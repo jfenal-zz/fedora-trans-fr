@@ -1,0 +1,7 @@
+
+paquet      : paquetage
+taskgroup   : groupe de tâches
+location (contexte users, groups, hosts ) : lieu ?? (OU ou DMD)
+principal   : mandant ? principal ? entrée (principale), identificateur de base (freebsd) 
+realm       : domaine
+credentials : données d'authentification, lettres de créance, justificatif d'identité, authentifiant
