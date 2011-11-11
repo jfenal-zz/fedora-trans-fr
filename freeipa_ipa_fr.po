@@ -4,13 +4,14 @@
 # Translators:
 # Automatically generated, 2010.
 #   <jfenal@gmail.com>, 2011.
+# Jérôme Fenal <jfenal@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-11 12:35+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2011-11-11 18:19+0100\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,7 +137,7 @@ msgstr ""
 "information. Ce module est conçu pour autoriser et non interdire l'accès.\n"
 "\n"
 "Les commandes aci sont conçues pour accorder les autorisations\n"
-"qui permettent de mettre à jour ou détruire des entrées existantes\n"
+"qui permettent de mettre à jour ou supprimer des entrées existantes\n"
 "ou pour en ajouter de nouvelles. L'objectif des ACI livrées avec IPA est de\n"
 "fournir un jeu de permissions de bas niveau qui permettent l'accès à des\n"
 "groupes spéciaux appelés taskgroups (groupes de tâches). Ces permissions\n"
@@ -176,64 +177,67 @@ msgstr ""
 "  ldap://uid=*,cn=users,cn=accounts,dc=example,dc=com. L'option subtree\n"
 "  est une garde-fou pour les objets qui ne seraient pas couverts par l'option type.\n"
 "\n"
-"The permissions define what the the ACI is allowed to do, and are one or\n"
-"more of:\n"
-"1. write - write one or more attributes\n"
-"2. read - read one or more attributes\n"
-"3. add - add a new entry to the tree\n"
-"4. delete - delete an existing entry\n"
-"5. all - all permissions are granted\n"
+"Les permissions définissent ce que l'ACI autorise, et sont constituées\n"
+"d'au moins une permission parmi les suivantes :\n"
+"1. write - écriture d'au moins un attribut\n"
+"2. read - lecture d'au moins un attribut\n"
+"3. add - ajout de nouvelles entrées dans l'arbre\n"
+"4. delete - destruction d'une entrée existante\n"
+"5. all - toutes les permissions sont accordées\n"
 "\n"
-"Note the distinction between attributes and entries. The permissions are\n"
-"independent, so being able to add a user does not mean that the user will\n"
-"be editable.\n"
+"Notez la distinction entre attributs et entrées. Les permissions sont\n"
+"indépendantes, le fait de pouvoir ajouter un utilisateur ne signifie pas\n"
+"que cet utilisateur sera modifiable.\n"
 "\n"
-"The bind rule defines who this ACI grants permissions to. The LDAP server\n"
-"allows this to be any valid LDAP entry but we encourage the use of\n"
-"taskgroups so that the rights can be easily shared through roles.\n"
+"Les règles de connexion définissent à qui une ACI accorde une autorisation.\n"
+"Le serveur LDAP permet ici tout type d'entrée LDAP valide, mais nous\n"
+"encourageons l'utilisation de groupes de tâches afin que les droits soient\n"
+"aisément partageables entre les différents rôles.\n"
 "\n"
-"For a more thorough description of access controls see\n"
+"Pour une description plus approfondies des contrôles d'accès, cf.\n"
 "http://www.redhat.com/docs/manuals/dir-server/ag/8.0/Managing_Access_Control.html\n"
 "\n"
-"EXAMPLES:\n"
+"EXEMPLES:\n"
 "\n"
-"NOTE: ACIs are now added via the permission plugin. These examples are to\n"
-"demonstrate how the various options work but this is done via the permission\n"
-"command-line now (see last example).\n"
+"NOTE: Les ACI sont maintenant ajoutées par le greffon permission. Ces exemples\n"
+"sont présentés afin de montrer les différentes possibilités, mais doivent maintenant\n"
+"être réalisées avec l'outil en ligne de commande permission (cf. le dernier exemple).\n"
 "\n"
-" Add an ACI so that the group \"secretaries\" can update the address on any user:\n"
-"   ipa group-add --desc=\"Office secretaries\" secretaries\n"
-"   ipa aci-add --attrs=streetAddress --memberof=ipausers --group=secretaries --permissions=write --prefix=none \"Secretaries write addresses\"\n"
+" Ajouter une ACI autorisant le groupe « assistantes » à modifier l'adresse de tout utilisateur :\n"
+"   ipa group-add --desc=\"Assistantes du bureau\" assistantes\n"
+"   ipa aci-add --attrs=streetAddress --memberof=ipausers --group=assistantes --permissions=write --prefix=none \"Les assistantes modifient les adresses\"\n"
 "\n"
-" Show the new ACI:\n"
-"   ipa aci-show --prefix=none \"Secretaries write addresses\"\n"
+" Afficher la nouvelle ACI:\n"
+"   ipa aci-show --prefix=none \"Les assistantes modifient les adresses\"\n"
 "\n"
-" Add an ACI that allows members of the \"addusers\" permission to add new users:\n"
-"   ipa aci-add --type=user --permission=addusers --permissions=add --prefix=none \"Add new users\"\n"
+" Ajouter une ACI pemettant aux membres de la permission « addusers » d'ajouter de nouveaux utilisateurs :\n"
+"   ipa aci-add --type=user --permission=addusers --permissions=add --prefix=none \"Ajouter de nouveaux utilisateurs\"\n"
 "\n"
-" Add an ACI that allows members of the editors manage members of the admins group:\n"
-"   ipa aci-add --permissions=write --attrs=member --targetgroup=admins --group=editors --prefix=none \"Editors manage admins\"\n"
+" Ajouter une ACI autorisant les membres du groupe directeurs d'administrer les membres du groupe administrateurs :\n"
+"FIXME admins : groupe interne à IPA ?"
+"   ipa aci-add --permissions=write --attrs=member --targetgroup=administrateurs --group=directeurs --prefix=none \"Les directeurs administrent les administrateurs\"\n"
 "\n"
-" Add an ACI that allows members of the admin group to manage the street and zip code of those in the editors group:\n"
-"   ipa aci-add --permissions=write --memberof=editors --group=admins --attrs=street,postalcode --prefix=none \"admins edit the address of editors\"\n"
+" Ajouter une ACI autorisant les membres du groupe administrateurs de gérer les adresses et code postal des membres du groupe directeurs :\n"
+"   ipa aci-add --permissions=write --memberof=directeurs --group=administrateurs --attrs=street,postalcode --prefix=none \"Les administrateurs modifient les adresses des directeurs\"\n"
 "\n"
-" Add an ACI that allows the admins group manage the street and zipcode of those who work for the boss:\n"
-"   ipa aci-add --permissions=write --group=admins --attrs=street,postalcode --filter=\"(manager=uid=boss,cn=users,cn=accounts,dc=example,dc=com)\" --prefix=none \"Edit the address of those who work for the boss\"\n"
+" Ajouter une ACI autorisant le groupe administrateurs de gérer adresse et coe postal de ceux travaillant pour le patron :\n"
+"   ipa aci-add --permissions=write --group=administrateurs --attrs=street,postalcode --filter=\"(manager=uid=patron,cn=users,cn=accounts,dc=example,dc=com)\" --prefix=none \"Modifier l'adresse de ceux travaillant pour le patron\"\n"
 "\n"
-" Add an entirely new kind of record to IPA that isn't covered by any of the --type options, creating a permission:\n"
-"   ipa permission-add  --permissions=add --subtree=\"cn=*,cn=orange,cn=accounts,dc=example,dc=com\" --desc=\"Add Orange Entries\" add_orange\n"
+" Ajouter un nouveau type d'enregistrements à IPA non couvert par aucune des options --type, créant ainsi une permission :\n"
+"   ipa permission-add  --permissions=add --subtree=\"cn=*,cn=orange,cn=accounts,dc=example,dc=com\" --desc=\"Ajouter des entrées Orange\" add_orange\n"
 "\n"
 "\n"
-"The show command shows the raw 389-ds ACI.\n"
+"La commande show montre l'ACI brute de 389-ds.\n"
 "\n"
-"IMPORTANT: When modifying the target attributes of an existing ACI you\n"
-"must include all existing attributes as well. When doing an aci-mod the\n"
-"targetattr REPLACES the current attributes, it does not add to them.\n"
+"IMPORTANT: Quand vous modifiez les attributs cible d'une ACI existante,\n"
+"vous devez aussi inclure tous les attributs existants. En effet, la\n"
+"commande aci-mod REMPLACE les attributs actuels, elle n'ajoute pas ceux\n"
+"spécifiés en plus des existants.\n"
 "\n"
 
 #: ipalib/plugins/aci.py:153
 msgid "A list of ACI values"
-msgstr ""
+msgstr "Une liste de valeurs d'ACI"
 
 #: ipalib/plugins/aci.py:172
 msgid ""
@@ -241,6 +245,9 @@ msgid ""
 "    Given a name and a prefix construct an ACI name.\n"
 "    "
 msgstr ""
+"\n"
+"    Construire un nom d'ACI avec un nom et un préfixe.\n"
+"    "
 
 #: ipalib/plugins/aci.py:181
 msgid ""
@@ -249,6 +256,10 @@ msgid ""
 "    and the actual ACI name.\n"
 "    "
 msgstr ""
+"\n"
+"    Analyser le nom brut de l'ACI et renvoyer un tuple contenant le préfixe\n"
+"    et le nom de l'ACI.\n"
+"    "
 
 #: ipalib/plugins/aci.py:193
 msgid ""
@@ -256,6 +267,9 @@ msgid ""
 "    Pull the group name out of a memberOf filter\n"
 "    "
 msgstr ""
+"\n"
+"    Récupérer le nom du groupe d'un filtre memberOf\n"
+"    "
 
 #: ipalib/plugins/aci.py:204
 msgid ""
@@ -263,10 +277,13 @@ msgid ""
 "    Given a name and a set of keywords construct an ACI.\n"
 "    "
 msgstr ""
+"\n"
+"    Construire une ACI avec un nom et un ensemble de mots-clés.\n"
+"   "
 
 #: ipalib/plugins/aci.py:215
 msgid "type, filter, subtree and targetgroup are mutually exclusive"
-msgstr ""
+msgstr "type, filter, subtree et targetgroup sont mutuellement exclusifs"
 
 #: ipalib/plugins/aci.py:218
 msgid "ACI prefix is required"
@@ -277,33 +294,34 @@ msgid ""
 "at least one of: type, filter, subtree, targetgroup, attrs or memberof are "
 "required"
 msgstr ""
+"au moins un parmi type, filter, subtree, targetgroup, attrs ou memberof est "
+"requis"
 
 #: ipalib/plugins/aci.py:224
 msgid "filter and memberof are mutually exclusive"
-msgstr ""
+msgstr "filter et memberof sont mutuellement exclusifs"
 
 #: ipalib/plugins/aci.py:230
 msgid "group, permission and self are mutually exclusive"
-msgstr ""
+msgstr "group, permission et self sont mutuellement exclusifs"
 
 #: ipalib/plugins/aci.py:232
 msgid "One of group, permission or self is required"
-msgstr ""
+msgstr "Un parmi group, permission ou self est requis"
 
 #: ipalib/plugins/aci.py:251
 msgid "Group '%s' does not exist"
-msgstr ""
+msgstr "Le groupe '%s' n'existe pas"
 
 #: ipalib/plugins/aci.py:273
 msgid "empty filter"
-msgstr ""
+msgstr "filtre vide"
 
 #: ipalib/plugins/aci.py:294
 msgid "Syntax Error: %(error)s"
-msgstr ""
+msgstr "Erreur de syntaxe : %(error)s"
 
 #: ipalib/plugins/aci.py:299
-#, fuzzy
 msgid ""
 "Convert an ACI into its equivalent keywords.\n"
 "\n"
@@ -312,21 +330,28 @@ msgid ""
 "       _make_aci().\n"
 "    "
 msgstr ""
+"Convertir une ACI en mots-clés équivalents.\n"
+"\n"
+"       Cela est utilisé par l'opération modify afin de pouvoir fusionner\n"
+"       les mots-clés en entrée et l'ACI existante et passer le résultat à \n"
+"       _make_aci().\n"
+"    "
 
 #: ipalib/plugins/aci.py:379
-#, fuzzy
 msgid "ACI with name \"%s\" not found"
-msgstr ""
+msgstr "ACI nommée \"%s\" introuvable"
 
 #: ipalib/plugins/aci.py:400
 msgid "ACI prefix"
-msgstr ""
+msgstr "Préfixe ACI"
 
 #: ipalib/plugins/aci.py:401
 msgid ""
 "Prefix used to distinguish ACI types (permission, delegation, selfservice, "
 "none)"
 msgstr ""
+"Préfixe utilisé pour distinguer les types d'ACI (permission, delegation, selfservice, "
+"none)"
 
 #: ipalib/plugins/aci.py:407
 msgid ""
@@ -334,100 +359,103 @@ msgid ""
 "    ACI object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet ACI.\n"
+"    "
 
 #: ipalib/plugins/aci.py:412
 msgid "ACIs"
-msgstr ""
+msgstr "ACI"
 
 #: ipalib/plugins/aci.py:417
 msgid "ACI name"
-msgstr ""
+msgstr "Nom d'ACI"
 
 #: ipalib/plugins/aci.py:422
 msgid "Permission"
-msgstr ""
+msgstr "Permission"
 
 #: ipalib/plugins/aci.py:423
 msgid "Permission ACI grants access to"
-msgstr ""
+msgstr "L'ACI Permission donne accès à"
 
 #: ipalib/plugins/aci.py:427 ipalib/plugins/delegation.py:130
 msgid "User group"
-msgstr ""
+msgstr "Groupe d'utilisateurs"
 
 #: ipalib/plugins/aci.py:428 ipalib/plugins/delegation.py:131
 msgid "User group ACI grants access to"
-msgstr ""
+msgstr "L'ACI groupe utilisateur donne accès à"
 
 #: ipalib/plugins/aci.py:432 ipalib/plugins/baseldap.py:60
 #: ipalib/plugins/delegation.py:113 ipalib/plugins/permission.py:107
 #: ipalib/plugins/permission.py:118 ipalib/plugins/selfservice.py:86
 msgid "Permissions"
-msgstr ""
+msgstr "Permissions"
 
 #: ipalib/plugins/aci.py:433
 msgid "comma-separated list of permissions to grant(read, write, add, delete, all)"
-msgstr ""
+msgstr "Liste séparée par des virgules de permissions à accorder (read, write, add, delete, all)"
 
 #: ipalib/plugins/aci.py:439 ipalib/plugins/delegation.py:119
 #: ipalib/plugins/permission.py:124 ipalib/plugins/selfservice.py:92
 msgid "Attributes"
-msgstr ""
+msgstr "Attributs"
 
 #: ipalib/plugins/aci.py:440 ipalib/plugins/delegation.py:120
 #: ipalib/plugins/permission.py:125 ipalib/plugins/selfservice.py:93
 msgid "Comma-separated list of attributes"
-msgstr ""
+msgstr "Liste séparée par des virgules d'attributs"
 
 #: ipalib/plugins/aci.py:444 ipalib/plugins/internal.py:164
 #: ipalib/plugins/permission.py:131
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: ipalib/plugins/aci.py:445
 msgid "type of IPA object (user, group, host, hostgroup, service, netgroup)"
-msgstr ""
+msgstr "type d'objet IPA (user, group, host, hostgroup, service, netgroup)"
 
 #: ipalib/plugins/aci.py:450
 msgid "Member of"
-msgstr ""
+msgstr "Membre de"
 
 #: ipalib/plugins/aci.py:451
 msgid "Member of a group"
-msgstr ""
+msgstr "Membre d'un groupe"
 
 #: ipalib/plugins/aci.py:455 ipalib/plugins/internal.py:234
 #: ipalib/plugins/permission.py:144
 msgid "Filter"
-msgstr ""
+msgstr "Filtre"
 
 #: ipalib/plugins/aci.py:456 ipalib/plugins/permission.py:145
 msgid "Legal LDAP filter (e.g. ou=Engineering)"
-msgstr ""
+msgstr "Filtre LDAP valide (i.e. ou=Engineering)"
 
 #: ipalib/plugins/aci.py:460 ipalib/plugins/permission.py:150
 msgid "Subtree"
-msgstr ""
+msgstr "Sous-arbre"
 
 #: ipalib/plugins/aci.py:461
 msgid "Subtree to apply ACI to"
-msgstr ""
+msgstr "Sous-arbre sur lequel appliquer l'ACI"
 
 #: ipalib/plugins/aci.py:465 ipalib/plugins/permission.py:156
 msgid "Target group"
-msgstr ""
+msgstr "Groupe cible"
 
 #: ipalib/plugins/aci.py:466
 msgid "Group to apply ACI to"
-msgstr ""
+msgstr "Groupe sur lequel appliquer l'ACI"
 
 #: ipalib/plugins/aci.py:470
 msgid "Target your own entry (self)"
-msgstr ""
+msgstr "Cibler votre propre entrée (self)"
 
 #: ipalib/plugins/aci.py:471
 msgid "Apply ACI to your own entry (self)"
-msgstr ""
+msgstr "Appliquer l'ACI à votre propre entrée (self)"
 
 #: ipalib/plugins/aci.py:478
 msgid ""
@@ -435,14 +463,17 @@ msgid ""
 "    Create new ACI.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer une nouvelle ACI.\n"
+"    "
 
 #: ipalib/plugins/aci.py:482
 msgid "Created ACI \"%(value)s\""
-msgstr ""
+msgstr "ACI créée \"%(value)s\""
 
 #: ipalib/plugins/aci.py:487
 msgid "Test the ACI syntax but don't write anything"
-msgstr ""
+msgstr "Tester la syntaxe de l'ACI, sans rien écrire"
 
 #: ipalib/plugins/aci.py:493
 msgid ""
@@ -455,6 +486,14 @@ msgid ""
 "        :param kw: Keyword arguments for the other LDAP attributes.\n"
 "        "
 msgstr ""
+"\n"
+"        Éxecuter l'opération aci-create.\n"
+"\n"
+"        Renvoie l'entrée telle qu'elle sera créée dans LDAP.\n"
+"\n"
+"        :param aciname: Le nom de l'ACI ajoutée.\n"
+"        :param kw: L'argument mot-clé arguments pour les les autres attributs LDAP.\n"
+"        "
 
 #: ipalib/plugins/aci.py:533
 msgid ""
@@ -462,10 +501,13 @@ msgid ""
 "    Delete ACI.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer l'ACI.\n"
+"    "
 
 #: ipalib/plugins/aci.py:538
 msgid "Deleted ACI \"%(value)s\""
-msgstr ""
+msgstr "Deleted ACI \"%(value)s\""
 
 #: ipalib/plugins/aci.py:543
 msgid ""
@@ -476,6 +518,12 @@ msgid ""
 "        :param kw: unused\n"
 "        "
 msgstr ""
+"\n"
+"        Éxecuter l'opération aci-delete.\n"
+"\n"
+"        :param aciname: Le nom de l'ACI à supprimer.\n"
+"        :param kw: inutilisé\n"
+"        "
 
 #: ipalib/plugins/aci.py:576
 msgid ""
@@ -483,16 +531,19 @@ msgid ""
 "    Modify ACI.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier l'ACI.\n"
+"    "
 
 #: ipalib/plugins/aci.py:582 ipalib/plugins/aci.py:830
 #: ipalib/plugins/aci.py:871 ipalib/plugins/delegation.py:255
 #: ipalib/plugins/selfservice.py:212
 msgid "ACI"
-msgstr ""
+msgstr "ACI"
 
 #: ipalib/plugins/aci.py:588
 msgid "Modified ACI \"%(value)s\""
-msgstr ""
+msgstr "ACI modifiée \"%(value)s\""
 
 #: ipalib/plugins/aci.py:633
 msgid ""
@@ -516,11 +567,30 @@ msgid ""
 "    members of that group indirectly.\n"
 "    "
 msgstr ""
+"\n"
+"    Recherche d'ACI.\n"
+"\n"
+"    Renvoie une liste d'ACI\n"
+"\n"
+"    EXEMPLES:\n"
+"\n"
+"     Trouver toutes les ACI s'appliquant aux membres du groupe ipausers:\n"
+"       ipa aci-find --memberof=ipausers\n"
+"\n"
+"     Trouver toutes les ACI accordant l'ajout d'accès:\n"
+"       ipa aci-find --permissions=add\n"
+"\n"
+"    N.B. : La commande find ne recherche le texte spécifié dans\n"
+"    l'ensemble des ACI. Elle n'évalue pas les ACI pour trouver si\n"
+"    quelquechose s'applique. Par exemple, rechercher memberof=ipausers\n"
+"    trouvera tous les ACI ayant ipausers en attribut memberof. Il pourrait y\n"
+"    avoir d'autres ACI s'appliquant indirectement aux membres de ce groupe.\n"
+"    "
 
 #: ipalib/plugins/aci.py:653
 msgid "%(count)d ACI matched"
 msgid_plural "%(count)d ACIs matched"
-msgstr[0] ""
+msgstr[0] "%(count)d ACI correspondantes"
 msgstr[1] ""
 
 #: ipalib/plugins/aci.py:823
@@ -529,6 +599,9 @@ msgid ""
 "    Display a single ACI given an ACI name.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher une ACI à partir de son nom.\n"
+"    "
 
 #: ipalib/plugins/aci.py:837
 msgid ""
@@ -541,6 +614,14 @@ msgid ""
 "        :param kw: unused\n"
 "        "
 msgstr ""
+"\n"
+"        Éxecuter l'opération aci-show.\n"
+"\n"
+"        Renvoie l'entrée\n"
+"\n"
+"        :param uid: Le nom d'utilisateur à renvoyer.\n"
+"        :param kw: inutilisé\n"
+"        "
 
 #: ipalib/plugins/aci.py:865
 msgid ""
@@ -548,14 +629,17 @@ msgid ""
 "    Rename an ACI.\n"
 "    "
 msgstr ""
+"\n"
+"    Renommer une ACI.\n"
+"    "
 
 #: ipalib/plugins/aci.py:878
 msgid "New ACI name"
-msgstr ""
+msgstr "Nouveau nom de l'ACI"
 
 #: ipalib/plugins/aci.py:882
 msgid "Renamed ACI to \"%(value)s\""
-msgstr ""
+msgstr "ACI renommée en \"%(value)s\""
 
 #: ipalib/plugins/automount.py:20
 msgid ""
@@ -644,6 +728,91 @@ msgid ""
 "  Remove the man key from the auto.share map:\n"
 "    ipa automountkey-del baltimore auto.share --key=man\n"
 msgstr ""
+"\n"
+"Automount\n"
+"\n"
+"Stocke la configuration automount(8) pour autofs(8) dans IPA.\n"
+"\n"
+"La base d'une configuration automount est le fichier de configuration auto.master.\n"
+"C'est aussi le lieu de base dans IPA. Plusieurs configurations auto.master\n"
+"peuvent être stockées dans plusieurs lieux différents. Un lieu est spécifique\n"
+"à chaque mise en œuvre, le lieu par défaut étant 'default'. Par exemple, vous\n"
+"pouvez avoir un lieu par région géographique, par étage, par type, etc.\n"
+"\n"
+"Automount a trois types d'objets : les lieux, les cartes et les clés.\n"
+"\n"
+"Un lieu définit un jeu de cartes ancrées dans auto.master. Cela permet\n"
+"de stocker de multiples configurations automount. Un lieu en soi n'est pas\n"
+"très intéressant, mais est le point de départ d'une nouvelle carte automount.\n"
+"\n"
+"Une carte est en gros équivalente à un fichier individuel automount et fournit\n"
+"le stockage pour les clés.\n"
+"\n"
+"Une clé est un point de montage associé à une carte.\n"
+"A key is a mount point associated with a map.\n"
+"\n"
+"Quand un nouveau lieu est créé, deux cartes sont automatiquement\n"
+"créées pour lui: auto.master et auto.direct. auto.master est la carte racine\n"
+"pour toutes les cartes automount pour le lieu en question. auto.direct est\n"
+"la carte par défaut pour les montages directs et est monté sur /-.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+"Lieux:\n"
+"\n"
+"  Créer un nouveau lieu nommé \"Baltimore\" :\n"
+"    ipa automountlocation-add baltimore\n"
+"\n"
+"  Afficher le nouveau lieu :\n"
+"    ipa automountlocation-show baltimore\n"
+"\n"
+"  Trouver les lieux disponibles :\n"
+"    ipa automountlocation-find\n"
+"\n"
+"  Supprimer un lieu automount nommé :\n"
+"    ipa automountlocation-del baltimore\n"
+"\n"
+"  Afficher à quoi ressembleraient les cartes automount si elles étaient dans le système de fichiers :\n"
+"    ipa automountlocation-tofiles baltimore\n"
+"\n"
+"  Importer une configuration existante dans un lieu:\n"
+"    ipa automountlocation-import baltimore /etc/auto.master\n"
+"\n"
+"    L'import échoera si une entrée dupliquée est trouvée. Pour une\n"
+"    utilisation continue où les erreurs sont ignorées, utiliser l'option\n"
+"    --continue."
+"\n"
+"Cartes :\n"
+"\n"
+"  Créer une nouvelle carte, \"auto.share\" :\n"
+"    ipa automountmap-add baltimore auto.share\n"
+"\n"
+"  Afficher la nouvelle carte :\n"
+"    ipa automountmap-show baltimore auto.share\n"
+"\n"
+"  Trouver les cartes du lieu baltimore :\n"
+"    ipa automountmap-find baltimore\n"
+"\n"
+"  Supprimer la carte auto.share :\n"
+"    ipa automountmap-del baltimore auto.share\n"
+"\n"
+"Clés :\n"
+"\n"
+"  Créer une nouvelle clé pour la carte auto.share du lieu baltimore. Cela associe\n"
+"  la carte précédemment créée à auto.master auto.master:\n"
+"    ipa automountkey-add baltimore auto.master --key=/share --info=auto.share\n"
+"\n"
+"  Créer une nouvelle clé dans notre carte auto.share, un montage NFS pour les pages de manuel :\n"
+"    ipa automountkey-add baltimore auto.share --key=man --info=\"-ro,soft,rsize=8192,wsize=8192 ipa.example.com:/shared/man\"\n"
+"\n"
+"  Trouver toutes les clés de la carte auto.share :\n"
+"    ipa automountkey-find baltimore auto.share\n"
+"\n"
+"  Trouver toutes les clés automount directes :\n"
+"    ipa automountkey-find baltimore --key=/-\n"
+"\n"
+"  Supprimer la clé man de la carte auto.share :\n"
+"    ipa automountkey-del baltimore auto.share --key=man\n"
 
 #: ipalib/plugins/automount.py:182
 msgid ""
@@ -651,18 +820,21 @@ msgid ""
 "    Location container for automount maps.\n"
 "    "
 msgstr ""
+"\n"
+"    Conteneur de lieu pour les cartes automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:190
 msgid "Automount Locations"
-msgstr ""
+msgstr "Lieux automount"
 
 #: ipalib/plugins/automount.py:196 ipalib/plugins/host.py:247
 msgid "Location"
-msgstr ""
+msgstr "Lieu"
 
 #: ipalib/plugins/automount.py:197
 msgid "Automount location name."
-msgstr ""
+msgstr "Nom de lieu autonmount."
 
 #: ipalib/plugins/automount.py:206
 msgid ""
@@ -670,6 +842,9 @@ msgid ""
 "    Create a new automount location.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer un nouveau lieu automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:221
 msgid ""
@@ -677,6 +852,9 @@ msgid ""
 "    Delete an automount location.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un lieu automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:229
 msgid ""
@@ -684,6 +862,9 @@ msgid ""
 "    Display an automount location.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher un lieu automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:237
 msgid ""
@@ -691,6 +872,9 @@ msgid ""
 "    Search for an automount location.\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher un lieu automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:245
 msgid ""
@@ -698,6 +882,9 @@ msgid ""
 "    Generate automount files for a specific location.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer les fichiers automount pour un lieu spécifique.\n"
+"    "
 
 #: ipalib/plugins/automount.py:308
 msgid ""
@@ -705,22 +892,25 @@ msgid ""
 "    Import automount files for a specific location.\n"
 "    "
 msgstr ""
+"\n"
+"    Importe les fichiers automount pour un lieu spécifique.\n"
+"    "
 
 #: ipalib/plugins/automount.py:314
 msgid "Master file"
-msgstr ""
+msgstr "Fichier maître"
 
 #: ipalib/plugins/automount.py:315
 msgid "Automount master file."
-msgstr ""
+msgstr "Fichier maître automount"
 
 #: ipalib/plugins/automount.py:322
 msgid "Continuous operation mode. Errors are reported but the process continues."
-msgstr ""
+msgstr "Mode opération continue. Les erreurs seront rapportées mais le processus continuera."
 
 #: ipalib/plugins/automount.py:334
 msgid "File %(file)s not found"
-msgstr ""
+msgstr "Fichiers %(file)s introuvable"
 
 #: ipalib/plugins/automount.py:341
 msgid ""
@@ -729,6 +919,10 @@ msgid ""
 "        we need, then read each map file and add all the keys for the map.\n"
 "        "
 msgstr ""
+"\n"
+"        Le principe est de lire le fichier maître et de créer toutes les cartes\n"
+"        nécessaires, puis lire chaque fichier carte, et ajouter les clés dans chaque carte.\n"
+"        "
 
 #: ipalib/plugins/automount.py:492
 msgid ""
@@ -736,14 +930,17 @@ msgid ""
 "    Automount map object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:505
 msgid "Map"
-msgstr ""
+msgstr "Carte"
 
 #: ipalib/plugins/automount.py:506
 msgid "Automount map name."
-msgstr ""
+msgstr "Nom de carte automount."
 
 #: ipalib/plugins/automount.py:511 ipalib/plugins/group.py:114
 #: ipalib/plugins/hbacrule.py:171 ipalib/plugins/hbacsvc.py:73
@@ -753,11 +950,11 @@ msgstr ""
 #: ipalib/plugins/sudocmd.py:74 ipalib/plugins/sudocmdgroup.py:76
 #: ipalib/plugins/sudorule.py:78
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ipalib/plugins/automount.py:515
 msgid "Automount Maps"
-msgstr ""
+msgstr "Cartes automount"
 
 #: ipalib/plugins/automount.py:521
 msgid ""
@@ -765,6 +962,9 @@ msgid ""
 "    Create a new automount map.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer une nouvelle carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:529
 msgid ""
@@ -772,6 +972,9 @@ msgid ""
 "    Delete an automount map.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:548
 msgid ""
@@ -779,6 +982,9 @@ msgid ""
 "    Modify an automount map.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:556
 msgid ""
@@ -786,6 +992,9 @@ msgid ""
 "    Search for an automount map.\n"
 "    "
 msgstr ""
+"\n"
+"    Cherche une carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:564
 msgid ""
@@ -793,6 +1002,9 @@ msgid ""
 "    Display an automount map.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher une carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:572
 msgid ""
@@ -800,49 +1012,56 @@ msgid ""
 "    Automount key object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet carte automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:589 ipalib/plugins/automount.py:778
 #: ipalib/plugins/automount.py:850
 msgid "Key"
-msgstr ""
+msgstr "Clé"
 
 #: ipalib/plugins/automount.py:590 ipalib/plugins/automount.py:779
 #: ipalib/plugins/automount.py:851
 msgid "Automount key name."
-msgstr ""
+msgstr "Nom de clé automount."
 
 #: ipalib/plugins/automount.py:594 ipalib/plugins/automount.py:783
 #: ipalib/plugins/automount.py:855
 msgid "Mount information"
-msgstr ""
+msgstr "Information du montage"
 
 #: ipalib/plugins/automount.py:597
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #: ipalib/plugins/automount.py:606
 msgid "Automount Keys"
-msgstr ""
+msgstr "Clés automount"
 
 #: ipalib/plugins/automount.py:607
 msgid ""
 "The key,info pair must be unique. A key named %(key)s with info %(info)s "
 "already exists"
 msgstr ""
+"La paire key,info doit être unique. Une clé nommée %(key)s avec l'information %(info)s "
+"existe déjà."
 
 #: ipalib/plugins/automount.py:608
 msgid "key named %(key)s already exists"
-msgstr ""
+msgstr "la clé nommée %(key)s existe déjà"
 
 #: ipalib/plugins/automount.py:609
 msgid "The automount key %(key)s with info %(info)s does not exist"
-msgstr ""
+msgstr "La clé automount %(key)s avec l'information %(info)s n'existe pas"
 
 #: ipalib/plugins/automount.py:659
 msgid ""
 "More than one entry with key %(key)s found, use --info to select specific "
 "entry."
 msgstr ""
+"Plus d'une entrée avec la clé %(key)s trouvée, utilisez --info pour "
+"sélectionner l'entrée spécifique."
 
 #: ipalib/plugins/automount.py:717
 msgid ""
@@ -850,6 +1069,9 @@ msgid ""
 "    Create a new automount key.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer une nouvelle clé automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:742
 msgid ""
@@ -857,18 +1079,21 @@ msgid ""
 "    Create a new indirect mount point.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer un nouveau point de montage indirect.\n"
+"    "
 
 #: ipalib/plugins/automount.py:748
 msgid "Mount point"
-msgstr ""
+msgstr "Point de montage"
 
 #: ipalib/plugins/automount.py:752
 msgid "Parent map"
-msgstr ""
+msgstr "Carte parente"
 
 #: ipalib/plugins/automount.py:753
 msgid "Name of parent automount map (default: auto.master)."
-msgstr ""
+msgstr "Nom de la carte parente (par défaut : auto.master)."
 
 #: ipalib/plugins/automount.py:772
 msgid ""
@@ -876,6 +1101,9 @@ msgid ""
 "    Delete an automount key.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une clé automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:803
 msgid ""
@@ -883,10 +1111,13 @@ msgid ""
 "    Modify an automount key.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une clé automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:809
 msgid "New mount information"
-msgstr ""
+msgstr "Nouvelle information de montage"
 
 #: ipalib/plugins/automount.py:836
 msgid ""
@@ -894,6 +1125,9 @@ msgid ""
 "    Search for an automount key.\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher une clé automount.\n"
+"    "
 
 #: ipalib/plugins/automount.py:844
 msgid ""
@@ -901,130 +1135,135 @@ msgid ""
 "    Display an automount key.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher une clé automount.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:19
 msgid ""
 "\n"
 "Base classes for LDAP plugins.\n"
 msgstr ""
+"\n"
+"Classes de base pour les greffons LDAP.\n"
 
 #: ipalib/plugins/baseldap.py:39
 msgid "Failed members"
-msgstr ""
+msgstr "Membres en échec"
 
 #: ipalib/plugins/baseldap.py:42
 msgid "Member users"
-msgstr ""
+msgstr "Utilisateurs membres"
 
 #: ipalib/plugins/baseldap.py:45
 msgid "Member groups"
-msgstr ""
+msgstr "Groupes membres"
 
 #: ipalib/plugins/baseldap.py:48
 msgid "Member of groups"
-msgstr ""
+msgstr "Membre des groupes"
 
 #: ipalib/plugins/baseldap.py:51
 msgid "Member hosts"
-msgstr ""
+msgstr "Systèmes membres"
 
 #: ipalib/plugins/baseldap.py:54
 msgid "Member host-groups"
-msgstr ""
+msgstr "Groupes de systèmes membres"
 
 #: ipalib/plugins/baseldap.py:57
 msgid "Member of host-groups"
-msgstr ""
+msgstr "Membre du groupe de systèmes"
 
 #: ipalib/plugins/baseldap.py:66
 msgid "Roles"
-msgstr ""
+msgstr "Rôles"
 
 #: ipalib/plugins/baseldap.py:69 ipalib/plugins/sudocmdgroup.py:65
 #: ipalib/plugins/sudocmdgroup.py:84 ipalib/plugins/sudorule.py:139
 #: ipalib/plugins/sudorule.py:143
 msgid "Sudo Command Groups"
-msgstr ""
+msgstr "Groupes de commandes sudo"
 
 #: ipalib/plugins/baseldap.py:75
 msgid "Granting privilege to roles"
-msgstr ""
+msgstr "Accord en cours des privilègues aux rôles"
 
 #: ipalib/plugins/baseldap.py:78
 msgid "Member netgroups"
-msgstr ""
+msgstr "Netgroups membres"
 
 #: ipalib/plugins/baseldap.py:81
 msgid "Member of netgroups"
-msgstr ""
+msgstr "Membre des netgroups"
 
 #: ipalib/plugins/baseldap.py:84
 msgid "Member services"
-msgstr ""
+msgstr "Services membres"
 
 #: ipalib/plugins/baseldap.py:87
 msgid "Member service groups"
-msgstr ""
+msgstr "Groupes de services membres."
 
 #: ipalib/plugins/baseldap.py:93
 msgid "Member HBAC service groups"
-msgstr ""
+msgstr "Membre des groupes de services HBAC"
 
 #: ipalib/plugins/baseldap.py:102
 msgid "Indirect Member users"
-msgstr ""
+msgstr "Utilisateurs membres indirects"
 
 #: ipalib/plugins/baseldap.py:105
 msgid "Indirect Member groups"
-msgstr ""
+msgstr "Groupes membres indirects"
 
 #: ipalib/plugins/baseldap.py:108
 msgid "Indirect Member hosts"
-msgstr ""
+msgstr "Systèmes membres indirects"
 
 #: ipalib/plugins/baseldap.py:111
 msgid "Indirect Member host-groups"
-msgstr ""
+msgstr "Groupes de systèmes membres indirect"
 
 #: ipalib/plugins/baseldap.py:114
 msgid "Indirect Member of roles"
-msgstr ""
+msgstr "Membres indirect des rôles"
 
 #: ipalib/plugins/baseldap.py:117
 msgid "Indirect Member permissions"
-msgstr ""
+msgstr "Permission membre indirect"
 
 #: ipalib/plugins/baseldap.py:120
 msgid "Indirect Member HBAC service"
-msgstr ""
+msgstr "Service HBAC membre indirect"
 
 #: ipalib/plugins/baseldap.py:123
 msgid "Indirect Member HBAC service group"
-msgstr ""
+msgstr "Groupe de services membre indirect"
 
 #: ipalib/plugins/baseldap.py:126
 msgid "Indirect Member netgroups"
-msgstr ""
+msgstr "Netgroups membre indirect"
 
 #: ipalib/plugins/baseldap.py:141
 msgid "External host"
-msgstr ""
+msgstr "Système externe"
 
 #: ipalib/plugins/baseldap.py:144
 msgid "Failed hosts/hostgroups"
-msgstr ""
+msgstr "Échec sur systèmes et groupes de système"
 
 #: ipalib/plugins/baseldap.py:147
 msgid "Failed users/groups"
-msgstr ""
+msgstr "Échec sur utilisateurs et groupes"
 
 #: ipalib/plugins/baseldap.py:150
 msgid "Failed managedby"
-msgstr ""
+msgstr "Échec sur managedby"
 
 #: ipalib/plugins/baseldap.py:153
 msgid "Failed to remove"
-msgstr ""
+msgstr "Échec à la suppression"
 
 #: ipalib/plugins/baseldap.py:171
 msgid ""
@@ -1032,6 +1271,9 @@ msgid ""
 "    Given a list of values in the form name=value, return a list of name.\n"
 "    "
 msgstr ""
+"\n"
+"    Sur une liste de valeurs de la forme nom=valeur, renvoie une liste de noms.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:197
 msgid ""
@@ -7872,7 +8114,7 @@ msgstr ""
 #: ipa-client/ipa-rmkeytab.c:143
 #, c-format
 msgid "realm not found\n"
-msgstr ""
+msgstr "domaine introuvable\n"
 
 #: ipa-client/ipa-rmkeytab.c:169
 msgid "Print debugging information"
@@ -7884,25 +8126,25 @@ msgstr ""
 
 #: ipa-client/ipa-rmkeytab.c:176
 msgid "Remove all principals in this realm"
-msgstr ""
+msgstr "Retirer tous les principals de ce royaume"
 
 #: ipa-client/ipa-rmkeytab.c:176
 msgid "Realm name"
-msgstr ""
+msgstr "Nom du royaume"
 
 #: ipa-client/ipa-rmkeytab.c:230 ipa-client/ipa-rmkeytab.c:237
 #, c-format
 msgid "Failed to open keytab '%s': %s\n"
-msgstr ""
+msgstr "Échec à l'ouverture du keytab '%s' : %s\n"
 
 #: ipa-client/ipa-rmkeytab.c:253
 #, c-format
 msgid "Closing keytab failed\n"
-msgstr ""
+msgstr "La fermeture du keytab a échoué\n"
 
 #: ipa-client/ipa-rmkeytab.c:255
 #, c-format
 msgid "krb5_kt_close %d: %s\n"
-msgstr ""
+msgstr "krb5_kt_close %d: %s\n"
 
 
