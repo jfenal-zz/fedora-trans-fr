@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-11 18:19+0100\n"
+"PO-Revision-Date: 2011-11-11 21:22+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr ""
 msgid "%(count)d ACI matched"
 msgid_plural "%(count)d ACIs matched"
 msgstr[0] "%(count)d ACI correspondantes"
-msgstr[1] ""
+msgstr[1] "%(count)d ACI correspondantes"
 
 #: ipalib/plugins/aci.py:823
 msgid ""
@@ -1287,6 +1287,15 @@ msgid ""
 "    if all the memberof attributes have been updated.\n"
 "    "
 msgstr ""
+"\n"
+"    Quand nous ajoutons ou retirons des membres inverses, nous simulons\n"
+"    une mise à jour sur l'objet A en modifiant l'attribut member de l'objet B.\n"
+"    Le greffon memberof effectue ce travail en ajoutant ou retirant l'attribut\n"
+"    memberof de l'objet A, ce qui prend un peu de temps.\n"
+"\n"
+"    Cela bouclera pendant environ 6 secondes, récupérant l'objet A afin de\n"
+"    voir si tous les attributs memberof ont été mis à jour.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:241
 msgid ""
@@ -1294,38 +1303,45 @@ msgid ""
 "    Object representing a LDAP entry.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet représentant une entrée LDAP.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:281
 msgid "Entry"
-msgstr ""
+msgstr "Entrée"
 
 #: ipalib/plugins/baseldap.py:283
 msgid "container entry (%(container)s) not found"
-msgstr ""
+msgstr "entrée conteneur (%(container)s) introuvable"
 
 #: ipalib/plugins/baseldap.py:284
 msgid "%(parent)s: %(oname)s not found"
-msgstr ""
+msgstr "%(parent)s: %(oname)s introuvable"
 
 #: ipalib/plugins/baseldap.py:285
 msgid "%(pkey)s: %(oname)s not found"
-msgstr ""
+msgstr "%(pkey)s: %(oname)s introuvable"
 
 #: ipalib/plugins/baseldap.py:286
 msgid "%(oname)s with name \"%(pkey)s\" already exists"
-msgstr ""
+msgstr "%(oname)s avec le nom \"%(pkey)s\" existe déjà"
 
 #: ipalib/plugins/baseldap.py:415
 msgid ""
 "Add an attribute/value pair. Format is attr=value. The attribute must be "
 "part of the schema."
 msgstr ""
+"Ajout une paire attribut/valeur. Le format est attr=valeur. L'attribut doit "
+"faire partie du schéma."
 
 #: ipalib/plugins/baseldap.py:420
 msgid ""
 "Set an attribute to a name/value pair. Format is attr=value.\n"
 "For multi-valued attributes, the command replaces the values already present."
 msgstr ""
+"Modifie un attribut avec une paire nom/valeur. Le format est attr=valeur.\n"
+"Pour les attributs multi-valués, la commande remplace toutes les valeurs déjà présentes."
 
 #: ipalib/plugins/baseldap.py:444
 msgid ""
