@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-11 21:22+0100\n"
+"PO-Revision-Date: 2011-11-12 13:48+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1357,6 +1357,17 @@ msgid ""
 "    If False then those attributes are not allowed.\n"
 "    "
 msgstr ""
+"\n"
+"    Si l'ensemble des classes d'objets est limité, appliquer le fait\n"
+"   que seules celles-ci soient mises à jour dans entry_attrs (plus le dn).\n"
+"\n"
+"    allow_only indique quel mode utiliser :\n"
+"\n"
+"    Si Vrai, alors les attributs modifiés doivent être dans la liste\n"
+"    de ceux autorisés.\n"
+"\n"
+"    Si Faux, alors ces attributs ne sont pas autorisés.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:474
 msgid ""
@@ -1364,6 +1375,9 @@ msgid ""
 "    Callback registration interface\n"
 "    "
 msgstr ""
+"\n"
+"    Interface d'enregistrement des fonctions de rappel\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:561
 msgid ""
@@ -1371,6 +1385,9 @@ msgid ""
 "    Create a new entry in LDAP.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer une nouvelle entrée LDAP.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:703
 msgid ""
@@ -1378,6 +1395,9 @@ msgid ""
 "    Base class for commands that need to retrieve an existing entry.\n"
 "    "
 msgstr ""
+"\n"
+"    Classe de base pour les commandes ayant besoin de récupérer une entrée existante.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:727
 msgid ""
@@ -1385,10 +1405,13 @@ msgid ""
 "    Base class for commands that need to retrieve one or more existing entries.\n"
 "    "
 msgstr ""
+"\n"
+"    Classe de base pour les commandes ayant besoin de récupérer une ou plusieurs entrées existantes.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:733
 msgid "Continuous mode: Don't stop on errors."
-msgstr ""
+msgstr "Mode continue : pas d'arrêt sur erreurs."
 
 #: ipalib/plugins/baseldap.py:750
 msgid ""
@@ -1396,17 +1419,22 @@ msgid ""
 "    Retrieve an LDAP entry.\n"
 "    "
 msgstr ""
+"\n"
+"    Récupère une entrée LDAP.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:758 ipalib/plugins/baseldap.py:827
 #: ipalib/plugins/internal.py:232
 msgid "Rights"
-msgstr ""
+msgstr "Droits"
 
 #: ipalib/plugins/baseldap.py:759 ipalib/plugins/baseldap.py:828
 msgid ""
 "Display the access rights of this entry (requires --all). See ipa man page "
 "for details."
 msgstr ""
+"Affiche les droits d'accès sur cette entrée (requiert --all). Cf. la page de "
+"manuel de ipa pour plus d'informations."
 
 #: ipalib/plugins/baseldap.py:821
 msgid ""
@@ -1414,18 +1442,21 @@ msgid ""
 "    Update an LDAP entry.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifie une entrée LDAP.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:837
 msgid "Rename"
-msgstr ""
+msgstr "Renommer"
 
 #: ipalib/plugins/baseldap.py:838
 msgid "Rename the %(ldap_obj_name)s object"
-msgstr ""
+msgstr "Renomme l'objet %(ldap_obj_name)s"
 
 #: ipalib/plugins/baseldap.py:957
 msgid "the entry was deleted while being modified"
-msgstr ""
+msgstr "cette entrée a été supprimée pendant sa modification"
 
 #: ipalib/plugins/baseldap.py:988
 msgid ""
@@ -1433,6 +1464,9 @@ msgid ""
 "    Delete an LDAP entry and all of its direct subentries.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprime une entrée LDAP et toutes ses sous-entrées directes.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1078
 msgid ""
@@ -1440,6 +1474,9 @@ msgid ""
 "    Base class for member manipulation.\n"
 "    "
 msgstr ""
+"\n"
+"    Classe de base pour la manipulation des membres.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1120
 msgid ""
@@ -1447,16 +1484,19 @@ msgid ""
 "    Add other LDAP entries to members.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter de nouvelles entrées LDAP aux membres.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1131 ipalib/plugins/baseldap.py:1592
 #: ipalib/plugins/privilege.py:165 ipalib/plugins/privilege.py:191
 #: ipalib/plugins/role.py:179 ipalib/plugins/role.py:203
 msgid "Members that could not be added"
-msgstr ""
+msgstr "Membres n'ayant pu être ajoutés"
 
 #: ipalib/plugins/baseldap.py:1135 ipalib/plugins/baseldap.py:1596
 msgid "Number of members added"
-msgstr ""
+msgstr "Nombre de membres ajoutés"
 
 #: ipalib/plugins/baseldap.py:1226
 msgid ""
@@ -1464,14 +1504,17 @@ msgid ""
 "    Remove LDAP entries from members.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprime les entrées LDAP des membres.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1236 ipalib/plugins/baseldap.py:1705
 msgid "Members that could not be removed"
-msgstr ""
+msgstr "Membres n'ayant pu être supprimés"
 
 #: ipalib/plugins/baseldap.py:1240 ipalib/plugins/baseldap.py:1709
 msgid "Number of members removed"
-msgstr ""
+msgstr "Nombre de membres supprimés"
 
 #: ipalib/plugins/baseldap.py:1335
 msgid ""
@@ -1479,22 +1522,25 @@ msgid ""
 "    Retrieve all LDAP entries matching the given criteria.\n"
 "    "
 msgstr ""
+"\n"
+"    Récupère toutes les entrées LDAP correspondant au critère spécifié.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1344
 msgid "Time Limit"
-msgstr ""
+msgstr "Limite de durée"
 
 #: ipalib/plugins/baseldap.py:1345
 msgid "Time limit of search in seconds"
-msgstr ""
+msgstr "Limite de durée de la recherche en secondes"
 
 #: ipalib/plugins/baseldap.py:1351
 msgid "Size Limit"
-msgstr ""
+msgstr "Limite de taille"
 
 #: ipalib/plugins/baseldap.py:1352
 msgid "Maximum number of entries returned"
-msgstr ""
+msgstr "Nombre maximal d'entrées renvoyées"
 
 #: ipalib/plugins/baseldap.py:1552
 msgid ""
@@ -1502,6 +1548,9 @@ msgid ""
 "    Base class for reverse member manipulation.\n"
 "    "
 msgstr ""
+"\n"
+"    Classe de base pour la manipulation des membres inverses.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1574
 msgid ""
@@ -1512,10 +1561,16 @@ msgid ""
 "    add B to A to handle reverse membership.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajoute de nouvelles entrées LDAP aux membres inverses.\n"
+"\n"
+"    L'appel ressemble à « ajoute A à B » mais exécute en fait\n"
+"    « ajoute B à A » pour gérer l'appartenance inverse.\n"
+"        "
 
 #: ipalib/plugins/baseldap.py:1654
 msgid "added"
-msgstr ""
+msgstr "ajouté"
 
 #: ipalib/plugins/baseldap.py:1687
 msgid ""
@@ -1526,10 +1581,16 @@ msgid ""
 "    remove B from A to handle reverse membership.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer d'autres entrées LDAP des membres inverses.\n"
+"\n"
+"    L'appel ressemble à « retire A de B » mais exécute en fait\n"
+"    « retire B de A » pour gérer l'appartenance inverse.\n"
+"    "
 
 #: ipalib/plugins/baseldap.py:1767
 msgid "removed"
-msgstr ""
+msgstr "retiré"
 
 #: ipalib/plugins/batch.py:21
 msgid ""
@@ -1559,14 +1620,39 @@ msgid ""
 "And then a nested response for each IPA command method sent in the request\n"
 "\n"
 msgstr ""
+"\n"
+"Greffon permettant de multiplier les appels à ipa via une seule commande distante\n"
+"\n"
+"Pour exécuter ce code dans lite-server\n"
+"\n"
+"curl   -H \"Content-Type:application/json\"          -H \"Accept:application/json\" -H \"Accept-Language:en\"        --negotiate -u :          --cacert /etc/ipa/ca.crt           -d  @batch_request.json -X POST       http://localhost:8888/ipa/json\n"
+"\n"
+"où le contenu du fichier batch_request.json suit l'exemple suivant :\n"
+"\n"
+"{\"method\":\"batch\",\"params\":[[\n"
+"        {\"method\":\"group_find\",\"params\":[[],{}]},\n"
+"        {\"method\":\"user_find\",\"params\":[[],{\"whoami\":\"true\",\"all\":\"true\"}]},\n"
+"        {\"method\":\"user_show\",\"params\":[[\"admin\"],{\"all\":true}]}\n"
+"        ],{}],\"id\":1}\n"
+"\n"
+"Le format de la réponse est imbriquée de la même façon. Le début en sera :\n"
+"  \"error\": null,\n"
+"    \"id\": 1,\n"
+"    \"result\": {\n"
+"        \"count\": 3,\n"
+"            \"results\": [\n"
+"\n"
+"\n"
+"Suivra une réponse imbriquée pour chaque commande IPA envoyée dans la requête\n"
+"\n"
 
 #: ipalib/plugins/batch.py:61
 msgid "Nested Methods to execute"
-msgstr ""
+msgstr "Commandes imbriquées à exécuter"
 
 #: ipalib/plugins/batch.py:68 ipalib/frontend.py:861
 msgid "Client version. Used to determine if server will accept request."
-msgstr ""
+msgstr "Version du client. Utilisée pour déterminer si le serveur acceptera la requête."
 
 #: ipalib/plugins/cert.py:22
 msgid ""
@@ -1629,6 +1715,66 @@ msgid ""
 "http://www.ietf.org/rfc/rfc5280.txt\n"
 "\n"
 msgstr ""
+"\n"
+"Opération sur les certificats IPA\n"
+"\n"
+"Met en œuvre un jeu de commandes permettant l'administration\n"
+"des certificats SSL de serveurs.\n"
+"\n"
+"Les requêtes de certificats existent sous la forme d'un Certificate Signing Request (CSR)\n"
+"au format PEM.\n"
+"\n"
+"En cas d'utilisation du module d'auto-signature, alors le sujet du CSR devra\n"
+"être identique au sujet configuré dans le serveur. L'autorité de certification\n"
+"dogtag utilise uniquement la valeur du CN du CSR, et remplace le reste du sujet.\n"
+"\n"
+"Un certificat est stocké avec un principal de service, qui requiert\n"
+"lui un système."
+"\n"
+"Afin de demander un certificat  :\n"
+"\n"
+"* Le système doit exister\n"
+"* Le service doit exister (ou utiliser l'option --add pour l'ajouter automatiquement)\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Demander un nouveau certificat et l'ajouter au principal :\n"
+"   ipa cert-request --add --principal=HTTP/lion.example.com example.csr\n"
+"\n"
+" Récupérer un certificat existant :\n"
+"   ipa cert-show 1032\n"
+"\n"
+" Révoquer un certificat (cf. RFC 5280 pour les détails sur les raisons) :\n"
+"   ipa cert-revoke --revocation-reason=6 1032\n"
+"\n"
+" Supprimer l'état en maintien de révocation d'un certificat :\n"
+"   ipa cert-remove-hold 1032\n"
+"\n"
+" Vérifier l'état d'une demande de signature :\n"
+"   ipa cert-status 10\n"
+"\n"
+"IPA émet actuellement (ou refuse d'émettre) toutes les demandes de\n"
+"certificats, rendant inutile l'état de la requête. Cette commande sera utile\n"
+"dans une version future, dans le cas où l'AC n'émet pas immédiatement\n"
+"le certificat.\n"
+"\n"
+"Les raisons suivantes de révocation sont supportées :\n"
+"\n"
+"    * 0 - unspecified\n"
+"    * 1 - keyCompromise\n"
+"    * 2 - cACompromise\n"
+"    * 3 - affiliationChanged\n"
+"    * 4 - superseded\n"
+"    * 5 - cessationOfOperation\n"
+"    * 6 - certificateHold\n"
+"    * 8 - removeFromCRL\n"
+"    * 9 - privilegeWithdrawn\n"
+"    * 10 - aACompromise\n"
+"\n"
+"N.B.: le code 7 n'est pas utilisé.  Cf. RFC 5280 pour plus de détails :\n"
+"\n"
+"http://www.ietf.org/rfc/rfc5280.txt\n"
+"\n"
 
 #: ipalib/plugins/cert.py:104
 msgid ""
@@ -1636,10 +1782,13 @@ msgid ""
 "    Return the value of CN in the subject of the request or None\n"
 "    "
 msgstr ""
+"\n"
+"    Renvoie la valeur du CN dans le sujet de la requête, ou None\n"
+"    "
 
 #: ipalib/plugins/cert.py:112
 msgid "Failure decoding Certificate Signing Request:"
-msgstr ""
+msgstr "Échec dans le décodage du Certificate Signing Request :"
 
 #: ipalib/plugins/cert.py:115
 msgid ""
@@ -1647,10 +1796,13 @@ msgid ""
 "    Return the first value of the subject alt name, if any\n"
 "    "
 msgstr ""
+"\n"
+"    Renvoie le cas échéant la première valeur du subject alt name\n"
+"    "
 
 #: ipalib/plugins/cert.py:125 ipalib/plugins/cert.py:137
 msgid "Failure decoding Certificate Signing Request"
-msgstr ""
+msgstr "Échec dans le décodage du Certificate Signing Request"
 
 #: ipalib/plugins/cert.py:128
 msgid ""
@@ -1659,10 +1811,14 @@ msgid ""
 "    parser.\n"
 "    "
 msgstr ""
+"\n"
+"    Vérifie que le CSR est encodé en base64 et peut être décodé par notre \n"
+"    analyseur PKCS#10.\n"
+"    "
 
 #: ipalib/plugins/cert.py:139
 msgid "Failure decoding Certificate Signing Request: %s"
-msgstr ""
+msgstr "Échec dans le décodage du Certificate Signing Request : %s"
 
 #: ipalib/plugins/cert.py:142
 msgid ""
@@ -1670,6 +1826,9 @@ msgid ""
 "    Strip any leading and trailing cruft around the BEGIN/END block\n"
 "    "
 msgstr ""
+"\n"
+"    Retire les scories restantes autour des blocs BEGIN/END\n"
+"    "
 
 #: ipalib/plugins/cert.py:162
 msgid ""
@@ -1678,6 +1837,10 @@ msgid ""
 "    Returns the number or None if conversion fails.\n"
 "    "
 msgstr ""
+"\n"
+"    Convertit un SN donné en décimal ou hexadécimal.\n"
+"    Renvoie le nombre ou None si la conversion échoue.\n"
+"    "
 
 #: ipalib/plugins/cert.py:188
 msgid ""
@@ -1686,6 +1849,10 @@ msgid ""
 "    host portion.\n"
 "    "
 msgstr ""
+"\n"
+"    Renvoie la postion système du principal spécifié avec\n"
+"    ou sans son domaine.\n"
+"    "
 
 #: ipalib/plugins/cert.py:202
 msgid ""
@@ -1693,63 +1860,66 @@ msgid ""
 "    Submit a certificate signing request.\n"
 "    "
 msgstr ""
+"\n"
+"    Soumet une demande de signature de certificat.\n"
+"    "
 
 #: ipalib/plugins/cert.py:216 ipalib/plugins/service.py:225
 msgid "Principal"
-msgstr ""
+msgstr "Principal"
 
 #: ipalib/plugins/cert.py:217
 msgid "Service principal for this certificate (e.g. HTTP/test.example.com)"
-msgstr ""
+msgstr "Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
 
 #: ipalib/plugins/cert.py:224
 msgid "automatically add the principal if it doesn't exist"
-msgstr ""
+msgstr "ajoute automatiquement le principal s'il n'existe pas"
 
 #: ipalib/plugins/cert.py:232 ipalib/plugins/cert.py:439
 #: ipalib/plugins/entitle.py:173 ipalib/plugins/host.py:276
 #: ipalib/plugins/service.py:232
 msgid "Certificate"
-msgstr ""
+msgstr "Certificat"
 
 #: ipalib/plugins/cert.py:236 ipalib/plugins/cert.py:442
 #: ipalib/plugins/host.py:159 ipalib/plugins/service.py:93
 msgid "Subject"
-msgstr ""
+msgstr "Subjet"
 
 #: ipalib/plugins/cert.py:240 ipalib/plugins/cert.py:445
 #: ipalib/plugins/host.py:165 ipalib/plugins/service.py:99
 msgid "Issuer"
-msgstr ""
+msgstr "Émetteur"
 
 #: ipalib/plugins/cert.py:244 ipalib/plugins/cert.py:448
 #: ipalib/plugins/host.py:168 ipalib/plugins/service.py:102
 msgid "Not Before"
-msgstr ""
+msgstr "Pas Avant"
 
 #: ipalib/plugins/cert.py:248 ipalib/plugins/cert.py:451
 #: ipalib/plugins/host.py:171 ipalib/plugins/service.py:105
 msgid "Not After"
-msgstr ""
+msgstr "Pas Après"
 
 #: ipalib/plugins/cert.py:252 ipalib/plugins/cert.py:454
 #: ipalib/plugins/host.py:174 ipalib/plugins/service.py:108
 msgid "Fingerprint (MD5)"
-msgstr ""
+msgstr "Empreinte (MD5)"
 
 #: ipalib/plugins/cert.py:256 ipalib/plugins/cert.py:457
 #: ipalib/plugins/host.py:177 ipalib/plugins/service.py:111
 msgid "Fingerprint (SHA1)"
-msgstr ""
+msgstr "Empreinte (SHA1)"
 
 #: ipalib/plugins/cert.py:260 ipalib/plugins/cert.py:425
 msgid "Serial number"
-msgstr ""
+msgstr "Numéro de série"
 
 #: ipalib/plugins/cert.py:268 ipalib/plugins/entitle.py:230
 #: ipalib/plugins/entitle.py:588 ipalib/plugins/misc.py:57
 msgid "Dictionary mapping variable name to value"
-msgstr ""
+msgstr "Nom de variable de correspondance de la valeur"
 
 #: ipalib/plugins/cert.py:396
 msgid ""
@@ -1757,18 +1927,21 @@ msgid ""
 "    Check the status of a certificate signing request.\n"
 "    "
 msgstr ""
+"\n"
+"    Vérifie l'état d'une demande de signature de certificat.\n"
+"    "
 
 #: ipalib/plugins/cert.py:402
 msgid "Request id"
-msgstr ""
+msgstr "Identifiant de la demande"
 
 #: ipalib/plugins/cert.py:408
 msgid "Request status"
-msgstr ""
+msgstr "État de la demande"
 
 #: ipalib/plugins/cert.py:426
 msgid "Serial number in decimal or if prefixed with 0x in hexadecimal"
-msgstr ""
+msgstr "Numéro de série en décimal (ou en hexadécimal avec le préfixe 0x)"
 
 #: ipalib/plugins/cert.py:431
 msgid ""
@@ -1776,19 +1949,22 @@ msgid ""
 "    Retrieve an existing certificate.\n"
 "    "
 msgstr ""
+"\n"
+"    Récupère un certificat existant.\n"
+"    "
 
 #: ipalib/plugins/cert.py:460 ipalib/plugins/host.py:180
 #: ipalib/plugins/service.py:114
 msgid "Revocation reason"
-msgstr ""
+msgstr "Raison de la révocation"
 
 #: ipalib/plugins/cert.py:466
 msgid "Output filename"
-msgstr ""
+msgstr "Nom de fichier de sortie"
 
 #: ipalib/plugins/cert.py:467
 msgid "File to store the certificate in."
-msgstr ""
+msgstr "Fichier dans lequel stocker le certificat."
 
 #: ipalib/plugins/cert.py:518
 msgid ""
@@ -1796,18 +1972,21 @@ msgid ""
 "    Revoke a certificate.\n"
 "    "
 msgstr ""
+"\n"
+"    Révoquer un certificat.\n"
+"    "
 
 #: ipalib/plugins/cert.py:526
 msgid "Revoked"
-msgstr ""
+msgstr "Révoqué"
 
 #: ipalib/plugins/cert.py:534
 msgid "Reason"
-msgstr ""
+msgstr "Raison"
 
 #: ipalib/plugins/cert.py:535
 msgid "Reason for revoking the certificate (0-10)"
-msgstr ""
+msgstr "Raison de révocation du certificat (0-10)"
 
 #: ipalib/plugins/cert.py:562
 msgid ""
@@ -1815,14 +1994,17 @@ msgid ""
 "    Take a revoked certificate off hold.\n"
 "    "
 msgstr ""
+"\n"
+"    Réintègre un certificat révoqué.\n"
+"    "
 
 #: ipalib/plugins/cert.py:570
 msgid "Unrevoked"
-msgstr ""
+msgstr "Réintégré"
 
 #: ipalib/plugins/cert.py:573
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 #: ipalib/plugins/config.py:20
 msgid ""
