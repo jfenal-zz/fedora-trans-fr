@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-12 13:48+0100\n"
+"PO-Revision-Date: 2011-11-12 15:10+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -2057,7 +2057,7 @@ msgstr ""
 
 #: ipalib/plugins/config.py:76
 msgid "searchtimelimit must be -1 or > 1."
-msgstr ""
+msgstr "searchtimelimit doit être égal à -1 ou > 1."
 
 #: ipalib/plugins/config.py:80
 msgid ""
@@ -2065,122 +2065,125 @@ msgid ""
 "    IPA configuration object\n"
 "    "
 msgstr ""
+"\n"
+"    Objet de configuration IPA\n"
+"    "
 
 #: ipalib/plugins/config.py:91 ipalib/plugins/internal.py:151
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 #: ipalib/plugins/config.py:96
 msgid "Max. username length"
-msgstr ""
+msgstr "Longueur max. de nom d'utilisateur"
 
 #: ipalib/plugins/config.py:101
 msgid "Home directory base"
-msgstr ""
+msgstr "Base de répertoire utilisateur"
 
 #: ipalib/plugins/config.py:102
 msgid "Default location of home directories."
-msgstr ""
+msgstr "Lieu par défaut des répertoires utilisateurs."
 
 #: ipalib/plugins/config.py:106
 msgid "Default shell"
-msgstr ""
+msgstr "Shell par défaut"
 
 #: ipalib/plugins/config.py:107
 msgid "Default shell for new users."
-msgstr ""
+msgstr "Shell par défaut pour les nouveaux utilisateurs."
 
 #: ipalib/plugins/config.py:111
 msgid "Default users group"
-msgstr ""
+msgstr "Groupe utilisateur par défaut"
 
 #: ipalib/plugins/config.py:112
 msgid "Default group for new users."
-msgstr ""
+msgstr "Groupe utilisateur par défaut pour les nouveaux utilisateurs."
 
 #: ipalib/plugins/config.py:116
 msgid "Default e-mail domain for new users"
-msgstr ""
+msgstr "Domaine de courriel par défaut"
 
 #: ipalib/plugins/config.py:117
 msgid "Default e-mail domain new users."
-msgstr ""
+msgstr "Domaine de courriel par défaut pour les nouveaux utilisateurs."
 
 #: ipalib/plugins/config.py:121
 msgid "Search time limit"
-msgstr ""
+msgstr "Durée de recherche limite"
 
 #: ipalib/plugins/config.py:122
 msgid "Max. amount of time (sec.) for a search (> 0, or -1 for unlimited)."
-msgstr ""
+msgstr "Durée maximale (sec.) allouée à une recherche (> 0 ou -1 pour illimitée)."
 
 #: ipalib/plugins/config.py:127
 msgid "Search size limit"
-msgstr ""
+msgstr "Taille limite de recherche"
 
 #: ipalib/plugins/config.py:128
 msgid "Max. number of records to search (-1 is unlimited)."
-msgstr ""
+msgstr "Nombre maximal d'entrées à rechercher (-1 pour illimité)."
 
 #: ipalib/plugins/config.py:133
 msgid "User search fields"
-msgstr ""
+msgstr "Champs de recherche utilisateur"
 
 #: ipalib/plugins/config.py:134
 msgid "A comma-separated list of fields to search when searching for users."
-msgstr ""
+msgstr "Une liste séparée par des virgules de champs à rechercher lors d'une recherche d'utilisateurs."
 
 #: ipalib/plugins/config.py:139
 msgid "A comma-separated list of fields to search when searching for groups."
-msgstr ""
+msgstr "Une liste séparée par des virgules de champs à rechercher lors d'une recherche de groupes."
 
 #: ipalib/plugins/config.py:143
 msgid "Migration mode"
-msgstr ""
+msgstr "Mode migration"
 
 #: ipalib/plugins/config.py:144
 msgid "Enable migration mode."
-msgstr ""
+msgstr "Activer le mode migration."
 
 #: ipalib/plugins/config.py:148
 msgid "Certificate Subject base"
-msgstr ""
+msgstr "Base du sujet de certificat."
 
 #: ipalib/plugins/config.py:149
 msgid "Base for certificate subjects (OU=Test,O=Example)."
-msgstr ""
+msgstr "Base pour les sujets de certificats (OU=Test,O=Example)."
 
 #: ipalib/plugins/config.py:154
 msgid "Default group objectclasses"
-msgstr ""
+msgstr "Classes d'objets par défaut pour les groupes"
 
 #: ipalib/plugins/config.py:155
 msgid "Default group objectclassses (comma-separated list)."
-msgstr ""
+msgstr "Classes d'objets par défaut pour les groupes (liste séparée par des virgules)."
 
 #: ipalib/plugins/config.py:159
 msgid "Default user objectclasses"
-msgstr ""
+msgstr "Classes d'objets par défaut pour les utilisateurs"
 
 #: ipalib/plugins/config.py:160
 msgid "Default user objectclassses (comma-separated list)."
-msgstr ""
+msgstr "Classes d'objets par défaut pour les utilisateurs (liste séparée par des virgules)."
 
 #: ipalib/plugins/config.py:164
 msgid "Password Expiration Notification"
-msgstr ""
+msgstr "Notification d'expiration des mots de passe"
 
 #: ipalib/plugins/config.py:165
 msgid "Number of days's notice of impending password expiration."
-msgstr ""
+msgstr "Nombre de jours pour les avertissements de futures expirations de mots de passe."
 
 #: ipalib/plugins/config.py:170
 msgid "Password plugin features"
-msgstr ""
+msgstr "Fonctionnalités du greffon password"
 
 #: ipalib/plugins/config.py:171
 msgid "Extra hashes to generate in password plug-in."
-msgstr ""
+msgstr "Condensés supplémentaires à générer dans le greffon password."
 
 #: ipalib/plugins/config.py:183
 msgid ""
@@ -2188,6 +2191,9 @@ msgid ""
 "    Modify configuration options.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier les options de configuration.\n"
+"    "
 
 #: ipalib/plugins/config.py:220
 msgid ""
@@ -2195,6 +2201,9 @@ msgid ""
 "    Show the current configuration.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher la configuration actuelle.\n"
+"    "
 
 #: ipalib/plugins/delegation.py:19
 msgid ""
