@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-12 20:26+0100\n"
+"PO-Revision-Date: 2011-11-13 14:59+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -213,8 +213,7 @@ msgstr ""
 " Ajouter une ACI pemettant aux membres de la permission « addusers » d'ajouter de nouveaux utilisateurs :\n"
 "   ipa aci-add --type=user --permission=addusers --permissions=add --prefix=none \"Ajouter de nouveaux utilisateurs\"\n"
 "\n"
-" Ajouter une ACI autorisant les membres du groupe directeurs d'administrer les membres du groupe administrateurs :\n"
-"FIXME admins : groupe interne à IPA ?"
+" Ajouter une ACI autorisant les membres du groupe directeurs à administrer les membres du groupe administrateurs :\n"
 "   ipa aci-add --permissions=write --attrs=member --targetgroup=administrateurs --group=directeurs --prefix=none \"Les directeurs administrent les administrateurs\"\n"
 "\n"
 " Ajouter une ACI autorisant les membres du groupe administrateurs de gérer les adresses et code postal des membres du groupe directeurs :\n"
@@ -2531,18 +2530,95 @@ msgid ""
 "   ipa dns-resolve www.example.com\n"
 "   ipa dns-resolve www\n"
 msgstr ""
+"\n"
+"Domain Name System (DNS)\n"
+"\n"
+"Gestion des zones DNS et des enregistrements de ressource.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Ajouter une nouvelle zone :\n"
+"   ipa dnszone-add example.com --name-server nameserver.example.com\n"
+"                               --admin-email admin@example.com\n"
+"\n"
+" Ajouter un second serveur de nom pour example.com:\n"
+"   ipa dnsrecord-add example.com @ --ns-rec nameserver2.example.com\n"
+"\n"
+" Ajouter un serveur de messagerie pour example.com:\n"
+"   ipa dnsrecord-add example.com @ --mx-rec=\"10 mail2\"\n"
+"\n"
+" Supprimer un serveur de messagerie précédemment défini pour example.com:\n"
+"   ipa dnsrecord-del example.com @ --ns-rec nameserver2.example.com\n"
+"\n"
+" Ajouter un nouvel enregistrement A pour www.example.com: (IP aléatoire)\n"
+"   ipa dnsrecord-add example.com www --a-rec 80.142.15.2\n"
+"\n"
+" Ajouter un nouvel enregistrement PTR pour www.example.com\n"
+"   ipa dnsrecord-add 15.142.80.in-addr.arpa 2 --ptr-rec www.example.com.\n"
+"\n"
+" Ajouter de nouveaux enregistrement SRV pour les serveurs LDAP. Les trois quarts\n"
+" des requêtes doivent aller sur fast.example.com, un quart sur slow.example.com.\n"
+" Si aucune n'est disponible, commuter sur backup.example.com.\n"
+"   ipa dnsrecord-add example.com _ldap._tcp --srv-rec=\"0 3 389 fast.example.com\"\n"
+"   ipa dnsrecord-add example.com _ldap._tcp --srv-rec=\"0 1 389 slow.example.com\"\n"
+"   ipa dnsrecord-add example.com _ldap._tcp --srv-rec=\"1 1 389 backup.example.com\"\n"
+"\n"
+" Quand la commande dnsrecord-add ext exécutée sans option pour ajouter un enregsitrement,\n"
+" le mode interactif est activé. Le mode interactif a pour invites les types les plus\n"
+" courants d'enregistrement pour la zone :\n"
+"   ipa dnsrecord-add example.com www\n"
+"   [A record]: 1.2.3.4,11.22.33.44      (2 adresses IP aléeatoires saisies)\n"
+"   [AAAA record]:                       (pas d'adresse AAAA saisie)\n"
+"     Record name: www\n"
+"     A record: 1.2.3.4, 11.22.33.44\n"
+"\n"
+" Le mode interactif peut aussi être utilisé pour supprimer des enregistrements DNS :\n"
+"   ipa dnsrecord-del example.com www\n"
+"   Pas d'option fournie pour supprimer un enregistrement spécifique.\n"
+"   Tout supprimer ? Oui/Non (Défault: Non):     (ne pas détruire tous les enregistrements)\n"
+"   Contenu actuel de l'enregistrement DNS :\n"
+"\n"
+"   Enregistrement A : 1.2.3.4, 11.22.33.44\n"
+"\n"
+"   Supprimer l'enregistrement A '1.2.3.4'? Oui/Non (défaut: Non): \n"
+"   Supprimer l'enregistrement A '11.22.33.44'? Oui/Non (défaut: Non): y\n"
+"     Nom de l'enregistrement : www\n"
+"     Enregistrement A : 1.2.3.4                  (Enregistrement A 11.22.33.44 a été supprimé)\n"
+"\n"
+" Afficher la zone example.com :\n"
+"   ipa dnszone-show example.com\n"
+"\n"
+" Chercher les zones contenant \"example\" dans le nom de domaine :\n"
+"   ipa dnszone-find example\n"
+"\n"
+" Chercher les enregistrements pour les ressources dont le nom contient \"www\" dans la zone example.com:\n"
+"   ipa dnsrecord-find example.com www\n"
+"\n"
+" Chercher les enregistrements A de valeur 10.10.0.1 dans la zone example.com\n"
+"   ipa dnsrecord-find example.com --a-rec 10.10.0.1\n"
+"\n"
+" Afficher les enregistrements pour la ressource www dans la zone example.com\n"
+"   ipa dnsrecord-show example.com www\n"
+"\n"
+" Supprimer la zone example.com avec toutes ses ressources :\n"
+"   ipa dnszone-del example.com\n"
+"\n"
+" Résoudre un nom de système afin de vérifier son existence (ajout automatique du nom de domaine IPA\n"
+" si non spécifié):\n"
+"   ipa dns-resolve www.example.com\n"
+"   ipa dns-resolve www\n"
 
 #: ipalib/plugins/dns.py:140
 msgid "Generate serial number for zones."
-msgstr ""
+msgstr "Génère le numéro de série des zones."
 
 #: ipalib/plugins/dns.py:189
 msgid "see RFC 2915 "
-msgstr ""
+msgstr "Cf. RFC 2915 "
 
 #: ipalib/plugins/dns.py:249
 msgid "Nameserver '%(host)s' does not have a corresponding A/AAAA record"
-msgstr ""
+msgstr "Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
 
 #: ipalib/plugins/dns.py:272
 msgid ""
@@ -2550,106 +2626,109 @@ msgid ""
 "    DNS Zone, container for resource records.\n"
 "    "
 msgstr ""
+"\n"
+"    Zone DNS, conteneur pour les enregistrements.\n"
+"    "
 
 #: ipalib/plugins/dns.py:284
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ipalib/plugins/dns.py:289
 msgid "Zone name"
-msgstr ""
+msgstr "Nom de zone"
 
 #: ipalib/plugins/dns.py:290
 msgid "Zone name (FQDN)"
-msgstr ""
+msgstr "Nom de zone (FQDN)"
 
 #: ipalib/plugins/dns.py:296
 msgid "Authoritative nameserver"
-msgstr ""
+msgstr "Serveur de nom faisant autorité"
 
 #: ipalib/plugins/dns.py:297
 msgid "Authoritative nameserver."
-msgstr ""
+msgstr "Serveur de nom faisant autorité."
 
 #: ipalib/plugins/dns.py:301 ipalib/plugins/dns.py:302
 msgid "Administrator e-mail address"
-msgstr ""
+msgstr "Adresse courriel de l'administrateur"
 
 #: ipalib/plugins/dns.py:308
 msgid "SOA serial"
-msgstr ""
+msgstr "Numéro de série SOA"
 
 #: ipalib/plugins/dns.py:309
 msgid "SOA record serial number"
-msgstr ""
+msgstr "Numéro de série de l'enregistrement SOA"
 
 #: ipalib/plugins/dns.py:316
 msgid "SOA refresh"
-msgstr ""
+msgstr "Actualisation SOA"
 
 #: ipalib/plugins/dns.py:317
 msgid "SOA record refresh time"
-msgstr ""
+msgstr "Durée d'actualisation de l'enregistrement SOA"
 
 #: ipalib/plugins/dns.py:324
 msgid "SOA retry"
-msgstr ""
+msgstr "ré-essai SOA"
 
 #: ipalib/plugins/dns.py:325
 msgid "SOA record retry time"
-msgstr ""
+msgstr "Durée avant nouvelle tentative de l'enregistrement SOA"
 
 #: ipalib/plugins/dns.py:332
 msgid "SOA expire"
-msgstr ""
+msgstr "Expiration SOA"
 
 #: ipalib/plugins/dns.py:333
 msgid "SOA record expire time"
-msgstr ""
+msgstr "Durée d'expiration de l'enregistrement SOA"
 
 #: ipalib/plugins/dns.py:340
 msgid "SOA minimum"
-msgstr ""
+msgstr "Minimum SOA"
 
 #: ipalib/plugins/dns.py:341
 msgid "How long should negative responses be cached"
-msgstr ""
+msgstr "Durée de maintien en cache des réponses négatives"
 
 #: ipalib/plugins/dns.py:349
 msgid "SOA time to live"
-msgstr ""
+msgstr "Durée de vie SOA"
 
 #: ipalib/plugins/dns.py:350
 msgid "SOA record time to live"
-msgstr ""
+msgstr "Durée de vie de l'enregistrement SOA"
 
 #: ipalib/plugins/dns.py:354
 msgid "SOA class"
-msgstr ""
+msgstr "Classe SOA"
 
 #: ipalib/plugins/dns.py:355
 msgid "SOA record class"
-msgstr ""
+msgstr "Classe de l'enregistrement SOA "
 
 #: ipalib/plugins/dns.py:360 ipalib/plugins/dns.py:361
 msgid "BIND update policy"
-msgstr ""
+msgstr "Politique de mise à jour BIND"
 
 #: ipalib/plugins/dns.py:365
 msgid "Active zone"
-msgstr ""
+msgstr "Zone active"
 
 #: ipalib/plugins/dns.py:366
 msgid "Is zone active?"
-msgstr ""
+msgstr "La zone est-elle active ?"
 
 #: ipalib/plugins/dns.py:372
 msgid "Dynamic update"
-msgstr ""
+msgstr "Mise à jour dynamique"
 
 #: ipalib/plugins/dns.py:373
 msgid "Allow dynamic updates."
-msgstr ""
+msgstr "Autorise les mises à jour dynamiques."
 
 #: ipalib/plugins/dns.py:382
 msgid ""
@@ -2657,23 +2736,26 @@ msgid ""
 "    Create new DNS zone (SOA record).\n"
 "    "
 msgstr ""
+"\n"
+"    Créer une nouvelle zone DNS (enregistrement SOA).\n"
+"    "
 
 #: ipalib/plugins/dns.py:387 ipalib/plugins/dns.py:697
 #: ipalib/plugins/host.py:315 ipalib/plugins/service.py:250
 msgid "Force"
-msgstr ""
+msgstr "Forcer"
 
 #: ipalib/plugins/dns.py:388
 msgid "Force DNS zone creation even if nameserver not in DNS."
-msgstr ""
+msgstr "Forcer la création de la zone DNS zone même si le serveur de nom n'est pas dans le DNS."
 
 #: ipalib/plugins/dns.py:391
 msgid "Add the nameserver to DNS with this IP address"
-msgstr ""
+msgstr "Ajouter le serveur de nom avec cette adresse IP"
 
 #: ipalib/plugins/dns.py:397
 msgid "DNS is not configured"
-msgstr ""
+msgstr "Le DNS n'est pas configuré"
 
 #: ipalib/plugins/dns.py:431
 msgid ""
@@ -2681,6 +2763,9 @@ msgid ""
 "    Delete DNS zone (SOA record).\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer la zone DNS (enregistrement SOA).\n"
+"    "
 
 #: ipalib/plugins/dns.py:439
 msgid ""
@@ -2688,6 +2773,9 @@ msgid ""
 "    Modify DNS zone (SOA record).\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier la zone DNS (enregistrement SOA).\n"
+"    "
 
 #: ipalib/plugins/dns.py:452
 msgid ""
@@ -2695,6 +2783,9 @@ msgid ""
 "    Search for DNS zones (SOA records).\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher dans les zones DNS (enregistrements SOA).\n"
+"    "
 
 #: ipalib/plugins/dns.py:460
 msgid ""
@@ -2702,6 +2793,9 @@ msgid ""
 "    Display information about a DNS zone (SOA record).\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations d'une zone DNS (enregistrement SOA).\n"
+"    "
 
 #: ipalib/plugins/dns.py:468
 msgid ""
@@ -2709,10 +2803,13 @@ msgid ""
 "    Disable DNS Zone.\n"
 "    "
 msgstr ""
+"\n"
+"    Désactiver une zone DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:472
 msgid "Disabled DNS zone \"%(value)s\""
-msgstr ""
+msgstr "Zone DNS \"%(value)s\" désactivée"
 
 #: ipalib/plugins/dns.py:490
 msgid ""
@@ -2720,10 +2817,13 @@ msgid ""
 "    Enable DNS Zone.\n"
 "    "
 msgstr ""
+"\n"
+"    Activer la zone DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:494
 msgid "Enabled DNS zone \"%(value)s\""
-msgstr ""
+msgstr "Zone DNS \"%(value)s\" activée"
 
 #: ipalib/plugins/dns.py:512
 msgid ""
@@ -2731,26 +2831,29 @@ msgid ""
 "    DNS record.\n"
 "    "
 msgstr ""
+"\n"
+"    Enregistrement DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:522
 msgid "DNS resource record"
-msgstr ""
+msgstr "Enregistrement de ressource DNS"
 
 #: ipalib/plugins/dns.py:527 ipalib/plugins/dns.py:528
 msgid "Record name"
-msgstr ""
+msgstr "Nom d'enregistrement"
 
 #: ipalib/plugins/dns.py:533 ipalib/plugins/dns.py:534
 msgid "Time to live"
-msgstr ""
+msgstr "Durée de vie"
 
 #: ipalib/plugins/dns.py:538
 msgid "Class"
-msgstr ""
+msgstr "Classe"
 
 #: ipalib/plugins/dns.py:539
 msgid "DNS class"
-msgstr ""
+msgstr "Classe DNS"
 
 #: ipalib/plugins/dns.py:566
 msgid ""
@@ -2758,6 +2861,9 @@ msgid ""
 "    Base class for DNS record commands with record options.\n"
 "    "
 msgstr ""
+"\n"
+"    Classe de base class pour les enregistrements DNS possédant des options.\n"
+"    "
 
 #: ipalib/plugins/dns.py:610
 msgid ""
@@ -2765,6 +2871,9 @@ msgid ""
 "    Base class for adding/removing records from DNS resource entries.\n"
 "    "
 msgstr ""
+"\n"
+"    Classe de base pour l'ajout/suppression d'enregistrement de ressources DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:674
 msgid ""
@@ -2772,6 +2881,9 @@ msgid ""
 "    Add records to DNS resource.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des enregistrements à une ressource DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:690
 msgid ""
@@ -2779,24 +2891,29 @@ msgid ""
 "    Add new DNS resource record.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter de nouveaux enregistrement de ressources DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:699
 msgid "force NS record creation even if its hostname is not in DNS"
-msgstr ""
+msgstr "forcer la création d'un enregistrement NS même si le nom du système n'est pas dans le DNS"
 
 #: ipalib/plugins/dns.py:735
 msgid ""
 "Reverse zone for PTR record should be a sub-zone of one the following fully "
 "qualified domains: %s"
 msgstr ""
+"La zone inverse pour l'enregistrement PTR doit être une sous-zone de l'un des "
+"domaines suivants pleinement qualifiés : %s"
 
 #: ipalib/plugins/dns.py:740
 msgid "Reverse zone %s requires exactly %d IP address components, %d given"
-msgstr ""
+msgstr "La zone inverse %s requiert exactement %d composantes adresses IP, %d spécifiées"
 
 #: ipalib/plugins/dns.py:746
 msgid "PTR record '%s' is not fully qualified (check traling '.')"
-msgstr ""
+msgstr "L'enregistrement PTR '%s' n'est pas pleinement qualifié (vérifier la présence du '.' final)"
 
 #: ipalib/plugins/dns.py:789
 msgid ""
@@ -2804,10 +2921,13 @@ msgid ""
 "    Delete DNS record entry.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un enregistrement DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:792
 msgid "Deleted record \"%(value)s\""
-msgstr ""
+msgstr "Enregistrement \"%(value)s\" supprimé"
 
 #: ipalib/plugins/dns.py:799
 msgid ""
@@ -2815,32 +2935,37 @@ msgid ""
 "    Delete DNS resource record.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un enregistrement de ressource DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:802
 msgid ""
 "Neither --del-all nor options to delete a specific record provided.\n"
 "Command help may be consulted for all supported record types."
 msgstr ""
+"Aucune option de suppression d'un enregistrement spécifique ni --del-all n'ont été indiqués.\n"
+"Merci de consulter l'aide pour connaître tous les types d'enregistrements supportés."
 
 #: ipalib/plugins/dns.py:807
 msgid "Delete all associated records"
-msgstr ""
+msgstr "Supprimer les enregistrements associés"
 
 #: ipalib/plugins/dns.py:834
 msgid "No option to delete specific record provided."
-msgstr ""
+msgstr "Pas d'option fournie pour supprimer un enregistrement spécifique."
 
 #: ipalib/plugins/dns.py:835
 msgid "Delete all?"
-msgstr ""
+msgstr "Tout supprimer ?"
 
 #: ipalib/plugins/dns.py:845
 msgid "Current DNS record contents:\n"
-msgstr ""
+msgstr "Contenu actuel de l'enregistrement DNS :\n"
 
 #: ipalib/plugins/dns.py:875
 msgid "%s record with value %s not found"
-msgstr ""
+msgstr "enregistrement %s de valeur %s introuvable"
 
 #: ipalib/plugins/dns.py:889
 msgid ""
@@ -2848,6 +2973,9 @@ msgid ""
 "    Display DNS resource.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher la ressource DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:905
 msgid ""
@@ -2855,6 +2983,9 @@ msgid ""
 "    Search for DNS resources.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher une ressource DNS.\n"
+"    "
 
 #: ipalib/plugins/dns.py:932
 msgid ""
@@ -2862,18 +2993,21 @@ msgid ""
 "    Resolve a host name in DNS\n"
 "    "
 msgstr ""
+"\n"
+"    Résoudre un nom de système dans les DNS\n"
+"    "
 
 #: ipalib/plugins/dns.py:936
 msgid "Found '%(value)s'"
-msgstr ""
+msgstr "'%(value)s' trouvé."
 
 #: ipalib/plugins/dns.py:940
 msgid "Hostname"
-msgstr ""
+msgstr "Nom de système"
 
 #: ipalib/plugins/dns.py:962
 msgid "Host '%(host)s' not found"
-msgstr ""
+msgstr "Système '%(host)s' introuvable"
 
 #: ipalib/plugins/dns.py:970
 msgid ""
@@ -2881,6 +3015,9 @@ msgid ""
 "    Checks if any of the servers has the DNS service enabled.\n"
 "    "
 msgstr ""
+"\n"
+"    Vérifie si l'un des serveurs a le service DNS activé.\n"
+"    "
 
 #: ipalib/plugins/entitle.py:19
 msgid ""
@@ -2944,7 +3081,7 @@ msgstr ""
 
 #: ipalib/plugins/entitle.py:189
 msgid "Entitlements"
-msgstr ""
+msgstr "Droits d'utilisation"
 
 #: ipalib/plugins/entitle.py:206
 msgid ""
@@ -2955,24 +3092,24 @@ msgstr ""
 
 #: ipalib/plugins/entitle.py:214 ipalib/plugins/entitle.py:602
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: ipalib/plugins/entitle.py:217 ipalib/plugins/entitle.py:306
 #: ipalib/plugins/entitle.py:388 ipalib/plugins/entitle.py:575
 #: ipalib/plugins/entitle.py:690
 msgid "Product"
-msgstr ""
+msgstr "Produit"
 
 #: ipalib/plugins/entitle.py:220 ipalib/plugins/entitle.py:286
 #: ipalib/plugins/entitle.py:296 ipalib/plugins/entitle.py:391
 #: ipalib/plugins/entitle.py:578 ipalib/plugins/entitle.py:680
 msgid "Quantity"
-msgstr ""
+msgstr "Quantité"
 
 #: ipalib/plugins/entitle.py:223 ipalib/plugins/entitle.py:309
 #: ipalib/plugins/entitle.py:581 ipalib/plugins/entitle.py:693
 msgid "Consumed"
-msgstr ""
+msgstr "Utilisé"
 
 #: ipalib/plugins/entitle.py:276
 msgid ""
@@ -3010,16 +3147,16 @@ msgstr ""
 
 #: ipalib/plugins/entitle.py:394
 msgid "Start"
-msgstr ""
+msgstr "Début"
 
 #: ipalib/plugins/entitle.py:397
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 #: ipalib/plugins/entitle.py:400 ipalib/plugins/host.py:162
 #: ipalib/plugins/internal.py:132 ipalib/plugins/service.py:96
 msgid "Serial Number"
-msgstr ""
+msgstr "Numéro de série"
 
 #: ipalib/plugins/entitle.py:435 ipalib/plugins/entitle.py:626
 #: ipalib/plugins/entitle.py:628
