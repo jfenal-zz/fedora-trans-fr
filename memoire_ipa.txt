@@ -18,3 +18,9 @@ Automount :
 - location : lieu
 - info: information
 - map : carte
+
+
+Exemples :
+- editors --> directeurs
+- admins  --> administrateurs (pas un groupe réservé IPA)
+
