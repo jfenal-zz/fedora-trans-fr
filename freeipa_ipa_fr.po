@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-20 22:05+0100\n"
+"PO-Revision-Date: 2011-11-20 22:17+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -349,8 +349,8 @@ msgid ""
 "Prefix used to distinguish ACI types (permission, delegation, selfservice, "
 "none)"
 msgstr ""
-"Préfixe utilisé pour distinguer les types d'ACI (permission, delegation, selfservice, "
-"none)"
+"Préfixe utilisé pour distinguer les types d'ACI (permission, delegation, "
+"selfservice, none)"
 
 #: ipalib/plugins/aci.py:407
 msgid ""
@@ -2437,8 +2437,8 @@ msgstr ""
 #: ipalib/plugins/delegation.py:223
 msgid "%(count)d delegation matched"
 msgid_plural "%(count)d delegations matched"
-msgstr[0] "%(count)d délégations correspondantes"
-msgstr[1] ""
+msgstr[0] "%(count)d délégation correspondante"
+msgstr[1] "%(count)d délégations correspondantes"
 
 #: ipalib/plugins/delegation.py:250
 msgid ""
@@ -3330,26 +3330,29 @@ msgid ""
 "    Group object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet groupe.\n"
+"    "
 
 #: ipalib/plugins/group.py:100
 msgid "User Groups"
-msgstr ""
+msgstr "Groupes d'utilisateurs"
 
 #: ipalib/plugins/group.py:108
 msgid "Group name"
-msgstr ""
+msgstr "Nom du groupe"
 
 #: ipalib/plugins/group.py:115 ipalib/plugins/sudocmdgroup.py:77
 msgid "Group description"
-msgstr ""
+msgstr "Description du groupe"
 
 #: ipalib/plugins/group.py:119 ipalib/plugins/user.py:187
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: ipalib/plugins/group.py:120
 msgid "GID (use this option to set it manually)"
-msgstr ""
+msgstr "GID (utiliser cette option pour le positionner manuellement)"
 
 #: ipalib/plugins/group.py:128
 msgid ""
@@ -3357,14 +3360,17 @@ msgid ""
 "    Create a new group.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer un nouveau groupe.\n"
+"    "
 
 #: ipalib/plugins/group.py:132
 msgid "Added group \"%(value)s\""
-msgstr ""
+msgstr "Groupe \"%(value)s\" créé"
 
 #: ipalib/plugins/group.py:137
 msgid "Create as a non-POSIX group"
-msgstr ""
+msgstr "Créer en tant que groupe non-POSIX"
 
 #: ipalib/plugins/group.py:154
 msgid ""
@@ -3372,10 +3378,13 @@ msgid ""
 "    Delete group.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer le groupe.\n"
+"    "
 
 #: ipalib/plugins/group.py:158
 msgid "Deleted group \"%(value)s\""
-msgstr ""
+msgstr "Groupe \"%(value)s\" supprimé"
 
 #: ipalib/plugins/group.py:186
 msgid ""
@@ -3383,14 +3392,17 @@ msgid ""
 "    Modify a group.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un groupe.\n"
+"    "
 
 #: ipalib/plugins/group.py:189
 msgid "Modified group \"%(value)s\""
-msgstr ""
+msgstr "Group \"%(value)s\" modifié"
 
 #: ipalib/plugins/group.py:194
 msgid "change to a POSIX group"
-msgstr ""
+msgstr "Transformer en groupe POSIX"
 
 #: ipalib/plugins/group.py:215
 msgid ""
@@ -3398,16 +3410,19 @@ msgid ""
 "    Search for groups.\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher des groupes.\n"
+"    "
 
 #: ipalib/plugins/group.py:220
 msgid "%(count)d group matched"
 msgid_plural "%(count)d groups matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d groupe correspondant"
+msgstr[1] "%(count)d groupes correspondants"
 
 #: ipalib/plugins/group.py:227 ipalib/plugins/netgroup.py:192
 msgid "search for private groups"
-msgstr ""
+msgstr "chercher des groupes privés"
 
 #: ipalib/plugins/group.py:257
 msgid ""
@@ -3415,6 +3430,9 @@ msgid ""
 "    Display information about a named group.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher l'information sur un groupe nommé.\n"
+"    "
 
 #: ipalib/plugins/group.py:265
 msgid ""
@@ -3422,6 +3440,9 @@ msgid ""
 "    Add members to a group.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un groupe.\n"
+"    "
 
 #: ipalib/plugins/group.py:273
 msgid ""
@@ -3429,6 +3450,9 @@ msgid ""
 "    Remove members from a group.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des membres d'un groupe.\n"
+"    "
 
 #: ipalib/plugins/group.py:281
 msgid ""
@@ -3436,6 +3460,9 @@ msgid ""
 "    Detach a managed group from a user\n"
 "    "
 msgstr ""
+"\n"
+"    Detach a managed group from a user\n"
+"    "
 
 #: ipalib/plugins/group.py:285
 msgid "Detached group \"%(value)s\" from user \"%(value)s\""
