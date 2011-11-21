@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-21 21:54+0100\n"
+"PO-Revision-Date: 2011-11-21 22:07+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -4077,6 +4077,30 @@ msgid ""
 " Delete an HBAC service group:\n"
 "   ipa hbacsvcgroup-del login\n"
 msgstr ""
+"\n"
+"Groupes de services HBAC\n"
+"\n"
+"Les groupes de services HBAC peuvent contenir n'importe quel nombre de\n"
+"services individuels, dit « membres ». Chaque groupe doit avoir une\n"
+"description.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Ajouter un nouveau groupe de services HBAC :\n"
+"   ipa hbacsvcgroup-add --desc=\"login services\" login\n"
+"\n"
+" Ajouter des membres à un groupe de services HBAC :\n"
+"   ipa hbacsvcgroup-add-member --hbacsvcs=sshd,login login\n"
+"\n"
+" Afficher les informations d'un groupe nommé :\n"
+"   ipa hbacsvcgroup-show login\n"
+"\n"
+" Ajouter un nouveau groupe au groupe \"login\" :\n"
+"   ipa hbacsvcgroup-add --desc=\"switch users\" login\n"
+"   ipa hbacsvcgroup-add-member --hbacsvcs=su,su-l login\n"
+"\n"
+" Supprimer un groupe de services HBAC :\n"
+"   ipa hbacsvcgroup-del login\n"
 
 #: ipalib/plugins/hbacsvcgroup.py:51
 msgid ""
@@ -4084,18 +4108,21 @@ msgid ""
 "    HBAC service group object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:64
 msgid "HBAC service Groups"
-msgstr ""
+msgstr "Groupes de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:69
 msgid "Service group name"
-msgstr ""
+msgstr "Nom de groupe de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:76
 msgid "HBAC service group description"
-msgstr ""
+msgstr "Description de groupe de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:84
 msgid ""
@@ -4103,10 +4130,13 @@ msgid ""
 "    Add a new HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:87
 msgid "Added HBAC service group \"%(value)s\""
-msgstr ""
+msgstr "Groupe de services HBAC \"%(value)s\" ajouté"
 
 #: ipalib/plugins/hbacsvcgroup.py:93
 msgid ""
@@ -4114,10 +4144,13 @@ msgid ""
 "    Delete an HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:96
 msgid "Deleted HBAC service group \"%(value)s\""
-msgstr ""
+msgstr "Groupe de services HBAC \"%(value)s\" supprimé"
 
 #: ipalib/plugins/hbacsvcgroup.py:102
 msgid ""
@@ -4125,10 +4158,13 @@ msgid ""
 "    Modify an HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:105
 msgid "Modified HBAC service group \"%(value)s\""
-msgstr ""
+msgstr "Groupe de services HBAC \"%(value)s\" modifié"
 
 #: ipalib/plugins/hbacsvcgroup.py:111
 msgid ""
@@ -4136,12 +4172,15 @@ msgid ""
 "    Search for an HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher un groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:114
 msgid "%(count)d HBAC service group matched"
 msgid_plural "%(count)d HBAC service groups matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d groupe de services HBAC correspondant"
+msgstr[1] "%(count)d groupes de services HBAC correspondants"
 
 #: ipalib/plugins/hbacsvcgroup.py:122
 msgid ""
@@ -4149,6 +4188,9 @@ msgid ""
 "    Display information about an HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher l'information sur un groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:130
 msgid ""
@@ -4156,6 +4198,9 @@ msgid ""
 "    Add members to an HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:138
 msgid ""
@@ -4163,6 +4208,9 @@ msgid ""
 "    Remove members from an HBAC service group.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des membres d'un groupe de services HBAC.\n"
+"    "
 
 #: ipalib/plugins/host.py:20
 msgid ""
