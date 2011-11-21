@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-20 22:17+0100\n"
+"PO-Revision-Date: 2011-11-21 21:54+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -3466,7 +3466,7 @@ msgstr ""
 
 #: ipalib/plugins/group.py:285
 msgid "Detached group \"%(value)s\" from user \"%(value)s\""
-msgstr ""
+msgstr "Groupe \"%(value)s\" détaché de l'utilisateur \"%(value)s\""
 
 #: ipalib/plugins/group.py:288
 msgid ""
@@ -3477,18 +3477,25 @@ msgid ""
 "        group can be modified and we're left in a bad state.\n"
 "        "
 msgstr ""
+"\n"
+"        Cette opération nécessite de mettre à jour tant l'utilisateur que le\n"
+"        groupe. Nous devons avant de procéder d'abord vérifier que le groupe\n"
+"        et l'utilisateur peuvent être modifiés, afin d'éviter toute situation\n"
+"        où seul le groupe ou l'utilisateur seraient modifiés, entraînant une\n"
+"        incohérence dans les données.\n"
+"        "
 
 #: ipalib/plugins/group.py:306
 msgid "not allowed to modify user entries"
-msgstr ""
+msgstr "interdit de modifier les entrées d'utilisateurs"
 
 #: ipalib/plugins/group.py:312
 msgid "not allowed to modify group entries"
-msgstr ""
+msgstr "interdit de modifier les entrées de groupe"
 
 #: ipalib/plugins/group.py:331
 msgid "Not a managed group"
-msgstr ""
+msgstr "Pas un groupe administré"
 
 #: ipalib/plugins/hbacrule.py:19
 msgid ""
@@ -3539,6 +3546,57 @@ msgid ""
 " Remove a named HBAC rule:\n"
 "   ipa hbacrule-del allow_server\n"
 msgstr ""
+"\n"
+"Contrôle d'accès des systèmes (HBAC)\n"
+"\n"
+"HBAC (Host-based acces control) permet de contrôler qui peut accéder\n"
+"à quels services sur quels systèmes, et d'où. Il est possible\n"
+"d'utiliser le système HBAC afin de contrôler quels utilisateurs ou\n"
+"groupes d'un système source peuvent accéder quels services, ou groupes\n"
+"de services, sur un système cible.\n"
+"\n"
+"Vous pouvez aussi spécifier une catégorie d'utilisateur, de systèmes\n"
+"cibles et de systèmes sources. La seule catégorie existante pour le\n"
+"moment est \"all\", mais cela sera étendu dans le futur.\n"
+"\n"
+"Les systèmes sources et cibles des règles HBAC doivent être des systèmes\n"
+"administrés par IPA.\n"
+"\n"
+"Les services et groupes de services disponibles sont gérés respectivement\n"
+"par les greffons hbacsvc and hbacsvcgroup.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Créer une règle \"test1\" autorisant tous les utilisateurs à accéder\n"
+" le serveur \"server\" depuis n'importe où :\n"
+"   ipa hbacrule-add --type=allow --usercat=all --srchostcat=all test1\n"
+"   ipa hbacrule-add-host --hosts=server.example.com test1\n"
+"\n"
+" Afficher les propriétés d'une règle nommée HBAC :\n"
+"   ipa hbacrule-show test1\n"
+"\n"
+" Créer d'une règle pour un service spécifique, permettant à\n"
+" l'utilisateur john d'accéder au service sshd sur toute machine depuis\n"
+" n'importe quelle machine :\n"
+"   ipa hbacrule-add --type=allow --hostcat=all --srchostcat=all john_sshd\n"
+"   ipa hbacrule-add-user --users=john john_sshd\n"
+"   ipa hbacrule-add-service --hbacsvcs=sshd john_sshd\n"
+"\n"
+" Créer d'une règle pour un nouveau groupe de services, permettant à\n"
+" l'utilisateur john d'accéder au service FTP de toute machine depuis\n"
+" n'importe quelle machine.\n"
+"   ipa hbacsvcgroup-add ftpers\n"
+"   ipa hbacsvc-add sftp\n"
+"   ipa hbacsvcgroup-add-member --hbacsvcs=ftp,sftp ftpers\n"
+"   ipa hbacrule-add --type=allow --hostcat=all --srchostcat=all john_ftp\n"
+"   ipa hbacrule-add-user --users=john john_ftp\n"
+"   ipa hbacrule-add-service --hbacsvcgroups=ftpers john_ftp\n"
+"\n"
+" Désactiver une règle HBAC nommée :\n"
+"   ipa hbacrule-disable test1\n"
+"\n"
+" Supprimer une règle HBAC nommée :\n"
+"   ipa hbacrule-del allow_server\n"
 
 #: ipalib/plugins/hbacrule.py:91
 msgid ""
@@ -3546,6 +3604,9 @@ msgid ""
 "    See if options[attribute] is lower-case 'all' in a safe way.\n"
 "    "
 msgstr ""
+"\n"
+"    Vérifie de façon sécurisée si options[attribute] est 'all' en minuscules.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:103
 msgid ""
@@ -3553,99 +3614,102 @@ msgid ""
 "    HBAC object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:126
 msgid "HBAC Rule"
-msgstr ""
+msgstr "Règle HBAC"
 
 #: ipalib/plugins/hbacrule.py:131 ipalib/plugins/sudorule.py:73
 msgid "Rule name"
-msgstr ""
+msgstr "Nom de règle"
 
 #: ipalib/plugins/hbacrule.py:136
 msgid "Rule type (allow or deny)"
-msgstr ""
+msgstr "Type de règle (allow ou deny)"
 
 #: ipalib/plugins/hbacrule.py:137
 msgid "Rule type"
-msgstr ""
+msgstr "Type de règle"
 
 #: ipalib/plugins/hbacrule.py:143 ipalib/plugins/netgroup.py:124
 #: ipalib/plugins/sudorule.py:86
 msgid "User category"
-msgstr ""
+msgstr "Catégorie d'utilisateur"
 
 #: ipalib/plugins/hbacrule.py:144 ipalib/plugins/netgroup.py:125
 #: ipalib/plugins/sudorule.py:87
 msgid "User category the rule applies to"
-msgstr ""
+msgstr "Catégorie d'utilisateur sur laquelle la règle s'applique"
 
 #: ipalib/plugins/hbacrule.py:149 ipalib/plugins/netgroup.py:130
 #: ipalib/plugins/sudorule.py:92
 msgid "Host category"
-msgstr ""
+msgstr "Catégorie de système"
 
 #: ipalib/plugins/hbacrule.py:150 ipalib/plugins/netgroup.py:131
 #: ipalib/plugins/sudorule.py:93
 msgid "Host category the rule applies to"
-msgstr ""
+msgstr "Catégorie de système sur laquelle la règle s'applique"
 
 #: ipalib/plugins/hbacrule.py:155
 msgid "Source host category"
-msgstr ""
+msgstr "Catégorie de système source"
 
 #: ipalib/plugins/hbacrule.py:156
 msgid "Source host category the rule applies to"
-msgstr ""
+msgstr "Catégorie de système source sur laquelle la règle s'applique"
 
 #: ipalib/plugins/hbacrule.py:161
 msgid "Service category"
-msgstr ""
+msgstr "Catégorie de service"
 
 #: ipalib/plugins/hbacrule.py:162
 msgid "Service category the rule applies to"
-msgstr ""
+msgstr "Catégorie de service sur laquelle la règle s'applique"
 
 #: ipalib/plugins/hbacrule.py:174 ipalib/plugins/sudorule.py:81
 msgid "Enabled"
-msgstr ""
+msgstr "Activée"
 
 #: ipalib/plugins/hbacrule.py:178 ipalib/plugins/sudorule.py:115
 #: ipalib/plugins/user.py:108
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 #: ipalib/plugins/hbacrule.py:182 ipalib/plugins/internal.py:272
 #: ipalib/plugins/sudorule.py:119
 msgid "Groups"
-msgstr ""
+msgstr "Groupes"
 
 #: ipalib/plugins/hbacrule.py:186 ipalib/plugins/host.py:226
 #: ipalib/plugins/sudorule.py:123
 msgid "Hosts"
-msgstr ""
+msgstr "Systèmes"
 
 #: ipalib/plugins/hbacrule.py:190 ipalib/plugins/hostgroup.py:73
 #: ipalib/plugins/sudorule.py:127
 msgid "Host Groups"
-msgstr ""
+msgstr "Groupes de systèmes"
 
 #: ipalib/plugins/hbacrule.py:194
 msgid "Source hosts"
-msgstr ""
+msgstr "Systèmes source"
 
 #: ipalib/plugins/hbacrule.py:198
 msgid "Source host groups"
-msgstr ""
+msgstr "Groupes de systèmes source"
 
 #: ipalib/plugins/hbacrule.py:202 ipalib/plugins/internal.py:196
 #: ipalib/plugins/service.py:220
 msgid "Services"
-msgstr ""
+msgstr "Services"
 
 #: ipalib/plugins/hbacrule.py:206
 msgid "Service Groups"
-msgstr ""
+msgstr "Groupes de services"
 
 #: ipalib/plugins/hbacrule.py:215
 msgid ""
@@ -3653,10 +3717,13 @@ msgid ""
 "    Create a new HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Créer une nouvelle règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:219
 msgid "Added HBAC rule \"%(value)s\""
-msgstr ""
+msgstr "Règle HBAC \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/hbacrule.py:230
 msgid ""
@@ -3664,10 +3731,13 @@ msgid ""
 "    Delete an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:234
 msgid "Deleted HBAC rule \"%(value)s\""
-msgstr ""
+msgstr "Règle HBAC \"%(value)s\" supprimée"
 
 #: ipalib/plugins/hbacrule.py:240
 msgid ""
@@ -3675,10 +3745,13 @@ msgid ""
 "    Modify an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:244
 msgid "Modified HBAC rule \"%(value)s\""
-msgstr ""
+msgstr "Règle HBAC \"%(value)s\" modifiée"
 
 #: ipalib/plugins/hbacrule.py:266
 msgid ""
@@ -3686,12 +3759,15 @@ msgid ""
 "    Search for HBAC rules.\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher des règles HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:270
 msgid "%(count)d HBAC rule matched"
 msgid_plural "%(count)d HBAC rules matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d règle HBAC correspondante"
+msgstr[1] "%(count)d règles HBAC correspondantes"
 
 #: ipalib/plugins/hbacrule.py:278
 msgid ""
@@ -3699,6 +3775,9 @@ msgid ""
 "    Display the properties of an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les propriétés d'une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:286
 msgid ""
@@ -3706,10 +3785,13 @@ msgid ""
 "    Enable an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Activer une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:290
 msgid "Enabled HBAC rule \"%(value)s\""
-msgstr ""
+msgstr "Règle HBAC \"%(value)s\" activée"
 
 #: ipalib/plugins/hbacrule.py:315
 msgid ""
@@ -3717,10 +3799,13 @@ msgid ""
 "    Disable an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Désactiver une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:319
 msgid "Disabled HBAC rule \"%(value)s\""
-msgstr ""
+msgstr "Règle HBAC \"%(value)s\" désactivée"
 
 #: ipalib/plugins/hbacrule.py:344
 msgid ""
@@ -3728,10 +3813,13 @@ msgid ""
 "    Add an access time to an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un horaire d'accès à la règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:351 ipalib/plugins/hbacrule.py:391
 msgid "Access time"
-msgstr ""
+msgstr "Horaire d'accès"
 
 #: ipalib/plugins/hbacrule.py:385
 msgid ""
@@ -3739,6 +3827,9 @@ msgid ""
 "    Remove access time to HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un horaire d'accès d'une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:425
 msgid ""
@@ -3746,6 +3837,9 @@ msgid ""
 "    Add users and groups to an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter utilisateurs et groupes à une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:442
 msgid ""
@@ -3753,6 +3847,9 @@ msgid ""
 "    Remove users and groups from an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer utilisateurs et groupes d'une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:452
 msgid ""
@@ -3760,6 +3857,9 @@ msgid ""
 "    Add target hosts and hostgroups to an HBAC rule\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter systèmes et groupes de systèmes cibles à une règle HBAC\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:469
 msgid ""
@@ -3767,6 +3867,9 @@ msgid ""
 "    Remove target hosts and hostgroups from an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer systèmes et groupes de systèmes cibles à une règle HBAC\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:479
 msgid ""
@@ -3774,6 +3877,9 @@ msgid ""
 "    Add source hosts and hostgroups from a HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter systèmes et groupes de systèmes sources à une règle HBAC\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:496
 msgid ""
@@ -3781,6 +3887,9 @@ msgid ""
 "    Remove source hosts and hostgroups from an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer systèmes et groupes de systèmes cibles d'une règle HBAC\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:506
 msgid ""
@@ -3788,6 +3897,9 @@ msgid ""
 "    Add services to an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des services à une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacrule.py:523
 msgid ""
@@ -3795,6 +3907,9 @@ msgid ""
 "    Remove service and service groups from an HBAC rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des services et groupes de services d'une règle HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvc.py:19
 msgid ""
@@ -3820,6 +3935,27 @@ msgid ""
 "   ipa hbacsvc-del tftp\n"
 "\n"
 msgstr ""
+"\n"
+"Services HBAC\n"
+"\n"
+"Les services PAM dont le système HBAC peut contrôler l'accès. Le nom\n"
+"utilisé ici doit correspondre au nom de service utilisé par PAM."
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Ajouter un nouveau service HBAC :\n"
+"   ipa hbacsvc-add tftp\n"
+"\n"
+" Modifier un service HBAC existant :\n"
+"   ipa hbacsvc-mod --desc=\"TFTP service\" tftp\n"
+"\n"
+" Chercher des services HBAC. Cet exemple renverra deux résultats,\n"
+" le service FTP et le service tftp nouvellement ajouté :\n"
+"   ipa hbacsvc-find ftp\n"
+"\n"
+" Supprimer un service HBAC :\n"
+"   ipa hbacsvc-del tftp\n"
+"\n"
 
 #: ipalib/plugins/hbacsvc.py:51
 msgid ""
@@ -3827,22 +3963,25 @@ msgid ""
 "    HBAC Service object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet service HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvc.py:61
 msgid "HBAC Services"
-msgstr ""
+msgstr "Services HBAC"
 
 #: ipalib/plugins/hbacsvc.py:66
 msgid "Service name"
-msgstr ""
+msgstr "Nom de service"
 
 #: ipalib/plugins/hbacsvc.py:67
 msgid "HBAC service"
-msgstr ""
+msgstr "Service HBAC"
 
 #: ipalib/plugins/hbacsvc.py:74
 msgid "HBAC service description"
-msgstr ""
+msgstr "Description de service HBAC"
 
 #: ipalib/plugins/hbacsvc.py:82
 msgid ""
@@ -3850,10 +3989,13 @@ msgid ""
 "    Add a new HBAC service.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau service HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvc.py:85
 msgid "Added HBAC service \"%(value)s\""
-msgstr ""
+msgstr "Service HBAC \"%(value)s\" ajouté"
 
 #: ipalib/plugins/hbacsvc.py:91
 msgid ""
@@ -3861,10 +4003,13 @@ msgid ""
 "    Delete an existing HBAC service.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimé un service HBAC existant.\n"
+"    "
 
 #: ipalib/plugins/hbacsvc.py:94
 msgid "Deleted HBAC service \"%(value)s\""
-msgstr ""
+msgstr "Service HBAC \"%(value)s\" supprimé"
 
 #: ipalib/plugins/hbacsvc.py:100
 msgid ""
@@ -3872,10 +4017,13 @@ msgid ""
 "    Modify an HBAC service.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un service HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvc.py:104
 msgid "Modified HBAC service \"%(value)s\""
-msgstr ""
+msgstr "Service HBAC \"%(value)s\" modifié"
 
 #: ipalib/plugins/hbacsvc.py:110
 msgid ""
@@ -3883,12 +4031,15 @@ msgid ""
 "    Search for HBAC services.\n"
 "    "
 msgstr ""
+"\n"
+"    Chercher des services HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvc.py:114
 msgid "%(count)d HBAC service matched"
 msgid_plural "%(count)d HBAC services matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d service HBAC correspondant"
+msgstr[1] "%(count)d services HBAC correspondants"
 
 #: ipalib/plugins/hbacsvc.py:122
 msgid ""
@@ -3896,6 +4047,9 @@ msgid ""
 "    Display information about an HBAC service.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher l'information sur un service HBAC.\n"
+"    "
 
 #: ipalib/plugins/hbacsvcgroup.py:19
 msgid ""
