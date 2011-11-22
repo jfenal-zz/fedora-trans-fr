@@ -1,24 +1,24 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Red Hat
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Automatically generated, 2010.
-# Jérôme Fenal <jfenal@gmail.com>, 2011.
 #   <jfenal@gmail.com>, 2011.
+# Jérôme Fenal <jfenal@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-22 01:08+0000\n"
-"Last-Translator: jfenal <jfenal@gmail.com>\n"
-"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
+"PO-Revision-Date: 2011-11-22 10:15+0100\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ipalib/plugins/__init__.py:20
 msgid ""
@@ -393,11 +393,8 @@ msgid "Permissions"
 msgstr "Permissions"
 
 #: ipalib/plugins/aci.py:433
-msgid ""
-"comma-separated list of permissions to grant(read, write, add, delete, all)"
-msgstr ""
-"Liste séparée par des virgules de permissions à accorder (read, write, add, "
-"delete, all)"
+msgid "comma-separated list of permissions to grant(read, write, add, delete, all)"
+msgstr "Liste séparée par des virgules de permissions à accorder (read, write, add, delete, all)"
 
 #: ipalib/plugins/aci.py:439 ipalib/plugins/delegation.py:119
 #: ipalib/plugins/permission.py:124 ipalib/plugins/selfservice.py:92
@@ -516,10 +513,16 @@ msgid ""
 "\n"
 "        Execute the aci-delete operation.\n"
 "\n"
-"        :param aciname: The name of the ACI being added.\n"
+"        :param aciname: The name of the ACI being deleted.\n"
 "        :param kw: unused\n"
 "        "
 msgstr ""
+"\n"
+"        Éxecuter l'opération aci-delete.\n"
+"\n"
+"        :param aciname: Le nom de l'ACI à supprimer.\n"
+"        :param kw: inutilisé\n"
+"        "
 
 #: ipalib/plugins/aci.py:576
 msgid ""
@@ -776,7 +779,8 @@ msgstr ""
 "\n"
 "    L'import échoera si une entrée dupliquée est trouvée. Pour une\n"
 "    utilisation continue où les erreurs sont ignorées, utiliser l'option\n"
-"    --continue.\n"
+"    --continue."
+"\n"
 "Cartes :\n"
 "\n"
 "  Créer une nouvelle carte, \"auto.share\" :\n"
@@ -900,11 +904,8 @@ msgid "Automount master file."
 msgstr "Fichier maître automount"
 
 #: ipalib/plugins/automount.py:322
-msgid ""
-"Continuous operation mode. Errors are reported but the process continues."
-msgstr ""
-"Mode opération continue. Les erreurs seront rapportées mais le processus "
-"continuera."
+msgid "Continuous operation mode. Errors are reported but the process continues."
+msgstr "Mode opération continue. Les erreurs seront rapportées mais le processus continuera."
 
 #: ipalib/plugins/automount.py:334
 msgid "File %(file)s not found"
@@ -1042,8 +1043,8 @@ msgid ""
 "The key,info pair must be unique. A key named %(key)s with info %(info)s "
 "already exists"
 msgstr ""
-"La paire key,info doit être unique. Une clé nommée %(key)s avec "
-"l'information %(info)s existe déjà."
+"La paire key,info doit être unique. Une clé nommée %(key)s avec l'information %(info)s "
+"existe déjà."
 
 #: ipalib/plugins/automount.py:608
 msgid "key named %(key)s already exists"
@@ -1431,8 +1432,8 @@ msgid ""
 "Display the access rights of this entry (requires --all). See ipa man page "
 "for details."
 msgstr ""
-"Affiche les droits d'accès sur cette entrée (requiert --all). Cf. la page de"
-" manuel de ipa pour plus d'informations."
+"Affiche les droits d'accès sur cette entrée (requiert --all). Cf. la page de "
+"manuel de ipa pour plus d'informations."
 
 #: ipalib/plugins/baseldap.py:821
 msgid ""
@@ -1650,9 +1651,7 @@ msgstr "Commandes imbriquées à exécuter"
 
 #: ipalib/plugins/batch.py:68 ipalib/frontend.py:861
 msgid "Client version. Used to determine if server will accept request."
-msgstr ""
-"Version du client. Utilisée pour déterminer si le serveur acceptera la "
-"requête."
+msgstr "Version du client. Utilisée pour déterminer si le serveur acceptera la requête."
 
 #: ipalib/plugins/cert.py:22
 msgid ""
@@ -1729,7 +1728,8 @@ msgstr ""
 "dogtag utilise uniquement la valeur du CN du CSR, et remplace le reste du sujet.\n"
 "\n"
 "Un certificat est stocké avec un principal de service, qui requiert\n"
-"lui un système.\n"
+"lui un système."
+"\n"
 "Afin de demander un certificat  :\n"
 "\n"
 "* Le système doit exister\n"
@@ -1869,8 +1869,7 @@ msgstr "Principal"
 
 #: ipalib/plugins/cert.py:217
 msgid "Service principal for this certificate (e.g. HTTP/test.example.com)"
-msgstr ""
-"Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
+msgstr "Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
 
 #: ipalib/plugins/cert.py:224
 msgid "automatically add the principal if it doesn't exist"
@@ -2082,9 +2081,11 @@ msgstr ""
 "                        utilisateurs\n"
 "\n"
 "Options de recherches. Celles-ci modifient le comportement de la recherche\n"
-"et le nombre d'entrées renvoyées.\n"
+"et le nombre d'entrées renvoyées."
+"\n"
 "  --searchtimelimit=INT Durée maximale (sec.) allouée à une recherche\n"
-"                        (> 0 ou -1 pour illimitée).  --searchrecordslimit=INT Nombre maximal d'entrées à rechercher\n"
+"                        (> 0 ou -1 pour illimitée)."
+"  --searchrecordslimit=INT Nombre maximal d'entrées à rechercher\n"
 "                        (-1 pour illimité).\n"
 "\n"
 "\n"
@@ -2166,8 +2167,7 @@ msgstr "Durée de recherche limite"
 
 #: ipalib/plugins/config.py:122
 msgid "Max. amount of time (sec.) for a search (> 0, or -1 for unlimited)."
-msgstr ""
-"Durée maximale (sec.) allouée à une recherche (> 0 ou -1 pour illimitée)."
+msgstr "Durée maximale (sec.) allouée à une recherche (> 0 ou -1 pour illimitée)."
 
 #: ipalib/plugins/config.py:127
 msgid "Search size limit"
@@ -2183,15 +2183,11 @@ msgstr "Champs de recherche utilisateur"
 
 #: ipalib/plugins/config.py:134
 msgid "A comma-separated list of fields to search when searching for users."
-msgstr ""
-"Une liste séparée par des virgules de champs à rechercher lors d'une "
-"recherche d'utilisateurs."
+msgstr "Une liste séparée par des virgules de champs à rechercher lors d'une recherche d'utilisateurs."
 
 #: ipalib/plugins/config.py:139
 msgid "A comma-separated list of fields to search when searching for groups."
-msgstr ""
-"Une liste séparée par des virgules de champs à rechercher lors d'une "
-"recherche de groupes."
+msgstr "Une liste séparée par des virgules de champs à rechercher lors d'une recherche de groupes."
 
 #: ipalib/plugins/config.py:143
 msgid "Migration mode"
@@ -2215,9 +2211,7 @@ msgstr "Classes d'objets par défaut pour les groupes"
 
 #: ipalib/plugins/config.py:155
 msgid "Default group objectclassses (comma-separated list)."
-msgstr ""
-"Classes d'objets par défaut pour les groupes (liste séparée par des "
-"virgules)."
+msgstr "Classes d'objets par défaut pour les groupes (liste séparée par des virgules)."
 
 #: ipalib/plugins/config.py:159
 msgid "Default user objectclasses"
@@ -2225,9 +2219,7 @@ msgstr "Classes d'objets par défaut pour les utilisateurs"
 
 #: ipalib/plugins/config.py:160
 msgid "Default user objectclassses (comma-separated list)."
-msgstr ""
-"Classes d'objets par défaut pour les utilisateurs (liste séparée par des "
-"virgules)."
+msgstr "Classes d'objets par défaut pour les utilisateurs (liste séparée par des virgules)."
 
 #: ipalib/plugins/config.py:164
 msgid "Password Expiration Notification"
@@ -2235,9 +2227,7 @@ msgstr "Notification d'expiration des mots de passe"
 
 #: ipalib/plugins/config.py:165
 msgid "Number of days's notice of impending password expiration."
-msgstr ""
-"Nombre de jours pour les avertissements de futures expirations de mots de "
-"passe."
+msgstr "Nombre de jours pour les avertissements de futures expirations de mots de passe."
 
 #: ipalib/plugins/config.py:170
 msgid "Password plugin features"
@@ -2381,8 +2371,8 @@ msgid ""
 "Comma-separated list of permissions to grant (read, write). Default is "
 "write."
 msgstr ""
-"Liste séparée par des virgules des permissions à accorder (read, write). La "
-"valeur par défaut est write."
+"Liste séparée par des virgules des permissions à accorder (read, write). "
+"La valeur par défaut est write."
 
 #: ipalib/plugins/delegation.py:125
 msgid "Member user group"
@@ -2628,8 +2618,7 @@ msgstr "Cf. RFC 2915 "
 
 #: ipalib/plugins/dns.py:249
 msgid "Nameserver '%(host)s' does not have a corresponding A/AAAA record"
-msgstr ""
-"Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
+msgstr "Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
 
 #: ipalib/plugins/dns.py:272
 msgid ""
@@ -2758,9 +2747,7 @@ msgstr "Forcer"
 
 #: ipalib/plugins/dns.py:388
 msgid "Force DNS zone creation even if nameserver not in DNS."
-msgstr ""
-"Forcer la création de la zone DNS zone même si le serveur de nom n'est pas "
-"dans le DNS."
+msgstr "Forcer la création de la zone DNS zone même si le serveur de nom n'est pas dans le DNS."
 
 #: ipalib/plugins/dns.py:391
 msgid "Add the nameserver to DNS with this IP address"
@@ -2910,29 +2897,23 @@ msgstr ""
 
 #: ipalib/plugins/dns.py:699
 msgid "force NS record creation even if its hostname is not in DNS"
-msgstr ""
-"forcer la création d'un enregistrement NS même si le nom du système n'est "
-"pas dans le DNS"
+msgstr "forcer la création d'un enregistrement NS même si le nom du système n'est pas dans le DNS"
 
 #: ipalib/plugins/dns.py:735
 msgid ""
 "Reverse zone for PTR record should be a sub-zone of one the following fully "
 "qualified domains: %s"
 msgstr ""
-"La zone inverse pour l'enregistrement PTR doit être une sous-zone de l'un "
-"des domaines suivants pleinement qualifiés : %s"
+"La zone inverse pour l'enregistrement PTR doit être une sous-zone de l'un des "
+"domaines suivants pleinement qualifiés : %s"
 
 #: ipalib/plugins/dns.py:740
 msgid "Reverse zone %s requires exactly %d IP address components, %d given"
-msgstr ""
-"La zone inverse %s requiert exactement %d composantes adresses IP, %d "
-"spécifiées"
+msgstr "La zone inverse %s requiert exactement %d composantes adresses IP, %d spécifiées"
 
 #: ipalib/plugins/dns.py:746
 msgid "PTR record '%s' is not fully qualified (check traling '.')"
-msgstr ""
-"L'enregistrement PTR '%s' n'est pas pleinement qualifié (vérifier la "
-"présence du '.' final)"
+msgstr "L'enregistrement PTR '%s' n'est pas pleinement qualifié (vérifier la présence du '.' final)"
 
 #: ipalib/plugins/dns.py:789
 msgid ""
@@ -3250,7 +3231,7 @@ msgid ""
 "\n"
 "Manage groups of users. By default, new groups are POSIX groups. You\n"
 "can add the --nonposix option to the group-add command to mark a new group\n"
-"as non-POSIX, and you can use the same argument to the group-mod command\n"
+"as non-POSIX. You can use --posix argument to the group-mod command\n"
 "to convert a non-POSIX group to a POSIX group. POSIX groups cannot be\n"
 "converted to non-POSIX groups.\n"
 "\n"
@@ -3293,6 +3274,55 @@ msgid ""
 " Display information about a named group.\n"
 "   ipa group-show localadmins\n"
 msgstr ""
+"\n"
+"Groupes d'utilisateurs\n"
+"\n"
+"Gestion des groupes d'utilisateur. Par défaut, les nouveaux groupes sont\n"
+"des groupes POSIX. Vous pouvez utiliser l'option --nonposix de la commande\n"
+"group-add pour le marquer comme non-POSIX. Vous pouvez utiliser l'option\n"
+"--posix de la commande group-mod pour convertir un groupe non-POSIX en groupe\n"
+"POSIX. Les groupes POSIX ne peuvent être convertis en groupes non-POSIX.\n"
+"\n"
+"Chaque groupe doit avoir une description.\n"
+"\n"
+"Les groupes POSIX doivent avoir un numéro d'identifiant de groupe (GID).\n"
+"Modifier un GID est supporté, mais peut avoir un impact sur les permissions\n"
+"de vos fichiers. Il n'est pas nécessaire de fournir un GID à la création\n"
+"d'un groupe. IPA en créera un automatiquement s'il n'est pas spécifié.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Ajouter un nouveau groupe :\n"
+"   ipa group-add --desc='administrateurs locaux' localadmins\n"
+"\n"
+" Ajouter un nouveau groupe non-POSIX :\n"
+"   ipa group-add --nonposix --desc='administrateurs distants' remoteadmins\n"
+"\n"
+" Convertir un groupe non-POSIX en POSIX :\n"
+"   ipa group-mod --posix remoteadmins\n"
+"\n"
+" Ajouter un nouveau groupe POSIX avec un numéro d'identifiant\n"
+" de groupe spécifique :\n"
+"   ipa group-add --gid=500 --desc='Administrateurs Unix' unixadmins\n"
+"\n"
+" Ajouter un nouveau groupe POSIX en laissant IPA choisir le numéro\n"
+" d'identifiant de groupe :\n"
+"   ipa group-add --desc='printer admins' printeradmins\n"
+"\n"
+" Supprimer un groupe :\n"
+"   ipa group-del unixadmins\n"
+"\n"
+" Pour ajouter le groupe \"remoteadmins\" au groupe \"localadmins\" :\n"
+"   ipa group-add-member --groups=remoteadmins localadmins\n"
+"\n"
+" Ajouter une liste d'utilisateurs au groupe \"localadmins\" :\n"
+"   ipa group-add-member --users=test1,test2 localadmins\n"
+"\n"
+" Supprimer un utilisateur du groupe \"localadmins\" :\n"
+"   ipa group-remove-member --users=test2 localadmins\n"
+"\n"
+" Afficher l'information sur un groupe nommé.\n"
+"   ipa group-show localadmins\n"
 
 #: ipalib/plugins/group.py:76
 msgid ""
@@ -3909,7 +3939,8 @@ msgstr ""
 "Services HBAC\n"
 "\n"
 "Les services PAM dont le système HBAC peut contrôler l'accès. Le nom\n"
-"utilisé ici doit correspondre au nom de service utilisé par PAM.\n"
+"utilisé ici doit correspondre au nom de service utilisé par PAM."
+"\n"
 "EXEMPLES:\n"
 "\n"
 " Ajouter un nouveau service HBAC :\n"
@@ -4236,6 +4267,61 @@ msgid ""
 " Add a host that can manage this host's keytab and certificate:\n"
 "   ipa host-add-managedby --hosts=test2 test\n"
 msgstr ""
+"\n"
+"Systèmes/Machines\n"
+"\n"
+"Un système représente une machine, et peut être utilisé dans plusieurs\n"
+"contextes :\n"
+"- entrées de services associés à un système\n"
+"- un système stocke les entrées des principaux de services host/\n"
+"- un système peut être utilisé dans les règles de contrôles d'accès HBAC\n"
+"- chaque client inscrit crée une entrée système\n"
+"\n"
+"INBSCRIPTION :\n"
+"\n"
+"Trois scenarii d'inscriptions d'un nouveau client sont possibles :\n"
+"\n"
+"1. La machine est enregistrée par un administrateur de plein droit.\n"
+"   L'entrée système peut pré-exister ou non. Un administrateur de\n"
+"   plein droit est membre du rôle hostadmin ou du groupe admins\n"
+"2. L'inscription est faite par un administrateur limité. Le système\n"
+"   doit avoir été préalablement créé. Un administrateur limité\n"
+"   possède le privilège Host Enrollment.\n"
+"3. Le système a été créé avec un mot de passe à usage unique.\n"
+"\n"
+"Un système peut être inscrit une seule fois. Si un client est déjà\n"
+"inscrit et nécessite d'être ré-inscrit, il faut d'abord le supprimer\n"
+"puis re-créé. La re-création du système provoquera la perte de tous\n"
+"les services du système à supprimer, ainsi que la révocation de tous\n"
+"les certificats SSL associés aux services supprimés.\n"
+"\n"
+"Un système peut de façon optionnelle stocker des informations\n"
+"complémentaires comme sa localisation, son système d'exploitation, etc.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter un nouveau système :\n"
+"   ipa host-add --location=\"labo 3e étage\" --locality=Dallas test.example.com\n"
+"\n"
+" Supprimer un système :\n"
+"   ipa host-del test.example.com\n"
+"\n"
+" Ajouter un système avec un mot de passe à usage unique :\n"
+"   ipa host-add --os='Fedora 12' --password=Secret123 test.example.com\n"
+"\n"
+" Ajouter un nouveau système avec un mot de passe à usage unique aléatoire :\n"
+"   ipa host-add --os='Fedora 12' --random test.example.com\n"
+"\n"
+" Modifier les informations d'un système :\n"
+"   ipa host-mod --os='Fedora 12' test.example.com\n"
+"\n"
+" Désactiver la clé Kerberos du système, ses certificats SSL et tous\n"
+" ses services :\n"
+"   ipa host-disable test.example.com\n"
+"\n"
+" Ajouter un système pouvant administrer le keytab et les certificats\n"
+" du système sur lequel la commande est lancée :\n"
+"   ipa host-add-managedby --hosts=test2 test\n"
 
 #: ipalib/plugins/host.py:97
 msgid ""
@@ -4243,14 +4329,18 @@ msgid ""
 "    Require at least one dot in the hostname (to support localhost.localdomain)\n"
 "    "
 msgstr ""
+"\n"
+"    Au un point dans le nom de système est nécessaire (permettant de supporter\n"
+"    localhost.localdomain)\n"
+"    "
 
 #: ipalib/plugins/host.py:101
 msgid "Fully-qualified hostname required"
-msgstr ""
+msgstr "Nom pleinement qualitfié requis"
 
 #: ipalib/plugins/host.py:129
 msgid "DNS reverse zone for IP address %(addr)s not found"
-msgstr ""
+msgstr "Zone DNS inverse introuvable pour l'adresse IP %(addr)s"
 
 #: ipalib/plugins/host.py:153 ipalib/plugins/service.py:87
 msgid "Keytab"
@@ -4262,10 +4352,13 @@ msgid ""
 "    Verify that we have either an IPv4 or IPv6 address.\n"
 "    "
 msgstr ""
+"\n"
+"    Verifie que nous avons au moins une adresse IPv4 ou IPv6.\n"
+"    "
 
 #: ipalib/plugins/host.py:189
 msgid "invalid IP address"
-msgstr ""
+msgstr "adresse IP invalide"
 
 #: ipalib/plugins/host.py:194
 msgid ""
@@ -4273,66 +4366,69 @@ msgid ""
 "    Host object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet système.\n"
+"    "
 
 #: ipalib/plugins/host.py:231
 msgid "Host name"
-msgstr ""
+msgstr "Nom de système"
 
 #: ipalib/plugins/host.py:238
 msgid "A description of this host"
-msgstr ""
+msgstr "Description de ce système"
 
 #: ipalib/plugins/host.py:242
 msgid "Locality"
-msgstr ""
+msgstr "Ville"
 
 #: ipalib/plugins/host.py:243
 msgid "Host locality (e.g. \"Baltimore, MD\")"
-msgstr ""
+msgstr "Ville du système (par ex. \"Paris, IDF\")"
 
 #: ipalib/plugins/host.py:248
 msgid "Host location (e.g. \"Lab 2\")"
-msgstr ""
+msgstr "Localisation du système (par ex. \"Lab 2\")"
 
 #: ipalib/plugins/host.py:252
 msgid "Platform"
-msgstr ""
+msgstr "Plate-forme"
 
 #: ipalib/plugins/host.py:253
 msgid "Host hardware platform (e.g. \"Lenovo T61\")"
-msgstr ""
+msgstr "Plate-forme matérielle du système (par ex. \"Lenovo T61\")"
 
 #: ipalib/plugins/host.py:257
 msgid "Operating system"
-msgstr ""
+msgstr "Système d'exploitation"
 
 #: ipalib/plugins/host.py:258
 msgid "Host operating system and version (e.g. \"Fedora 9\")"
-msgstr ""
+msgstr "Système d'exploitation et version (par ex. \"Fedora 9\")"
 
 #: ipalib/plugins/host.py:262
 msgid "User password"
-msgstr ""
+msgstr "Mot de passe utilisateur"
 
 #: ipalib/plugins/host.py:263
 msgid "Password used in bulk enrollment"
-msgstr ""
+msgstr "Mot de passe utilisé pour les inscriptions en masse"
 
 #: ipalib/plugins/host.py:266
 msgid "Generate a random password to be used in bulk enrollment"
-msgstr ""
+msgstr "Crée un mot de passe aléatoire utilisé pour l'inscription en masse"
 
 #: ipalib/plugins/host.py:271
 msgid "Random password"
-msgstr ""
+msgstr "Mot de passe aléatoire"
 
 #: ipalib/plugins/host.py:277 ipalib/plugins/service.py:233
 msgid "Base-64 encoded server certificate"
-msgstr ""
+msgstr "Certificat du serveur encodé en Base-64"
 
 #: ipalib/plugins/host.py:280 ipalib/plugins/host.py:548
 msgid "Principal name"
-msgstr ""
+msgstr "Nom du principal"
 
 #: ipalib/plugins/host.py:306
 msgid ""
@@ -4340,30 +4436,33 @@ msgid ""
 "    Add a new host.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau système.\n"
+"    "
 
 #: ipalib/plugins/host.py:311
 msgid "Added host \"%(value)s\""
-msgstr ""
+msgstr "Système \"%(value)s\" ajouté"
 
 #: ipalib/plugins/host.py:316
 msgid "force host name even if not in DNS"
-msgstr ""
+msgstr "forcer le nom même si absent des DNS"
 
 #: ipalib/plugins/host.py:319
 msgid "skip reverse DNS detection"
-msgstr ""
+msgstr "passer outre la détection de DNS inverse"
 
 #: ipalib/plugins/host.py:322
 msgid "Add the host to DNS with this IP address"
-msgstr ""
+msgstr "Ajouter le système aux DNS avec cette adresse IP"
 
 #: ipalib/plugins/host.py:338 ipalib/plugins/host.py:477
 msgid "DNS zone %(zone)s not found"
-msgstr ""
+msgstr "Zone DNS %(zone)s introuvable"
 
 #: ipalib/plugins/host.py:413
 msgid "The host was added but the DNS update failed with: %(exc)s"
-msgstr ""
+msgstr "Le système a été ajouté mais la mise à jour DNS a échoué : %(exc)s"
 
 #: ipalib/plugins/host.py:422
 msgid ""
@@ -4371,14 +4470,17 @@ msgid ""
 "    Delete a host.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un système.\n"
+"    "
 
 #: ipalib/plugins/host.py:426
 msgid "Deleted host \"%(value)s\""
-msgstr ""
+msgstr "Système \"%(value)s\" supprimé"
 
 #: ipalib/plugins/host.py:431
 msgid "Remove entries from DNS"
-msgstr ""
+msgstr "Supprimer les entrées DNS"
 
 #: ipalib/plugins/host.py:537
 msgid ""
@@ -4386,14 +4488,17 @@ msgid ""
 "    Modify information about a host.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier les informations d'un système.\n"
+"    "
 
 #: ipalib/plugins/host.py:542
 msgid "Modified host \"%(value)s\""
-msgstr ""
+msgstr "Système \"%(value)s\" modifié"
 
 #: ipalib/plugins/host.py:549
 msgid "Kerberos principal name for this host"
-msgstr ""
+msgstr "Nom de principal Kerberos pour ce système"
 
 #: ipalib/plugins/host.py:618
 msgid ""
@@ -4401,12 +4506,15 @@ msgid ""
 "    Search for hosts.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des systèmes.\n"
+"    "
 
 #: ipalib/plugins/host.py:623
 msgid "%(count)d host matched"
 msgid_plural "%(count)d hosts matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d système correspondant"
+msgstr[1] "%(count)d systèmes correspondants"
 
 #: ipalib/plugins/host.py:643
 msgid ""
@@ -4414,14 +4522,17 @@ msgid ""
 "    Display information about a host.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations d'un système.\n"
+"    "
 
 #: ipalib/plugins/host.py:649 ipalib/plugins/service.py:400
 msgid "file to store certificate in"
-msgstr ""
+msgstr "fichier où stocker le certificat"
 
 #: ipalib/plugins/host.py:673 ipalib/plugins/service.py:422
 msgid "Certificate stored in file '%(file)s'"
-msgstr ""
+msgstr "Certificat enregistré dans le fichier '%(file)s'"
 
 #: ipalib/plugins/host.py:684
 msgid ""
@@ -4429,10 +4540,13 @@ msgid ""
 "    Disable the Kerberos key, SSL certificate and all services of a host.\n"
 "    "
 msgstr ""
+"\n"
+"    Désactiver la clé Kerberos, les certificats SSL et tous les services d'un système.\n"
+"    "
 
 #: ipalib/plugins/host.py:688
 msgid "Disabled host \"%(value)s\""
-msgstr ""
+msgstr "Système \"%(value)s\" désactivé"
 
 #: ipalib/plugins/host.py:770
 msgid ""
@@ -4440,6 +4554,9 @@ msgid ""
 "    Add hosts that can manage this host.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des systèmes pouvant administrer le présent système.\n"
+"    "
 
 #: ipalib/plugins/host.py:781
 msgid ""
@@ -4447,6 +4564,9 @@ msgid ""
 "    Remove hosts that can manage this host.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des systèmes pouvant administrer le présent système.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:20
 msgid ""
@@ -5630,8 +5750,7 @@ msgid ""
 msgstr ""
 
 #: ipalib/plugins/migration.py:78
-msgid ""
-"Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
+msgid "Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
 msgstr ""
 
 #: ipalib/plugins/migration.py:79
@@ -5695,8 +5814,7 @@ msgid "User object class"
 msgstr ""
 
 #: ipalib/plugins/migration.py:300
-msgid ""
-"Comma-separated list of objectclasses used to search for user entries in DS"
+msgid "Comma-separated list of objectclasses used to search for user entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:306
@@ -5704,8 +5822,7 @@ msgid "Group object class"
 msgstr ""
 
 #: ipalib/plugins/migration.py:307
-msgid ""
-"Comma-separated list of objectclasses used to search for group entries in DS"
+msgid "Comma-separated list of objectclasses used to search for group entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:313
@@ -5719,8 +5836,7 @@ msgid ""
 msgstr ""
 
 #: ipalib/plugins/migration.py:320
-msgid ""
-"Continuous operation mode. Errors are reported but the process continues"
+msgid "Continuous operation mode. Errors are reported but the process continues"
 msgstr ""
 
 #: ipalib/plugins/migration.py:328
@@ -5803,8 +5919,7 @@ msgid "%(count)d variables"
 msgstr ""
 
 #: ipalib/plugins/misc.py:47 ipalib/plugins/misc.py:115
-msgid ""
-"retrieve and print all attributes from the server. Affects command output."
+msgid "retrieve and print all attributes from the server. Affects command output."
 msgstr ""
 
 #: ipalib/plugins/misc.py:61
@@ -6072,13 +6187,11 @@ msgid "Permission name"
 msgstr ""
 
 #: ipalib/plugins/permission.py:119
-msgid ""
-"Comma-separated list of permissions to grant (read, write, add, delete, all)"
+msgid "Comma-separated list of permissions to grant (read, write, add, delete, all)"
 msgstr ""
 
 #: ipalib/plugins/permission.py:132
-msgid ""
-"Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
+msgid "Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
 msgstr ""
 
 #: ipalib/plugins/permission.py:138
@@ -7903,8 +8016,7 @@ msgid ""
 msgstr ""
 
 #: ipalib/errors.py:874
-msgid ""
-"The realm for the principal does not match the realm for this IPA server"
+msgid "The realm for the principal does not match the realm for this IPA server"
 msgstr ""
 
 #: ipalib/errors.py:890
@@ -8055,8 +8167,7 @@ msgid "Results are truncated, try a more specific search"
 msgstr ""
 
 #: ipalib/frontend.py:850
-msgid ""
-"Retrieve and print all attributes from the server. Affects command output."
+msgid "Retrieve and print all attributes from the server. Affects command output."
 msgstr ""
 
 #: ipalib/frontend.py:856
@@ -8395,8 +8506,7 @@ msgid "Server Name"
 msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:781 ipa-client/ipa-rmkeytab.c:171
-msgid ""
-"The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
+msgid "The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
 msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:782 ipa-client/ipa-rmkeytab.c:172
@@ -8481,8 +8591,7 @@ msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:901
 #, c-format
-msgid ""
-"Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
+msgid "Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
 msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:909
@@ -8638,9 +8747,7 @@ msgstr "Le nom du système doit être pleinement qualifié : %s\n"
 #: ipa-client/ipa-join.c:724 ipa-client/ipa-join.c:925
 #, c-format
 msgid "Unable to join host: Kerberos context initialization failed\n"
-msgstr ""
-"Impossible d'inscrire le système : échec à l'initialisation du contexte "
-"Kerberos\n"
+msgstr "Impossible d'inscrire le système : échec à l'initialisation du contexte Kerberos\n"
 
 #: ipa-client/ipa-join.c:732
 #, c-format
@@ -8690,8 +8797,7 @@ msgstr "résultat de la réponse XML-RPC introuvable\n"
 #: ipa-client/ipa-join.c:932
 #, c-format
 msgid "Unable to join host: Kerberos Credential Cache not found\n"
-msgstr ""
-"Impossible d'inscrire le système : cache de crédit Kerberos introuvable\n"
+msgstr "Impossible d'inscrire le système : cache de crédit Kerberos introuvable\n"
 
 #: ipa-client/ipa-join.c:940
 #, c-format
@@ -8699,8 +8805,8 @@ msgid ""
 "Unable to join host: Kerberos User Principal not found and host password not"
 " provided.\n"
 msgstr ""
-"Impossible d'inscrire le système : Principal d'utilisateur Kerberos  "
-"introuvable et mot de passe non fourni.\n"
+"Impossible d'inscrire le système : Principal d'utilisateur Kerberos "
+" introuvable et mot de passe non fourni.\n"
 
 #: ipa-client/ipa-join.c:954
 #, c-format
