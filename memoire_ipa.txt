@@ -1,3 +1,6 @@
+TODO : cohérence entre Chercher/Rechercher à revoir
+
+
 Mémoire de traducation Kerberos et IPA.
 
 plug-in     : greffon
@@ -11,6 +14,7 @@ credentials : données d'authentification, lettres de créance, justificatif d'i
 host : système
 host-group : groupes de systèmes
 
+access time (HBAC rules) : horaire d'accès
 
 
 Automount :
