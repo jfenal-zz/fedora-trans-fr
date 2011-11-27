@@ -3,16 +3,16 @@
 #
 # Translators:
 # Automatically generated, 2010.
-#   <jfenal@gmail.com>, 2011.
 # Jérôme Fenal <jfenal@gmail.com>, 2011.
+#   <jfenal@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-22 10:15+0100\n"
+"PO-Revision-Date: 2011-11-27 22:16+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -394,7 +394,9 @@ msgstr "Permissions"
 
 #: ipalib/plugins/aci.py:433
 msgid "comma-separated list of permissions to grant(read, write, add, delete, all)"
-msgstr "Liste séparée par des virgules de permissions à accorder (read, write, add, delete, all)"
+msgstr ""
+"Liste séparée par des virgules de permissions à accorder (read, write, add, "
+"delete, all)"
 
 #: ipalib/plugins/aci.py:439 ipalib/plugins/delegation.py:119
 #: ipalib/plugins/permission.py:124 ipalib/plugins/selfservice.py:92
@@ -513,12 +515,12 @@ msgid ""
 "\n"
 "        Execute the aci-delete operation.\n"
 "\n"
-"        :param aciname: The name of the ACI being deleted.\n"
+"        :param aciname: The name of the ACI being added.\n"
 "        :param kw: unused\n"
 "        "
 msgstr ""
 "\n"
-"        Éxecuter l'opération aci-delete.\n"
+"        Exécute l'opération aci-delete.\n"
 "\n"
 "        :param aciname: Le nom de l'ACI à supprimer.\n"
 "        :param kw: inutilisé\n"
@@ -779,8 +781,7 @@ msgstr ""
 "\n"
 "    L'import échoera si une entrée dupliquée est trouvée. Pour une\n"
 "    utilisation continue où les erreurs sont ignorées, utiliser l'option\n"
-"    --continue."
-"\n"
+"    --continue.\n"
 "Cartes :\n"
 "\n"
 "  Créer une nouvelle carte, \"auto.share\" :\n"
@@ -905,7 +906,9 @@ msgstr "Fichier maître automount"
 
 #: ipalib/plugins/automount.py:322
 msgid "Continuous operation mode. Errors are reported but the process continues."
-msgstr "Mode opération continue. Les erreurs seront rapportées mais le processus continuera."
+msgstr ""
+"Mode opération continue. Les erreurs seront rapportées mais le processus "
+"continuera."
 
 #: ipalib/plugins/automount.py:334
 msgid "File %(file)s not found"
@@ -1043,8 +1046,8 @@ msgid ""
 "The key,info pair must be unique. A key named %(key)s with info %(info)s "
 "already exists"
 msgstr ""
-"La paire key,info doit être unique. Une clé nommée %(key)s avec l'information %(info)s "
-"existe déjà."
+"La paire key,info doit être unique. Une clé nommée %(key)s avec "
+"l'information %(info)s existe déjà."
 
 #: ipalib/plugins/automount.py:608
 msgid "key named %(key)s already exists"
@@ -1432,8 +1435,8 @@ msgid ""
 "Display the access rights of this entry (requires --all). See ipa man page "
 "for details."
 msgstr ""
-"Affiche les droits d'accès sur cette entrée (requiert --all). Cf. la page de "
-"manuel de ipa pour plus d'informations."
+"Affiche les droits d'accès sur cette entrée (requiert --all). Cf. la page de"
+" manuel de ipa pour plus d'informations."
 
 #: ipalib/plugins/baseldap.py:821
 msgid ""
@@ -1651,7 +1654,9 @@ msgstr "Commandes imbriquées à exécuter"
 
 #: ipalib/plugins/batch.py:68 ipalib/frontend.py:861
 msgid "Client version. Used to determine if server will accept request."
-msgstr "Version du client. Utilisée pour déterminer si le serveur acceptera la requête."
+msgstr ""
+"Version du client. Utilisée pour déterminer si le serveur acceptera la "
+"requête."
 
 #: ipalib/plugins/cert.py:22
 msgid ""
@@ -1728,8 +1733,7 @@ msgstr ""
 "dogtag utilise uniquement la valeur du CN du CSR, et remplace le reste du sujet.\n"
 "\n"
 "Un certificat est stocké avec un principal de service, qui requiert\n"
-"lui un système."
-"\n"
+"lui un système.\n"
 "Afin de demander un certificat  :\n"
 "\n"
 "* Le système doit exister\n"
@@ -2081,11 +2085,9 @@ msgstr ""
 "                        utilisateurs\n"
 "\n"
 "Options de recherches. Celles-ci modifient le comportement de la recherche\n"
-"et le nombre d'entrées renvoyées."
-"\n"
+"et le nombre d'entrées renvoyées.\n"
 "  --searchtimelimit=INT Durée maximale (sec.) allouée à une recherche\n"
-"                        (> 0 ou -1 pour illimitée)."
-"  --searchrecordslimit=INT Nombre maximal d'entrées à rechercher\n"
+"                        (> 0 ou -1 pour illimitée).  --searchrecordslimit=INT Nombre maximal d'entrées à rechercher\n"
 "                        (-1 pour illimité).\n"
 "\n"
 "\n"
@@ -2183,11 +2185,15 @@ msgstr "Champs de recherche utilisateur"
 
 #: ipalib/plugins/config.py:134
 msgid "A comma-separated list of fields to search when searching for users."
-msgstr "Une liste séparée par des virgules de champs à rechercher lors d'une recherche d'utilisateurs."
+msgstr ""
+"Une liste séparée par des virgules de champs à rechercher lors d'une "
+"recherche d'utilisateurs."
 
 #: ipalib/plugins/config.py:139
 msgid "A comma-separated list of fields to search when searching for groups."
-msgstr "Une liste séparée par des virgules de champs à rechercher lors d'une recherche de groupes."
+msgstr ""
+"Une liste séparée par des virgules de champs à rechercher lors d'une "
+"recherche de groupes."
 
 #: ipalib/plugins/config.py:143
 msgid "Migration mode"
@@ -2211,7 +2217,9 @@ msgstr "Classes d'objets par défaut pour les groupes"
 
 #: ipalib/plugins/config.py:155
 msgid "Default group objectclassses (comma-separated list)."
-msgstr "Classes d'objets par défaut pour les groupes (liste séparée par des virgules)."
+msgstr ""
+"Classes d'objets par défaut pour les groupes (liste séparée par des "
+"virgules)."
 
 #: ipalib/plugins/config.py:159
 msgid "Default user objectclasses"
@@ -2219,7 +2227,9 @@ msgstr "Classes d'objets par défaut pour les utilisateurs"
 
 #: ipalib/plugins/config.py:160
 msgid "Default user objectclassses (comma-separated list)."
-msgstr "Classes d'objets par défaut pour les utilisateurs (liste séparée par des virgules)."
+msgstr ""
+"Classes d'objets par défaut pour les utilisateurs (liste séparée par des "
+"virgules)."
 
 #: ipalib/plugins/config.py:164
 msgid "Password Expiration Notification"
@@ -2227,7 +2237,9 @@ msgstr "Notification d'expiration des mots de passe"
 
 #: ipalib/plugins/config.py:165
 msgid "Number of days's notice of impending password expiration."
-msgstr "Nombre de jours pour les avertissements de futures expirations de mots de passe."
+msgstr ""
+"Nombre de jours pour les avertissements de futures expirations de mots de "
+"passe."
 
 #: ipalib/plugins/config.py:170
 msgid "Password plugin features"
@@ -2371,8 +2383,8 @@ msgid ""
 "Comma-separated list of permissions to grant (read, write). Default is "
 "write."
 msgstr ""
-"Liste séparée par des virgules des permissions à accorder (read, write). "
-"La valeur par défaut est write."
+"Liste séparée par des virgules des permissions à accorder (read, write). La "
+"valeur par défaut est write."
 
 #: ipalib/plugins/delegation.py:125
 msgid "Member user group"
@@ -2747,7 +2759,9 @@ msgstr "Forcer"
 
 #: ipalib/plugins/dns.py:388
 msgid "Force DNS zone creation even if nameserver not in DNS."
-msgstr "Forcer la création de la zone DNS zone même si le serveur de nom n'est pas dans le DNS."
+msgstr ""
+"Forcer la création de la zone DNS zone même si le serveur de nom n'est pas "
+"dans le DNS."
 
 #: ipalib/plugins/dns.py:391
 msgid "Add the nameserver to DNS with this IP address"
@@ -2897,23 +2911,29 @@ msgstr ""
 
 #: ipalib/plugins/dns.py:699
 msgid "force NS record creation even if its hostname is not in DNS"
-msgstr "forcer la création d'un enregistrement NS même si le nom du système n'est pas dans le DNS"
+msgstr ""
+"forcer la création d'un enregistrement NS même si le nom du système n'est "
+"pas dans le DNS"
 
 #: ipalib/plugins/dns.py:735
 msgid ""
 "Reverse zone for PTR record should be a sub-zone of one the following fully "
 "qualified domains: %s"
 msgstr ""
-"La zone inverse pour l'enregistrement PTR doit être une sous-zone de l'un des "
-"domaines suivants pleinement qualifiés : %s"
+"La zone inverse pour l'enregistrement PTR doit être une sous-zone de l'un "
+"des domaines suivants pleinement qualifiés : %s"
 
 #: ipalib/plugins/dns.py:740
 msgid "Reverse zone %s requires exactly %d IP address components, %d given"
-msgstr "La zone inverse %s requiert exactement %d composantes adresses IP, %d spécifiées"
+msgstr ""
+"La zone inverse %s requiert exactement %d composantes adresses IP, %d "
+"spécifiées"
 
 #: ipalib/plugins/dns.py:746
 msgid "PTR record '%s' is not fully qualified (check traling '.')"
-msgstr "L'enregistrement PTR '%s' n'est pas pleinement qualifié (vérifier la présence du '.' final)"
+msgstr ""
+"L'enregistrement PTR '%s' n'est pas pleinement qualifié (vérifier la "
+"présence du '.' final)"
 
 #: ipalib/plugins/dns.py:789
 msgid ""
@@ -3231,7 +3251,7 @@ msgid ""
 "\n"
 "Manage groups of users. By default, new groups are POSIX groups. You\n"
 "can add the --nonposix option to the group-add command to mark a new group\n"
-"as non-POSIX. You can use --posix argument to the group-mod command\n"
+"as non-POSIX, and you can use the same argument to the group-mod command\n"
 "to convert a non-POSIX group to a POSIX group. POSIX groups cannot be\n"
 "converted to non-POSIX groups.\n"
 "\n"
@@ -3939,8 +3959,7 @@ msgstr ""
 "Services HBAC\n"
 "\n"
 "Les services PAM dont le système HBAC peut contrôler l'accès. Le nom\n"
-"utilisé ici doit correspondre au nom de service utilisé par PAM."
-"\n"
+"utilisé ici doit correspondre au nom de service utilisé par PAM.\n"
 "EXEMPLES:\n"
 "\n"
 " Ajouter un nouveau service HBAC :\n"
@@ -4599,6 +4618,35 @@ msgid ""
 " Delete a hostgroup:\n"
 "   ipa hostgroup-del baltimore\n"
 msgstr ""
+"FIXME "
+"\n"
+"Groupes de systèmes.\n"
+"\n"
+"Gestion des groupes de systèmes. Permet d'appliquer des contrôles d'accès\n"
+"à plusieurs systèmes en utilisant les contrôles HBAC.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter un nouveau groupe de systèmes :\n"
+"   ipa hostgroup-add --desc=\"Systèmes de Baltimore\" baltimore\n"
+"\n"
+" Ajouter un nouveau groupe de systèmes :\n"
+"   ipa hostgroup-add --desc=\"Systèmes du Maryland\" maryland\n"
+"\n"
+" Ajouter des membres à un groupe de systèmes :\n"
+"   ipa hostgroup-add-member --hosts=box1,box2,box3 baltimore\n"
+"\n"
+" Ajouter un groupe de systèmes en tant que membre d'un autre :\n"
+"   ipa hostgroup-add-member --hostgroups=baltimore maryland\n"
+"\n"
+" Supprimer un système d'un groupe :\n"
+"   ipa hostgroup-remove-member --hosts=box2 baltimore\n"
+"\n"
+" Afficher un groupe de systèmes :\n"
+"   ipa hostgroup-show baltimore\n"
+"\n"
+" Supprimer un groupe de systèmes :\n"
+"   ipa hostgroup-del baltimore\n"
 
 #: ipalib/plugins/hostgroup.py:55
 msgid ""
@@ -4606,18 +4654,21 @@ msgid ""
 "    Hostgroup object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:78
 msgid "Host-group"
-msgstr ""
+msgstr "Groupe de systèmes"
 
 #: ipalib/plugins/hostgroup.py:79
 msgid "Name of host-group"
-msgstr ""
+msgstr "Nom du groupe de systèmes"
 
 #: ipalib/plugins/hostgroup.py:86
 msgid "A description of this host-group"
-msgstr ""
+msgstr "Description de ce groupe de systèmes"
 
 #: ipalib/plugins/hostgroup.py:94
 msgid ""
@@ -4625,10 +4676,13 @@ msgid ""
 "    Add a new hostgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:98
 msgid "Added hostgroup \"%(value)s\""
-msgstr ""
+msgstr "Groupe de systèmes \"%(value)s\" ajouté"
 
 #: ipalib/plugins/hostgroup.py:104
 msgid ""
@@ -4636,10 +4690,13 @@ msgid ""
 "    Delete a hostgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:108
 msgid "Deleted hostgroup \"%(value)s\""
-msgstr ""
+msgstr "Groupe de systèmes \"%(value)s\" supprimé"
 
 #: ipalib/plugins/hostgroup.py:114
 msgid ""
@@ -4647,10 +4704,13 @@ msgid ""
 "    Modify a hostgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:118
 msgid "Modified hostgroup \"%(value)s\""
-msgstr ""
+msgstr "Groupe de systèmes \"%(value)s\" modifié"
 
 #: ipalib/plugins/hostgroup.py:124
 msgid ""
@@ -4658,12 +4718,15 @@ msgid ""
 "    Search for hostgroups.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher un groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:128
 msgid "%(count)d hostgroup matched"
 msgid_plural "%(count)d hostgroups matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d groupe de systèmes correspondant"
+msgstr[1] "%(count)d groupes de systèmes correspondants"
 
 #: ipalib/plugins/hostgroup.py:136
 msgid ""
@@ -4671,6 +4734,9 @@ msgid ""
 "    Display information about a hostgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations d'un groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:144
 msgid ""
@@ -4678,6 +4744,9 @@ msgid ""
 "    Add members to a hostgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/hostgroup.py:152
 msgid ""
@@ -4685,12 +4754,17 @@ msgid ""
 "    Remove members from a hostgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des membres d'un groupe de systèmes.\n"
+"    "
 
 #: ipalib/plugins/internal.py:22
 msgid ""
 "\n"
 "Plugins not accessible directly through the CLI, commands used internally\n"
 msgstr ""
+"\n"
+"Les greffons ne sont pas accessibles directement en ligne de commande, mais utilisés en interne\n"
 
 #: ipalib/plugins/internal.py:36
 msgid ""
@@ -4698,802 +4772,809 @@ msgid ""
 "    Export plugin meta-data for the webUI.\n"
 "    "
 msgstr ""
+"\n"
+"    Exporter les meta-données de greffon pour l'interface web.\n"
+"    "
 
 #: ipalib/plugins/internal.py:44
 msgid "Name of object to export"
-msgstr ""
+msgstr "Nom de l'objet à exporter"
 
 #: ipalib/plugins/internal.py:47
 msgid "Name of method to export"
-msgstr ""
+msgstr "Nom de la méthode à exporter"
 
 #: ipalib/plugins/internal.py:52
 msgid "Dict of JSON encoded IPA Objects"
-msgstr ""
+msgstr "Dictionnaire d'objets IPA encodés JSON"
 
 #: ipalib/plugins/internal.py:53
 msgid "Dict of JSON encoded IPA Methods"
-msgstr ""
+msgstr "Dictionnaire de méthode IPA encodées JSON"
 
 #: ipalib/plugins/internal.py:96
 msgid "Logged In As"
-msgstr ""
+msgstr "Connecté en tant que"
 
 #: ipalib/plugins/internal.py:99
 msgid "Attribute"
-msgstr ""
+msgstr "Attribut"
 
 #: ipalib/plugins/internal.py:102
 msgid "Add Automount Location"
-msgstr ""
+msgstr "Ajouter un lieu d'automontage"
 
 #: ipalib/plugins/internal.py:103
 msgid "Automount Location Settings"
-msgstr ""
+msgstr "Détail d'un lieu d'automontage"
 
 #: ipalib/plugins/internal.py:106
 msgid "Add Automount Map"
-msgstr ""
+msgstr "Ajouter une carte d'automontage"
 
 #: ipalib/plugins/internal.py:109
 msgid "Add Automount Key"
-msgstr ""
+msgstr "Ajouter une clé d'automontage"
 
 #: ipalib/plugins/internal.py:112
 msgid "Unspecified"
-msgstr ""
+msgstr "Non-spécifié"
 
 #: ipalib/plugins/internal.py:113
 msgid "Key Compromise"
-msgstr ""
+msgstr "Clé compromise"
 
 #: ipalib/plugins/internal.py:114
 msgid "CA Compromise"
-msgstr ""
+msgstr "AC compromise"
 
 #: ipalib/plugins/internal.py:115
 msgid "Affiliation Changed"
-msgstr ""
+msgstr "L'affiliation a changé"
 
 #: ipalib/plugins/internal.py:116
 msgid "Superseded"
-msgstr ""
+msgstr "Obsolète"
 
 #: ipalib/plugins/internal.py:117
 msgid "Cessation of Operation"
-msgstr ""
+msgstr "Cessation d'activité"
 
 #: ipalib/plugins/internal.py:118
 msgid "Certificate Hold"
-msgstr ""
+msgstr "Certificat bloqué"
 
 #: ipalib/plugins/internal.py:119
 msgid "Remove from CRL"
-msgstr ""
+msgstr "Retrait de la LRC"
 
 #: ipalib/plugins/internal.py:120
 msgid "Privilege Withdrawn"
-msgstr ""
+msgstr "Privilège retiré"
 
 #: ipalib/plugins/internal.py:121
 msgid "AA Compromise"
-msgstr ""
+msgstr "Autorité d'attribut compromise"
 
 #: ipalib/plugins/internal.py:122
 msgid ""
 "To confirm your intention to revoke this certificate, select a reason from "
 "the pull-down list, and click the \"Revoke\" button."
 msgstr ""
+"Afin de confirmer votre intention de révoquer ce certificat, sélectionner "
+"une raison dans la liste, puis de cliquer sur le bouton \"Révoquer\"."
 
 #: ipalib/plugins/internal.py:124
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ipalib/plugins/internal.py:125
 msgid "Reason for Revocation"
-msgstr ""
+msgstr "Raison de la révocation"
 
 #: ipalib/plugins/internal.py:126
 msgid ""
 "To confirm your intention to restore this certificate, click the \"Restore\""
 " button."
-msgstr ""
+msgstr "Afin de confirmer votre intention de restaurer ce certificat, cliquer sur le bouton \"Restaurer\"."
 
 #: ipalib/plugins/internal.py:128
 msgid "Issued To"
-msgstr ""
+msgstr "Émis pour"
 
 #: ipalib/plugins/internal.py:129
 msgid "Common Name"
-msgstr ""
+msgstr "Nom usuel"
 
 #: ipalib/plugins/internal.py:130
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: ipalib/plugins/internal.py:131
 msgid "Organizational Unit"
-msgstr ""
+msgstr "Unité organisationnelle"
 
 #: ipalib/plugins/internal.py:133
 msgid "Issued By"
-msgstr ""
+msgstr "Émis par"
 
 #: ipalib/plugins/internal.py:134
 msgid "Validity"
-msgstr ""
+msgstr "Validité"
 
 #: ipalib/plugins/internal.py:135
 msgid "Issued On"
-msgstr ""
+msgstr "Émis le"
 
 #: ipalib/plugins/internal.py:136
 msgid "Expires On"
-msgstr ""
+msgstr "Expire le"
 
 #: ipalib/plugins/internal.py:137
 msgid "Fingerprints"
-msgstr ""
+msgstr "Condensés"
 
 #: ipalib/plugins/internal.py:138
 msgid "SHA1 Fingerprint"
-msgstr ""
+msgstr "Condensé SHA1"
 
 #: ipalib/plugins/internal.py:139
 msgid "MD5 Fingerprint"
-msgstr ""
+msgstr "Condensé MD5"
 
 #: ipalib/plugins/internal.py:140
 msgid "Enter the Base64-encoded CSR below"
-msgstr ""
+msgstr "Copier le CSR encodé en base 64 ci-dessous"
 
 #: ipalib/plugins/internal.py:141
 msgid "Valid Certificate Present"
-msgstr ""
+msgstr "Certificat validé présent"
 
 #: ipalib/plugins/internal.py:142
 msgid "New Certificate"
-msgstr ""
+msgstr "Nouveau certificat"
 
 #: ipalib/plugins/internal.py:143
 msgid "Certificate Revoked"
-msgstr ""
+msgstr "Certificat révoqué"
 
 #: ipalib/plugins/internal.py:144
 msgid "No Valid Certificate"
-msgstr ""
+msgstr "Pas de certificat valide"
 
 #: ipalib/plugins/internal.py:145
 msgid "Certificate for ${entity} ${primary_key}"
-msgstr ""
+msgstr "Certificat pour l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:146
 msgid "Issue New Certificate for ${entity} ${primary_key}"
-msgstr ""
+msgstr "Émettre un nouveau certificat pour l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:147
 msgid "Revoke Certificate for ${entity} ${primary_key}"
-msgstr ""
+msgstr "Révoquer un certificat pour l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:148
 msgid "Restore Certificate for ${entity} ${primary_key}"
-msgstr ""
+msgstr "Restaurer un certificat pour ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:152
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ipalib/plugins/internal.py:155
 msgid "Add Delegation"
-msgstr ""
+msgstr "Ajouter une délégation"
 
 #: ipalib/plugins/internal.py:158
 msgid "Add DNS Zone"
-msgstr ""
+msgstr "Ajouter une zone DNS"
 
 #: ipalib/plugins/internal.py:159
 msgid "DNS Zone Settings"
-msgstr ""
+msgstr "Paramètres de zone DNS"
 
 #: ipalib/plugins/internal.py:162
 msgid "Add DNS Resource Record"
-msgstr ""
+msgstr "Ajouter un enregistrement de ressource DNS"
 
 #: ipalib/plugins/internal.py:163
 msgid "Resource"
-msgstr ""
+msgstr "Ressource"
 
 #: ipalib/plugins/internal.py:165
 msgid "Data"
-msgstr ""
+msgstr "Données"
 
 #: ipalib/plugins/internal.py:166
 msgid "Records for DNS Zone"
-msgstr ""
+msgstr "Enregistrements pour la zone DNS"
 
 #: ipalib/plugins/internal.py:169
 msgid "Add Group"
-msgstr ""
+msgstr "Ajouter un groupe"
 
 #: ipalib/plugins/internal.py:170
 msgid "Group Settings"
-msgstr ""
+msgstr "Paramètres de groupe"
 
 #: ipalib/plugins/internal.py:171 ipalib/plugins/internal.py:206
 msgid "Is this a POSIX group?"
-msgstr ""
+msgstr "Ce groupe est-il POSIX ?"
 
 #: ipalib/plugins/internal.py:174
 msgid "Add HBAC Rule"
-msgstr ""
+msgstr "Ajouter une règle HBAC"
 
 #: ipalib/plugins/internal.py:175 ipalib/plugins/internal.py:280
 #: ipalib/plugins/internal.py:306
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #: ipalib/plugins/internal.py:176 ipalib/plugins/internal.py:282
 msgid "Allow"
-msgstr ""
+msgstr "Autoriser"
 
 #: ipalib/plugins/internal.py:177 ipalib/plugins/internal.py:283
 msgid "Deny"
-msgstr ""
+msgstr "Interdire"
 
 #: ipalib/plugins/internal.py:178 ipalib/plugins/internal.py:281
 #: ipalib/plugins/internal.py:308
 msgid "Inactive"
-msgstr ""
+msgstr "Inactif"
 
 #: ipalib/plugins/internal.py:179 ipalib/plugins/internal.py:296
 msgid "Rule status"
-msgstr ""
+msgstr "État de la règle"
 
 #: ipalib/plugins/internal.py:180 ipalib/plugins/internal.py:284
 msgid "Who"
-msgstr ""
+msgstr "Qui"
 
 #: ipalib/plugins/internal.py:181 ipalib/plugins/internal.py:285
 msgid "Anyone"
-msgstr ""
+msgstr "N'importe qui"
 
 #: ipalib/plugins/internal.py:182 ipalib/plugins/internal.py:286
 msgid "Specified Users and Groups"
-msgstr ""
+msgstr "Utilisateurs et groupes spécifiques"
 
 #: ipalib/plugins/internal.py:183
 msgid "Accessing"
-msgstr ""
+msgstr "Accédant à"
 
 #: ipalib/plugins/internal.py:184 ipalib/plugins/internal.py:288
 msgid "Any Host"
-msgstr ""
+msgstr "N'importe quel système"
 
 #: ipalib/plugins/internal.py:185 ipalib/plugins/internal.py:289
 msgid "Specified Hosts and Groups"
-msgstr ""
+msgstr "Systèmes et groupes spécifiques"
 
 #: ipalib/plugins/internal.py:186
 msgid "Via Service"
-msgstr ""
+msgstr "Via le service"
 
 #: ipalib/plugins/internal.py:187
 msgid "Any Service"
-msgstr ""
+msgstr "N'importe quel service"
 
 #: ipalib/plugins/internal.py:188
 msgid "Specified Services and Groups"
-msgstr ""
+msgstr "Services et groupes spécifiques"
 
 #: ipalib/plugins/internal.py:189
 msgid "From"
-msgstr ""
+msgstr "Depuis"
 
 #: ipalib/plugins/internal.py:192
 msgid "Add HBAC Service"
-msgstr ""
+msgstr "Ajouter un service HBAC"
 
 #: ipalib/plugins/internal.py:195
 msgid "Add HBAC Service Group"
-msgstr ""
+msgstr "Ajouter un groupe de services HBAC"
 
 #: ipalib/plugins/internal.py:199
 msgid "Add Host"
-msgstr ""
+msgstr "Ajouter un système"
 
 #: ipalib/plugins/internal.py:200
 msgid "Host Certificate"
-msgstr ""
+msgstr "Certificat de système"
 
 #: ipalib/plugins/internal.py:201 ipalib/plugins/internal.py:259
 msgid "Host Name"
-msgstr ""
+msgstr "Nom de système"
 
 #: ipalib/plugins/internal.py:202
 msgid "Host Settings"
-msgstr ""
+msgstr "Paramètres de système"
 
 #: ipalib/plugins/internal.py:203
 msgid "Enrolled?"
-msgstr ""
+msgstr "Inscrit ?"
 
 #: ipalib/plugins/internal.py:204
 msgid "Enrollment"
-msgstr ""
+msgstr "Inscription"
 
 #: ipalib/plugins/internal.py:205
 msgid "Fully Qualified Host Name"
-msgstr ""
+msgstr "Nom de système pleinement qualifié"
 
 #: ipalib/plugins/internal.py:207 ipalib/plugins/internal.py:262
 msgid "Status"
-msgstr ""
+msgstr "État"
 
 #: ipalib/plugins/internal.py:208
 msgid "Kerberos Key Present, Host Provisioned"
-msgstr ""
+msgstr "Clé Kerberos présente, système provisionné"
 
 #: ipalib/plugins/internal.py:209 ipalib/plugins/internal.py:264
 msgid "Delete Key, Unprovision"
-msgstr ""
+msgstr "Supprimer la clé, décommissionner"
 
 #: ipalib/plugins/internal.py:210 ipalib/plugins/internal.py:265
 msgid "Kerberos Key Not Present"
-msgstr ""
+msgstr "Clé Kerberos absente"
 
 #: ipalib/plugins/internal.py:211
 msgid "Enroll via One-Time-Password"
-msgstr ""
+msgstr "Inscription via mot de passe à usage unique"
 
 #: ipalib/plugins/internal.py:212
 msgid "Set OTP"
-msgstr ""
+msgstr "Paramétrer le mot de passe à usage unique"
 
 #: ipalib/plugins/internal.py:213
 msgid "One-Time-Password has been set."
-msgstr ""
+msgstr "Le mot de passe à usage unique est paramétré."
 
 #: ipalib/plugins/internal.py:214 ipalib/plugins/internal.py:266
 msgid "Unprovisioning ${entity}"
-msgstr ""
+msgstr "Décommissionnement de l'objet ${entity}"
 
 #: ipalib/plugins/internal.py:215
 msgid "Are you sure you want to unprovision this host?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir décommissionner ce système ?"
 
 #: ipalib/plugins/internal.py:216 ipalib/plugins/internal.py:268
 msgid "Unprovision"
-msgstr ""
+msgstr "Décommissioner"
 
 #: ipalib/plugins/internal.py:219
 msgid "Add Host Group"
-msgstr ""
+msgstr "Ajouter un groupe de systèmes"
 
 #: ipalib/plugins/internal.py:220
 msgid "Host Group Settings"
-msgstr ""
+msgstr "Paramètres du groupe de systèmes"
 
 #: ipalib/plugins/internal.py:223
 msgid "Kerberos ticket policy"
-msgstr ""
+msgstr "Politique des tickets Kerberos"
 
 #: ipalib/plugins/internal.py:226
 msgid "Add Netgroup"
-msgstr ""
+msgstr "Ajouter un netgroup"
 
 #: ipalib/plugins/internal.py:227
 msgid "Netgroup Settings"
-msgstr ""
+msgstr "Paramètres du netgroup"
 
 #: ipalib/plugins/internal.py:230
 msgid "Add Permission"
-msgstr ""
+msgstr "Ajouter une permission"
 
 #: ipalib/plugins/internal.py:231 ipalib/plugins/internal.py:376
 msgid "Identity"
-msgstr ""
+msgstr "Identité"
 
 #: ipalib/plugins/internal.py:233
 msgid "Target"
-msgstr ""
+msgstr "Cible"
 
 #: ipalib/plugins/internal.py:235
 msgid "By Subtree"
-msgstr ""
+msgstr "Par sous-arbre"
 
 #: ipalib/plugins/internal.py:236
 msgid "Target Group"
-msgstr ""
+msgstr "Groupe cible"
 
 #: ipalib/plugins/internal.py:237
 msgid "Object By Type"
-msgstr ""
+msgstr "Objet par type"
 
 #: ipalib/plugins/internal.py:238
 msgid "Permission with invalid target specification"
-msgstr ""
+msgstr "Permission avec spécification de cible invalide"
 
 #: ipalib/plugins/internal.py:241
 msgid "Add Privilege"
-msgstr ""
+msgstr "Ajouter un privilège"
 
 #: ipalib/plugins/internal.py:242
 msgid "Privilege Settings"
-msgstr ""
+msgstr "Paramètres du privilège"
 
 #: ipalib/plugins/internal.py:245
 msgid "Add Password Policy"
-msgstr ""
+msgstr "Ajouter une politique de gestion des mots de passe"
 
 #: ipalib/plugins/internal.py:246 ipalib/plugins/pwpolicy.py:219
 msgid "Password Policy"
-msgstr ""
+msgstr "Politique de gestion des mots de passe"
 
 #: ipalib/plugins/internal.py:249
 msgid "Add Role"
-msgstr ""
+msgstr "Ajouter un rôle"
 
 #: ipalib/plugins/internal.py:250
 msgid "Role Settings"
-msgstr ""
+msgstr "Paramètres de rôles"
 
 #: ipalib/plugins/internal.py:253
 msgid "Add Self Service Definition"
-msgstr ""
+msgstr "Ajouter une définition Self Service"
 
 #: ipalib/plugins/internal.py:256
 msgid "Add Service"
-msgstr ""
+msgstr "Ajouter un service"
 
 #: ipalib/plugins/internal.py:257
 msgid "Service Certificate"
-msgstr ""
+msgstr "Certificat de service"
 
 #: ipalib/plugins/internal.py:258
 msgid "Service Settings"
-msgstr ""
+msgstr "Paramètres de service"
 
 #: ipalib/plugins/internal.py:260
 msgid "Provisioning"
-msgstr ""
+msgstr "Commissionnement"
 
 #: ipalib/plugins/internal.py:261
 msgid "Service"
-msgstr ""
+msgstr "Service"
 
 #: ipalib/plugins/internal.py:263
 msgid "Kerberos Key Present, Service Provisioned"
-msgstr ""
+msgstr "Clé Kerberos présente, service commissionné"
 
 #: ipalib/plugins/internal.py:267
 msgid "Are you sure you want to unprovision this service?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir décommissionner ce service ?"
 
 #: ipalib/plugins/internal.py:271
 msgid "Add Sudo Command"
-msgstr ""
+msgstr "Ajout d'une commande sudo"
 
 #: ipalib/plugins/internal.py:275
 msgid "Add Sudo Command Group"
-msgstr ""
+msgstr "Ajout d'un groupe de commandes sudo"
 
 #: ipalib/plugins/internal.py:276 ipalib/plugins/sudocmdgroup.py:80
 msgid "Commands"
-msgstr ""
+msgstr "Commandes"
 
 #: ipalib/plugins/internal.py:279
 msgid "Add Sudo Rule"
-msgstr ""
+msgstr "Ajout d'une règle sudo"
 
 #: ipalib/plugins/internal.py:287
 msgid "Access this host"
-msgstr ""
+msgstr "Accède ce système"
 
 #: ipalib/plugins/internal.py:290
 msgid "Run Commands"
-msgstr ""
+msgstr "Exécute les commandes"
 
 #: ipalib/plugins/internal.py:291
 msgid "Any Command"
-msgstr ""
+msgstr "Toute commande"
 
 #: ipalib/plugins/internal.py:292
 msgid "Specified Commands and Groups"
-msgstr ""
+msgstr "Commandes et groupes spécifiés"
 
 #: ipalib/plugins/internal.py:293
 msgid "As Whom"
-msgstr ""
+msgstr "En tant que"
 
 #: ipalib/plugins/internal.py:294
 msgid "Any Group"
-msgstr ""
+msgstr "Tout groupe"
 
 #: ipalib/plugins/internal.py:295
 msgid "Specified Groups"
-msgstr ""
+msgstr "Groupes spécifiés"
 
 #: ipalib/plugins/internal.py:297
 msgid "External"
-msgstr ""
+msgstr "Externe"
 
 #: ipalib/plugins/internal.py:300
 msgid "Add User"
-msgstr ""
+msgstr "Ajouter un utilisateur"
 
 #: ipalib/plugins/internal.py:301
 msgid "Account Settings"
-msgstr ""
+msgstr "Paramètres de compte"
 
 #: ipalib/plugins/internal.py:302
 msgid "Contact Settings"
-msgstr ""
+msgstr "Paramètres de contact"
 
 #: ipalib/plugins/internal.py:303
 msgid "Mailing Address"
-msgstr ""
+msgstr "Adresse postale"
 
 #: ipalib/plugins/internal.py:304
 msgid "Employee Information"
-msgstr ""
+msgstr "Informations employé"
 
 #: ipalib/plugins/internal.py:305
 msgid "Misc. Information"
-msgstr ""
+msgstr "Informations diverses"
 
 #: ipalib/plugins/internal.py:307
 msgid "Click to Deactivate"
-msgstr ""
+msgstr "Cliquer pour désactiver"
 
 #: ipalib/plugins/internal.py:309
 msgid "Click to Activate"
-msgstr ""
+msgstr "Cliquer pour activer"
 
 #: ipalib/plugins/internal.py:310
 msgid "Error changing account status"
-msgstr ""
+msgstr "Erreur lors du changement d'état du compte"
 
 #: ipalib/plugins/internal.py:311
 msgid "Reset Password"
-msgstr ""
+msgstr "Réinitialiser le mot de passe"
 
 #: ipalib/plugins/internal.py:312
 msgid "New Password"
-msgstr ""
+msgstr "Nouveau mot de passe"
 
 #: ipalib/plugins/internal.py:313
 msgid "Repeat Password"
-msgstr ""
+msgstr "Réitérer le mot de passe"
 
 #: ipalib/plugins/internal.py:314
 msgid "Password change complete"
-msgstr ""
+msgstr "Modification du mot de passe terminée"
 
 #: ipalib/plugins/internal.py:315
 msgid "Passwords must match"
-msgstr ""
+msgstr "Les mots de passe doivent correspondre"
 
 #: ipalib/plugins/internal.py:319
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: ipalib/plugins/internal.py:320
 msgid "Add and Add Another"
-msgstr ""
+msgstr "Ajouter, puis ajouter un nouveau"
 
 #: ipalib/plugins/internal.py:321
 msgid "Add and Edit"
-msgstr ""
+msgstr "Ajouter et modifier"
 
 #: ipalib/plugins/internal.py:322
 msgid "Add and Close"
-msgstr ""
+msgstr "Ajouter et fermer"
 
 #: ipalib/plugins/internal.py:323
 msgid "Add Many"
-msgstr ""
+msgstr "Ajouter plusieurs"
 
 #: ipalib/plugins/internal.py:324
 msgid "Back to List"
-msgstr ""
+msgstr "Retour à la liste"
 
 #: ipalib/plugins/internal.py:325
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: ipalib/plugins/internal.py:326
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: ipalib/plugins/internal.py:327
 msgid "Enroll"
-msgstr ""
+msgstr "Inscrire"
 
 #: ipalib/plugins/internal.py:328
 msgid "Find"
-msgstr ""
+msgstr "Rechercher"
 
 #: ipalib/plugins/internal.py:329
 msgid "Get"
-msgstr ""
+msgstr "Obtenir"
 
 #: ipalib/plugins/internal.py:330
 msgid "Issue"
-msgstr ""
+msgstr "Émettre"
 
 #: ipalib/plugins/internal.py:331
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ipalib/plugins/internal.py:332
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: ipalib/plugins/internal.py:333
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: ipalib/plugins/internal.py:334
 msgid "Restore"
-msgstr ""
+msgstr "Restaurer"
 
 #: ipalib/plugins/internal.py:335
 msgid "Retry"
-msgstr ""
+msgstr "Réessayer"
 
 #: ipalib/plugins/internal.py:336
 msgid "Revoke"
-msgstr ""
+msgstr "Révoquer"
 
 #: ipalib/plugins/internal.py:337
 msgid "Update"
-msgstr ""
+msgstr "Modifier"
 
 #: ipalib/plugins/internal.py:338
 msgid "View"
-msgstr ""
+msgstr "Voir"
 
 #: ipalib/plugins/internal.py:341
 msgid "Available"
-msgstr ""
+msgstr "Disponible"
 
 #: ipalib/plugins/internal.py:342
 msgid "This page has unsaved changes. Please save or revert."
-msgstr ""
+msgstr "Cette page comporte des modifications non-sauvegardées. Merci de sauvegarder ou de réinitialiser."
 
 #: ipalib/plugins/internal.py:343
 msgid "Dirty"
-msgstr ""
+msgstr "Modifié"
 
 #: ipalib/plugins/internal.py:344
 msgid "Hide already enrolled."
-msgstr ""
+msgstr "Cacher ceux déjà inscrits."
 
 #: ipalib/plugins/internal.py:345
 msgid "Select ${entity} to be removed."
-msgstr ""
+msgstr "Sélectionner l'objet ${entity} à supprimer."
 
 #: ipalib/plugins/internal.py:346
 msgid "Remove ${entity}."
-msgstr ""
+msgstr "Supprimer l'objet ${entity}."
 
 #: ipalib/plugins/internal.py:347
 msgid "Prospective"
-msgstr ""
+msgstr "Potentiel"
 
 #: ipalib/plugins/internal.py:350
 msgid "Managed by"
-msgstr ""
+msgstr "Administré par"
 
 #: ipalib/plugins/internal.py:351
 msgid "Member"
-msgstr ""
+msgstr "Membre"
 
 #: ipalib/plugins/internal.py:352
 msgid "Indirect Member"
-msgstr ""
+msgstr "Membre indirect"
 
 #: ipalib/plugins/internal.py:353
 msgid "Member Of"
-msgstr ""
+msgstr "Membre de"
 
 #: ipalib/plugins/internal.py:354
 msgid "Indirect Member Of"
-msgstr ""
+msgstr "Membre indirect de"
 
 #: ipalib/plugins/internal.py:355 ipalib/plugins/internal.py:359
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: ipalib/plugins/internal.py:358
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: ipalib/plugins/internal.py:362
 msgid "Quick Links"
-msgstr ""
+msgstr "Liens rapides"
 
 #: ipalib/plugins/internal.py:363
 msgid "Select All"
-msgstr ""
+msgstr "Tout sélectionner"
 
 #: ipalib/plugins/internal.py:364
 msgid "Unselect All"
-msgstr ""
+msgstr "Tout déselectionner"
 
 #: ipalib/plugins/internal.py:365
 msgid "Are you sure you want to delete selected entries?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer les entrées sélectionnées ?"
 
 #: ipalib/plugins/internal.py:366
 msgid ""
 "Query returned more results than the configured size limit. Displaying the "
 "first ${counter} results."
 msgstr ""
+"La recherche a retourné plus de résultats que le nombre limite configuré. "
+"Affichage des ${counter} premiers résultats."
 
 #: ipalib/plugins/internal.py:370
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: ipalib/plugins/internal.py:371
 msgid "Identity Settings"
-msgstr ""
+msgstr "Paramètres d'identité"
 
 #: ipalib/plugins/internal.py:372
 msgid "${entity} ${primary_key} Settings"
-msgstr ""
+msgstr "Paramètres de l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:373
 msgid "Back to Top"
-msgstr ""
+msgstr "Haut de page"
 
 #: ipalib/plugins/internal.py:377
 msgid "Policy"
-msgstr ""
+msgstr "Politique"
 
 #: ipalib/plugins/internal.py:378
 msgid "Audit"
-msgstr ""
+msgstr "Audit"
 
 #: ipalib/plugins/internal.py:379
 msgid "IPA Server"
-msgstr ""
+msgstr "Serveur IPA"
 
 #: ipalib/plugins/internal.py:380
 msgid "Sudo"
-msgstr ""
+msgstr "Sudo"
 
 #: ipalib/plugins/internal.py:381
 msgid "Host Based Access Control"
-msgstr ""
+msgstr "Contrôlé d'accès basé sur les systèmes (HBAC)"
 
 #: ipalib/plugins/internal.py:382
 msgid "Role Based Access Control"
-msgstr ""
+msgstr "Contrôle d'accès basé sur les rôles (RBAC)"
 
 #: ipalib/plugins/internal.py:383
 msgid "Automount"
-msgstr ""
+msgstr "Automontage"
 
 #: ipalib/plugins/internal.py:386
 msgid "Add ${other_entity} into ${entity} ${primary_key}"
-msgstr ""
+msgstr "Ajouter un objet ${other_entity} à l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:387
 msgid "${other_entity} enrolled in ${entity} ${primary_key}"
-msgstr ""
+msgstr "Objet ${other_entity} ajouté à l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:388
 msgid "${entity} ${primary_key} is enrolled in the following ${other_entity}"
-msgstr ""
+msgstr "Objet ${entity} ${primary_key} est ajouté à l'objet ${other_entity} suivant"
 
 #: ipalib/plugins/internal.py:389
 msgid "Remove ${other_entity} from ${entity} ${primary_key}"
-msgstr ""
+msgstr "Supprimer l'objet ${other_entity} de l'objet ${entity} ${primary_key}"
 
 #: ipalib/plugins/internal.py:392
 msgid "Text does not match field pattern"
-msgstr ""
+msgstr "Le texte ne correspond pas au motif de champ"
 
 #: ipalib/plugins/internal.py:395
 msgid ""
@@ -5502,10 +5583,15 @@ msgid ""
 "href='/ipa/config/unauthorized.html'>follow these directions</a> to "
 "configure your browser."
 msgstr ""
+"Votre ticket Kerberos n'est plus valide. Merci de lancer kinit puis de "
+"cliquer sur \"Réessayer\". Si cela est votre première utilisation de "
+"l'interface Web de IPA, merci de <a "
+"href='/ipa/config/unauthorized.html'>suivre les directices suivantes</a> "
+"pour configurer votre navigateur."
 
 #: ipalib/plugins/internal.py:399
 msgid "Dict of I18N messages"
-msgstr ""
+msgstr "Dictionnaire de messages I18N"
 
 #: ipalib/plugins/kerberos.py:20
 msgid ""
@@ -8338,7 +8424,7 @@ msgstr ""
 
 #: ipaserver/plugins/selfsign.py:189
 msgid "certutil failure"
-msgstr ""
+msgstr "échec de certutil"
 
 #: ipa-client/config.c:55
 #, c-format
@@ -8358,7 +8444,7 @@ msgstr ""
 #: ipa-client/config.c:79
 #, c-format
 msgid "read error\n"
-msgstr ""
+msgstr "erreur en lecture\n"
 
 #: ipa-client/ipa-getkeytab.c:85 ipa-client/ipa-getkeytab.c:821
 #: ipa-client/ipa-rmkeytab.c:190
@@ -8374,12 +8460,12 @@ msgstr ""
 #: ipa-client/ipa-getkeytab.c:155
 #, c-format
 msgid "Out of memory!?\n"
-msgstr ""
+msgstr "Mémoire saturée !?\n"
 
 #: ipa-client/ipa-getkeytab.c:173 ipa-client/ipa-getkeytab.c:188
 #, c-format
 msgid "Out of memory\n"
-msgstr ""
+msgstr "Mémoire saturée\n"
 
 #: ipa-client/ipa-getkeytab.c:203
 #, c-format
@@ -8428,12 +8514,12 @@ msgstr ""
 #: ipa-client/ipa-getkeytab.c:507
 #, c-format
 msgid "Out of memory \n"
-msgstr ""
+msgstr "Mémoire saturée\n"
 
 #: ipa-client/ipa-getkeytab.c:545
 #, c-format
 msgid "Out of Memory!\n"
-msgstr ""
+msgstr "Mémoire saturée !\n"
 
 #: ipa-client/ipa-getkeytab.c:552
 #, c-format
@@ -8747,7 +8833,9 @@ msgstr "Le nom du système doit être pleinement qualifié : %s\n"
 #: ipa-client/ipa-join.c:724 ipa-client/ipa-join.c:925
 #, c-format
 msgid "Unable to join host: Kerberos context initialization failed\n"
-msgstr "Impossible d'inscrire le système : échec à l'initialisation du contexte Kerberos\n"
+msgstr ""
+"Impossible d'inscrire le système : échec à l'initialisation du contexte "
+"Kerberos\n"
 
 #: ipa-client/ipa-join.c:732
 #, c-format
@@ -8805,8 +8893,8 @@ msgid ""
 "Unable to join host: Kerberos User Principal not found and host password not"
 " provided.\n"
 msgstr ""
-"Impossible d'inscrire le système : Principal d'utilisateur Kerberos "
-" introuvable et mot de passe non fourni.\n"
+"Impossible d'inscrire le système : Principal d'utilisateur Kerberos  "
+"introuvable et mot de passe non fourni.\n"
 
 #: ipa-client/ipa-join.c:954
 #, c-format
