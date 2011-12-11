@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-11-27 22:16+0100\n"
+"PO-Revision-Date: 2011-12-11 15:45+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -4618,7 +4618,6 @@ msgid ""
 " Delete a hostgroup:\n"
 "   ipa hostgroup-del baltimore\n"
 msgstr ""
-"FIXME "
 "\n"
 "Groupes de systèmes.\n"
 "\n"
@@ -5600,6 +5599,10 @@ msgid ""
 "\n"
 "This wraps the python-kerberos and python-krbV bindings.\n"
 msgstr ""
+"\n"
+"Greffon du moteur Kerberos.\n"
+"\n"
+"Ce greffon habille les API python-kerberos et python-krbV.\n"
 
 #: ipalib/plugins/kerberos.py:35
 msgid ""
@@ -5611,6 +5614,14 @@ msgid ""
 "    encoding/decoding of values going-to/coming-from the bindings.\n"
 "    "
 msgstr ""
+"\n"
+"    Greffon du moteur Kerberos.\n"
+"\n"
+"    Ce greffon habille les API \"krbV\", et à terme celles \"kerberos\".\n"
+"    Point important, ce greffon est aussi chargé de la gestion des\n"
+"    encodages et décodages Unicode des valeurs passant au travers\n"
+"    de ces API.\n"
+"    "
 
 #: ipalib/plugins/kerberos.py:44
 msgid ""
@@ -5618,6 +5629,9 @@ msgid ""
 "        Return the ``krbV.CCache`` for the default credential cache.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie \"krbV.CCache\" pour le cache de crédit par défaut.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:50
 msgid ""
@@ -5625,6 +5639,9 @@ msgid ""
 "        Return the ``krb5.Principal`` for the default credential cache.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie ``krb5.Principal`` pour le cache de crédit par défaut.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:56
 msgid ""
@@ -5632,6 +5649,9 @@ msgid ""
 "        Return the ``krbV.CCache`` for the ``ccname`` credential ccache.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie ``krbV.CCache`` pour le cache de crédit ``ccname``.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:62
 msgid ""
@@ -5639,6 +5659,9 @@ msgid ""
 "        Return the ``krb5.Principal`` for the ``ccname`` credential ccache.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie ``krb5.Principal`` pour le cache de crédit ``ccname``.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:68
 msgid ""
@@ -5651,6 +5674,14 @@ msgid ""
 "        request is processed.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie le nom du fichier de cache de crédit par défaut.\n"
+"\n"
+"        La valeur renvoyée ressemblera à '/tmp/krb5cc_500'.\n"
+"\n"
+"        Aucune valeur significative ne peut être renvoyée si utilisé\n"
+"        dans le serveur pendant le traitement d'une requête.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:79
 msgid ""
@@ -5664,6 +5695,16 @@ msgid ""
 "        request is processed.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie le nom du principal dans le cache des données d'identification.\n"
+"\n"
+"        Renvoie une donnée du type 'admin@EXAMPLE.COM'. Si aucun cache de\n"
+"        données d'authentification n'existe pour l'utilisateur de cette\n"
+"        fonction, la valeur None est renvoyée.\n"
+"\n"
+"        Aucune donnée significative ne peut être renvoyée si le serveur\n"
+"        traite une requête.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:91
 msgid ""
@@ -5677,6 +5718,17 @@ msgid ""
 "        request is processed.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie le nom du domaine du cache des données d'identification\n"
+"        par défaut.\n"
+"\n"
+"        Renvoie une donnée du type 'EXAMPLE.COM'. Si aucun cache de\n"
+"        données d'authentification n'existe pour l'utilisateur de cette\n"
+"        fonction, la valeur None est renvoyée.\n"
+"\n"
+"        Aucune donnée significative ne peut être renvoyée si le serveur\n"
+"        traite une requête.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:103
 msgid ""
@@ -5686,6 +5738,12 @@ msgid ""
 "        This will return something like 'admin@EXAMPLE.COM'.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie le nom du principal du cache des données d'identification\n"
+"        nommé ``ccname ``.\n"
+"\n"
+"        Renvoie une donnée du type 'admin@EXAMPLE.COM'.\n"
+"        "
 
 #: ipalib/plugins/kerberos.py:111
 msgid ""
@@ -5695,6 +5753,12 @@ msgid ""
 "        This will return something like 'EXAMPLE.COM'.\n"
 "        "
 msgstr ""
+"\n"
+"        Renvoie le domaine du cache des données d'identification\n"
+"        nommé ``ccname ``.\n"
+"\n"
+"        Renvoie une donnée du type 'EXAMPLE.COM'.\n"
+"        "
 
 #: ipalib/plugins/krbtpolicy.py:19
 msgid ""
@@ -5735,6 +5799,45 @@ msgid ""
 " Modify per-user policy for user 'admin':\n"
 "  ipa krbtpolicy-mod admin --maxlife=3600\n"
 msgstr ""
+"\n"
+"Politique de ticket Kerberos\n"
+"\n"
+"Il n'existe qu'une unique politique de ticket Kerberos. Cette politique\n"
+"définit la durée de vie maximale des tickets, ainsi que l'âge maximal de\n"
+"renouvellement, période pendant laquelle le ticket est renouvelable.\n"
+"\n"
+"Vous pouvez aussi créer une politique par utilisateur en spécifiant\n"
+"l'identifiant de l'utilisateur.\n"
+"\n"
+"Pour que les changements à la politique globale s'appliquent, il est \n"
+"nécessaire de redémarrer le service KDC, par exemple :\n"
+"\n"
+"service krb5kdc restart\n"
+"\n"
+"Les changements à une politique spécifique à un utilisateur prennent effet\n"
+"immédiatement pour les tickets nouvellement demandés (i.e. quand\n"
+"l'utilisateur lance kinit).\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Affiche la politique actuelle de ticket Kerberos :\n"
+"  ipa krbtpolicy-show\n"
+"\n"
+" Réinitialise la politique aux valeurs par défaut :\n"
+"  ipa krbtpolicy-reset\n"
+"\n"
+" Modifie la politique à 8 heures de durée de vie, 1 journée de durée\n"
+" maximale de renouvellement :\n"
+"  ipa krbtpolicy-mod --maxlife=28800 --maxrenew=86400\n"
+"\n"
+" Affiche la politique actuelle de ticket Kerberos de l'utilisateur 'admin' :\n"
+"  ipa krbtpolicy-show admin\n"
+"\n"
+" Réinitialise la politique de ticket Kerberos de l'utilisateur 'admin' :\n"
+"  ipa krbtpolicy-reset admin\n"
+"\n"
+" Modifie la politique de ticket Kerberos de l'utilisateur 'admin' :\n"
+"  ipa krbtpolicy-mod admin --maxlife=3600\n"
 
 #: ipalib/plugins/krbtpolicy.py:71
 msgid ""
@@ -5742,34 +5845,37 @@ msgid ""
 "    Kerberos Ticket Policy object\n"
 "    "
 msgstr ""
+"\n"
+"    Objet Politique de ticket Kerberos\n"
+"    "
 
 #: ipalib/plugins/krbtpolicy.py:79
 msgid "Kerberos Ticket Policy"
-msgstr ""
+msgstr "Politique de ticket Kerberos"
 
 #: ipalib/plugins/krbtpolicy.py:84 ipalib/plugins/passwd.py:53
 msgid "User name"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 #: ipalib/plugins/krbtpolicy.py:85
 msgid "Manage ticket policy for specific user"
-msgstr ""
+msgstr "Administre la politique de ticket d'un utilisateur spécifique"
 
 #: ipalib/plugins/krbtpolicy.py:90
 msgid "Max life"
-msgstr ""
+msgstr "Vie max."
 
 #: ipalib/plugins/krbtpolicy.py:91
 msgid "Maximum ticket life (seconds)"
-msgstr ""
+msgstr "Durée de vie maximale (secondes)"
 
 #: ipalib/plugins/krbtpolicy.py:96
 msgid "Max renew"
-msgstr ""
+msgstr "Renouvellement max."
 
 #: ipalib/plugins/krbtpolicy.py:97
 msgid "Maximum renewable age (seconds)"
-msgstr ""
+msgstr "Âge maximale de renouvellement (secondes)"
 
 #: ipalib/plugins/krbtpolicy.py:111
 msgid ""
@@ -5777,6 +5883,9 @@ msgid ""
 "    Modify Kerberos ticket policy.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifie la politique de ticket Kerberos.\n"
+"    "
 
 #: ipalib/plugins/krbtpolicy.py:125
 msgid ""
@@ -5784,6 +5893,9 @@ msgid ""
 "    Display the current Kerberos ticket policy.\n"
 "    "
 msgstr ""
+"\n"
+"    Affiche la politique de ticket Kerberos actuelle.\n"
+"    "
 
 #: ipalib/plugins/krbtpolicy.py:149
 msgid ""
@@ -5791,6 +5903,9 @@ msgid ""
 "    Reset Kerberos ticket policy to the default values.\n"
 "    "
 msgstr ""
+"\n"
+"    Réinitialise la politique de ticket Kerberos aux valeurs par défaut.\n"
+"    "
 
 #: ipalib/plugins/migration.py:19
 msgid ""
@@ -5834,16 +5949,58 @@ msgid ""
 " group data from an IPA v1 server:\n"
 "   ipa migrate-ds --user-container='cn=users,cn=accounts' --group-container='cn=groups,cn=accounts' ldap://ds.example.com:389\n"
 msgstr ""
+"\n"
+"Migration vers IPA\n"
+"\n"
+"Migre les utilisateurs et groupes d'un serveur LDAP vers IPA.\n"
+"\n"
+"Utilise le requêtage d'utilisateurs et groupes LDAP sur un conteneur\n"
+"d'un serveur distant. Pour la migration des mots de passe, vous devez\n"
+"utiliser un utilisateur ayant le droit de lire l'attribut userPassword\n"
+"sur le serveur distant. Ce droit est généralement réservé aux administrateurs\n"
+"de haut niveau comme cn=Directory Manager dans 389-ds (valeur utilisée\n"
+"par défaut).\n"
+"\n"
+"Le conteneur par défaut des utilisateurs est ou=People.\n"
+"\n"
+"Le conteneur par défaut des groupes est ou=Groups.\n"
+"\n"
+"Les utilisateurs et groupes existant déjà sur le serveur IPA sont sautés.\n"
+"\n"
+"Deux schemas LDAP définissent la façon de stocker des groupes : RFC2307\n"
+"et RFC2307bis. RFC2307bis utilise les attributs member et uniquemember\n"
+"pour spécifier les membres, RFC2307 utilise memberUid. Le schéma utilisé\n"
+"par défaut pour la migration est RFC2307bis.\n"
+"\n"
+"Les utilisateurs migrés n'ont pas d'autorisations Kerberos, uniquement\n"
+"leur mot de passe LDAP. Afin de terminer le processus de migration, les\n"
+"utilisateurs devront se connecter à http://ipa.example.com/ipa/migration\n"
+"et s'authentifier à l'aide de leur mot de passe pour créer les informations\n"
+"d'authentification Kerberos.\n"
+"\n"
+"La migration est désactivée par défaut. Pour l'activer, utiliser la\n"
+"commande ipa config-mod :\n"
+"\n"
+" ipa config-mod --enable-migration=TRUE\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" La migration la plus simple, utilisant les valeurs par défaut :\n"
+"   ipa migrate-ds ldap://ds.example.com:389\n"
+"\n"
+" Spécifier les conteneurs utilisateurs et groupes. Cela peut être utilisé\n"
+" pour migrer les données d'un serveur IPA v1 :\n"
+"   ipa migrate-ds --user-container='cn=users,cn=accounts' --group-container='cn=groups,cn=accounts' ldap://ds.example.com:389\n"
 
 #: ipalib/plugins/migration.py:78
 msgid "Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
-msgstr ""
+msgstr "Le principal Kerberos %s existe déjà. Utiliser la commande 'ipa user-mod' pour le créer manuellement."
 
 #: ipalib/plugins/migration.py:79
 msgid ""
 "Failed to add user to the default group. Use 'ipa group-add-member' to add "
 "manually."
-msgstr ""
+msgstr "Échec à l'ajout de l'utlisateur dans le groupe par défaut. Utiliser la commande 'ipa group-add-member' pour l'ajouter manuellement."
 
 #: ipalib/plugins/migration.py:175
 msgid ""
@@ -5851,10 +6008,13 @@ msgid ""
 "        Convert usernames in member attributes to work in IPA.\n"
 "        "
 msgstr ""
+"\n"
+"        Convertir les noms d'utilisateurs en attributs member pour permettre le fonctionnement avec IPA.\n"
+"        "
 
 #: ipalib/plugins/migration.py:220
 msgid "Invalid LDAP URI."
-msgstr ""
+msgstr "URI LDAP invalide."
 
 #: ipalib/plugins/migration.py:225
 msgid ""
@@ -5862,84 +6022,89 @@ msgid ""
 "    Migrate users and groups from DS to IPA.\n"
 "    "
 msgstr ""
+"\n"
+"    Migre utilisateurs et groupes de l'annuaire vers IPA.\n"
+"    "
 
 #: ipalib/plugins/migration.py:266
 msgid "LDAP URI"
-msgstr ""
+msgstr "URI LDAP"
 
 #: ipalib/plugins/migration.py:267
 msgid "LDAP URI of DS server to migrate from"
-msgstr ""
+msgstr "URI LDAP du serveur d'annuaire depuis lequel migrer"
 
 #: ipalib/plugins/migration.py:272
 msgid "bind password"
-msgstr ""
+msgstr "mot de passe de connexion"
 
 #: ipalib/plugins/migration.py:279
 msgid "Bind DN"
-msgstr ""
+msgstr "DN de connexion"
 
 #: ipalib/plugins/migration.py:285
 msgid "User container"
-msgstr ""
+msgstr "Conteneur d'utilisateurs"
 
 #: ipalib/plugins/migration.py:286
 msgid "RDN of container for users in DS"
-msgstr ""
+msgstr "RDN du conteneur d'utilisateurs dans l'annuaire"
 
 #: ipalib/plugins/migration.py:292
 msgid "Group container"
-msgstr ""
+msgstr "Conteneur de groupes"
 
 #: ipalib/plugins/migration.py:293
 msgid "RDN of container for groups in DS"
-msgstr ""
+msgstr "RDN du conteneur de groupes dans l'annuaire"
 
 #: ipalib/plugins/migration.py:299
 msgid "User object class"
-msgstr ""
+msgstr "Classes d'objet utilisateur"
 
 #: ipalib/plugins/migration.py:300
 msgid "Comma-separated list of objectclasses used to search for user entries in DS"
-msgstr ""
+msgstr "Liste séparée par des virgules des classes d'objet à utiliser pour la recherche d'entrées utilisateurs dans l'annuaire"
 
 #: ipalib/plugins/migration.py:306
 msgid "Group object class"
-msgstr ""
+msgstr "Classes d'objets groupes"
 
 #: ipalib/plugins/migration.py:307
 msgid "Comma-separated list of objectclasses used to search for group entries in DS"
-msgstr ""
+msgstr "Liste séparée par des virgules des classes d'objet à utiliser pour la recherche d'entrées groupes dans l'annuaire"
 
 #: ipalib/plugins/migration.py:313
 msgid "LDAP schema"
-msgstr ""
+msgstr "Schéma LDAP"
 
 #: ipalib/plugins/migration.py:314
 msgid ""
 "The schema used on the LDAP server. Supported values are RFC2307 and "
 "RFC2307bis. The default is RFC2307bis"
 msgstr ""
+"Le schéma utilisé sur le serveur LDAP. Les valeurs supportées sont RFC2307 et "
+"RFC2307bis. La valeur par défaut est RFC2307bis"
 
 #: ipalib/plugins/migration.py:320
 msgid "Continuous operation mode. Errors are reported but the process continues"
-msgstr ""
+msgstr "Mode continu. Les erreurs sont rapportées mais le processus continue"
 
 #: ipalib/plugins/migration.py:328
 msgid "Lists of objects migrated; categorized by type."
-msgstr ""
+msgstr "Liste des objets migrés, catégorisés par type."
 
 #: ipalib/plugins/migration.py:332
 msgid "Lists of objects that could not be migrated; categorized by type."
-msgstr ""
+msgstr "Liste des objets n'ayant pu être migrés, catégorisés par type."
 
 #: ipalib/plugins/migration.py:336
 msgid "False if migration mode was disabled."
-msgstr ""
+msgstr "Faux si le mode de migration est désactivé."
 
 #: ipalib/plugins/migration.py:340
 msgid "comma-separated list of %s to exclude from migration"
-msgstr ""
+msgstr "Liste séparée par des virgules des %s à exclure de la migration"
 
 #: ipalib/plugins/migration.py:342
 msgid ""
@@ -5947,10 +6112,13 @@ msgid ""
 "have been truncated by the server;\n"
 "migration process might be incomplete\n"
 msgstr ""
+"les résultats de la recherche sur les objets\n"
+"à migrer a été tronquée par le server ; le\n"
+"processus peut donc être incomplet\n"
 
 #: ipalib/plugins/migration.py:347
 msgid "Migration mode is disabled. Use 'ipa config-mod' to enable it."
-msgstr ""
+msgstr "Mode migration désactivé. Utiliser la commande 'ipa config-mod' pour l'activer."
 
 #: ipalib/plugins/migration.py:350
 msgid ""
@@ -5960,6 +6128,11 @@ msgid ""
 "login at https://your.domain/ipa/migration/ before they\n"
 "can use their Kerberos accounts."
 msgstr ""
+"Les mots de passe ont été migré dans leur format chiffré.\n"
+"IPA est incapable de créer des clés Kerberos sauf à\n"
+"utiliser les mots de passe en clair. Tous les utilisateurs\n"
+"migrés devront se connecter à https://your.domain/ipa/migration/\n"
+"avant de pouvoir utiliser leur compte Kerberos."
 
 #: ipalib/plugins/migration.py:358
 msgid ""
@@ -5968,6 +6141,10 @@ msgid ""
 "        for each type of object being migrated.\n"
 "        "
 msgstr ""
+"\n"
+"        Appelle get_options sur la classe de base et ajoute les options\n"
+"        d'exclusion pour chaque type d'objet à migrer.\n"
+"        "
 
 #: ipalib/plugins/migration.py:375
 msgid ""
@@ -5978,6 +6155,13 @@ msgid ""
 "        plugin doesn't like that - convert back to empty lists.\n"
 "        "
 msgstr ""
+"\n"
+"        Convertit tous les options d'exclusion en minuscules.\n"
+"\n"
+"        De plus, une liste de paramètres vide est convertie en None,\n"
+"        mais le greffon de migration n'aimant pas ça, reconversion\n"
+"        en liste vide.\n"
+"        "
 
 #: ipalib/plugins/migration.py:399
 msgid ""
@@ -5985,50 +6169,55 @@ msgid ""
 "        Migrate objects from DS to LDAP.\n"
 "        "
 msgstr ""
+"\n"
+"        Migration des objets de l'annuaire vers LDAP.\n"
+"        "
 
 #: ipalib/plugins/migration.py:425
 msgid "Container for %(container)s not found"
-msgstr ""
+msgstr "Conteneur pour %(container)s introuvable"
 
 #: ipalib/plugins/misc.py:20
 msgid ""
 "\n"
 "Misc plug-ins\n"
 msgstr ""
+"\n"
+"Greffons divers\n"
 
 #: ipalib/plugins/misc.py:36
 msgid "Show environment variables"
-msgstr ""
+msgstr "Affiche les variables d'environnement"
 
 #: ipalib/plugins/misc.py:38
 msgid "%(count)d variables"
-msgstr ""
+msgstr "%(count)d variables"
 
 #: ipalib/plugins/misc.py:47 ipalib/plugins/misc.py:115
 msgid "retrieve and print all attributes from the server. Affects command output."
-msgstr ""
+msgstr "récupère et affiche tous les attributs du serveur. Modifie la sortie de la commande."
 
 #: ipalib/plugins/misc.py:61
 msgid "Total number of variables env (>= count)"
-msgstr ""
+msgstr "Nombre total de variables d'environnement (>= count)"
 
 #: ipalib/plugins/misc.py:66
 msgid "Number of variables returned (<= total)"
-msgstr ""
+msgstr "Nombre de variables renvoyées (<= total)"
 
 #: ipalib/plugins/misc.py:106
 msgid "Show all loaded plugins"
-msgstr ""
+msgstr "Affiche tous les greffons chargés"
 
 #: ipalib/plugins/misc.py:108
 msgid "%(count)d plugin loaded"
 msgid_plural "%(count)d plugins loaded"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d greffon chargé"
+msgstr[1] "%(count)d greffons chargés"
 
 #: ipalib/plugins/misc.py:126
 msgid "Number of plugins loaded"
-msgstr ""
+msgstr "Nombre de greffons chargés"
 
 #: ipalib/plugins/netgroup.py:20
 msgid ""
@@ -8589,7 +8778,7 @@ msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:779
 msgid "Server Name"
-msgstr ""
+msgstr "Nom de serveur"
 
 #: ipa-client/ipa-getkeytab.c:781 ipa-client/ipa-rmkeytab.c:171
 msgid "The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
@@ -8629,7 +8818,7 @@ msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:795
 msgid "LDAP DN"
-msgstr ""
+msgstr "DN LDAP"
 
 #: ipa-client/ipa-getkeytab.c:795
 msgid "DN to bind as if not using kerberos"
@@ -8637,7 +8826,7 @@ msgstr ""
 
 #: ipa-client/ipa-getkeytab.c:797
 msgid "LDAP password"
-msgstr ""
+msgstr "Mot de passe LDAP"
 
 #: ipa-client/ipa-getkeytab.c:797
 msgid "password to use if not using kerberos"
