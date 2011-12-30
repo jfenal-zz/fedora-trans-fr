@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-11 15:45+0100\n"
+"PO-Revision-Date: 2011-12-30 17:34+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4875,7 +4875,9 @@ msgstr "Raison de la révocation"
 msgid ""
 "To confirm your intention to restore this certificate, click the \"Restore\""
 " button."
-msgstr "Afin de confirmer votre intention de restaurer ce certificat, cliquer sur le bouton \"Restaurer\"."
+msgstr ""
+"Afin de confirmer votre intention de restaurer ce certificat, cliquer sur le"
+" bouton \"Restaurer\"."
 
 #: ipalib/plugins/internal.py:128
 msgid "Issued To"
@@ -5437,7 +5439,9 @@ msgstr "Disponible"
 
 #: ipalib/plugins/internal.py:342
 msgid "This page has unsaved changes. Please save or revert."
-msgstr "Cette page comporte des modifications non-sauvegardées. Merci de sauvegarder ou de réinitialiser."
+msgstr ""
+"Cette page comporte des modifications non-sauvegardées. Merci de sauvegarder"
+" ou de réinitialiser."
 
 #: ipalib/plugins/internal.py:343
 msgid "Dirty"
@@ -5994,13 +5998,17 @@ msgstr ""
 
 #: ipalib/plugins/migration.py:78
 msgid "Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
-msgstr "Le principal Kerberos %s existe déjà. Utiliser la commande 'ipa user-mod' pour le créer manuellement."
+msgstr ""
+"Le principal Kerberos %s existe déjà. Utiliser la commande 'ipa user-mod' "
+"pour le créer manuellement."
 
 #: ipalib/plugins/migration.py:79
 msgid ""
 "Failed to add user to the default group. Use 'ipa group-add-member' to add "
 "manually."
-msgstr "Échec à l'ajout de l'utlisateur dans le groupe par défaut. Utiliser la commande 'ipa group-add-member' pour l'ajouter manuellement."
+msgstr ""
+"Échec à l'ajout de l'utlisateur dans le groupe par défaut. Utiliser la "
+"commande 'ipa group-add-member' pour l'ajouter manuellement."
 
 #: ipalib/plugins/migration.py:175
 msgid ""
@@ -6064,7 +6072,9 @@ msgstr "Classes d'objet utilisateur"
 
 #: ipalib/plugins/migration.py:300
 msgid "Comma-separated list of objectclasses used to search for user entries in DS"
-msgstr "Liste séparée par des virgules des classes d'objet à utiliser pour la recherche d'entrées utilisateurs dans l'annuaire"
+msgstr ""
+"Liste séparée par des virgules des classes d'objet à utiliser pour la "
+"recherche d'entrées utilisateurs dans l'annuaire"
 
 #: ipalib/plugins/migration.py:306
 msgid "Group object class"
@@ -6072,7 +6082,9 @@ msgstr "Classes d'objets groupes"
 
 #: ipalib/plugins/migration.py:307
 msgid "Comma-separated list of objectclasses used to search for group entries in DS"
-msgstr "Liste séparée par des virgules des classes d'objet à utiliser pour la recherche d'entrées groupes dans l'annuaire"
+msgstr ""
+"Liste séparée par des virgules des classes d'objet à utiliser pour la "
+"recherche d'entrées groupes dans l'annuaire"
 
 #: ipalib/plugins/migration.py:313
 msgid "LDAP schema"
@@ -6083,8 +6095,8 @@ msgid ""
 "The schema used on the LDAP server. Supported values are RFC2307 and "
 "RFC2307bis. The default is RFC2307bis"
 msgstr ""
-"Le schéma utilisé sur le serveur LDAP. Les valeurs supportées sont RFC2307 et "
-"RFC2307bis. La valeur par défaut est RFC2307bis"
+"Le schéma utilisé sur le serveur LDAP. Les valeurs supportées sont RFC2307 "
+"et RFC2307bis. La valeur par défaut est RFC2307bis"
 
 #: ipalib/plugins/migration.py:320
 msgid "Continuous operation mode. Errors are reported but the process continues"
@@ -6118,7 +6130,9 @@ msgstr ""
 
 #: ipalib/plugins/migration.py:347
 msgid "Migration mode is disabled. Use 'ipa config-mod' to enable it."
-msgstr "Mode migration désactivé. Utiliser la commande 'ipa config-mod' pour l'activer."
+msgstr ""
+"Mode migration désactivé. Utiliser la commande 'ipa config-mod' pour "
+"l'activer."
 
 #: ipalib/plugins/migration.py:350
 msgid ""
@@ -6195,7 +6209,9 @@ msgstr "%(count)d variables"
 
 #: ipalib/plugins/misc.py:47 ipalib/plugins/misc.py:115
 msgid "retrieve and print all attributes from the server. Affects command output."
-msgstr "récupère et affiche tous les attributs du serveur. Modifie la sortie de la commande."
+msgstr ""
+"récupère et affiche tous les attributs du serveur. Modifie la sortie de la "
+"commande."
 
 #: ipalib/plugins/misc.py:61
 msgid "Total number of variables env (>= count)"
@@ -6244,10 +6260,32 @@ msgid ""
 " Delete a netgroup:\n"
 "   ipa netgroup-del admins\n"
 msgstr ""
+"\n"
+"Netgroups\n"
+"\n"
+"Un netgroup est un groupe utilisé pour la vérification de permissions. Il\n"
+"peut contenir à la fois des utilisateurs et des noms de systèmes.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter un nouveau netgroup :\n"
+"   ipa netgroup-add --desc=\"NFS admins\" admins\n"
+"\n"
+" Ajouter des membres au netgroup :\n"
+"   ipa netgroup-add-member --users=tuser1,tuser2 admins\n"
+"\n"
+" Retirer un membre du netgroup :\n"
+"   ipa netgroup-remove-member --users=tuser2 admins\n"
+"\n"
+" Afficher les informations sur un netgroup :\n"
+"   ipa netgroup-show admins\n"
+"\n"
+" Supprimer un netgroup :\n"
+"   ipa netgroup-del admins\n"
 
 #: ipalib/plugins/netgroup.py:59
 msgid "Member Host"
-msgstr ""
+msgstr "Système membre"
 
 #: ipalib/plugins/netgroup.py:67
 msgid ""
@@ -6255,26 +6293,29 @@ msgid ""
 "    Netgroup object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:98
 msgid "Netgroups"
-msgstr ""
+msgstr "Netgroups"
 
 #: ipalib/plugins/netgroup.py:103
 msgid "Netgroup name"
-msgstr ""
+msgstr "Nom de netgroup"
 
 #: ipalib/plugins/netgroup.py:110
 msgid "Netgroup description"
-msgstr ""
+msgstr "Description de netgroup"
 
 #: ipalib/plugins/netgroup.py:114
 msgid "NIS domain name"
-msgstr ""
+msgstr "Nom de domaine NIS"
 
 #: ipalib/plugins/netgroup.py:119
 msgid "IPA unique ID"
-msgstr ""
+msgstr "ID unique IPA"
 
 #: ipalib/plugins/netgroup.py:140
 msgid ""
@@ -6282,10 +6323,13 @@ msgid ""
 "    Add a new netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:144
 msgid "Added netgroup \"%(value)s\""
-msgstr ""
+msgstr "Netgroup \"%(value)s\" ajouté"
 
 #: ipalib/plugins/netgroup.py:153
 msgid ""
@@ -6293,10 +6337,13 @@ msgid ""
 "    Delete a netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:156
 msgid "Deleted netgroup \"%(value)s\""
-msgstr ""
+msgstr "Netgroup \"%(value)s\" supprimé"
 
 #: ipalib/plugins/netgroup.py:162
 msgid ""
@@ -6304,10 +6351,13 @@ msgid ""
 "    Modify a netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:166
 msgid "Modified netgroup \"%(value)s\""
-msgstr ""
+msgstr "Netgroup \"%(value)s\" supprimé"
 
 #: ipalib/plugins/netgroup.py:180
 msgid ""
@@ -6315,12 +6365,15 @@ msgid ""
 "    Search for a netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher un netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:185
 msgid "%(count)d netgroup matched"
 msgid_plural "%(count)d netgroups matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d netgroup correspondant"
+msgstr[1] "%(count)d netgroups correspondants"
 
 #: ipalib/plugins/netgroup.py:213
 msgid ""
@@ -6328,6 +6381,9 @@ msgid ""
 "    Display information about a netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur un netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:222
 msgid ""
@@ -6335,6 +6391,9 @@ msgid ""
 "    Add members to a netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un netgroup.\n"
+"    "
 
 #: ipalib/plugins/netgroup.py:258
 msgid ""
@@ -6342,6 +6401,9 @@ msgid ""
 "    Remove members from a netgroup.\n"
 "    "
 msgstr ""
+"\n"
+"    Retirer des membres d'un netgroup.\n"
+"    "
 
 #: ipalib/plugins/passwd.py:19
 msgid ""
@@ -6363,6 +6425,26 @@ msgid ""
 " To change another user's password:\n"
 "   ipa passwd tuser1\n"
 msgstr ""
+"FIXME\n"
+"Définir le mot de passe d'un utilisateur\n"
+"\n"
+"Si une personne autre que l'utilisateur change le mot de passe de cet\n"
+"utilisateur (par exemple en cas de réinitialisation par les services\n"
+"d'assistance technique), le mot de passe devra être modifié la première\n"
+"fois qu'il sera utilisé, afin que l'utilisateur soit le seul à connaître\n"
+"son mot de passe.\n"
+"\n"
+"La politique de mot de passe de IPA contrôle la fréquence de changement\n"
+"des mots de passe, les prérequis quant à leur résistance, et la taille\n"
+"de l'historique des mots de passe.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Modifier son mot de passe :\n"
+"   ipa passwd\n"
+"\n"
+" Modifier le mot de passe d'un utilisateur :\n"
+"   ipa passwd tuser1\n"
 
 #: ipalib/plugins/passwd.py:46
 msgid ""
@@ -6370,10 +6452,13 @@ msgid ""
 "    Set a user's password\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier le mot de passe d'un utilisateur\n"
+"    "
 
 #: ipalib/plugins/passwd.py:64
 msgid "Changed password for \"%(value)s\""
-msgstr ""
+msgstr "Mot de passe modifié for \"%(value)s\""
 
 #: ipalib/plugins/passwd.py:67
 msgid ""
@@ -6389,6 +6474,17 @@ msgid ""
 "        :param password: the new password\n"
 "        "
 msgstr ""
+"\n"
+"        Exécute l'opération passwd.\n"
+"\n"
+"        Le dn ne doit pas être passé en paramètre car il est construit par\n"
+"        cette méthode.\n"
+"\n"
+"        Renvoie l'entrée\n"
+"\n"
+"        :param principal: L'identifiant de connexion ou le principal de l'utilisateur\n"
+"        :param password: le nouveau mot de passe\n"
+"        "
 
 #: ipalib/plugins/permission.py:19
 msgid ""
@@ -6445,10 +6541,64 @@ msgid ""
 " Add a permission that grants the ability to manage group membership:\n"
 "   ipa permission-add --attrs=member --permissions=write --type=group \"Manage Group Members\"\n"
 msgstr ""
+"\n"
+"Permissions\n"
+"\n"
+"Une permission permet une définition fine des délégations de droits. Une\n"
+"permission est une forme lisible par un humain des règles ou instructions\n"
+"de contrôle d'accès (ACI) de 389-ds. Une permission accorde le droit\n"
+"d'effectuer une tâche spécifique comme la création d'un utilisateur, la\n"
+"modification d'un groupe, etc.\n"
+"\n"
+"Une permission ne peut contenir d'autres permissions.\n"
+"\n"
+"* Une permission accorde un droit en lecture, écriture, ajout ou supression.\n"
+"* Un privilège combine des permissions similaires (par exemple toutes les\n"
+"  permissions requises pour la création d'un utilisateur).\n"
+"* Un rôle accorde un jeu de privilèges à des utilisateurs, des groupes, des\n"
+"  systèmes, ou à des groupes de systèmes.\n"
+"\n"
+"Une permission est constitués des éléments suivants :\n"
+"\n"
+"1. Le nom de la permission.\n"
+"2. La cible de la permission.\n"
+"3. Les droits accordés par la permission.\n"
+"\n"
+"Les droits définissent quelles opérations sont autorisées, et\n"
+"peuvent être une ou plusieurs parmi :\n"
+"1. write - écrire un ou plusieurs attributs\n"
+"2. read - lire un ou plusieurs attributs\n"
+"3. add - ajouter une nouvelle entrée dans l'arbre\n"
+"4. delete - supprimer une entrée existante\n"
+"5. all - toutes les permissions sont accordées\n"
+"\n"
+"La permission read est accordée par défaut sur la plupart des\n"
+"attributs, elle ne sera donc utilisée que peu souvent.\n"
+"\n"
+"Notez la distinction entre attributs and entrées. Les permissions sont\n"
+"indépendantes, donc la capacité de créer un utilisateur ne signifie pas\n"
+"que l'utilisateur sera modifiable.\n"
+"\n"
+"Il existe plusieurs sortes de cibles autorisées dans une permission :\n"
+"1. type: un type d'objet (user, group, etc.).\n"
+"2. memberof: un membre d'un groupe ou d'un groupe de systèmes\n"
+"3. filter: un filtre LDAP\n"
+"4. subtree: un filtre LDAP spécifiant une branche du DIT LDAP. Ceci est un\n"
+"   sur-ensemble de la cible 'type'.\n"
+"5. targetgroup: accorde l'accès permettant de modifier un groupe spécifique\n"
+"   (comme le fait d'accorder les droits en modification des membres d'un groupe)\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter une permission accordant la création d'utilisateurs :\n"
+"   ipa permission-add --type=user --permissions=add \"Add Users\"\n"
+"\n"
+" Ajouter une permission accordant la capacité de gérer les membres d'un groupe :\n"
+"   ipa permission-add --attrs=member --permissions=write --type=group \"Manage Group Members\"\n"
 
 #: ipalib/plugins/permission.py:84
 msgid "Permission Type"
-msgstr ""
+msgstr "Type de permission"
 
 #: ipalib/plugins/permission.py:89
 msgid ""
@@ -6456,34 +6606,37 @@ msgid ""
 "    Permission object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet permission.\n"
+"    "
 
 #: ipalib/plugins/permission.py:112
 msgid "Permission name"
-msgstr ""
+msgstr "Nom de permission"
 
 #: ipalib/plugins/permission.py:119
 msgid "Comma-separated list of permissions to grant (read, write, add, delete, all)"
-msgstr ""
+msgstr "Liste séparée par des virgules des permissions à accorder (read, write, add, delete, all)"
 
 #: ipalib/plugins/permission.py:132
 msgid "Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
-msgstr ""
+msgstr "Type d'objet IPA (user, group, host, hostgroup, service, netgroup, dns)"
 
 #: ipalib/plugins/permission.py:138
 msgid "Member of group"
-msgstr ""
+msgstr "Membre du groupe"
 
 #: ipalib/plugins/permission.py:139
 msgid "Target members of a group"
-msgstr ""
+msgstr "Membres cible d'un groupe"
 
 #: ipalib/plugins/permission.py:151
 msgid "Subtree to apply permissions to"
-msgstr ""
+msgstr "Branche sur laquelle appliquer les permissions"
 
 #: ipalib/plugins/permission.py:157
 msgid "User group to apply permissions to"
-msgstr ""
+msgstr "Groupe d'utilisateur sur lequel appliquer les permissions"
 
 #: ipalib/plugins/permission.py:177
 msgid ""
@@ -6491,10 +6644,13 @@ msgid ""
 "    Add a new permission.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter une nouvelle permission.\n"
+"    "
 
 #: ipalib/plugins/permission.py:181
 msgid "Added permission \"%(value)s\""
-msgstr ""
+msgstr "Permission \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/permission.py:236
 msgid ""
@@ -6502,10 +6658,13 @@ msgid ""
 "    Delete a permission.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une permission.\n"
+"    "
 
 #: ipalib/plugins/permission.py:240
 msgid "Deleted permission \"%(value)s\""
-msgstr ""
+msgstr "Permission \"%(value)s\" supprimée"
 
 #: ipalib/plugins/permission.py:256
 msgid ""
@@ -6513,10 +6672,13 @@ msgid ""
 "    Modify a permission.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une permission.\n"
+"    "
 
 #: ipalib/plugins/permission.py:260
 msgid "Modified permission \"%(value)s\""
-msgstr ""
+msgstr "Permission \"%(value)s\" modifiée"
 
 #: ipalib/plugins/permission.py:352
 msgid ""
@@ -6524,12 +6686,15 @@ msgid ""
 "    Search for permissions.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des permissions.\n"
+"    "
 
 #: ipalib/plugins/permission.py:356
 msgid "%(count)d permission matched"
 msgid_plural "%(count)d permissions matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d permission correspondante"
+msgstr[1] "%(count)d permissions correspondantes"
 
 #: ipalib/plugins/permission.py:405
 msgid ""
@@ -6537,6 +6702,9 @@ msgid ""
 "    Display information about a permission.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur une permission.\n"
+"    "
 
 #: ipalib/plugins/permission.py:428
 msgid ""
@@ -6544,6 +6712,9 @@ msgid ""
 "    Add members to a permission.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à une permission.\n"
+"    "
 
 #: ipalib/plugins/permission.py:437
 msgid ""
@@ -6551,12 +6722,17 @@ msgid ""
 "    Remove members from a permission.\n"
 "    "
 msgstr ""
+"\n"
+"    Retirer des membres d'une permission.\n"
+"    "
 
 #: ipalib/plugins/ping.py:19
 msgid ""
 "\n"
 "Ping the remote IPA server\n"
 msgstr ""
+"\n"
+"Sonder le serveur IPA distant\n"
 
 #: ipalib/plugins/ping.py:29
 msgid ""
@@ -6564,6 +6740,9 @@ msgid ""
 "    ping a remote server\n"
 "    "
 msgstr ""
+"\n"
+"    sonder un serveur distant\n"
+"    "
 
 #: ipalib/plugins/ping.py:37
 msgid ""
@@ -6572,6 +6751,10 @@ msgid ""
 "        back but a fixed value works for now.\n"
 "        "
 msgstr ""
+"\n"
+"        Une amélioration possible serait de prendre un argument et de\n"
+"        le renvoyer en retour, mais une valeur fixe fonctionne pour le moment.\n"
+"        "
 
 #: ipalib/plugins/pkinit.py:19
 msgid ""
