@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-30 17:34+0100\n"
+"PO-Revision-Date: 2011-12-30 17:53+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -6425,7 +6425,7 @@ msgid ""
 " To change another user's password:\n"
 "   ipa passwd tuser1\n"
 msgstr ""
-"FIXME\n"
+"\n"
 "Définir le mot de passe d'un utilisateur\n"
 "\n"
 "Si une personne autre que l'utilisateur change le mot de passe de cet\n"
@@ -6777,6 +6777,24 @@ msgid ""
 "\n"
 "http://k5wiki.kerberos.org/wiki/Projects/Anonymous_pkinit\n"
 msgstr ""
+"\n"
+"Options Kerberos pkinit\n"
+"\n"
+"Active ou désactive l'opération pkinit anonyme utilisant\n"
+"le principal WELLKNOWN/ANONYMOUS@REALM. Le serveur doit avoir\n"
+"été installé avec le support pkinit.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Active le pkinit anonyme :\n"
+"  ipa pkinit-anonymous enable\n"
+"\n"
+" Désactive le pkinit anonyme :\n"
+"  ipa pkinit-anonymous disable\n"
+"\n"
+"Pour plus d'informations sur l'opération pkinit anonyme, cf. :\n"
+"\n"
+"http://k5wiki.kerberos.org/wiki/Projects/Anonymous_pkinit\n"
 
 #: ipalib/plugins/pkinit.py:46
 msgid ""
@@ -6784,10 +6802,13 @@ msgid ""
 "    PKINIT Options\n"
 "    "
 msgstr ""
+"\n"
+"    Options PKINIT\n"
+"    "
 
 #: ipalib/plugins/pkinit.py:51
 msgid "PKINIT"
-msgstr ""
+msgstr "PKINIT"
 
 #: ipalib/plugins/pkinit.py:56
 msgid ""
@@ -6795,6 +6816,9 @@ msgid ""
 "    Accepts only Enable/Disable.\n"
 "    "
 msgstr ""
+"\n"
+"    Accepte uniquement Enable/Disable.\n"
+"    "
 
 #: ipalib/plugins/pkinit.py:67
 msgid ""
@@ -6802,6 +6826,9 @@ msgid ""
 "    Enable or Disable Anonymous PKINIT\n"
 "    "
 msgstr ""
+"\n"
+"    Active ou désactive l'opération PKINIT anonyme\n"
+"    "
 
 #: ipalib/plugins/privilege.py:19
 msgid ""
@@ -6825,6 +6852,25 @@ msgid ""
 "\n"
 "See role and permission for additional information.\n"
 msgstr ""
+"\n"
+"Privilèges\n"
+"\n"
+"Un privilège combine les permissions en tâches logiques. Une permission\n"
+"fournit les droits de réaliser une tâche unique. Certaines opérations IPA\n"
+"requièrent une combinaison de plusieurs permissions. Un privilège est la\n"
+"combinaison de ces permissions pour réaliser une tâche.\n"
+"\n"
+"Par example, la création d'utilisateur requiert les permissions suivantes :\n"
+" * Création d'une nouvelle entrée\n"
+" * Réinitialisation du mot de passe\n"
+" * Ajout du nouvel utilisateur au groupe d'utilisateurs par défaut de IPA\n"
+"\n"
+"La combinaison de ces trois tâches de bas niveau en privilège nommé \"Add User\"\n"
+"facilite la gestion des rôles.\n"
+"\n"
+"Un privilège ne peut contenir d'autres privilèges.\n"
+"\n"
+"Reportez-vous la gestion des rôles et des permissions pour plus d'informations.\n"
 
 #: ipalib/plugins/privilege.py:45
 msgid ""
@@ -6832,18 +6878,21 @@ msgid ""
 "    Privilege object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:65
 msgid "Privileges"
-msgstr ""
+msgstr "Privilèges"
 
 #: ipalib/plugins/privilege.py:70
 msgid "Privilege name"
-msgstr ""
+msgstr "Nom du privilège"
 
 #: ipalib/plugins/privilege.py:77
 msgid "Privilege description"
-msgstr ""
+msgstr "Description du privilege"
 
 #: ipalib/plugins/privilege.py:85
 msgid ""
@@ -6851,10 +6900,13 @@ msgid ""
 "    Add a new privilege.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:89
 msgid "Added privilege \"%(value)s\""
-msgstr ""
+msgstr "Privilège \"%(value)s\" ajouté"
 
 #: ipalib/plugins/privilege.py:95
 msgid ""
@@ -6862,10 +6914,13 @@ msgid ""
 "    Delete a privilege.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:99
 msgid "Deleted privilege \"%(value)s\""
-msgstr ""
+msgstr "Privilège \"%(value)s\" supprimé"
 
 #: ipalib/plugins/privilege.py:105
 msgid ""
@@ -6873,10 +6928,13 @@ msgid ""
 "    Modify a privilege.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:109
 msgid "Modified privilege \"%(value)s\""
-msgstr ""
+msgstr "Privilège \"%(value)s\" supprimé"
 
 #: ipalib/plugins/privilege.py:115
 msgid ""
@@ -6884,12 +6942,15 @@ msgid ""
 "    Search for privileges.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des privilèges.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:119
 msgid "%(count)d privilege matched"
 msgid_plural "%(count)d privileges matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d privilège correspondant"
+msgstr[1] "%(count)d privilèges correspondants"
 
 #: ipalib/plugins/privilege.py:127
 msgid ""
@@ -6897,6 +6958,9 @@ msgid ""
 "    Display information about a privilege.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur un privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:135
 msgid ""
@@ -6904,6 +6968,9 @@ msgid ""
 "    Add members to a privilege\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un privilège\n"
+"    "
 
 #: ipalib/plugins/privilege.py:144
 msgid ""
@@ -6911,6 +6978,9 @@ msgid ""
 "    Remove members from a privilege\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des membres d'un privilège\n"
+"    "
 
 #: ipalib/plugins/privilege.py:153
 msgid ""
@@ -6918,10 +6988,13 @@ msgid ""
 "    Add permissions to a privilege.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des permissions à un privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:169
 msgid "Number of permissions added"
-msgstr ""
+msgstr "Nombre de permissions ajoutées"
 
 #: ipalib/plugins/privilege.py:177
 msgid ""
@@ -6929,10 +7002,13 @@ msgid ""
 "    Remove permissions from a privilege.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des permissions d'un privilège.\n"
+"    "
 
 #: ipalib/plugins/privilege.py:195
 msgid "Number of permissions removed"
-msgstr ""
+msgstr "Nombre de permissions supprimées"
 
 #: ipalib/plugins/pwpolicy.py:20
 msgid ""
