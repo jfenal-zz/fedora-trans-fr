@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-31 16:33+0100\n"
+"PO-Revision-Date: 2011-12-31 17:29+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -8845,6 +8845,8 @@ msgid ""
 "\n"
 "Base classes for non-LDAP backend plugins.\n"
 msgstr ""
+"\n"
+"Classes de base pour les greffons de moteurs non-LDAP.\n"
 
 #: ipalib/plugins/virtual.py:28
 msgid ""
@@ -8862,6 +8864,20 @@ msgid ""
 "        cn=request certificate, cn=virtual operations,cn=etc, dc=example, dc=com\n"
 "    "
 msgstr ""
+"\n"
+"    Une commande qui n'utilise pas le moteur LDAP mais souhaite\n"
+"    utiliser le système de contrôle d'accès LDAP pour prendre\n"
+"    les décisions d'autorisation.\n"
+"\n"
+"    L'opération de classe variable est le commonName attribué aux\n"
+"    entrées envers lesquelles tester.\n"
+"\n"
+"    Il faut avoir au préalable créé un entrée de la forme :\n"
+"        cn=<operation>, api.env.container_virtual, api.env.basedn\n"
+"\n"
+"    Par exemple :\n"
+"        cn=request certificate, cn=virtual operations,cn=etc, dc=example, dc=com\n"
+"    "
 
 #: ipalib/plugins/virtual.py:44
 msgid ""
@@ -8871,17 +8887,24 @@ msgid ""
 "        This should be executed before any actual work is done.\n"
 "        "
 msgstr ""
+"\n"
+"        Effectue une requête LDAP pour vérifier une autorisation.\n"
+"\n"
+"        Cela doit être exécuté avant d'effectuer tout travail.\n"
+"        "
 
 #: ipalib/plugins/xmlclient.py:21
 msgid ""
 "\n"
 "XML-RPC client plugin.\n"
 msgstr ""
+"\n"
+"Greffon client XML-RPC.\n"
 
 #: ipalib/cli.py:581
 #, python-format
 msgid "Enter %(label)s again to verify: "
-msgstr ""
+msgstr "Entrer à nouveau %(label)s pour validation : "
 
 #: ipalib/cli.py:585 ipa-client/ipa-getkeytab.c:751
 #, c-format
@@ -8894,21 +8917,21 @@ msgstr "Annulé."
 
 #: ipalib/cli.py:819
 msgid "Command name"
-msgstr ""
+msgstr "Nom de commande"
 
 #: ipalib/cli.py:1117
 msgid "No file to read"
-msgstr ""
+msgstr "Pas de fichier à lire"
 
 #: ipalib/errors.py:300
 #, python-format
 msgid "%(cver)s client incompatible with %(sver)s server at %(server)r"
-msgstr ""
+msgstr "Version de client %(cver)s incompatible avec la version %(sver)s du serveur %(server)r"
 
 #: ipalib/errors.py:318
 #, python-format
 msgid "unknown error %(code)d from %(server)s: %(error)s"
-msgstr ""
+msgstr "Code erreur inconnu %(code)d renvoyé par %(server)s: %(error)s"
 
 #: ipalib/errors.py:334
 msgid "an internal error has occurred"
@@ -8927,119 +8950,119 @@ msgstr "commande inconnue %(name)r"
 #: ipalib/errors.py:389 ipalib/errors.py:414
 #, python-format
 msgid "error on server %(server)r: %(error)s"
-msgstr ""
+msgstr "erreur sur le serveur %(server)r: %(error)s"
 
 #: ipalib/errors.py:405
 #, python-format
 msgid "cannot connect to %(uri)r: %(error)s"
-msgstr ""
+msgstr "impossible de se connecter à %(uri)r: %(error)s"
 
 #: ipalib/errors.py:423
 #, python-format
 msgid "Invalid JSON-RPC request: %(error)s"
-msgstr ""
+msgstr "Requête JSON-RPC invalide : %(error)s"
 
 #: ipalib/errors.py:439
 #, python-format
 msgid "error marshalling data for XML-RPC transport: %(error)s"
-msgstr ""
+msgstr "erreur au triage des données du transport XML-RPC : %(error)s"
 
 #: ipalib/errors.py:465
 #, python-format
 msgid "Kerberos error: %(major)s/%(minor)s"
-msgstr ""
+msgstr "Erreur Kerberos : %(major)s/%(minor)s"
 
 #: ipalib/errors.py:482
 msgid "did not receive Kerberos credentials"
-msgstr ""
+msgstr "n'ai pas reçu les crédits Kerberos"
 
 #: ipalib/errors.py:498
 #, python-format
 msgid "Service %(service)r not found in Kerberos database"
-msgstr ""
+msgstr "Service %(service)r introuvable dans la base Kerberos"
 
 #: ipalib/errors.py:514
 msgid "No credentials cache found"
-msgstr ""
+msgstr "Cache de crédits introuvable"
 
 #: ipalib/errors.py:530
 msgid "Ticket expired"
-msgstr ""
+msgstr "Ticket expiré"
 
 #: ipalib/errors.py:546
 msgid "Credentials cache permissions incorrect"
-msgstr ""
+msgstr "Permissions du cache de crédit incorrectes"
 
 #: ipalib/errors.py:562
 msgid "Bad format in credentials cache"
-msgstr ""
+msgstr "Mauvais format de cache de crédit"
 
 #: ipalib/errors.py:578
 msgid "Cannot resolve KDC for requested realm"
-msgstr ""
+msgstr "Impossible de trouver le KDC pour le domaine demandé"
 
 #: ipalib/errors.py:597
 #, python-format
 msgid "Insufficient access: %(info)s"
-msgstr ""
+msgstr "Accès insuffisant : %(info)s"
 
 #: ipalib/errors.py:641
 #, python-format
 msgid "command %(name)r takes no arguments"
-msgstr ""
+msgstr "la commande %(name)r ne prend aucun argument"
 
 #: ipalib/errors.py:661
 #, python-format
 msgid "command %(name)r takes at most %(count)d argument"
 msgid_plural "command %(name)r takes at most %(count)d arguments"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "la commande %(name)r prend au plus %(count)d argument"
+msgstr[1] "la commande %(name)r prend au plus %(count)d arguments"
 
 #: ipalib/errors.py:691
 #, python-format
 msgid "overlapping arguments and options: %(names)r"
-msgstr ""
+msgstr "arguments et options se chevauchant : %(names)r"
 
 #: ipalib/errors.py:707
 #, python-format
 msgid "%(name)r is required"
-msgstr ""
+msgstr "%(name)r est requis"
 
 #: ipalib/errors.py:723 ipalib/errors.py:739
 #, python-format
 msgid "invalid %(name)r: %(error)s"
-msgstr ""
+msgstr "%(name)r invalide : %(error)s"
 
 #: ipalib/errors.py:755
 #, python-format
 msgid "api has no such namespace: %(name)r"
-msgstr ""
+msgstr "l'API n'a pas d'espace de nom : %(name)r"
 
 #: ipalib/errors.py:764
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Les mots de passe ne correspondent pas"
 
 #: ipalib/errors.py:773
 msgid "Command not implemented"
-msgstr ""
+msgstr "Commande non développée"
 
 #: ipalib/errors.py:782
 msgid "Client is not configured. Run ipa-client-install."
-msgstr ""
+msgstr "Le client n'est pas configuré. Lancer la commande ipa-client-install."
 
 #: ipalib/errors.py:810 ipalib/errors.py:1050 ipalib/errors.py:1144
 #: ipalib/errors.py:1424 ipalib/errors.py:1441
 #, python-format
 msgid "%(reason)s"
-msgstr ""
+msgstr "%(reason)s"
 
 #: ipalib/errors.py:826
 msgid "This entry already exists"
-msgstr ""
+msgstr "Cette entrée existe déjà"
 
 #: ipalib/errors.py:842
 msgid "You must enroll a host in order to create a host service"
-msgstr ""
+msgstr "Vous devez enregistrer un système afin de créer un service"
 
 #: ipalib/errors.py:858
 #, python-format
@@ -9047,82 +9070,84 @@ msgid ""
 "Service principal is not of the form: service/fully-qualified host name: "
 "%(reason)s"
 msgstr ""
+"Le principal de service n'est pas de la forme : service/fully-qualified host name: "
+"%(reason)s"
 
 #: ipalib/errors.py:874
 msgid "The realm for the principal does not match the realm for this IPA server"
-msgstr ""
+msgstr "Le domaine du principal ne correspond pas au domaine de ce serveur IPA"
 
 #: ipalib/errors.py:890
 msgid "This command requires root access"
-msgstr ""
+msgstr "Cette commande requiert des droits root"
 
 #: ipalib/errors.py:906
 msgid "This is already a posix group"
-msgstr ""
+msgstr "Ce groupe est déjà de type POSIX"
 
 #: ipalib/errors.py:922
 #, python-format
 msgid "Principal is not of the form user@REALM: %(principal)r"
-msgstr ""
+msgstr "Le principal n'est pas de la forme user@REALM: %(principal)r"
 
 #: ipalib/errors.py:938
 msgid "This entry is already enabled"
-msgstr ""
+msgstr "Cette entrée est déjà activée"
 
 #: ipalib/errors.py:954
 msgid "This entry is already disabled"
-msgstr ""
+msgstr "Cette entrée est déjà désactivée"
 
 #: ipalib/errors.py:970
 msgid "This entry cannot be enabled or disabled"
-msgstr ""
+msgstr "Cette entrée ne peut être activée ou désactivée"
 
 #: ipalib/errors.py:986
 msgid "This entry is not a member"
-msgstr ""
+msgstr "Cette entrée n'est pas un membre"
 
 #: ipalib/errors.py:1002
 msgid "A group may not be a member of itself"
-msgstr ""
+msgstr "Un groupe ne peut être membre de lui-même"
 
 #: ipalib/errors.py:1018
 msgid "This entry is already a member"
-msgstr ""
+msgstr "Cette entrée est déjà membre"
 
 #: ipalib/errors.py:1034
 #, python-format
 msgid "Base64 decoding failed: %(reason)s"
-msgstr ""
+msgstr "Échec de décodage base64 : %(reason)s"
 
 #: ipalib/errors.py:1066
 msgid "A group may not be added as a member of itself"
-msgstr ""
+msgstr "Un groupe ne peut être ajouté comme membre de lui-même"
 
 #: ipalib/errors.py:1082
 msgid "The default users group cannot be removed"
-msgstr ""
+msgstr "Le groupe par défaut ne peut être supprimé"
 
 #: ipalib/errors.py:1098
 msgid "Host does not have corresponding DNS A record"
-msgstr ""
+msgstr "Un système doit avoir un enregistrement DNS A correspondant"
 
 #: ipalib/errors.py:1113
 msgid "Deleting a managed group is not allowed. It must be detached first."
-msgstr ""
+msgstr "La suppression d'un groupe géré est interdite. Il doit d'abord être détaché."
 
 #: ipalib/errors.py:1128
 msgid "A managed group cannot have a password policy."
-msgstr ""
+msgstr "Un groupe géré ne peut avoir de politique de mot de passe."
 
 #: ipalib/errors.py:1160
 #, python-format
 msgid "'%(entry)s' doesn't have a certificate."
-msgstr ""
+msgstr "'%(entry)s' ne possède pas de certificat."
 
 #: ipalib/errors.py:1176
 #, python-format
 msgid "Unable to create private group. A group '%(group)s' already exists."
-msgstr ""
+msgstr "Impossible de créer un groupe privé. Un groupe '%(group)s' existe déjà."
 
 #: ipalib/errors.py:1192
 #, python-format
@@ -9130,224 +9155,226 @@ msgid ""
 "A problem was encountered when verifying that all members were %(verb)s: "
 "%(exc)s"
 msgstr ""
+"Un problème est survenu lors de la vérification que tous les membres étaient des %(verb)s: "
+"%(exc)s"
 
 #: ipalib/errors.py:1216
 #, python-format
 msgid "no command nor help topic %(topic)r"
-msgstr ""
+msgstr "pas de commande ou de sujet d'aide pour %(topic)r"
 
 #: ipalib/errors.py:1240
 msgid "change collided with another change"
-msgstr ""
+msgstr "la modification a subit un collision avec une autre"
 
 #: ipalib/errors.py:1256
 msgid "no modifications to be performed"
-msgstr ""
+msgstr "pas de modification à effectuer"
 
 #: ipalib/errors.py:1272
 #, python-format
 msgid "%(desc)s: %(info)s"
-msgstr ""
+msgstr "%(desc)s : %(info)s"
 
 #: ipalib/errors.py:1288
 msgid "limits exceeded for this query"
-msgstr ""
+msgstr "limites dépassées pour cette requête"
 
 #: ipalib/errors.py:1303
 #, python-format
 msgid "%(info)s"
-msgstr ""
+msgstr "%(info)s"
 
 #: ipalib/errors.py:1318
 msgid "modifying primary key is not allowed"
-msgstr ""
+msgstr "la modification de clé primaire n'est pas autorisée"
 
 #: ipalib/errors.py:1334
 #, python-format
 msgid "%(attr)s: Only one value allowed."
-msgstr ""
+msgstr "%(attr)s : une seule valeur autorisée."
 
 #: ipalib/errors.py:1350
 #, python-format
 msgid "%(attr)s: Invalid syntax."
-msgstr ""
+msgstr "%(attr)s : syntaxe invalide."
 
 #: ipalib/errors.py:1366
 #, python-format
 msgid "Bad search filter %(info)s"
-msgstr ""
+msgstr "Filtre de recherche invalide %(info)s"
 
 #: ipalib/errors.py:1391
 #, python-format
 msgid "Certificate operation cannot be completed: %(error)s"
-msgstr ""
+msgstr "L'opération sur le certification ne peut être effectuée : %(error)s"
 
 #: ipalib/errors.py:1407
 #, python-format
 msgid "Certificate format error: %(error)s"
-msgstr ""
+msgstr "Erreur de format de certificate : %(error)s"
 
 #: ipalib/errors.py:1458
 msgid "Already registered"
-msgstr ""
+msgstr "Déjà enregistré"
 
 #: ipalib/errors.py:1474
 msgid "Not registered yet"
-msgstr ""
+msgstr "Pas encore enregistré"
 
 #: ipalib/frontend.py:398
 msgid "Results are truncated, try a more specific search"
-msgstr ""
+msgstr "Résultats tronqués, essayer un recherche plus spécifique"
 
 #: ipalib/frontend.py:850
 msgid "Retrieve and print all attributes from the server. Affects command output."
-msgstr ""
+msgstr "Récupérer et imprimer tous les attributs du serveur. Affecte la sortie standard de la commande."
 
 #: ipalib/frontend.py:856
 msgid "Print entries as stored on the server. Only affects output format."
-msgstr ""
+msgstr "Imprimer les entrées telles que stockées sur le serveur. Affecte uniquement le format de sortie."
 
 #: ipalib/frontend.py:985
 msgid "Forward to server instead of running locally"
-msgstr ""
+msgstr "Transférer au serveur au lieu d'exécuter localement"
 
 #: ipalib/output.py:92
 msgid "A dictionary representing an LDAP entry"
-msgstr ""
+msgstr "Un dictionnaire représente une entrée LDAP"
 
 #: ipalib/output.py:100
 msgid "A list of LDAP entries"
-msgstr ""
+msgstr "Une liste d'entrées LDAP"
 
 #: ipalib/output.py:111
 msgid "All commands should at least have a result"
-msgstr ""
+msgstr "Toutes les commandes doivent avoir au moins un résultat"
 
 #: ipalib/parameters.py:296
 msgid "incorrect type"
-msgstr ""
+msgstr "type incorrect"
 
 #: ipalib/parameters.py:299
 msgid "Only one value is allowed"
-msgstr ""
+msgstr "Une seule valeur est autorisée"
 
 #: ipalib/parameters.py:901
 msgid "must be True or False"
-msgstr ""
+msgstr "doit être True ou False"
 
 #: ipalib/parameters.py:1002
 msgid "must be an integer"
-msgstr ""
+msgstr "doit être un nombre entier"
 
 #: ipalib/parameters.py:1054
 #, python-format
 msgid "must be at least %(minvalue)d"
-msgstr ""
+msgstr "doit être supérieur ou égal à %(minvalue)d"
 
 #: ipalib/parameters.py:1064
 #, python-format
 msgid "can be at most %(maxvalue)d"
-msgstr ""
+msgstr "doit être inférieur ou égal à %(maxvalue)d"
 
 #: ipalib/parameters.py:1074
 msgid "must be a decimal number"
-msgstr ""
+msgstr "doit être un nombre décimal"
 
 #: ipalib/parameters.py:1097
 #, python-format
 msgid "must be at least %(minvalue)f"
-msgstr ""
+msgstr "doit être supérieur ou égal à %(minvalue)f"
 
 #: ipalib/parameters.py:1107
 #, python-format
 msgid "can be at most %(maxvalue)f"
-msgstr ""
+msgstr "doit être inférieur ou égal à %(maxvalue)f"
 
 #: ipalib/parameters.py:1174
 #, python-format
 msgid "must match pattern \"%(pattern)s\""
-msgstr ""
+msgstr "doit correspondre au motif \"%(pattern)s\""
 
 #: ipalib/parameters.py:1192
 msgid "must be binary data"
-msgstr ""
+msgstr "doit être des données binaires"
 
 #: ipalib/parameters.py:1208
 #, python-format
 msgid "must be at least %(minlength)d bytes"
-msgstr ""
+msgstr "doit être d'au moins %(minlength)d octets"
 
 #: ipalib/parameters.py:1218
 #, python-format
 msgid "can be at most %(maxlength)d bytes"
-msgstr ""
+msgstr "peut être d'au plus %(maxlength)d octets"
 
 #: ipalib/parameters.py:1228
 #, python-format
 msgid "must be exactly %(length)d bytes"
-msgstr ""
+msgstr "doit être d'exactement %(length)d octets"
 
 #: ipalib/parameters.py:1246
 msgid "must be Unicode text"
-msgstr ""
+msgstr "doit être du texte Unicode"
 
 #: ipalib/parameters.py:1277
 #, python-format
 msgid "must be at least %(minlength)d characters"
-msgstr ""
+msgstr "doit être d'au moins %(minlength)d caractères"
 
 #: ipalib/parameters.py:1287
 #, python-format
 msgid "can be at most %(maxlength)d characters"
-msgstr ""
+msgstr "peut être d'au plus %(maxlength)d caractères"
 
 #: ipalib/parameters.py:1297
 #, python-format
 msgid "must be exactly %(length)d characters"
-msgstr ""
+msgstr "doit être d'exactement %(length)d caractères"
 
 #: ipalib/parameters.py:1315
 #, python-format
 msgid "The character '%(char)r' is not allowed."
-msgstr ""
+msgstr "Le caractère '%(char)r' n'est pas autorisé."
 
 #: ipalib/parameters.py:1355
 #, python-format
 msgid "must be one of %(values)r"
-msgstr ""
+msgstr "doit être l'un parmi %(values)r"
 
 #: ipalib/util.py:200
 #, python-format
 msgid "Permission denied: %(file)s"
-msgstr ""
+msgstr "Autorisation refusée : %(file)s"
 
 #: ipalib/x509.py:174
 #, python-format
 msgid "Issuer \"%(issuer)s\" does not match the expected issuer"
-msgstr ""
+msgstr "L'Émetteur \"%(issuer)s\" ne correspond pas à l'émetteur attendu"
 
 #: ipaserver/plugins/dogtag.py:1313 ipaserver/plugins/dogtag.py:1398
 #: ipaserver/plugins/dogtag.py:1463 ipaserver/plugins/dogtag.py:1541
 #: ipaserver/plugins/dogtag.py:1600
 #, python-format
 msgid "Unable to communicate with CMS (%s)"
-msgstr ""
+msgstr "Impossible de communiquer avec le CMS (%s)"
 
 #: ipaserver/plugins/join.py:54
 msgid "The hostname to register as"
-msgstr ""
+msgstr "Le nom de système sous lequel s'enregistrer"
 
 #: ipaserver/plugins/join.py:62
 msgid "The IPA realm"
-msgstr ""
+msgstr "Le domaine IPA"
 
 #: ipaserver/plugins/join.py:68
 msgid "Hardware platform of the host (e.g. Lenovo T61)"
-msgstr ""
+msgstr "Plate-forme matérielle du système (par ex. Lenovo T61)"
 
 #: ipaserver/plugins/join.py:72
 msgid "Operating System and version of the host (e.g. Fedora 9)"
-msgstr ""
+msgstr "Système d'exploitation et version du système (par ex. Fedora 9)"
 
 #: ipaserver/plugins/selfsign.py:99
 #, python-format
@@ -9355,19 +9382,21 @@ msgid ""
 "Request subject \"%(request_subject)s\" does not match the form "
 "\"%(subject_base)s\""
 msgstr ""
+"Le sujet de la demande \"%(request_subject)s\" ne correspondant pas à la forme "
+"\"%(subject_base)s\""
 
 #: ipaserver/plugins/selfsign.py:104
 #, python-format
 msgid "unable to decode csr: %s"
-msgstr ""
+msgstr "impossible de décoder le csr : %s"
 
 #: ipaserver/plugins/selfsign.py:125 ipaserver/plugins/selfsign.py:140
 msgid "file operation"
-msgstr ""
+msgstr "opération fichier"
 
 #: ipaserver/plugins/selfsign.py:154
 msgid "cannot obtain next serial number"
-msgstr ""
+msgstr "impossible d'obtenir le nouveau numéro de série"
 
 #: ipaserver/plugins/selfsign.py:189
 msgid "certutil failure"
@@ -9376,17 +9405,17 @@ msgstr "échec de certutil"
 #: ipa-client/config.c:55
 #, c-format
 msgid "cannot open configuration file %s\n"
-msgstr ""
+msgstr "impossible d'ouvrir le fichier de configuration %s\n"
 
 #: ipa-client/config.c:62
 #, c-format
 msgid "cannot stat() configuration file %s\n"
-msgstr ""
+msgstr "impossible d'utiliser stat() sur le fichier de configuration %s\n"
 
 #: ipa-client/config.c:68
 #, c-format
 msgid "out of memory\n"
-msgstr ""
+msgstr "mémoire saturée\n"
 
 #: ipa-client/config.c:79
 #, c-format
@@ -9397,12 +9426,12 @@ msgstr "erreur en lecture\n"
 #: ipa-client/ipa-rmkeytab.c:190
 #, c-format
 msgid "Kerberos context initialization failed\n"
-msgstr ""
+msgstr "Échec de l'initialisation du contexte Kerberos\n"
 
 #: ipa-client/ipa-getkeytab.c:147 ipa-client/ipa-getkeytab.c:834
 #, c-format
 msgid "No system preferred enctypes ?!\n"
-msgstr ""
+msgstr "Pas d'enctypes préféré sur le système ?!\n"
 
 #: ipa-client/ipa-getkeytab.c:155
 #, c-format
@@ -9417,28 +9446,28 @@ msgstr "Mémoire saturée\n"
 #: ipa-client/ipa-getkeytab.c:203
 #, c-format
 msgid "Warning unrecognized encryption type: [%s]\n"
-msgstr ""
+msgstr "Avertissement, type de chiffrement inconnu : [%s]\n"
 
 #: ipa-client/ipa-getkeytab.c:218
 #, c-format
 msgid "Warning unrecognized salt type: [%s]\n"
-msgstr ""
+msgstr "Avertissement, type de sel inconnu : [%s]\n"
 
 #: ipa-client/ipa-getkeytab.c:245
 #, c-format
 msgid "Enctype comparison failed!\n"
-msgstr ""
+msgstr "Échec de comparaison enctype !\n"
 
 #: ipa-client/ipa-getkeytab.c:307
 #, c-format
 msgid "Failed to create random key!\n"
-msgstr ""
+msgstr "Échec à la création de la clé aléatoire !\n"
 
 #: ipa-client/ipa-getkeytab.c:320 ipa-client/ipa-getkeytab.c:337
 #: ipa-client/ipa-getkeytab.c:345 ipa-client/ipa-getkeytab.c:382
 #, c-format
 msgid "Failed to create key!\n"
-msgstr ""
+msgstr "Échec à la création de la clé !\n"
 
 #: ipa-client/ipa-getkeytab.c:327 ipa-client/ipa-getkeytab.c:360
 #: ipa-client/ipa-join.c:417 ipa-client/ipa-join.c:426
@@ -9446,17 +9475,17 @@ msgstr ""
 #: ipa-client/ipa-join.c:819
 #, c-format
 msgid "Out of memory!\n"
-msgstr ""
+msgstr "Mémoire saturée !\n"
 
 #: ipa-client/ipa-getkeytab.c:371
 #, c-format
 msgid "Bad or unsupported salt type (%d)!\n"
-msgstr ""
+msgstr "Type de sel inconnu ou mauvais (%d)!\n"
 
 #: ipa-client/ipa-getkeytab.c:492
 #, c-format
 msgid "No keys accepted by KDC\n"
-msgstr ""
+msgstr "Aucune clé acceptée par le KDC\n"
 
 #: ipa-client/ipa-getkeytab.c:507
 #, c-format
@@ -9471,68 +9500,68 @@ msgstr "Mémoire saturée !\n"
 #: ipa-client/ipa-getkeytab.c:552
 #, c-format
 msgid "Failed to create control!\n"
-msgstr ""
+msgstr "Échec à la création du contrôle !\n"
 
 #: ipa-client/ipa-getkeytab.c:576
 #, c-format
 msgid "Unable to initialize ldap library!\n"
-msgstr ""
+msgstr "Impossible d'initialiser la bibliothèque LDAP !\n"
 
 #: ipa-client/ipa-getkeytab.c:583
 #, c-format
 msgid "Unable to set ldap options!\n"
-msgstr ""
+msgstr "Impossible de définir les options LDAP !\n"
 
 #: ipa-client/ipa-getkeytab.c:596
 #, c-format
 msgid "Simple bind failed\n"
-msgstr ""
+msgstr "Échec de la connexion simple\n"
 
 #: ipa-client/ipa-getkeytab.c:606
 #, c-format
 msgid "SASL Bind failed!\n"
-msgstr ""
+msgstr "Échec de la connexion SASL !\n"
 
 #: ipa-client/ipa-getkeytab.c:622 ipa-client/ipa-getkeytab.c:635
 #: ipa-client/ipa-getkeytab.c:642 ipa-client/ipa-getkeytab.c:649
 #, c-format
 msgid "Operation failed! %s\n"
-msgstr ""
+msgstr "Échec de l'opération %s !\n"
 
 #: ipa-client/ipa-getkeytab.c:655 ipa-client/ipa-getkeytab.c:665
 #, c-format
 msgid "Missing reply control!\n"
-msgstr ""
+msgstr "Absence de contrôle dans la réponse !\n"
 
 #: ipa-client/ipa-getkeytab.c:672
 #, c-format
 msgid "ber_init() failed, Invalid control ?!\n"
-msgstr ""
+msgstr "Échec de ber_init(), contrôle invalide ?!\n"
 
 #: ipa-client/ipa-getkeytab.c:691 ipa-client/ipa-getkeytab.c:698
 #, c-format
 msgid "ber_scanf() failed, Invalid control ?!\n"
-msgstr ""
+msgstr "Échec de ber_scanf(), contrôle invalide ?!\n"
 
 #: ipa-client/ipa-getkeytab.c:736
 msgid "New Principal Password"
-msgstr ""
+msgstr "Nouveau mot de passe du principal"
 
 #: ipa-client/ipa-getkeytab.c:742
 msgid "Verify Principal Password"
-msgstr ""
+msgstr "Vérfier le mot de passe du principal"
 
 #: ipa-client/ipa-getkeytab.c:776
 msgid "Print as little as possible"
-msgstr ""
+msgstr "Affiche aussi peu que possible"
 
 #: ipa-client/ipa-getkeytab.c:776
 msgid "Output only on errors"
-msgstr ""
+msgstr "N'affiche que les erreurs"
 
 #: ipa-client/ipa-getkeytab.c:778
 msgid "Contact this specific KDC Server"
-msgstr ""
+msgstr "Contacter ce serveur KDC spécifique"
 
 #: ipa-client/ipa-getkeytab.c:779
 msgid "Server Name"
@@ -9540,39 +9569,39 @@ msgstr "Nom de serveur"
 
 #: ipa-client/ipa-getkeytab.c:781 ipa-client/ipa-rmkeytab.c:171
 msgid "The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
-msgstr ""
+msgstr "Le principal pour lequel obtenir le (par ex: ftp/ftp.example.com@EXAMPLE.COM)"
 
 #: ipa-client/ipa-getkeytab.c:782 ipa-client/ipa-rmkeytab.c:172
 msgid "Kerberos Service Principal Name"
-msgstr ""
+msgstr "Nom de principal de service Kerberos"
 
 #: ipa-client/ipa-getkeytab.c:784 ipa-client/ipa-rmkeytab.c:174
 msgid "File were to store the keytab information"
-msgstr ""
+msgstr "Fichier dans lequel stocker l'information de keytab"
 
 #: ipa-client/ipa-getkeytab.c:785 ipa-client/ipa-rmkeytab.c:174
 msgid "Keytab File Name"
-msgstr ""
+msgstr "Nom de fichier keytab"
 
 #: ipa-client/ipa-getkeytab.c:787
 msgid "Encryption types to request"
-msgstr ""
+msgstr "Type de chiffrement à demander"
 
 #: ipa-client/ipa-getkeytab.c:788
 msgid "Comma separated encryption types list"
-msgstr ""
+msgstr "Liste séparée par des virgules des types de chiffrement"
 
 #: ipa-client/ipa-getkeytab.c:790
 msgid "Show the list of permitted encryption types and exit"
-msgstr ""
+msgstr "Affiche la liste des types de chiffrement autorisés, et sort."
 
 #: ipa-client/ipa-getkeytab.c:791
 msgid "Permitted Encryption Types"
-msgstr ""
+msgstr "Type de chiffrements autorisés"
 
 #: ipa-client/ipa-getkeytab.c:793
 msgid "Asks for a non-random password to use for the principal"
-msgstr ""
+msgstr "Demande un mot de passe non aléatoire à utiliser pour le principal"
 
 #: ipa-client/ipa-getkeytab.c:795
 msgid "LDAP DN"
@@ -9580,7 +9609,7 @@ msgstr "DN LDAP"
 
 #: ipa-client/ipa-getkeytab.c:795
 msgid "DN to bind as if not using kerberos"
-msgstr ""
+msgstr "DN à utiliser pour la connexion en cas de non-utilisation de kerberos"
 
 #: ipa-client/ipa-getkeytab.c:797
 msgid "LDAP password"
@@ -9588,22 +9617,22 @@ msgstr "Mot de passe LDAP"
 
 #: ipa-client/ipa-getkeytab.c:797
 msgid "password to use if not using kerberos"
-msgstr ""
+msgstr "mot de passe à utiliser pour la connexion en cas de non-utilisation de kerberos"
 
 #: ipa-client/ipa-getkeytab.c:837
 #, c-format
 msgid "Supported encryption types:\n"
-msgstr ""
+msgstr "Type de chiffrements supportés :\n"
 
 #: ipa-client/ipa-getkeytab.c:841
 #, c-format
 msgid "Warning: failed to convert type (#%d)\n"
-msgstr ""
+msgstr "Avertissement : échec de conversion de type (#%d)\n"
 
 #: ipa-client/ipa-getkeytab.c:860
 #, c-format
 msgid "Bind password required when using a bind DN.\n"
-msgstr ""
+msgstr "Mot de passe de connexion requis lors de l'utilisation d'un DN de connexion.\n"
 
 #: ipa-client/ipa-getkeytab.c:873
 #, c-format
@@ -9611,31 +9640,33 @@ msgid ""
 "Warning: salt types are not honored with randomized passwords (see opt. "
 "-P)\n"
 msgstr ""
+"Avertissement : les types de sels ne sont pas utilisés avec les mots de "
+"passe aléatoires (cf. option -P)\n"
 
 #: ipa-client/ipa-getkeytab.c:885
 #, c-format
 msgid "Invalid Service Principal Name\n"
-msgstr ""
+msgstr "Nom de principal de service invalide\n"
 
 #: ipa-client/ipa-getkeytab.c:893
 #, c-format
 msgid "Kerberos Credential Cache not found. Do you have a Kerberos Ticket?\n"
-msgstr ""
+msgstr "Cache de crédits Kerberos introuvable. Possédez-vous un ticket Kerberos ?\n"
 
 #: ipa-client/ipa-getkeytab.c:901
 #, c-format
 msgid "Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
-msgstr ""
+msgstr "Principal d'utilisateur Kerberos introuvable. Possédez-vous un cache de crédits Kerberos ?\n"
 
 #: ipa-client/ipa-getkeytab.c:909
 #, c-format
 msgid "Failed to open Keytab\n"
-msgstr ""
+msgstr "Échec à l'ouverture du keytab\n"
 
 #: ipa-client/ipa-getkeytab.c:916
 #, c-format
 msgid "Failed to create key material\n"
-msgstr ""
+msgstr "Échec de création du contenu de la clé\n"
 
 #: ipa-client/ipa-getkeytab.c:935
 #, c-format
