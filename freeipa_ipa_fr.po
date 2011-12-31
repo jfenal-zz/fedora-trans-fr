@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-31 09:58+0100\n"
+"PO-Revision-Date: 2011-12-31 10:40+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -7316,6 +7316,43 @@ msgid ""
 " The result of this is that any users in the group 'useradmins' can\n"
 " add users, reset passwords or add a user to the default IPA user group.\n"
 msgstr ""
+"FIXME\n"
+"Rôles\n"
+"\n"
+"Les rôles sont utilisés pour les délégations fines. Une permission accorde\n"
+"la capacité d'effectuer une tâche de bas niveau (ajouter un utilisateur,\n"
+"modifier un groupe, etc.). Un privilège combine une ou plusieurs permissions\n"
+"en une abstraction de plus haut niveau comme useradmin. Un administrateur\n"
+"d'utilisateur (useradmin) sera capable d'ajouter, modifier et supprimer des\n"
+"utilisateurs.\n"
+"\n"
+"Les privilèges sont attribués aux Rôles.\n"
+"\n"
+"Peuvent être membres d'un rôle des utilisateurs, des groupes, des systèmes\n"
+"et des groupes de systèmes.\n"
+"\n"
+"Les rôles ne peuvent contenir d'autres rôles.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter un nouveau rôle :\n"
+"   ipa role-add --desc=\"Junior-level admin\" junioradmin\n"
+"\n"
+" Ajouter des privilèges à ce rôle :\n"
+"   ipa role-add-privilege --privileges=addusers junioradmin\n"
+"   ipa role-add-privilege --privileges=change_password junioradmin\n"
+"   ipa role-add-privilege --privileges=add_user_to_default_group junioradmin\n"
+"\n"
+" Ajouter un groupe d'utilisateurs à ce rôle :\n"
+"   ipa group-add --desc=\"User admins\" useradmins\n"
+"   ipa role-add-member --groups=useradmins junioradmin\n"
+"\n"
+" Afficher les informations sur un rôle :\n"
+"   ipa role-show junioradmin\n"
+"\n"
+" Le résultat des commandes ci-dessus est que le groupe 'junioradmin' peut\n"
+" ajouter des utilisateurs, réinitialiser des mots de passe, ou ajouter\n"
+" un utilisateur au groupe d'utilisateur par défaut de IPA.\n"
 
 #: ipalib/plugins/role.py:62
 msgid ""
@@ -7323,18 +7360,21 @@ msgid ""
 "    Role object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:81
 msgid "Role"
-msgstr ""
+msgstr "Rôle"
 
 #: ipalib/plugins/role.py:86
 msgid "Role name"
-msgstr ""
+msgstr "Nom du rôle"
 
 #: ipalib/plugins/role.py:93
 msgid "A description of this role-group"
-msgstr ""
+msgstr "Description de ce rôle"
 
 #: ipalib/plugins/role.py:101
 msgid ""
@@ -7342,10 +7382,13 @@ msgid ""
 "    Add a new role.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:105
 msgid "Added role \"%(value)s\""
-msgstr ""
+msgstr "Rôle \"%(value)s\" ajouté"
 
 #: ipalib/plugins/role.py:111
 msgid ""
@@ -7353,10 +7396,13 @@ msgid ""
 "    Delete a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:115
 msgid "Deleted role \"%(value)s\""
-msgstr ""
+msgstr "Rôle \"%(value)s\" supprimé"
 
 #: ipalib/plugins/role.py:121
 msgid ""
@@ -7364,10 +7410,13 @@ msgid ""
 "    Modify a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:125
 msgid "Modified role \"%(value)s\""
-msgstr ""
+msgstr "Rôle \"%(value)s\" modifié"
 
 #: ipalib/plugins/role.py:131
 msgid ""
@@ -7375,12 +7424,15 @@ msgid ""
 "    Search for roles.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des rôles.\n"
+"    "
 
 #: ipalib/plugins/role.py:135
 msgid "%(count)d role matched"
 msgid_plural "%(count)d roles matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d rôle correspondant"
+msgstr[1] "%(count)d rôles correspondants"
 
 #: ipalib/plugins/role.py:143
 msgid ""
@@ -7388,6 +7440,9 @@ msgid ""
 "    Display information about a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:151
 msgid ""
@@ -7395,6 +7450,9 @@ msgid ""
 "    Add members to a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:159
 msgid ""
@@ -7402,6 +7460,9 @@ msgid ""
 "    Remove members from a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Retirer des membres d'un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:167
 msgid ""
@@ -7409,10 +7470,13 @@ msgid ""
 "    Add privileges to a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des privilèges à un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:183
 msgid "Number of privileges added"
-msgstr ""
+msgstr "Nombre de privilèges ajoutés"
 
 #: ipalib/plugins/role.py:191
 msgid ""
@@ -7420,10 +7484,13 @@ msgid ""
 "    Remove privileges from a role.\n"
 "    "
 msgstr ""
+"\n"
+"    Retirer des privilèges d'un rôle.\n"
+"    "
 
 #: ipalib/plugins/role.py:207
 msgid "Number of privileges removed"
-msgstr ""
+msgstr "Nombre de privilèges retirés"
 
 #: ipalib/plugins/selfservice.py:19
 msgid ""
