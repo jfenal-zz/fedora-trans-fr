@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-30 17:53+0100\n"
+"PO-Revision-Date: 2011-12-31 09:58+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -7054,6 +7054,49 @@ msgid ""
 " Modify a group password policy:\n"
 "   ipa pwpolicy-mod --minclasses=2 localadmins\n"
 msgstr ""
+"\n"
+"Politique de mots de passe\n"
+"\n"
+"Une politique de mots de passe permet de définir des limites sur les mots\n"
+"de passe dans IPA, comme leur durée de vie, minimale ou maximale, la taille\n"
+"de l'historique de mots de passe, le nombre de classes de caractères requises\n"
+"(pour la résistance à force brute) et la longueur minimale du mot de passe.\n"
+"\n"
+"Par défaut, une politique unique et globale est définie pour tous les\n"
+"utilisateurs. Vous pouvez aussi créer une politique à appliquer à un groupe.\n"
+"Chaque utilisateur est l'objet d'une seule politique de mots de passe, par\n"
+"un groupe ou par la politique globale. Une politique de groupe remplace\n"
+"totalement la politique globale ; elle n'est pas la somme de la politique\n"
+"globale plus quelques paramètres spécifiques.\n"
+"\n"
+"Chaque politique de groupe requiert un paramètre de priorité unique. Si un\n"
+"utilisateur appartient à plusieurs groupes ayant des politiques différentes,\n"
+"la priorité sera utilisée afin de déterminer quelle politique appliquer. Une\n"
+"valeur inférieure indique une priorité supérieure pour la politique de mots\n"
+"de passe."
+"\n"
+"Les politiques de mots de passe sont automatiquement supprimées lorsque les\n"
+"groupes auxquels elles sont associées sont supprimés.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Modifier la politique globale :\n"
+"   ipa pwpolicy-mod --minlength=10\n"
+"\n"
+" Ajouter une nouvelle politique de groupe :\n"
+"   ipa pwpolicy-add --maxlife=90 --minlife=1 --history=10 --minclasses=3 --minlength=8 --priority=10 localadmins\n"
+"\n"
+" Afficher la politique de mots de passe globale :\n"
+"   ipa pwpolicy-show\n"
+"\n"
+" Afficher une politique de mots de passe de groupe :\n"
+"   ipa pwpolicy-show localadmins\n"
+"\n"
+" Afficher la politique applicable à un utilisateur :\n"
+"   ipa pwpolicy-show --user=tuser1\n"
+"\n"
+" Modifier une politique de mots de passe de groupe :\n"
+"   ipa pwpolicy-mod --minclasses=2 localadmins\n"
 
 #: ipalib/plugins/pwpolicy.py:72
 msgid ""
@@ -7061,10 +7104,13 @@ msgid ""
 "    Class of Service object used for linking policies with groups\n"
 "    "
 msgstr ""
+"\n"
+"    Objet Class of Service utilisé pour le lien entre politique et groupe\n"
+"    "
 
 #: ipalib/plugins/pwpolicy.py:87
 msgid "priority must be a unique value (%(prio)d already used by %(gname)s)"
-msgstr ""
+msgstr "la priorité doit être une valeur unique (%(prio)d déjà utilisée par %(gname)s)"
 
 #: ipalib/plugins/pwpolicy.py:172
 msgid ""
@@ -7072,86 +7118,89 @@ msgid ""
 "    Password Policy object\n"
 "    "
 msgstr ""
+"\n"
+"    Objet Politique de mots de passe\n"
+"    "
 
 #: ipalib/plugins/pwpolicy.py:201
 msgid "Max failures"
-msgstr ""
+msgstr "Nombre maximal d'échecs"
 
 #: ipalib/plugins/pwpolicy.py:202
 msgid "Consecutive failures before lockout"
-msgstr ""
+msgstr "Échec consécutif avant verrouillage"
 
 #: ipalib/plugins/pwpolicy.py:207
 msgid "Failure reset interval"
-msgstr ""
+msgstr "Intervalle de réinitialisation sur échec"
 
 #: ipalib/plugins/pwpolicy.py:208
 msgid "Period after which failure count will be reset (seconds)"
-msgstr ""
+msgstr "Période après laquelle le compteur d'échec sera réinitialisé (secondes)"
 
 #: ipalib/plugins/pwpolicy.py:213
 msgid "Lockout duration"
-msgstr ""
+msgstr "Durée de verrouillage"
 
 #: ipalib/plugins/pwpolicy.py:214
 msgid "Period for which lockout is enforced (seconds)"
-msgstr ""
+msgstr "Période pendant laquelle le verrouillage est actif (secondes)"
 
 #: ipalib/plugins/pwpolicy.py:224
 msgid "Group"
-msgstr ""
+msgstr "Groupe"
 
 #: ipalib/plugins/pwpolicy.py:225
 msgid "Manage password policy for specific group"
-msgstr ""
+msgstr "Gérer la politique de mots de passe d'un groupe spécifique"
 
 #: ipalib/plugins/pwpolicy.py:230
 msgid "Max lifetime (days)"
-msgstr ""
+msgstr "Durée de vie maximale (jours)"
 
 #: ipalib/plugins/pwpolicy.py:231
 msgid "Maximum password lifetime (in days)"
-msgstr ""
+msgstr "Durée de vie maximale d'un mot de passe (en jours)"
 
 #: ipalib/plugins/pwpolicy.py:236
 msgid "Min lifetime (hours)"
-msgstr ""
+msgstr "Durée de vie minimale (jours)"
 
 #: ipalib/plugins/pwpolicy.py:237
 msgid "Minimum password lifetime (in hours)"
-msgstr ""
+msgstr "Durée de vie maximale d'un mot de passe (en jours)"
 
 #: ipalib/plugins/pwpolicy.py:242
 msgid "History size"
-msgstr ""
+msgstr "Taille de l'historique"
 
 #: ipalib/plugins/pwpolicy.py:243
 msgid "Password history size"
-msgstr ""
+msgstr "Taille de l'historique des mots de passe"
 
 #: ipalib/plugins/pwpolicy.py:248
 msgid "Character classes"
-msgstr ""
+msgstr "Classes de caractères"
 
 #: ipalib/plugins/pwpolicy.py:249
 msgid "Minimum number of character classes"
-msgstr ""
+msgstr "Nombre minimal de classes de caractères"
 
 #: ipalib/plugins/pwpolicy.py:255
 msgid "Min length"
-msgstr ""
+msgstr "Longueur minimale"
 
 #: ipalib/plugins/pwpolicy.py:256
 msgid "Minimum length of password"
-msgstr ""
+msgstr "Taille minimale d'un mot de passe"
 
 #: ipalib/plugins/pwpolicy.py:261
 msgid "Priority"
-msgstr ""
+msgstr "Priorité"
 
 #: ipalib/plugins/pwpolicy.py:262
 msgid "Priority of the policy (higher number means lower priority"
-msgstr ""
+msgstr "Priorité de la polique (une valeur élevé indique une priorité basse)"
 
 #: ipalib/plugins/pwpolicy.py:294
 msgid ""
@@ -7160,10 +7209,14 @@ msgid ""
 "        If there is no minimum lifetime set then don't return an error.\n"
 "        "
 msgstr ""
+"\n"
+"        Vérifier que la durée de vie maximale est supérieure au minimum.\n"
+"        Si aucune limite minimale n'est définie, aucune erreur n'est renvoyée.\n"
+"        "
 
 #: ipalib/plugins/pwpolicy.py:314
 msgid "Maximum password life must be greater than minimum."
-msgstr ""
+msgstr "La durée de vie maximale du mot de passe doit être supérieure au minimum."
 
 #: ipalib/plugins/pwpolicy.py:333
 msgid ""
@@ -7171,6 +7224,9 @@ msgid ""
 "    Add a new group password policy.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter une nouvelle politique de mots de passe de groupe.\n"
+"    "
 
 #: ipalib/plugins/pwpolicy.py:361
 msgid ""
@@ -7178,6 +7234,9 @@ msgid ""
 "    Delete a group password policy.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une politique de mots de passe de groupe.\n"
+"    "
 
 #: ipalib/plugins/pwpolicy.py:380
 msgid ""
@@ -7185,10 +7244,13 @@ msgid ""
 "    Modify a group password policy.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une politique de mots de passe de groupe.\n"
+"    "
 
 #: ipalib/plugins/pwpolicy.py:391
 msgid "priority cannot be set on global policy"
-msgstr ""
+msgstr "la priorité ne peut être définie sur la politique globale"
 
 #: ipalib/plugins/pwpolicy.py:423
 msgid ""
@@ -7196,14 +7258,17 @@ msgid ""
 "    Display information about password policy.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur une politique de mots de passe.\n"
+"    "
 
 #: ipalib/plugins/pwpolicy.py:428
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 #: ipalib/plugins/pwpolicy.py:429
 msgid "Display effective policy for a specific user"
-msgstr ""
+msgstr "Afficher la politique effective sur un utilisateur spécifique"
 
 #: ipalib/plugins/pwpolicy.py:452
 msgid ""
@@ -7211,6 +7276,9 @@ msgid ""
 "    Search for group password policies.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des politiques de mots de passe de groupe.\n"
+"    "
 
 #: ipalib/plugins/role.py:20
 msgid ""
