@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-31 15:21+0100\n"
+"PO-Revision-Date: 2011-12-31 16:33+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -7919,6 +7919,19 @@ msgid ""
 "   ipa sudocmd-del /usr/bin/less\n"
 "\n"
 msgstr ""
+"\n"
+"Commandes sudo\n"
+"\n"
+"Commandes utilisées en tant que briques de base pour sudo\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter une nouvelle commande\n"
+"   ipa sudocmd-add --desc='For reading log files' /usr/bin/less\n"
+"\n"
+" Supprimer une commande\n"
+"   ipa sudocmd-del /usr/bin/less\n"
+"\n"
 
 #: ipalib/plugins/sudocmd.py:46
 msgid ""
@@ -7926,18 +7939,21 @@ msgid ""
 "    Sudo Command object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet commande sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmd.py:64
 msgid "Sudo Commands"
-msgstr ""
+msgstr "Commandes sudo"
 
 #: ipalib/plugins/sudocmd.py:69
 msgid "Sudo Command"
-msgstr ""
+msgstr "Commande sudo"
 
 #: ipalib/plugins/sudocmd.py:75
 msgid "A description of this command"
-msgstr ""
+msgstr "Description de la commande"
 
 #: ipalib/plugins/sudocmd.py:98
 msgid ""
@@ -7945,10 +7961,13 @@ msgid ""
 "    Create new sudo command.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter une nouvelle commande sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmd.py:102
 msgid "Added sudo command \"%(value)s\""
-msgstr ""
+msgstr "Commande sudo \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/sudocmd.py:107
 msgid ""
@@ -7956,10 +7975,13 @@ msgid ""
 "    Delete sudo command.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une commande sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmd.py:111
 msgid "Deleted sudo command \"%(value)s\""
-msgstr ""
+msgstr "Commande sudo \"%(value)s\" supprimée"
 
 #: ipalib/plugins/sudocmd.py:116
 msgid ""
@@ -7967,10 +7989,13 @@ msgid ""
 "    Modify command.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une commande sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmd.py:120
 msgid "Modified sudo command \"%(value)s\""
-msgstr ""
+msgstr "Commande sudo \"%(value)s\" modifiée"
 
 #: ipalib/plugins/sudocmd.py:125
 msgid ""
@@ -7978,12 +8003,15 @@ msgid ""
 "    Search for commands.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmd.py:129
 msgid "%(count)d sudo command matched"
 msgid_plural "%(count)d sudo command matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d commande sudo correspondante"
+msgstr[1] "%(count)d commandes sudo correspondantes"
 
 #: ipalib/plugins/sudocmd.py:136
 msgid ""
@@ -7991,6 +8019,9 @@ msgid ""
 "    Display sudo command.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher une commande sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:19
 msgid ""
@@ -8016,6 +8047,27 @@ msgid ""
 " Show a Sudo command group:\n"
 "   ipa group-show localadmins\n"
 msgstr ""
+"\n"
+"Groupes de commandes sudo\n"
+"\n"
+"Administrer les groupes de commandes sudo.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter un nouveau groupe de commandes sudo:\n"
+"   ipa sudocmdgroup-add --desc='administrators commands' admincmds\n"
+"\n"
+" Supprimer un groupe de commandes sudo :\n"
+"   ipa sudocmdgroup-del admincmds\n"
+"\n"
+" Administrer les commandes membres d'un groupe de commandes sudo :\n"
+"   ipa sudocmdgroup-add-member --sudocmds=/usr/bin/less,/usr/bin/vim admincmds\n"
+"\n"
+" Administrer les commandes membres d'un groupe de commandes sudo :\n"
+"   ipa group-remove-member --sudocmds=/usr/bin/less admincmds\n"
+"\n"
+" Afficher un groupe de commandes sudo :\n"
+"   ipa group-show localadmins\n"
 
 #: ipalib/plugins/sudocmdgroup.py:50
 msgid ""
@@ -8023,10 +8075,13 @@ msgid ""
 "    Sudo Group object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:70
 msgid "Sudo Command Group"
-msgstr ""
+msgstr "Groupe de commandes sudo"
 
 #: ipalib/plugins/sudocmdgroup.py:93
 msgid ""
@@ -8034,10 +8089,13 @@ msgid ""
 "    Create new sudo command group.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouveau groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:97
 msgid "Added sudo command group \"%(value)s\""
-msgstr ""
+msgstr "Groupe de commandes sudo \"%(value)s\" ajouté"
 
 #: ipalib/plugins/sudocmdgroup.py:103
 msgid ""
@@ -8045,10 +8103,13 @@ msgid ""
 "    Delete sudo command group.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:107
 msgid "Deleted sudo command group \"%(value)s\""
-msgstr ""
+msgstr "Groupe de commandes sudo \"%(value)s\" supprimé"
 
 #: ipalib/plugins/sudocmdgroup.py:113
 msgid ""
@@ -8056,10 +8117,13 @@ msgid ""
 "    Modify group.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:117
 msgid "Modified sudo command group \"%(value)s\""
-msgstr ""
+msgstr "Groupe de commandes sudo \"%(value)s\" modifié"
 
 #: ipalib/plugins/sudocmdgroup.py:123
 msgid ""
@@ -8067,12 +8131,15 @@ msgid ""
 "    Search for sudo command groups.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des groupes de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:127
 msgid "%(count)d sudo command group matched"
 msgid_plural "%(count)d sudo command groups matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d groupe de commandes sudo correspondant"
+msgstr[1] "%(count)d groupes de commandes sudo correspondants"
 
 #: ipalib/plugins/sudocmdgroup.py:136
 msgid ""
@@ -8080,6 +8147,9 @@ msgid ""
 "    Display sudo command group.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur un groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:144
 msgid ""
@@ -8087,6 +8157,9 @@ msgid ""
 "    Add members to sudo command group.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des membres à un groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudocmdgroup.py:152
 msgid ""
@@ -8094,6 +8167,9 @@ msgid ""
 "    Remove members from sudo command group.\n"
 "    "
 msgstr ""
+"\n"
+"    Retirer des membres d'un groupe de commandes sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:19
 msgid ""
@@ -8111,6 +8187,20 @@ msgid ""
 "\n"
 "For more information, see the FreeIPA Documentation to Sudo.\n"
 msgstr ""
+"\n"
+"Sudo (su \"do\") permet à un administrateur système de déléguer la\n"
+"permissions à certains utilisateurs (ou groupes d'utilisateurs) de\n"
+"lancer des commandes en tant que root ou un autre utilisateur tout\n"
+"en fournissant un rapport d'audit des commandes et des arguments\n"
+"utilisés.\n"
+"\n"
+"FreeIPA fournit le binddn spécifique suivant utilisé avec sudo :\n"
+"uid=sudo,cn=sysaccounts,cn=etc,dc=example,dc=com\n"
+"\n"
+"Utiliser la commande suivante pour activer le binddn en lui donnant un mot de passe :\n"
+"LDAPTLS_CACERT=/etc/ipa/ca.crt /usr/bin/ldappasswd -S -W -h ipa.example.com -ZZ -D \"cn=Directory Manager\" uid=sudo,cn=sysaccounts,cn=etc,dc=example,dc=com\n"
+"\n"
+"Pour plus d'informations, se référer à la documentation sudo de FreeIPA.\n"
 
 #: ipalib/plugins/sudorule.py:44
 msgid ""
@@ -8118,74 +8208,77 @@ msgid ""
 "    Sudo Rule management\n"
 "    "
 msgstr ""
+"\n"
+"    Administration des règles sudo\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:68
 msgid "Sudo Rule"
-msgstr ""
+msgstr "Règle sudo"
 
 #: ipalib/plugins/sudorule.py:98
 msgid "Command category"
-msgstr ""
+msgstr "Catégorie de commande"
 
 #: ipalib/plugins/sudorule.py:99
 msgid "Command category the rule applies to"
-msgstr ""
+msgstr "Catégorie de commande à laquelle la règle s'applique"
 
 #: ipalib/plugins/sudorule.py:104
 msgid "Run As User category"
-msgstr ""
+msgstr "Catégorie Lancer en tant qu'un utilisateur"
 
 #: ipalib/plugins/sudorule.py:105
 msgid "Run As User category the rule applies to"
-msgstr ""
+msgstr "Catégorie Lancer en tant qu'un utilisateur à laquelle la règle s'applique"
 
 #: ipalib/plugins/sudorule.py:110
 msgid "Run As Group category"
-msgstr ""
+msgstr "Catégorie Lancer en tant qu'un groupe"
 
 #: ipalib/plugins/sudorule.py:111
 msgid "Run As Group category the rule applies to"
-msgstr ""
+msgstr "Catégorie Lancer en tant qu'un groupe à laquelle la règle s'applique"
 
 #: ipalib/plugins/sudorule.py:131
 msgid "Sudo Allow Commands"
-msgstr ""
+msgstr "Commandes sudo allow"
 
 #: ipalib/plugins/sudorule.py:135
 msgid "Sudo Deny Commands"
-msgstr ""
+msgstr "Commande sudo deny"
 
 #: ipalib/plugins/sudorule.py:147
 msgid "Run As User"
-msgstr ""
+msgstr "Lancer en tant qu'un utilisateur"
 
 #: ipalib/plugins/sudorule.py:151
 msgid "Run As Group"
-msgstr ""
+msgstr "Lancer en tant qu'un groupe"
 
 #: ipalib/plugins/sudorule.py:156
 msgid "External User"
-msgstr ""
+msgstr "Utilisateur externe"
 
 #: ipalib/plugins/sudorule.py:157
 msgid "External User the rule applies to"
-msgstr ""
+msgstr "Utilisateur externe à laquelle la règle s'applique"
 
 #: ipalib/plugins/sudorule.py:161
 msgid "RunAs External User"
-msgstr ""
+msgstr "Lancer en tant que l'utilisateur externe"
 
 #: ipalib/plugins/sudorule.py:162
 msgid "External User the commands can run as"
-msgstr ""
+msgstr "Utilisateur externe en tant que lequel la règle être lancée"
 
 #: ipalib/plugins/sudorule.py:166
 msgid "RunAs External Group"
-msgstr ""
+msgstr "Utilisateur externe"
 
 #: ipalib/plugins/sudorule.py:167
 msgid "External Group the commands can run as"
-msgstr ""
+msgstr "Lancer en tant que le groupe externe"
 
 #: ipalib/plugins/sudorule.py:175
 msgid ""
@@ -8193,10 +8286,13 @@ msgid ""
 "    Create new Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter une nouvelle règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:183
 msgid "Added sudo rule \"%(value)s\""
-msgstr ""
+msgstr "Règle sudo \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/sudorule.py:189
 msgid ""
@@ -8204,6 +8300,9 @@ msgid ""
 "    Delete Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:197
 msgid ""
@@ -8211,6 +8310,9 @@ msgid ""
 "    Modify Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:205
 msgid ""
@@ -8218,6 +8320,9 @@ msgid ""
 "    Search for Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:213
 msgid ""
@@ -8225,6 +8330,9 @@ msgid ""
 "    Display Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations d'une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:221
 msgid ""
@@ -8232,6 +8340,9 @@ msgid ""
 "    Enable a Sudo rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Activer une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:247
 msgid ""
@@ -8239,6 +8350,9 @@ msgid ""
 "    Disable a Sudo rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Désactiver une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:273 ipalib/plugins/sudorule.py:293
 msgid ""
@@ -8246,6 +8360,9 @@ msgid ""
 "    Add commands and sudo command groups affected by Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des commandes et groupes de commandes affectés par une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:283 ipalib/plugins/sudorule.py:303
 msgid ""
@@ -8253,6 +8370,9 @@ msgid ""
 "    Remove commands and sudo command groups affected by Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des commandes et groupes de commandes affectés par une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:313
 msgid ""
@@ -8260,6 +8380,9 @@ msgid ""
 "    Add users and groups affected by Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des utilisateurs et groupes d'utilisateurs affectés par une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:349
 msgid ""
@@ -8267,6 +8390,9 @@ msgid ""
 "    Remove users and groups affected by Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des utilisateurs et groupes d'utilisateurs affectés par une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:383
 msgid ""
@@ -8274,6 +8400,9 @@ msgid ""
 "    Add hosts and hostgroups affected by Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des systèmes et groupes de systèmes affectés par une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:419
 msgid ""
@@ -8281,6 +8410,9 @@ msgid ""
 "    Remove hosts and hostgroups affected by Sudo Rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer des systèmes et groupes de systèmes affectés par une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:453
 msgid ""
@@ -8288,6 +8420,9 @@ msgid ""
 "    Add user for Sudo to execute as.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un utilisateur sudo pour lancer des commandes en tant que.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:489
 msgid ""
@@ -8295,6 +8430,9 @@ msgid ""
 "    Remove user for Sudo to execute as.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un utilisateur sudo pour lancer des commandes en tant que.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:523
 msgid ""
@@ -8302,6 +8440,9 @@ msgid ""
 "    Add group for Sudo to execute as.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un groupe d'utilisateur sudo pour lancer des commandes en tant que.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:559
 msgid ""
@@ -8309,6 +8450,9 @@ msgid ""
 "    Remove group for Sudo to execute as.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un groupe d'utilisateur sudo pour lancer des commandes en tant que.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:593
 msgid ""
@@ -8316,10 +8460,13 @@ msgid ""
 "    Add an option to the Sudo rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter une option à la règle sudo.\n"
+"    "
 
 #: ipalib/plugins/sudorule.py:600 ipalib/plugins/sudorule.py:641
 msgid "Sudo Option"
-msgstr ""
+msgstr "Option sudo"
 
 #: ipalib/plugins/sudorule.py:635
 msgid ""
@@ -8327,6 +8474,9 @@ msgid ""
 "    Remove an option from Sudo rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une option d'une règle sudo.\n"
+"    "
 
 #: ipalib/plugins/user.py:20
 msgid ""
@@ -8368,6 +8518,45 @@ msgid ""
 " Delete a user:\n"
 "   ipa user-del tuser1\n"
 msgstr ""
+"\n"
+"Utilisateurs\n"
+"\n"
+"Administration des utilisateurs. Tous les utilisateurs sont de type POSIX.\n"
+"\n"
+"IPA permet l'utilisation d'un grand nombre de formats de noms d'utilisateurs.\n"
+"Certaines restrictions peuvent cependant s'appliquer à un environnement\n"
+"particulier. À titre d'exemple, les noms d'utilisateurs commençant par\n"
+"un chiffre ou ceux excédant une certaine longueur peuvent poser souci à\n"
+"certains systèmes UNIX.\n"
+"Utiliser la commande 'ipa config-mod' afin de modifier le format de nom\n"
+"autorisé par les outils IPA.\n"
+"\n"
+"La désactivation d'un compte utilisateur lui interdit d'obtenir de\n"
+"nouvelles informations de crédit Kerberos. Elle n'invalide pas les crédits\n"
+"déjà obtenus.\n"
+"\n"
+"L'administration des mots de passe ne fait pas partie de ce module. Pour\n"
+"plus d'informations sur ce sujet, cf. : ipa help passwd\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter un nouvel utilisateur :\n"
+"   ipa user-add --first=Tim --last=User --password tuser1\n"
+"\n"
+" Trouver tous les utilisateurs dont l'entrée contient la chaîne \"Tim\":\n"
+"   ipa user-find Tim\n"
+"\n"
+" Trouver tous les utilisateurs ayant \"Tim\" comme prénom :\n"
+"   ipa user-find --first=Tim\n"
+"\n"
+" Désactiver un compte utilisateur :\n"
+"   ipa user-disable tuser1\n"
+"\n"
+" Activer un compte utilisateur :\n"
+"   ipa user-enable tuser1\n"
+"\n"
+" Supprimer un utilisateur :\n"
+"   ipa user-del tuser1\n"
 
 #: ipalib/plugins/user.py:79
 msgid ""
@@ -8375,118 +8564,121 @@ msgid ""
 "    User object.\n"
 "    "
 msgstr ""
+"\n"
+"    Objet utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:116
 msgid "User login"
-msgstr ""
+msgstr "Identifiant de connexion"
 
 #: ipalib/plugins/user.py:123
 msgid "First name"
-msgstr ""
+msgstr "Prénom"
 
 #: ipalib/plugins/user.py:127
 msgid "Last name"
-msgstr ""
+msgstr "Nom"
 
 #: ipalib/plugins/user.py:130
 msgid "Full name"
-msgstr ""
+msgstr "Nom complet"
 
 #: ipalib/plugins/user.py:135
 msgid "Display name"
-msgstr ""
+msgstr "Nom affiché"
 
 #: ipalib/plugins/user.py:140
 msgid "Initials"
-msgstr ""
+msgstr "Initiales"
 
 #: ipalib/plugins/user.py:146
 msgid "Home directory"
-msgstr ""
+msgstr "Répertoire utilisateur"
 
 #: ipalib/plugins/user.py:150
 msgid "GECOS field"
-msgstr ""
+msgstr "Champ GECOS"
 
 #: ipalib/plugins/user.py:156
 msgid "Login shell"
-msgstr ""
+msgstr "Shell de connexion"
 
 #: ipalib/plugins/user.py:161
 msgid "Kerberos principal"
-msgstr ""
+msgstr "Principal Kerberos"
 
 #: ipalib/plugins/user.py:168
 msgid "Email address"
-msgstr ""
+msgstr "Adresse courriel"
 
 #: ipalib/plugins/user.py:173
 msgid "Prompt to set the user password"
-msgstr ""
+msgstr "Invite de modification du mot de passe"
 
 #: ipalib/plugins/user.py:180
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: ipalib/plugins/user.py:181
 msgid "User ID Number (system will assign one if not provided)"
-msgstr ""
+msgstr "Numéro d'identifiant utilisateur (le système en assignera un si non spécifié)"
 
 #: ipalib/plugins/user.py:188
 msgid "Group ID Number"
-msgstr ""
+msgstr "Numéro d'identifiant de groupe"
 
 #: ipalib/plugins/user.py:193
 msgid "Street address"
-msgstr ""
+msgstr "Adresse"
 
 #: ipalib/plugins/user.py:197
 msgid "City"
-msgstr ""
+msgstr "Ville"
 
 #: ipalib/plugins/user.py:201
 msgid "State/Province"
-msgstr ""
+msgstr "État/province"
 
 #: ipalib/plugins/user.py:204
 msgid "ZIP"
-msgstr ""
+msgstr "Code postal"
 
 #: ipalib/plugins/user.py:208
 msgid "Telephone Number"
-msgstr ""
+msgstr "Numéro de téléphone"
 
 #: ipalib/plugins/user.py:211
 msgid "Mobile Telephone Number"
-msgstr ""
+msgstr "Numéro de téléphone mobile"
 
 #: ipalib/plugins/user.py:214
 msgid "Pager Number"
-msgstr ""
+msgstr "Numéro de téléavertisseur"
 
 #: ipalib/plugins/user.py:218
 msgid "Fax Number"
-msgstr ""
+msgstr "Numéro de fax"
 
 #: ipalib/plugins/user.py:222
 msgid "Org. Unit"
-msgstr ""
+msgstr "Unité organisationnelle"
 
 #: ipalib/plugins/user.py:225
 msgid "Job Title"
-msgstr ""
+msgstr "Titre de poste"
 
 #: ipalib/plugins/user.py:228
 msgid "Manager"
-msgstr ""
+msgstr "Responsable"
 
 #: ipalib/plugins/user.py:231
 msgid "Car License"
-msgstr ""
+msgstr "Carte d'identité"
 
 #: ipalib/plugins/user.py:234
 msgid "Account disabled"
-msgstr ""
+msgstr "Compte désactivé"
 
 #: ipalib/plugins/user.py:258
 msgid ""
@@ -8494,10 +8686,13 @@ msgid ""
 "        Given a userid verify the user's existence and return the dn.\n"
 "        "
 msgstr ""
+"\n"
+"        Vérifier l'existence d'un identifiant utilisateur donné, renvoyer son dn.\n"
+"        "
 
 #: ipalib/plugins/user.py:276
 msgid "manager %(manager)s not found"
-msgstr ""
+msgstr "responsable %(manager)s introuvable"
 
 #: ipalib/plugins/user.py:281
 msgid ""
@@ -8505,6 +8700,9 @@ msgid ""
 "        Convert a manager dn into a userid\n"
 "        "
 msgstr ""
+"\n"
+"        Convertir un identifiant de responsable en identifiant utilisateur\n"
+"        "
 
 #: ipalib/plugins/user.py:295
 msgid ""
@@ -8512,18 +8710,21 @@ msgid ""
 "    Add a new user.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter un nouvel utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:298
 msgid "Added user \"%(value)s\""
-msgstr ""
+msgstr "Utilisateur \"%(value)s\" ajouté"
 
 #: ipalib/plugins/user.py:303
 msgid "Don't create user private group"
-msgstr ""
+msgstr "Ne pas créer de groupe privé"
 
 #: ipalib/plugins/user.py:333
 msgid "can be at most %(len)d characters"
-msgstr ""
+msgstr "doit contenir au plus %(len)d caractères"
 
 #: ipalib/plugins/user.py:400
 msgid ""
@@ -8531,10 +8732,13 @@ msgid ""
 "    Delete a user.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer un utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:404
 msgid "Deleted user \"%(value)s\""
-msgstr ""
+msgstr "Utilisateur \"%(value)s\" supprimé"
 
 #: ipalib/plugins/user.py:413
 msgid ""
@@ -8542,10 +8746,13 @@ msgid ""
 "    Modify a user.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier un utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:417
 msgid "Modified user \"%(value)s\""
-msgstr ""
+msgstr "Utilisateur \"%(value)s\" modifié"
 
 #: ipalib/plugins/user.py:437
 msgid ""
@@ -8553,20 +8760,23 @@ msgid ""
 "    Search for users.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des utilisateurs.\n"
+"    "
 
 #: ipalib/plugins/user.py:444
 msgid "Self"
-msgstr ""
+msgstr "Moi-même"
 
 #: ipalib/plugins/user.py:445
 msgid "Display user record for current Kerberos principal"
-msgstr ""
+msgstr "Afficher l'enregistrement utilisateur pour le principal Kerberos actuel"
 
 #: ipalib/plugins/user.py:463
 msgid "%(count)d user matched"
 msgid_plural "%(count)d users matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d utilisateur correspondant"
+msgstr[1] "%(count)d utilisateurs correspondants"
 
 #: ipalib/plugins/user.py:471
 msgid ""
@@ -8574,6 +8784,9 @@ msgid ""
 "    Display information about a user.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations à propos d'un utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:484
 msgid ""
@@ -8581,10 +8794,13 @@ msgid ""
 "    Disable a user account.\n"
 "    "
 msgstr ""
+"\n"
+"    Désactiver un compte utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:489
 msgid "Disabled user account \"%(value)s\""
-msgstr ""
+msgstr "Compte utilisateur \"%(value)s\" désactivé"
 
 #: ipalib/plugins/user.py:507
 msgid ""
@@ -8592,10 +8808,13 @@ msgid ""
 "    Enable a user account.\n"
 "    "
 msgstr ""
+"\n"
+"    Activer un compte utilisateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:512
 msgid "Enabled user account \"%(value)s\""
-msgstr ""
+msgstr "Compte utilisateur \"%(value)s\" activé"
 
 #: ipalib/plugins/user.py:529
 msgid ""
@@ -8608,10 +8827,18 @@ msgid ""
 "    an administrator.\n"
 "    "
 msgstr ""
+"\n"
+"    Déverrouiller un compte utilisateur\n"
+"\n"
+"    Un compte utilisateur peut être verrouillé si un mot de passe incorrect\n"
+"    a été utilisé trop souvent dans une période de temps spécifiée par la\n"
+"    politique de mots de passe. Le verrouillage d'un compte est temporaire,\n"
+"    est peut être déverrouillé par un administrateur.\n"
+"    "
 
 #: ipalib/plugins/user.py:538
 msgid "Unlocked account \"%(value)s\""
-msgstr ""
+msgstr "Compte utilisateur \"%(value)s\" déverrouillé"
 
 #: ipalib/plugins/virtual.py:20
 msgid ""
