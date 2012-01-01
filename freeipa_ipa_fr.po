@@ -3,14 +3,14 @@
 #
 # Translators:
 # Automatically generated, 2010.
-# Jérôme Fenal <jfenal@gmail.com>, 2011.
+# Jérôme Fenal <jfenal@gmail.com>, 2011, 2012.
 #   <jfenal@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-06-06 13:27-0400\n"
-"PO-Revision-Date: 2011-12-31 17:29+0100\n"
+"PO-Revision-Date: 2012-01-01 08:42+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -5976,11 +5976,11 @@ msgstr ""
 "pour spécifier les membres, RFC2307 utilise memberUid. Le schéma utilisé\n"
 "par défaut pour la migration est RFC2307bis.\n"
 "\n"
-"Les utilisateurs migrés n'ont pas d'autorisations Kerberos, uniquement\n"
+"Les utilisateurs migrés n'ont pas de crédits Kerberos, uniquement\n"
 "leur mot de passe LDAP. Afin de terminer le processus de migration, les\n"
 "utilisateurs devront se connecter à http://ipa.example.com/ipa/migration\n"
-"et s'authentifier à l'aide de leur mot de passe pour créer les informations\n"
-"d'authentification Kerberos.\n"
+"et s'authentifier à l'aide de leur mot de passe pour créer leurs crédits\n"
+"Kerberos.\n"
 "\n"
 "La migration est désactivée par défaut. Pour l'activer, utiliser la\n"
 "commande ipa config-mod :\n"
