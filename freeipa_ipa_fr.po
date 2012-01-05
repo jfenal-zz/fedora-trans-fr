@@ -1,7 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Red Hat
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Automatically generated, 2010.
 # Jérôme Fenal <jfenal@gmail.com>, 2011, 2012.
@@ -11,14 +10,15 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-12-08 16:05-0500\n"
-"PO-Revision-Date: 2012-01-05 08:30+0000\n"
+"PO-Revision-Date: 2012-01-05 10:27+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
-"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ipalib/cli.py:583
 #, python-format
@@ -37,31 +37,31 @@ msgstr "Annulé."
 #: ipalib/cli.py:753
 #, python-format
 msgid "Purpose: %s"
-msgstr ""
+msgstr "Objectif : %s"
 
 #: ipalib/cli.py:770
 msgid "Usage: ipa [global-options] COMMAND ..."
-msgstr ""
+msgstr "Utilisation : ipa [options-globales] COMMAND ..."
 
 #: ipalib/cli.py:772
 msgid "Built-in commands:"
-msgstr ""
+msgstr "Commandes intégrées :"
 
 #: ipalib/cli.py:774
 msgid "Help subtopics:"
-msgstr ""
+msgstr "Sous-thèmes de l'aide :"
 
 #: ipalib/cli.py:777
 msgid "Help topics:"
-msgstr ""
+msgstr "Thèmes de l'aide :"
 
 #: ipalib/cli.py:782
 msgid "Try `ipa --help` for a list of global options."
-msgstr ""
+msgstr "Utiliser `ipa --help` pour obtenir la liste des options globales."
 
 #: ipalib/cli.py:816
 msgid "Topic commands:"
-msgstr ""
+msgstr "Commandes du thème :"
 
 #: ipalib/cli.py:827
 msgid "Command name"
@@ -224,10 +224,8 @@ msgstr ""
 " name: %(reason)s"
 
 #: ipalib/errors.py:877
-msgid ""
-"The realm for the principal does not match the realm for this IPA server"
-msgstr ""
-"Le domaine du principal ne correspond pas au domaine de ce serveur IPA"
+msgid "The realm for the principal does not match the realm for this IPA server"
+msgstr "Le domaine du principal ne correspond pas au domaine de ce serveur IPA"
 
 #: ipalib/errors.py:893
 msgid "This command requires root access"
@@ -285,8 +283,7 @@ msgstr "Un système doit avoir un enregistrement DNS A correspondant"
 
 #: ipalib/errors.py:1116
 msgid "Deleting a managed group is not allowed. It must be detached first."
-msgstr ""
-"La suppression d'un groupe géré est interdite. Il doit d'abord être détaché."
+msgstr "La suppression d'un groupe géré est interdite. Il doit d'abord être détaché."
 
 #: ipalib/errors.py:1131
 msgid "A managed group cannot have a password policy."
@@ -300,8 +297,7 @@ msgstr "'%(entry)s' ne possède pas de certificat."
 #: ipalib/errors.py:1179
 #, python-format
 msgid "Unable to create private group. A group '%(group)s' already exists."
-msgstr ""
-"Impossible de créer un groupe privé. Un groupe '%(group)s' existe déjà."
+msgstr "Impossible de créer un groupe privé. Un groupe '%(group)s' existe déjà."
 
 #: ipalib/errors.py:1195
 #, python-format
@@ -315,13 +311,12 @@ msgstr ""
 #: ipalib/errors.py:1213
 #, python-format
 msgid "%(attr)s does not contain '%(value)s'"
-msgstr ""
+msgstr "%(attr)s ne contient pas '%(value)s'"
 
 #: ipalib/errors.py:1230
 #, python-format
-msgid ""
-"The search criteria was not specific enough. Expected 1 and found %(found)d."
-msgstr ""
+msgid "The search criteria was not specific enough. Expected 1 and found %(found)d."
+msgstr "Le critère de recherche n'est pas suffisamment spécifique. Une valeur attendue, mais %(found)d trouvées."
 
 #: ipalib/errors.py:1254
 #, python-format
@@ -392,8 +387,7 @@ msgid "Results are truncated, try a more specific search"
 msgstr "Résultats tronqués, essayer un recherche plus spécifique"
 
 #: ipalib/frontend.py:821
-msgid ""
-"Retrieve and print all attributes from the server. Affects command output."
+msgid "Retrieve and print all attributes from the server. Affects command output."
 msgstr ""
 "Récupérer et imprimer tous les attributs du serveur. Affecte la sortie "
 "standard de la commande."
@@ -617,8 +611,7 @@ msgid "Permissions"
 msgstr "Permissions"
 
 #: ipalib/plugins/aci.py:436
-msgid ""
-"comma-separated list of permissions to grant(read, write, add, delete, all)"
+msgid "comma-separated list of permissions to grant(read, write, add, delete, all)"
 msgstr ""
 "Liste séparée par des virgules de permissions à accorder (read, write, add, "
 "delete, all)"
@@ -1274,8 +1267,7 @@ msgid "Automount master file."
 msgstr "Fichier maître automount"
 
 #: ipalib/plugins/automount.py:331
-msgid ""
-"Continuous operation mode. Errors are reported but the process continues."
+msgid "Continuous operation mode. Errors are reported but the process continues."
 msgstr ""
 "Mode opération continue. Les erreurs seront rapportées mais le processus "
 "continuera."
@@ -1934,8 +1926,7 @@ msgstr "Principal"
 
 #: ipalib/plugins/cert.py:221
 msgid "Service principal for this certificate (e.g. HTTP/test.example.com)"
-msgstr ""
-"Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
+msgstr "Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
 
 #: ipalib/plugins/cert.py:228
 msgid "automatically add the principal if it doesn't exist"
@@ -2142,8 +2133,7 @@ msgid "Search time limit"
 msgstr "Durée de recherche limite"
 
 #: ipalib/plugins/config.py:121
-msgid ""
-"Maximum amount of time (seconds) for a search (> 0, or -1 for unlimited)"
+msgid "Maximum amount of time (seconds) for a search (> 0, or -1 for unlimited)"
 msgstr ""
 
 #: ipalib/plugins/config.py:126
@@ -2163,8 +2153,7 @@ msgid "A comma-separated list of fields to search in when searching for users"
 msgstr ""
 
 #: ipalib/plugins/config.py:138
-msgid ""
-"A comma-separated list of fields to search in when searching for groups"
+msgid "A comma-separated list of fields to search in when searching for groups"
 msgstr ""
 
 #: ipalib/plugins/config.py:142 ipalib/plugins/config.py:143
@@ -2500,8 +2489,7 @@ msgid "flag must be one of \"S\", \"A\", \"U\", or \"P\""
 msgstr ""
 
 #: ipalib/plugins/dns.py:249
-msgid ""
-"format must be specified as \"subtype hostname\" (see RFC 1183 for details)"
+msgid "format must be specified as \"subtype hostname\" (see RFC 1183 for details)"
 msgstr ""
 
 #: ipalib/plugins/dns.py:254
@@ -2690,8 +2678,7 @@ msgstr ""
 #: ipalib/plugins/dns.py:611
 #, python-format
 msgid "Nameserver '%(host)s' does not have a corresponding A/AAAA record"
-msgstr ""
-"Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
+msgstr "Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
 
 #: ipalib/plugins/dns.py:638
 msgid "DNS zone"
@@ -5687,8 +5674,7 @@ msgstr ""
 
 #: ipalib/plugins/migration.py:86
 #, python-format
-msgid ""
-"Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
+msgid "Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
 msgstr ""
 "Le principal Kerberos %s existe déjà. Utiliser la commande 'ipa user-mod' "
 "pour le créer manuellement."
@@ -5760,8 +5746,7 @@ msgid "User object class"
 msgstr "Classes d'objet utilisateur"
 
 #: ipalib/plugins/migration.py:357
-msgid ""
-"Comma-separated list of objectclasses used to search for user entries in DS"
+msgid "Comma-separated list of objectclasses used to search for user entries in DS"
 msgstr ""
 "Liste séparée par des virgules des classes d'objet à utiliser pour la "
 "recherche d'entrées utilisateurs dans l'annuaire"
@@ -5771,8 +5756,7 @@ msgid "Group object class"
 msgstr "Classes d'objets groupes"
 
 #: ipalib/plugins/migration.py:365
-msgid ""
-"Comma-separated list of objectclasses used to search for group entries in DS"
+msgid "Comma-separated list of objectclasses used to search for group entries in DS"
 msgstr ""
 "Liste séparée par des virgules des classes d'objet à utiliser pour la "
 "recherche d'entrées groupes dans l'annuaire"
@@ -5782,8 +5766,7 @@ msgid "Ignore user object class"
 msgstr ""
 
 #: ipalib/plugins/migration.py:373
-msgid ""
-"Comma-separated list of objectclasses to be ignored for user entries in DS"
+msgid "Comma-separated list of objectclasses to be ignored for user entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:380
@@ -5791,8 +5774,7 @@ msgid "Ignore user attribute"
 msgstr ""
 
 #: ipalib/plugins/migration.py:381
-msgid ""
-"Comma-separated list of attributes to be ignored for user entries in DS"
+msgid "Comma-separated list of attributes to be ignored for user entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:388
@@ -5800,8 +5782,7 @@ msgid "Ignore group object class"
 msgstr ""
 
 #: ipalib/plugins/migration.py:389
-msgid ""
-"Comma-separated list of objectclasses to be ignored for group entries in DS"
+msgid "Comma-separated list of objectclasses to be ignored for group entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:396
@@ -5809,8 +5790,7 @@ msgid "Ignore group attribute"
 msgstr ""
 
 #: ipalib/plugins/migration.py:397
-msgid ""
-"Comma-separated list of attributes to be ignored for group entries in DS"
+msgid "Comma-separated list of attributes to be ignored for group entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:404
@@ -5840,8 +5820,7 @@ msgid "Continue"
 msgstr ""
 
 #: ipalib/plugins/migration.py:418
-msgid ""
-"Continuous operation mode. Errors are reported but the process continues"
+msgid "Continuous operation mode. Errors are reported but the process continues"
 msgstr "Mode continu. Les erreurs sont rapportées mais le processus continue"
 
 #: ipalib/plugins/migration.py:426
@@ -5914,8 +5893,7 @@ msgid "%(count)d variables"
 msgstr "%(count)d variables"
 
 #: ipalib/plugins/misc.py:47 ipalib/plugins/misc.py:115
-msgid ""
-"retrieve and print all attributes from the server. Affects command output."
+msgid "retrieve and print all attributes from the server. Affects command output."
 msgstr ""
 "récupère et affiche tous les attributs du serveur. Modifie la sortie de la "
 "commande."
@@ -6265,17 +6243,14 @@ msgid "Permission name"
 msgstr "Nom de permission"
 
 #: ipalib/plugins/permission.py:120
-msgid ""
-"Comma-separated list of permissions to grant (read, write, add, delete, all)"
+msgid "Comma-separated list of permissions to grant (read, write, add, delete, all)"
 msgstr ""
 "Liste séparée par des virgules des permissions à accorder (read, write, add,"
 " delete, all)"
 
 #: ipalib/plugins/permission.py:135
-msgid ""
-"Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
-msgstr ""
-"Type d'objet IPA (user, group, host, hostgroup, service, netgroup, dns)"
+msgid "Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
+msgstr "Type d'objet IPA (user, group, host, hostgroup, service, netgroup, dns)"
 
 #: ipalib/plugins/permission.py:141
 msgid "Member of group"
@@ -6643,8 +6618,7 @@ msgstr "Intervalle de réinitialisation sur échec"
 
 #: ipalib/plugins/pwpolicy.py:209
 msgid "Period after which failure count will be reset (seconds)"
-msgstr ""
-"Période après laquelle le compteur d'échec sera réinitialisé (secondes)"
+msgstr "Période après laquelle le compteur d'échec sera réinitialisé (secondes)"
 
 #: ipalib/plugins/pwpolicy.py:214
 msgid "Lockout duration"
@@ -6716,8 +6690,7 @@ msgstr "Priorité de la polique (une valeur élevé indique une priorité basse)
 
 #: ipalib/plugins/pwpolicy.py:317
 msgid "Maximum password life must be greater than minimum."
-msgstr ""
-"La durée de vie maximale du mot de passe doit être supérieure au minimum."
+msgstr "La durée de vie maximale du mot de passe doit être supérieure au minimum."
 
 #: ipalib/plugins/pwpolicy.py:336
 msgid "Add a new group password policy."
@@ -7917,8 +7890,7 @@ msgstr "Moi-même"
 
 #: ipalib/plugins/user.py:518
 msgid "Display user record for current Kerberos principal"
-msgstr ""
-"Afficher l'enregistrement utilisateur pour le principal Kerberos actuel"
+msgstr "Afficher l'enregistrement utilisateur pour le principal Kerberos actuel"
 
 #: ipalib/plugins/user.py:539
 #, python-format
@@ -8238,8 +8210,7 @@ msgid "Server Name"
 msgstr "Nom de serveur"
 
 #: ipa-client/ipa-getkeytab.c:798 ipa-client/ipa-rmkeytab.c:171
-msgid ""
-"The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
+msgid "The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
 msgstr ""
 "Le principal pour lequel obtenir le (par ex: "
 "ftp/ftp.example.com@EXAMPLE.COM)"
@@ -8333,13 +8304,11 @@ msgstr "Nom de principal de service invalide\n"
 #: ipa-client/ipa-getkeytab.c:910
 #, c-format
 msgid "Kerberos Credential Cache not found. Do you have a Kerberos Ticket?\n"
-msgstr ""
-"Cache de crédits Kerberos introuvable. Possédez-vous un ticket Kerberos ?\n"
+msgstr "Cache de crédits Kerberos introuvable. Possédez-vous un ticket Kerberos ?\n"
 
 #: ipa-client/ipa-getkeytab.c:918
 #, c-format
-msgid ""
-"Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
+msgid "Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
 msgstr ""
 "Principal d'utilisateur Kerberos introuvable. Possédez-vous un cache de "
 "crédits Kerberos ?\n"
@@ -8529,8 +8498,7 @@ msgstr "résultat de la réponse XML-RPC introuvable\n"
 #: ipa-client/ipa-join.c:919
 #, c-format
 msgid "Unable to join host: Kerberos Credential Cache not found\n"
-msgstr ""
-"Impossible d'inscrire le système : cache de crédit Kerberos introuvable\n"
+msgstr "Impossible d'inscrire le système : cache de crédit Kerberos introuvable\n"
 
 #: ipa-client/ipa-join.c:927
 #, c-format
