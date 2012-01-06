@@ -16,12 +16,13 @@ host-group : groupes de systèmes
 
 access time (HBAC rules) : horaire d'accès
 
+automember rule : règle d'auto-adhésion
 
 Automount :
-- key : clé
-- location : lieu
-- info: information
-- map : carte
+- key : clé d'automontage
+- location : lieu d'automontage
+- info: information d'automontage
+- map : carte d'automontage
 
 
 Exemples :
