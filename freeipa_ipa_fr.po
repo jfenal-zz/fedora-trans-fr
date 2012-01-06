@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-12-08 16:05-0500\n"
-"PO-Revision-Date: 2012-01-05 10:27+0100\n"
+"PO-Revision-Date: 2012-01-06 22:57+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -490,7 +490,7 @@ msgstr "doit être du texte Unicode"
 
 #: ipalib/parameters.py:1436
 msgid "Leading and trailing spaces are not allowed"
-msgstr ""
+msgstr "Les espaces de début et de fin ne sont pas autorisés"
 
 #: ipalib/parameters.py:1444
 #, python-format
@@ -795,40 +795,121 @@ msgid ""
 "    ipa automember-del --type=hostgroup webservers\n"
 "    ipa automember-del --type=group devel\n"
 msgstr ""
+"FIXME\n"
+"Règle d'auto adhésion.\n"
+"\n"
+"Il est possible d'apporter de la clarté dans l'adhésion de systèmes ou\n"
+"d'utilisateurs en configurant des motifs d'expressions rationnelles inclusives\n"
+"ou exclusives, ce qui permet d'assigner de nouvelles entrées dans un groupe\n"
+"d'utilisateurs ou de systèmes sur la base d'informations dans les attributs.\n"
+"\n"
+"Une règle est directement associée avec un groupe par son nom, il est donc\n"
+"impossible de créer une règle sans le nom du groupe auquel elle est associée.\n"
+"\n"
+"Une condition est une expression rationnelle utilisée par 389-ds pour\n"
+"identifier les nouvelles entrées à utiliser dans la règle d'auto-adhésion.\n"
+"S'il y a correspondance avec une règle d'auto-adhésion, alors l'entrée\n"
+"est automatiquement ajoutée au groupe d'utilisateurs ou de systèmes.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter le groupe d'utilisateurs ou de systèmes initial :\n"
+"   ipa hostgroup-add --desc=\"Web Servers\" webservers\n"
+"   ipa group-add --desc=\"Developers\" devel\n"
+"\n"
+" Créer la règle initiale :\n"
+"   ipa automember-add --type=hostgroup webservers\n"
+"   ipa automember-add --type=group devel\n"
+"\n"
+" Ajouter une condition à la règle :\n"
+"   ipa automember-add-condition --key=fqdn --type=hostgroup --inclusive-regex=^web[1-9]+\\.example\\.com webservers\n"
+"   ipa automember-add-condition --key=manager --type=group --inclusive-regex=^uid=mscott devel\n"
+"\n"
+" Ajouter une condition exclusive à la règle empêchant l'auto-adhésion :\n"
+"   ipa automember-add-condition --key=fqdn --type=hostgroup --exclusive-regex=^web5\\.example\\.com webservers\n"
+"\n"
+" Ajouter un système :\n"
+"    ipa host-add web1.example.com\n"
+"\n"
+" Ajouter un utilisateur :\n"
+"    ipa user-add --first=Tim --last=User --password tuser1 --manager=mscott\n"
+"\n"
+" Vérifier l'auto-adhésion :\n"
+"    ipa hostgroup-show webservers\n"
+"      Host-group: webservers\n"
+"      Description: Web Servers\n"
+"      Member hosts: web1.example.com\n"
+"\n"
+"    ipa group-show devel\n"
+"      Group name: devel\n"
+"      Description: Developers\n"
+"      GID: 1004200000\n"
+"      Member users: tuser\n"
+"\n"
+" Supprimer une conditition de la règle :\n"
+"   ipa automember-remove-condition --key=fqdn --type=hostgroup --inclusive-regex=^web[1-9]+\\.example\\.com webservers\n"
+"\n"
+" Modifier la règle d'auto-adhésion:\n"
+"    ipa automember-mod\n"
+"\n"
+" Définir le groupe cible par défaut :\n"
+"    ipa automember-default-group-set --default-group=webservers --type=hostgroup\n"
+"    ipa automember-default-group-set --default-group=ipausers --type=group\n"
+"\n"
+" Supprimer le groupe cible par défaut :\n"
+"    ipa automember-default-group-remove --type=hostgroup\n"
+"    ipa automember-default-group-remove --type=group\n"
+"\n"
+" Afficher le groupe cible par défaut :\n"
+"    ipa automember-default-group-show --type=hostgroup\n"
+"    ipa automember-default-group-show --type=group\n"
+"\n"
+" Recherche toutes les règles d'auto-adhésion :\n"
+"    ipa automember-find\n"
+"\n"
+" Afficher une règle d'auto-adhésion :\n"
+"    ipa automember-show --type=hostgroup webservers\n"
+"    ipa automember-show --type=group devel\n"
+"\n"
+" Supprimer une règle d'auto-adhésion :\n"
+"    ipa automember-del --type=hostgroup webservers\n"
+"    ipa automember-del --type=group devel\n"
 
 #: ipalib/plugins/automember.py:114 ipalib/plugins/automember.py:115
 msgid "Inclusive Regex"
-msgstr ""
+msgstr "Regex inclusive"
 
 #: ipalib/plugins/automember.py:121 ipalib/plugins/automember.py:122
 msgid "Exclusive Regex"
-msgstr ""
+msgstr "Regex exclusive"
 
 #: ipalib/plugins/automember.py:127
 msgid "Attribute Key"
-msgstr ""
+msgstr "Clé d'attribut"
 
 #: ipalib/plugins/automember.py:128
 msgid ""
 "Attribute to filter via regex. For example fqdn for a host, or manager for a"
 " user"
 msgstr ""
+"Attribut à filtrer via l'expression rationnelle. Par exemple fqdn pour un "
+" système, ou manager pour un utilisateur"
 
 #: ipalib/plugins/automember.py:135
 msgid "Grouping Type"
-msgstr ""
+msgstr "Type de groupe"
 
 #: ipalib/plugins/automember.py:136
 msgid "Grouping to which the rule applies"
-msgstr ""
+msgstr "Type de groupe auquel la règle s'applique"
 
 #: ipalib/plugins/automember.py:144 ipalib/plugins/automember.py:145
 msgid "Automember Rule"
-msgstr ""
+msgstr "Règle d'auto-adhésion"
 
 #: ipalib/plugins/automember.py:166
 msgid "Auto Membership Rule"
-msgstr ""
+msgstr "Règle d'auto-adhésion"
 
 #: ipalib/plugins/automember.py:171 ipalib/plugins/automount.py:526
 #: ipalib/plugins/group.py:115 ipalib/plugins/hbacrule.py:181
@@ -842,25 +923,25 @@ msgstr "Description"
 
 #: ipalib/plugins/automember.py:172
 msgid "A description of this auto member rule"
-msgstr ""
+msgstr "Une description de cette règle d'auto-adhésion"
 
 #: ipalib/plugins/automember.py:176 ipalib/plugins/automember.py:509
 msgid "Default Group"
-msgstr ""
+msgstr "Groupe par défaut"
 
 #: ipalib/plugins/automember.py:177 ipalib/plugins/automember.py:510
 msgid "Default group for entires to land"
-msgstr ""
+msgstr "Groupe par défaut assigné aux nouvelles entrées"
 
 #: ipalib/plugins/automember.py:188
 #, python-format
 msgid "Group: %s not found!"
-msgstr ""
+msgstr "Groupe : %s introuvable !"
 
 #: ipalib/plugins/automember.py:215
 #, python-format
 msgid "%s is not a valid attribute."
-msgstr ""
+msgstr "%s n'est pas un attribut valide."
 
 #: ipalib/plugins/automember.py:228
 msgid ""
@@ -868,15 +949,18 @@ msgid ""
 "    Add an automember rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter une règle d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:233
 #, python-format
 msgid "Added automember rule \"%(value)s\""
-msgstr ""
+msgstr "Règle d'auto-adhésion \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/automember.py:239
 msgid "Auto Membership is not configured"
-msgstr ""
+msgstr "L'auto-adhésion n'est pas configurée"
 
 #: ipalib/plugins/automember.py:252
 msgid ""
@@ -884,28 +968,31 @@ msgid ""
 "    Add conditions to an automember rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Ajouter des conditions à une règle d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:257
 msgid "Failed to add"
-msgstr ""
+msgstr "Échec lors de l'ajout"
 
 #: ipalib/plugins/automember.py:264
 #, python-format
 msgid "Added condition(s) to \"%(value)s\""
-msgstr ""
+msgstr "Condition(s) ajoutées à \"%(value)s\""
 
 #: ipalib/plugins/automember.py:273
 msgid "Conditions that could not be added"
-msgstr ""
+msgstr "Conditions n'ayant pu être ajoutées"
 
 #: ipalib/plugins/automember.py:277
 msgid "Number of conditions added"
-msgstr ""
+msgstr "Nombre de conditions ajoutées"
 
 #: ipalib/plugins/automember.py:286 ipalib/plugins/automember.py:372
 #, python-format
 msgid "Auto member rule: %s not found!"
-msgstr ""
+msgstr "Règle d'auto-adhésion : %s introuvable !"
 
 #: ipalib/plugins/automember.py:329
 msgid ""
@@ -913,6 +1000,10 @@ msgid ""
 "        Override this so we can add completed and failed to the return result.\n"
 "        "
 msgstr ""
+"\n"
+"        Outrepasser ceci afin de pouvoir préciser les ajouts et échecs aux "
+"        résultats renvoyé.\n"
+"        "
 
 #: ipalib/plugins/automember.py:345
 msgid ""
@@ -920,19 +1011,22 @@ msgid ""
 "    Remove conditions from an automember rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer les conditions d'une règle d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:350
 #, python-format
 msgid "Removed condition(s) to \"%(value)s\""
-msgstr ""
+msgstr "Condition(s) supprimée(s) de \"%(value)s\""
 
 #: ipalib/plugins/automember.py:359
 msgid "Conditions that could not be removed"
-msgstr ""
+msgstr "Conditions n'ayant pu être supprimées"
 
 #: ipalib/plugins/automember.py:363
 msgid "Number of conditions removed"
-msgstr ""
+msgstr "Nombre de conditions supprimées"
 
 #: ipalib/plugins/automember.py:418
 msgid ""
@@ -940,6 +1034,9 @@ msgid ""
 "        Override this so we can set completed and failed.\n"
 "        "
 msgstr ""
+"\n"
+"        Outrepasser ceci afin de pouvoir préciser les ajouts et échecs.\n"
+"        "
 
 #: ipalib/plugins/automember.py:434
 msgid ""
@@ -947,11 +1044,14 @@ msgid ""
 "    Modify an automember rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Modifier une règle d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:439
 #, python-format
 msgid "Modified automember rule \"%(value)s\""
-msgstr ""
+msgstr "Règle d'auto-adhésion \"%(value)s\" modifiée"
 
 #: ipalib/plugins/automember.py:450
 msgid ""
@@ -959,11 +1059,14 @@ msgid ""
 "    Delete an automember rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer une règle d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:455
 #, python-format
 msgid "Deleted automember rule \"%(value)s\""
-msgstr ""
+msgstr "Règle d'auto-adhésion \"%(value)s\" supprimée"
 
 #: ipalib/plugins/automember.py:466
 msgid ""
@@ -971,13 +1074,16 @@ msgid ""
 "    Search for automember rules.\n"
 "    "
 msgstr ""
+"\n"
+"    Rechercher des règles d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:473
 #, python-format
 msgid "%(count)d rules matched"
 msgid_plural "%(count)d rules matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d règle correspondante"
+msgstr[1] "%(count)d règles correspondantes"
 
 #: ipalib/plugins/automember.py:486
 msgid ""
@@ -985,6 +1091,9 @@ msgid ""
 "    Display information about an automember rule.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur une règle d'auto-adhésion.\n"
+"    "
 
 #: ipalib/plugins/automember.py:502
 msgid ""
@@ -992,11 +1101,14 @@ msgid ""
 "    Set default group for all unmatched entries.\n"
 "    "
 msgstr ""
+"\n"
+"    Définir le groupe par défaut pour les entrées ne correspondant à aucune règle.\n"
+"    "
 
 #: ipalib/plugins/automember.py:514
 #, python-format
 msgid "Set default group for automember \"%(value)s\""
-msgstr ""
+msgstr "Groupe d'auto-adhésion par défaut défini à \"%(value)s\""
 
 #: ipalib/plugins/automember.py:531
 msgid ""
@@ -1004,15 +1116,18 @@ msgid ""
 "    Remove default group for all unmatched entries.\n"
 "    "
 msgstr ""
+"\n"
+"    Supprimer le groupe par défaut pour les entrées ne correspondant à aucune règle.\n"
+"    "
 
 #: ipalib/plugins/automember.py:536
 #, python-format
 msgid "Removed default group for automember \"%(value)s\""
-msgstr ""
+msgstr "Groupe d'auto-adhésion par défaut \"%(value)s\" supprimé"
 
 #: ipalib/plugins/automember.py:548
 msgid "No default group set"
-msgstr ""
+msgstr "Aucun groupe d'auto-adhésion défini"
 
 #: ipalib/plugins/automember.py:567
 msgid ""
@@ -1020,6 +1135,9 @@ msgid ""
 "    Display information about the default automember groups.\n"
 "    "
 msgstr ""
+"\n"
+"    Afficher les informations sur le groupe d'auto-adhésion par défaut.\n"
+"    "
 
 #: ipalib/plugins/automount.py:29
 msgid ""
@@ -1195,19 +1313,19 @@ msgstr ""
 
 #: ipalib/plugins/automount.py:191
 msgid "automount location"
-msgstr ""
+msgstr "lieu d'automontage"
 
 #: ipalib/plugins/automount.py:192
 msgid "automount locations"
-msgstr ""
+msgstr "lieux d'automontage"
 
 #: ipalib/plugins/automount.py:195
 msgid "Automount Locations"
-msgstr "Lieux automount"
+msgstr "Lieux d'automontage"
 
 #: ipalib/plugins/automount.py:196
 msgid "Automount Location"
-msgstr ""
+msgstr "Lieu d'automontage"
 
 #: ipalib/plugins/automount.py:201 ipalib/plugins/host.py:273
 msgid "Location"
@@ -1215,48 +1333,48 @@ msgstr "Lieu"
 
 #: ipalib/plugins/automount.py:202
 msgid "Automount location name."
-msgstr "Nom de lieu autonmount."
+msgstr "Nom de lieu automount."
 
 #: ipalib/plugins/automount.py:211
 msgid "Create a new automount location."
-msgstr ""
+msgstr "Créer un nouveau lieu d'automontage"
 
 #: ipalib/plugins/automount.py:213
 #, python-format
 msgid "Added automount location \"%(value)s\""
-msgstr ""
+msgstr "Lieu d'automontage \"%(value)s\" ajouté"
 
 #: ipalib/plugins/automount.py:232
 msgid "Delete an automount location."
-msgstr ""
+msgstr "Supprimer un lieu d'automontage."
 
 #: ipalib/plugins/automount.py:234
 #, python-format
 msgid "Deleted automount location \"%(value)s\""
-msgstr ""
+msgstr "Lieu d'automontage \"%(value)s\" supprimé"
 
 #: ipalib/plugins/automount.py:240
 msgid "Display an automount location."
-msgstr ""
+msgstr "Afficher un lieu d'automontage."
 
 #: ipalib/plugins/automount.py:246
 msgid "Search for an automount location."
-msgstr ""
+msgstr "Rechercher un lieu d'automontage."
 
 #: ipalib/plugins/automount.py:249
 #, python-format
 msgid "%(count)d automount location matched"
 msgid_plural "%(count)d automount locations matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d lieu d'automontage correspondants"
+msgstr[1] "%(count)d lieux d'automontage correspondant"
 
 #: ipalib/plugins/automount.py:257
 msgid "Generate automount files for a specific location."
-msgstr ""
+msgstr "Créer les fichiers d'automontage pour un lieu spécifique."
 
 #: ipalib/plugins/automount.py:319
 msgid "Import automount files for a specific location."
-msgstr ""
+msgstr "Importer les fichiers d'automontage pour un lieu spécifique."
 
 #: ipalib/plugins/automount.py:323
 msgid "Master file"
@@ -1279,11 +1397,11 @@ msgstr "Fichiers %(file)s introuvable"
 
 #: ipalib/plugins/automount.py:512
 msgid "automount map"
-msgstr ""
+msgstr "carte d'automontage"
 
 #: ipalib/plugins/automount.py:513
 msgid "automount maps"
-msgstr ""
+msgstr "cartes d'automontage"
 
 #: ipalib/plugins/automount.py:520
 msgid "Map"
@@ -1291,69 +1409,69 @@ msgstr "Carte"
 
 #: ipalib/plugins/automount.py:521
 msgid "Automount map name."
-msgstr "Nom de carte automount."
+msgstr "Nom de carte d'automontage."
 
 #: ipalib/plugins/automount.py:530
 msgid "Automount Maps"
-msgstr "Cartes automount"
+msgstr "Cartes d'automontage"
 
 #: ipalib/plugins/automount.py:531
 msgid "Automount Map"
-msgstr ""
+msgstr "Carte d'automontage"
 
 #: ipalib/plugins/automount.py:537
 msgid "Create a new automount map."
-msgstr ""
+msgstr "Créer une nouvelle carte d'automontage."
 
 #: ipalib/plugins/automount.py:539
 #, python-format
 msgid "Added automount map \"%(value)s\""
-msgstr ""
+msgstr "Carte d'automontage \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/automount.py:545
 msgid "Delete an automount map."
-msgstr ""
+msgstr "Supprimer une carte d'automontage."
 
 #: ipalib/plugins/automount.py:547
 #, python-format
 msgid "Deleted automount map \"%(value)s\""
-msgstr ""
+msgstr "Carte d'automontage \"%(value)s\" supprimée"
 
 #: ipalib/plugins/automount.py:565
 msgid "Modify an automount map."
-msgstr ""
+msgstr "Modifier une carte d'automontage."
 
 #: ipalib/plugins/automount.py:567
 #, python-format
 msgid "Modified automount map \"%(value)s\""
-msgstr ""
+msgstr "Carte d'automontage \"%(value)s\" modifiée"
 
 #: ipalib/plugins/automount.py:573
 msgid "Search for an automount map."
-msgstr ""
+msgstr "Rechercher des cartes d'automontage."
 
 #: ipalib/plugins/automount.py:576
 #, python-format
 msgid "%(count)d automount map matched"
 msgid_plural "%(count)d automount maps matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d carte d'automontage correspondante"
+msgstr[1] "%(count)d cartes d'automontage correspondantes"
 
 #: ipalib/plugins/automount.py:584
 msgid "Display an automount map."
-msgstr ""
+msgstr "Afficher une carte d'automontage."
 
 #: ipalib/plugins/automount.py:590
 msgid "Automount key object."
-msgstr ""
+msgstr "Objet clé d'automontage."
 
 #: ipalib/plugins/automount.py:594
 msgid "automount key"
-msgstr ""
+msgstr "clé d'automontage"
 
 #: ipalib/plugins/automount.py:595
 msgid "automount keys"
-msgstr ""
+msgstr "clés d'automontage"
 
 #: ipalib/plugins/automount.py:606 ipalib/plugins/automount.py:804
 #: ipalib/plugins/automount.py:911
@@ -1363,7 +1481,7 @@ msgstr "Clé"
 #: ipalib/plugins/automount.py:607 ipalib/plugins/automount.py:805
 #: ipalib/plugins/automount.py:912
 msgid "Automount key name."
-msgstr "Nom de clé automount."
+msgstr "Nom de clé d'automontage."
 
 #: ipalib/plugins/automount.py:612 ipalib/plugins/automount.py:809
 #: ipalib/plugins/automount.py:916
@@ -1376,11 +1494,11 @@ msgstr "description"
 
 #: ipalib/plugins/automount.py:624
 msgid "Automount Keys"
-msgstr "Clés automount"
+msgstr "Clés d'automontage"
 
 #: ipalib/plugins/automount.py:625
 msgid "Automount Key"
-msgstr ""
+msgstr "Clé d'automontage"
 
 #: ipalib/plugins/automount.py:626
 #, python-format
@@ -1412,21 +1530,21 @@ msgstr ""
 
 #: ipalib/plugins/automount.py:736
 msgid "Create a new automount key."
-msgstr ""
+msgstr "Créer une nouvelle clé d'automontage."
 
 #: ipalib/plugins/automount.py:738
 #, python-format
 msgid "Added automount key \"%(value)s\""
-msgstr ""
+msgstr "Clé d'automontage \"%(value)s\" créée"
 
 #: ipalib/plugins/automount.py:761
 msgid "Create a new indirect mount point."
-msgstr ""
+msgstr "Créer un nouveau point de montage indirect."
 
 #: ipalib/plugins/automount.py:763
 #, python-format
 msgid "Added automount indirect map \"%(value)s\""
-msgstr ""
+msgstr "Carte d'automontage indirect \"%(value)s\" créée"
 
 #: ipalib/plugins/automount.py:768
 msgid "Mount point"
@@ -1442,21 +1560,21 @@ msgstr "Nom de la carte parente (par défaut : auto.master)."
 
 #: ipalib/plugins/automount.py:797
 msgid "Delete an automount key."
-msgstr ""
+msgstr "Supprimer une clé d'automontage."
 
 #: ipalib/plugins/automount.py:799
 #, python-format
 msgid "Deleted automount key \"%(value)s\""
-msgstr ""
+msgstr "Clé d'automontage \"%(value)s\" supprimée"
 
 #: ipalib/plugins/automount.py:839
 msgid "Modify an automount key."
-msgstr ""
+msgstr "Modifier une clé d'automontage."
 
 #: ipalib/plugins/automount.py:841
 #, python-format
 msgid "Modified automount key \"%(value)s\""
-msgstr ""
+msgstr "Clé d'automontage \"%(value)s\" modifiée"
 
 #: ipalib/plugins/automount.py:846
 msgid "New mount information"
@@ -1464,18 +1582,18 @@ msgstr "Nouvelle information de montage"
 
 #: ipalib/plugins/automount.py:895
 msgid "Search for an automount key."
-msgstr ""
+msgstr "Rechercher une clé d'automontage."
 
 #: ipalib/plugins/automount.py:898
 #, python-format
 msgid "%(count)d automount key matched"
 msgid_plural "%(count)d automount keys matched"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)d clé d'automontage correspondante"
+msgstr[1] "%(count)d clés d'automontage correspondantes"
 
 #: ipalib/plugins/automount.py:906
 msgid "Display an automount key."
-msgstr ""
+msgstr "Afficher une clé d'automontage."
 
 #: ipalib/plugins/baseldap.py:40 ipalib/plugins/entitle.py:487
 #: ipalib/plugins/migration.py:327 ipalib/plugins/user.py:235
