@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-12-08 16:05-0500\n"
-"PO-Revision-Date: 2012-01-06 23:00+0100\n"
+"PO-Revision-Date: 2012-01-08 17:18+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1655,15 +1655,15 @@ msgstr "Services membres"
 
 #: ipalib/plugins/baseldap.py:91
 msgid "Member service groups"
-msgstr "Groupes de services membres."
+msgstr "Groupes de services membres"
 
 #: ipalib/plugins/baseldap.py:97
 msgid "Member HBAC service"
-msgstr ""
+msgstr "Services HBAC membres"
 
 #: ipalib/plugins/baseldap.py:100
 msgid "Member HBAC service groups"
-msgstr "Membre des groupes de services HBAC"
+msgstr "Groupes de services HBAC membres"
 
 #: ipalib/plugins/baseldap.py:109
 msgid "Indirect Member users"
@@ -1699,7 +1699,7 @@ msgstr "Groupe de services membre indirect"
 
 #: ipalib/plugins/baseldap.py:133
 msgid "Indirect Member netgroups"
-msgstr "Netgroups membre indirect"
+msgstr "Netgroups membres indirects"
 
 #: ipalib/plugins/baseldap.py:148
 msgid "External host"
@@ -1707,23 +1707,23 @@ msgstr "Système externe"
 
 #: ipalib/plugins/baseldap.py:151
 msgid "Failed source hosts/hostgroups"
-msgstr ""
+msgstr "Systèmes/groupes de systèmes sources en échec"
 
 #: ipalib/plugins/baseldap.py:154
 msgid "Failed hosts/hostgroups"
-msgstr "Échec sur systèmes et groupes de système"
+msgstr "Systèmes et groupes de système en échec"
 
 #: ipalib/plugins/baseldap.py:157
 msgid "Failed users/groups"
-msgstr "Échec sur utilisateurs et groupes"
+msgstr "Utilisateurs et groupes en échec"
 
 #: ipalib/plugins/baseldap.py:160
 msgid "Failed service/service groups"
-msgstr ""
+msgstr "Services et groupes de service en échec"
 
 #: ipalib/plugins/baseldap.py:163
 msgid "Failed managedby"
-msgstr "Échec sur managedby"
+msgstr "managedby en échec"
 
 #: ipalib/plugins/baseldap.py:166
 msgid "Failed to remove"
@@ -1731,11 +1731,11 @@ msgstr "Échec à la suppression"
 
 #: ipalib/plugins/baseldap.py:306
 msgid "entry"
-msgstr ""
+msgstr "entrée"
 
 #: ipalib/plugins/baseldap.py:307
 msgid "entries"
-msgstr ""
+msgstr "entrées"
 
 #: ipalib/plugins/baseldap.py:339 ipalib/plugins/baseldap.py:340
 msgid "Entry"
@@ -1774,16 +1774,20 @@ msgid ""
 "Add an attribute/value pair. Format is attr=value. The attribute\n"
 "must be part of the schema."
 msgstr ""
+"Ajouter une paire attribut/valeur. Format : attr=valeur. Les\n"
+"attributs doivent faire partie du schéma."
 
 #: ipalib/plugins/baseldap.py:644
 msgid ""
 "Delete an attribute/value pair. The option will be evaluated\n"
 "last, after all sets and adds."
 msgstr ""
+"Supprimer une paire attribut/valeur. L'option sera évaluée\n"
+"en dernier, après les modifications et ajouts."
 
 #: ipalib/plugins/baseldap.py:965
 msgid "Continuous mode: Don't stop on errors."
-msgstr "Mode continue : pas d'arrêt sur erreurs."
+msgstr "Mode continu : pas d'arrêt sur erreurs."
 
 #: ipalib/plugins/baseldap.py:990 ipalib/plugins/baseldap.py:1062
 #: ipalib/plugins/internal.py:409
@@ -1814,17 +1818,17 @@ msgstr "cette entrée a été supprimée pendant sa modification"
 #: ipalib/plugins/baseldap.py:1290 ipalib/plugins/baseldap.py:1782
 #, python-format
 msgid "comma-separated list of %s"
-msgstr ""
+msgstr "liste séparée par des virgules de %s"
 
 #: ipalib/plugins/baseldap.py:1302
 #, python-format
 msgid "member %s"
-msgstr ""
+msgstr "%s membre"
 
 #: ipalib/plugins/baseldap.py:1332 ipalib/plugins/baseldap.py:1807
 #, python-format
 msgid "comma-separated list of %s to add"
-msgstr ""
+msgstr "liste séparée par des virgules de %s à ajouter"
 
 #: ipalib/plugins/baseldap.py:1340 ipalib/plugins/baseldap.py:1819
 #: ipalib/plugins/privilege.py:153 ipalib/plugins/privilege.py:178
@@ -1839,11 +1843,11 @@ msgstr "Nombre de membres ajoutés"
 #: ipalib/plugins/baseldap.py:1438 ipalib/plugins/baseldap.py:1920
 #, python-format
 msgid "comma-separated list of %s to remove"
-msgstr ""
+msgstr "liste séparée par des virgules de %s à supprimer"
 
 #: ipalib/plugins/baseldap.py:1445 ipalib/plugins/baseldap.py:1932
 msgid "Members that could not be removed"
-msgstr "Membres n'ayant pu être supprimés"
+msgstr "Membres n'ayant pu être supprimé"
 
 #: ipalib/plugins/baseldap.py:1449 ipalib/plugins/baseldap.py:1936
 msgid "Number of members removed"
@@ -1852,12 +1856,12 @@ msgstr "Nombre de membres supprimés"
 #: ipalib/plugins/baseldap.py:1548
 #, python-format
 msgid "Search for %s with these %s %s."
-msgstr ""
+msgstr "Rechercher des %s avec ces %s %s."
 
 #: ipalib/plugins/baseldap.py:1549
 #, python-format
 msgid "Search for %s without these %s %s."
-msgstr ""
+msgstr "Rechercher des %s sans ces %s %s."
 
 #: ipalib/plugins/baseldap.py:1557
 msgid "Time Limit"
@@ -1877,12 +1881,12 @@ msgstr "Nombre maximal d'entrées renvoyées"
 
 #: ipalib/plugins/baseldap.py:1586
 msgid "Primary key only"
-msgstr ""
+msgstr "Clé primaire uniquement"
 
 #: ipalib/plugins/baseldap.py:1587
 #, python-format
 msgid "Results should contain primary key attribute only (\"%s\")"
-msgstr ""
+msgstr "Les résultats devraient contenir uniquement des attributs clé primaire uniquement (\"%s\")"
 
 #: ipalib/plugins/baseldap.py:1881
 msgid "added"
@@ -2032,11 +2036,11 @@ msgstr "Échec dans le décodage du Certificate Signing Request : %s"
 
 #: ipalib/plugins/cert.py:207
 msgid "Submit a certificate signing request."
-msgstr ""
+msgstr "Soumettre une demande de signature de certificat."
 
 #: ipalib/plugins/cert.py:211
 msgid "CSR"
-msgstr ""
+msgstr "CSR"
 
 #: ipalib/plugins/cert.py:220 ipalib/plugins/service.py:228
 msgid "Principal"
@@ -2097,7 +2101,7 @@ msgstr "Nom de variable de correspondance de la valeur"
 
 #: ipalib/plugins/cert.py:400
 msgid "Check the status of a certificate signing request."
-msgstr ""
+msgstr "Vérifier l'état d'une demande de signature de certificat."
 
 #: ipalib/plugins/cert.py:404
 msgid "Request id"
@@ -2113,7 +2117,7 @@ msgstr "Numéro de série en décimal (ou en hexadécimal avec le préfixe 0x)"
 
 #: ipalib/plugins/cert.py:433
 msgid "Retrieve an existing certificate."
-msgstr ""
+msgstr "Récupérer un certificat existant."
 
 #: ipalib/plugins/cert.py:460 ipalib/plugins/host.py:196
 #: ipalib/plugins/service.py:115
@@ -2130,7 +2134,7 @@ msgstr "Fichier dans lequel stocker le certificat."
 
 #: ipalib/plugins/cert.py:518
 msgid "Revoke a certificate."
-msgstr ""
+msgstr "Révoquer un certificat."
 
 #: ipalib/plugins/cert.py:524
 msgid "Revoked"
@@ -2146,11 +2150,11 @@ msgstr "Raison de révocation du certificat (0-10)"
 
 #: ipalib/plugins/cert.py:554
 msgid "7 is not a valid revocation reason"
-msgstr ""
+msgstr "7 n'est pas une raison de révocation valide"
 
 #: ipalib/plugins/cert.py:563
 msgid "Take a revoked certificate off hold."
-msgstr ""
+msgstr "Prendre un certificat révoqué en attente."
 
 #: ipalib/plugins/cert.py:569
 msgid "Unrevoked"
@@ -2201,6 +2205,50 @@ msgid ""
 " Enable migration mode to make \"ipa migrate-ds\" command operational:\n"
 "   ipa config-mod --enable-migration=TRUE\n"
 msgstr ""
+"\n"
+"Configuration serveur\n"
+"\n"
+"Administrer les valeurs de configuration par défaut qu'utilise IPA ainsi\n"
+"que certains paramètres.\n"
+"\n"
+"NOTES :\n"
+"\n"
+"La valeur pour le préavis d'expiration des mots de passe (--pwdexpnotify)\n"
+"est stockée ici afin de pouvoir être répliquée. Elle n'est pas encore\n"
+"utilisée pour la notification des utilisateurs avant l'expiration de leur\n"
+"mot de passe.\n"
+"\n"
+"Certains attributs sont en lecture seule, fournis à titre d'information,\n"
+"incluant :\n"
+"\n"
+"Base de sujet de certificat : la base configurée pour les sujets de\n"
+"  certificat, par exemple O=EXAMPLE.COM, configurable uniquement lors\n"
+"  de l'installation.\n"
+"Fonctionnalités du greffon de gestion des mots de passe : défini\n"
+"  actuellement les types de condensés additionnels qu'un mot de\n"
+"  passe va générer (d'autres conditions peuvent s'appliquer).\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Afficher la configuration de base du serveur :\n"
+"   ipa config-show\n"
+"\n"
+" Afficher toutes les options de configuration :\n"
+"   ipa config-show --all\n"
+"\n"
+" Modifier la longueur maximale d'un nom d'utilisateur\n"
+" à 99 caractères :\n"
+"   ipa config-mod --maxusername=99\n"
+"\n"
+" Augmenter les limites de temps et de taille pour les recherches\n"
+" sur le serveur IPA :\n"
+"   ipa config-mod --searchtimelimit=10 --searchrecordslimit=2000\n"
+"\n"
+" Définir le domaine par défaut pour les adresses courriel des utilisateurs :\n"
+"   ipa config-mod --emaildomain=example.com\n"
+"\n"
+" Activer le mode migration pour rendre la commande \"ipa migrate-ds\" opérationelle :\n"
+"   ipa config-mod --enable-migration=TRUE\n"
 
 #: ipalib/plugins/config.py:73
 msgid "searchtimelimit must be -1 or > 1."
@@ -2208,7 +2256,7 @@ msgstr "searchtimelimit doit être égal à -1 ou > 1."
 
 #: ipalib/plugins/config.py:80
 msgid "configuration options"
-msgstr ""
+msgstr "options de configuration"
 
 #: ipalib/plugins/config.py:89 ipalib/plugins/config.py:90
 msgid "Configuration"
@@ -2216,7 +2264,7 @@ msgstr "Configuration"
 
 #: ipalib/plugins/config.py:95
 msgid "Maximum username length"
-msgstr ""
+msgstr "Longueur maximale de nom d'utilisateur"
 
 #: ipalib/plugins/config.py:100
 msgid "Home directory base"
@@ -2224,7 +2272,7 @@ msgstr "Base de répertoire utilisateur"
 
 #: ipalib/plugins/config.py:101
 msgid "Default location of home directories"
-msgstr ""
+msgstr "Emplacement par défaut des répertoires utilisateur"
 
 #: ipalib/plugins/config.py:105
 msgid "Default shell"
@@ -2232,7 +2280,7 @@ msgstr "Shell par défaut"
 
 #: ipalib/plugins/config.py:106
 msgid "Default shell for new users"
-msgstr ""
+msgstr "Interpréteur de commande par défaut pour les nouveaux utilisateurs"
 
 #: ipalib/plugins/config.py:110
 msgid "Default users group"
@@ -2240,11 +2288,11 @@ msgstr "Groupe utilisateur par défaut"
 
 #: ipalib/plugins/config.py:111
 msgid "Default group for new users"
-msgstr ""
+msgstr "Groupe utilisateur par défaut pour les nouveaux utilisateurs"
 
 #: ipalib/plugins/config.py:115 ipalib/plugins/config.py:116
 msgid "Default e-mail domain"
-msgstr ""
+msgstr "Domaine par défaut pour les adresses courriel"
 
 #: ipalib/plugins/config.py:120
 msgid "Search time limit"
@@ -2252,7 +2300,7 @@ msgstr "Durée de recherche limite"
 
 #: ipalib/plugins/config.py:121
 msgid "Maximum amount of time (seconds) for a search (> 0, or -1 for unlimited)"
-msgstr ""
+msgstr "Durée maximale (secondes) pour une recherche (> 0, -1 pour illimité)"
 
 #: ipalib/plugins/config.py:126
 msgid "Search size limit"
@@ -2260,7 +2308,7 @@ msgstr "Taille limite de recherche"
 
 #: ipalib/plugins/config.py:127
 msgid "Maximum number of records to search (-1 is unlimited)"
-msgstr ""
+msgstr "Nombre maximal d'entrées à rechercher (-1 pour illimité)"
 
 #: ipalib/plugins/config.py:132
 msgid "User search fields"
@@ -2268,23 +2316,23 @@ msgstr "Champs de recherche utilisateur"
 
 #: ipalib/plugins/config.py:133
 msgid "A comma-separated list of fields to search in when searching for users"
-msgstr ""
+msgstr "Une liste séparée par des virgules des champs à fouiller lors d'une recherche d'utilisateurs"
 
 #: ipalib/plugins/config.py:138
 msgid "A comma-separated list of fields to search in when searching for groups"
-msgstr ""
+msgstr "Une liste séparée par des virgules des champs à fouiller lors d'une recherche de groupes"
 
 #: ipalib/plugins/config.py:142 ipalib/plugins/config.py:143
 msgid "Enable migration mode"
-msgstr ""
+msgstr "Activer le mode migration"
 
 #: ipalib/plugins/config.py:147
 msgid "Certificate Subject base"
-msgstr "Base du sujet de certificat."
+msgstr "Base du sujet de certificat"
 
 #: ipalib/plugins/config.py:148
 msgid "Base for certificate subjects (OU=Test,O=Example)"
-msgstr ""
+msgstr "Base pour les sujets de certificat (OU=Test,O=Example)"
 
 #: ipalib/plugins/config.py:153
 msgid "Default group objectclasses"
@@ -2292,7 +2340,7 @@ msgstr "Classes d'objets par défaut pour les groupes"
 
 #: ipalib/plugins/config.py:154
 msgid "Default group objectclasses (comma-separated list)"
-msgstr ""
+msgstr "Classes d'objets par défaut pour les groupes (liste séparée par des virgules)"
 
 #: ipalib/plugins/config.py:159
 msgid "Default user objectclasses"
@@ -2300,40 +2348,40 @@ msgstr "Classes d'objets par défaut pour les utilisateurs"
 
 #: ipalib/plugins/config.py:160
 msgid "Default user objectclasses (comma-separated list)"
-msgstr ""
+msgstr "Classes d'objets par défaut pour les utilisateurs (liste séparée par des virgules)"
 
 #: ipalib/plugins/config.py:165
 msgid "Password Expiration Notification (days)"
-msgstr ""
+msgstr "Notification avant expiration de mot de passe (jours)"
 
 #: ipalib/plugins/config.py:166
 msgid "Number of days's notice of impending password expiration"
-msgstr ""
+msgstr "Nombre de jours de préavis d'expiration de mot de passe"
 
 #: ipalib/plugins/config.py:171
 msgid "Password plugin features"
-msgstr "Fonctionnalités du greffon password"
+msgstr "Fonctionnalités du greffon de gestion des mots de passe"
 
 #: ipalib/plugins/config.py:172
 msgid "Extra hashes to generate in password plug-in"
-msgstr ""
+msgstr "Hachages supplémentaires à générer dans le greffon de gestion des mots de passe"
 
 #: ipalib/plugins/config.py:184
 msgid "Modify configuration options."
-msgstr ""
+msgstr "Modifier les options de configuration."
 
 #: ipalib/plugins/config.py:192
 msgid "The group doesn't exist"
-msgstr ""
+msgstr "Le groupe n'existe pas"
 
 #: ipalib/plugins/config.py:207
 #, python-format
 msgid "attribute \"%s\" not allowed"
-msgstr ""
+msgstr "attribut \"%s\" interdit"
 
 #: ipalib/plugins/config.py:215
 msgid "May not be empty"
-msgstr ""
+msgstr "Ne peut être vide"
 
 #: ipalib/plugins/config.py:228
 #, python-format
@@ -2342,7 +2390,7 @@ msgstr ""
 
 #: ipalib/plugins/config.py:237
 msgid "Show the current configuration."
-msgstr ""
+msgstr "Afficher la configuration actuelle."
 
 #: ipalib/plugins/delegation.py:28
 msgid ""
@@ -2371,6 +2419,33 @@ msgid ""
 " Delete a rule:\n"
 "   ipa delegation-del \"managers edit employees' street\"\n"
 msgstr ""
+"\n"
+"Délégation de groupe à groupe\n"
+"\n"
+"Une permission permet une délégation fine des autorisations. Les règles de\n"
+"contrôle d'accès, ou les instructions (ACI), accordent la possibilité aux\n"
+"permissions de réaliser certaines tâches comme l'ajout d'utilisateur, la\n"
+"modification d'un groupe, etc.\n"
+"\n"
+"La délégation de groupe à groupe permet aux membres d'un groupe de modifier\n"
+"un jeu d'attributs de membres d'un autre groupe.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Ajouter une règle de délégation permettant aux directeurs de modifier\n"
+" les adresses des administrateurs :\n"
+"   ipa delegation-add --attrs=street --membergroup=admins --group=editors 'les directeurs modifient les adresses des administrateurs'\n"
+"\n"
+" Lors de la gestion d'une liste d'attributs, vous devez toujours spécifier\n"
+" la liste complète des attributs, y compris les attributs existants. Ajouter \n"
+" postalCode à la liste :\n"
+"   ipa delegation-mod --attrs=street,postalCode --membergroup=admins --group=editors 'les directeurs modifient les adresses des administrateurs'\n"
+"\n"
+" Afficher la règle modifiée :\n"
+"   ipa delegation-show 'les directeurs modifient les adresses des administrateurs'\n"
+"\n"
+" Supprimer une règle :\n"
+"   ipa delegation-del 'les directeurs modifient les adresses des administrateurs'\n"
 
 #: ipalib/plugins/delegation.py:64 ipalib/plugins/delegation.py:91
 #, python-format
@@ -2384,15 +2459,15 @@ msgstr "Erreur à la récupération du groupe membre %(group)s: %(error)s"
 
 #: ipalib/plugins/delegation.py:101
 msgid "delegation"
-msgstr ""
+msgstr "délégation"
 
 #: ipalib/plugins/delegation.py:102
 msgid "delegations"
-msgstr ""
+msgstr "délégations"
 
 #: ipalib/plugins/delegation.py:103
 msgid "Delegations"
-msgstr ""
+msgstr "Délégations"
 
 #: ipalib/plugins/delegation.py:104
 msgid "Delegation"
@@ -2420,7 +2495,7 @@ msgstr "Groupe d'utilisateur auquel appliquer la délégation"
 
 #: ipalib/plugins/delegation.py:156
 msgid "Add a new delegation."
-msgstr ""
+msgstr "Ajouter une nouvelle délégation."
 
 #: ipalib/plugins/delegation.py:158
 #, python-format
@@ -2429,7 +2504,7 @@ msgstr "Délégation \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/delegation.py:178
 msgid "Delete a delegation."
-msgstr ""
+msgstr "Supprimer une délégation."
 
 #: ipalib/plugins/delegation.py:181
 #, python-format
@@ -2438,7 +2513,7 @@ msgstr "Délégation \"%(value)s\" supprimée"
 
 #: ipalib/plugins/delegation.py:197
 msgid "Modify a delegation."
-msgstr ""
+msgstr "Modifier une délégation."
 
 #: ipalib/plugins/delegation.py:199
 #, python-format
@@ -2447,7 +2522,7 @@ msgstr "Délégation \"%(value)s\" modifiée"
 
 #: ipalib/plugins/delegation.py:217
 msgid "Search for delegations."
-msgstr ""
+msgstr "Rechercher des délégations."
 
 #: ipalib/plugins/delegation.py:220
 #, python-format
@@ -2458,7 +2533,7 @@ msgstr[1] "%(count)d délégations correspondantes"
 
 #: ipalib/plugins/delegation.py:246
 msgid "Display information about a delegation."
-msgstr ""
+msgstr "Afficher les informations sur une délégation."
 
 #: ipalib/plugins/dns.py:35
 msgid ""
@@ -2551,114 +2626,206 @@ msgid ""
 "   ipa dns-resolve www.example.com\n"
 "   ipa dns-resolve www\n"
 msgstr ""
+"\n"
+"Domain Name System (DNS)\n"
+"\n"
+"Gestion des zones DNS et des enregistrements de ressource.\n"
+"\n"
+"EXEMPLES :\n"
+"\n"
+" Ajouter une nouvelle zone :\n"
+"   ipa dnszone-add example.com --name-server nameserver.example.com\n"
+"                               --admin-email admin@example.com\n"
+"\n"
+" Modifier la zone pour permettre les mises à jour dynamiques des\n"
+" enregistrements des systèmes du domaine EXAMPLE.COM :\n"
+"   ipa dnszone-mod example.com --dynamic-update=TRUE \\\n"
+"        --update-policy=\"grant EXAMPLE.COM krb5-self * A; grant EXAMPLE.COM krb5-self * AAAA;\"\n"
+"\n"
+" Ajouter une nouvelle zone inverse spécifiée par son adresse de réseau :\n"
+"   ipa dnszone-add --name-from-ip 80.142.15.0/24\n"
+"                   --name-server nameserver.example.com\n"
+"\n"
+" Ajouter un second serveur de nom pour example.com:\n"
+"   ipa dnsrecord-add example.com @ --ns-rec nameserver2.example.com\n"
+"\n"
+" Ajouter un serveur de messagerie pour example.com:\n"
+"   ipa dnsrecord-add example.com @ --mx-rec=\"10 mail2\"\n"
+"\n"
+" Supprimer un serveur de messagerie précédemment défini pour example.com:\n"
+"   ipa dnsrecord-del example.com @ --ns-rec nameserver2.example.com\n"
+"\n"
+" Ajouter un nouvel enregistrement A pour www.example.com: (IP aléatoire)\n"
+"   ipa dnsrecord-add example.com www --a-rec 80.142.15.2\n"
+"\n"
+" Ajouter un nouvel enregistrement PTR pour www.example.com\n"
+"   ipa dnsrecord-add 15.142.80.in-addr.arpa 2 --ptr-rec www.example.com.\n"
+"\n"
+" Ajouter de nouveaux enregistrement SRV pour les serveurs LDAP. Les trois quarts\n"
+" des requêtes doivent aller sur fast.example.com, un quart sur slow.example.com.\n"
+" Si aucune n'est disponible, commuter sur backup.example.com.\n"
+"   ipa dnsrecord-add example.com _ldap._tcp --srv-rec=\"0 3 389 fast.example.com\"\n"
+"   ipa dnsrecord-add example.com _ldap._tcp --srv-rec=\"0 1 389 slow.example.com\"\n"
+"   ipa dnsrecord-add example.com _ldap._tcp --srv-rec=\"1 1 389 backup.example.com\"\n"
+"\n"
+" Quand la commande dnsrecord-add ext exécutée sans option pour ajouter un enregsitrement,\n"
+" le mode interactif est activé. Le mode interactif a pour invites les types les plus\n"
+" courants d'enregistrement pour la zone :\n"
+"   ipa dnsrecord-add example.com www\n"
+"   [A record]: 1.2.3.4,11.22.33.44      (2 adresses IP aléeatoires saisies)\n"
+"   [AAAA record]:                       (pas d'adresse AAAA saisie)\n"
+"     Record name: www\n"
+"     A record: 1.2.3.4, 11.22.33.44\n"
+"\n"
+" Le mode interactif peut aussi être utilisé pour supprimer des enregistrements DNS :\n"
+"   ipa dnsrecord-del example.com www\n"
+"   Pas d'option fournie pour supprimer un enregistrement spécifique.\n"
+"   Tout supprimer ? Oui/Non (Défault: Non):     (ne pas détruire tous les enregistrements)\n"
+"   Contenu actuel de l'enregistrement DNS :\n"
+"\n"
+"   Enregistrement A : 1.2.3.4, 11.22.33.44\n"
+"\n"
+"   Supprimer l'enregistrement A '1.2.3.4'? Oui/Non (défaut: Non): \n"
+"   Supprimer l'enregistrement A '11.22.33.44'? Oui/Non (défaut: Non): y\n"
+"     Nom de l'enregistrement : www\n"
+"     Enregistrement A : 1.2.3.4                  (Enregistrement A 11.22.33.44 a été supprimé)\n"
+"\n"
+" Afficher la zone example.com :\n"
+"   ipa dnszone-show example.com\n"
+"\n"
+" Chercher les zones contenant \"example\" dans le nom de domaine :\n"
+"   ipa dnszone-find example\n"
+"\n"
+" Chercher les enregistrements pour les ressources dont le nom contient \"www\" dans la zone example.com:\n"
+"   ipa dnsrecord-find example.com www\n"
+"\n"
+" Chercher les enregistrements A de valeur 10.10.0.1 dans la zone example.com\n"
+"   ipa dnsrecord-find example.com --a-rec 10.10.0.1\n"
+"\n"
+" Afficher les enregistrements pour la ressource www dans la zone example.com\n"
+"   ipa dnsrecord-show example.com www\n"
+"\n"
+" Supprimer la zone example.com avec toutes ses ressources :\n"
+"   ipa dnszone-del example.com\n"
+"\n"
+" Résoudre un nom de système afin de vérifier son existence (ajout automatique du nom de domaine IPA\n"
+" si non spécifié):\n"
+"   ipa dns-resolve www.example.com\n"
+"   ipa dns-resolve www\n"
 
 #: ipalib/plugins/dns.py:173
 msgid "invalid IP address format"
-msgstr ""
+msgstr "format d'adresse IP invalide"
 
 #: ipalib/plugins/dns.py:180
 msgid "invalid IP network format"
-msgstr ""
+msgstr "format de réseau IP invalide"
 
 #: ipalib/plugins/dns.py:188
 msgid "format must be specified as \"priority weight port target\""
-msgstr ""
+msgstr "le format doit être spécifié comme \"priorité poids port cible\""
 
 #: ipalib/plugins/dns.py:195
 msgid ""
 "format must be specified as \"priority weight port target\" (see RFC 2782 "
 "for details)"
 msgstr ""
+"le format doit être spécifié comme \"priorité poids port cible\" "
+"(cf. RFC 2782 pour plus de détails)"
 
 #: ipalib/plugins/dns.py:205
 msgid ""
 "format must be specified as \"priority mailserver\" (see RFC 1035 for "
 "details)"
 msgstr ""
+"le format doit être spécifié comme \"priorité serveur_de_messagerie\" "
+"(cf. RFC 1035 pour plus de détails)"
 
 #: ipalib/plugins/dns.py:211
 msgid "the value of priority must be integer"
-msgstr ""
+msgstr "la valeur de la priorité doit être un entier"
 
 #: ipalib/plugins/dns.py:214
 msgid "the value of priority must be between 0 and 65535"
-msgstr ""
+msgstr "la valeur de la priorité doit être comprise entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:223
 msgid ""
 "format must be specified as \"order preference flags service regexp "
 "replacement\" (see RFC 2915 for details)"
 msgstr ""
+"le format doit être spécifié comme \"ordre préférence drapeaux service regexp"
+"remplacement\" (cf. RFC 2915 pour plus de détails)"
 
 #: ipalib/plugins/dns.py:230
 msgid "order and preference must be integers"
-msgstr ""
+msgstr "ordre et préférences doivent être des entiers"
 
 #: ipalib/plugins/dns.py:233
 msgid "the value of order and preference must be between 0 and 65535"
-msgstr ""
+msgstr "la valeur de l'ordre et de la préférence doivent être compris entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:238
 msgid "flag must be a single character (quotation is allowed)"
-msgstr ""
+msgstr "le drapeau doit être un caractère unique (avec éventuellement des guillemets)"
 
 #: ipalib/plugins/dns.py:240
 msgid "flag must be one of \"S\", \"A\", \"U\", or \"P\""
-msgstr ""
+msgstr "le drapeau doit être une lettre parmi \"S\", \"A\", \"U\", or \"P\""
 
 #: ipalib/plugins/dns.py:249
 msgid "format must be specified as \"subtype hostname\" (see RFC 1183 for details)"
-msgstr ""
+msgstr "le format doit être spécifié ainsi : \"sous_type nom_de_système\" (cf. RFC 1183 pour plus de détails)"
 
 #: ipalib/plugins/dns.py:254
 msgid "the value of subtype must be integer"
-msgstr ""
+msgstr "la valeur du sous-type doit être un entier"
 
 #: ipalib/plugins/dns.py:257
 msgid "the value of subtype must be between 0 and 65535"
-msgstr ""
+msgstr "la valeur du sous-type doit être comprise entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:266
 msgid ""
 "format must be specified as \"type key_tag algorithm certificate_or_crl\" "
 "(see RFC 4398 for details)"
-msgstr ""
+msgstr "le format doit être spécifié comme \"type key_tag algorithme certificat_ou_crl\" (cf. RFC 4398 pour plus de détails)"
 
 #: ipalib/plugins/dns.py:274 ipalib/plugins/dns.py:317
 msgid "key_tag, algorithm and digest_type must be integers"
-msgstr ""
+msgstr "key_tag, algorithme and type doivent être des entiers"
 
 #: ipalib/plugins/dns.py:277
 msgid "the value of type and key_tag must be between 0 and 65535"
-msgstr ""
+msgstr "les valeurs de type et key_tag doit être comprises entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:280 ipalib/plugins/dns.py:349
 msgid "the value of algorithm must be between 0 and 255"
-msgstr ""
+msgstr "la valeur de algorithme doit être comprise entre 0 et 255"
 
 #: ipalib/plugins/dns.py:289 ipalib/plugins/dns.py:457
 #, python-format
 msgid "format must be specified as \"domain_name\" (see RFC 1035 for details): %s"
-msgstr ""
+msgstr "le format doit être spécifié comme \"nom_de_domaine\" (cf. RFC 1035 pour plus de détails) : %s"
 
 #: ipalib/plugins/dns.py:299
 #, python-format
 msgid "format must be specified as \"target\" (see RFC 2672 for details): %s"
-msgstr ""
+msgstr "le format doit être spécifié comme \"cible\" (cf. RFC 2672 pour plus de détails) : %s"
 
 #: ipalib/plugins/dns.py:309
 msgid ""
 "format must be specified as \"key_tag algorithm digest_type digest\" (see "
 "RFC 4034 for details)"
-msgstr ""
+msgstr "le format doit être spécifié comme \"key_tag algorithme digest_type digest\" (cf. RFC 4034 pour plus de détails)"
 
 #: ipalib/plugins/dns.py:320 ipalib/plugins/dns.py:343
 msgid "the value of flags must be between 0 and 65535"
-msgstr ""
+msgstr "la valeur de drapeaux doit être comprise entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:323
 msgid "the value of algorithm and digest_type must be between 0 and 255"
-msgstr ""
+msgstr "les valeurs de algorithme et digest_type doivent être comprises entre 0 et 255"
 
 #: ipalib/plugins/dns.py:332
 msgid ""
