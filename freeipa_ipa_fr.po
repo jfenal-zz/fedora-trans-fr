@@ -1,6 +1,7 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Red Hat
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Automatically generated, 2010.
 # Jérôme Fenal <jfenal@gmail.com>, 2011, 2012.
@@ -10,15 +11,14 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-12-08 16:05-0500\n"
-"PO-Revision-Date: 2012-01-08 17:18+0100\n"
+"PO-Revision-Date: 2012-02-10 14:41+0000\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Lokalize 1.0\n"
 
 #: ipalib/cli.py:583
 #, python-format
@@ -224,8 +224,10 @@ msgstr ""
 " name: %(reason)s"
 
 #: ipalib/errors.py:877
-msgid "The realm for the principal does not match the realm for this IPA server"
-msgstr "Le domaine du principal ne correspond pas au domaine de ce serveur IPA"
+msgid ""
+"The realm for the principal does not match the realm for this IPA server"
+msgstr ""
+"Le domaine du principal ne correspond pas au domaine de ce serveur IPA"
 
 #: ipalib/errors.py:893
 msgid "This command requires root access"
@@ -283,7 +285,8 @@ msgstr "Un système doit avoir un enregistrement DNS A correspondant"
 
 #: ipalib/errors.py:1116
 msgid "Deleting a managed group is not allowed. It must be detached first."
-msgstr "La suppression d'un groupe géré est interdite. Il doit d'abord être détaché."
+msgstr ""
+"La suppression d'un groupe géré est interdite. Il doit d'abord être détaché."
 
 #: ipalib/errors.py:1131
 msgid "A managed group cannot have a password policy."
@@ -297,7 +300,8 @@ msgstr "'%(entry)s' ne possède pas de certificat."
 #: ipalib/errors.py:1179
 #, python-format
 msgid "Unable to create private group. A group '%(group)s' already exists."
-msgstr "Impossible de créer un groupe privé. Un groupe '%(group)s' existe déjà."
+msgstr ""
+"Impossible de créer un groupe privé. Un groupe '%(group)s' existe déjà."
 
 #: ipalib/errors.py:1195
 #, python-format
@@ -315,8 +319,11 @@ msgstr "%(attr)s ne contient pas '%(value)s'"
 
 #: ipalib/errors.py:1230
 #, python-format
-msgid "The search criteria was not specific enough. Expected 1 and found %(found)d."
-msgstr "Le critère de recherche n'est pas suffisamment spécifique. Une valeur attendue, mais %(found)d trouvées."
+msgid ""
+"The search criteria was not specific enough. Expected 1 and found %(found)d."
+msgstr ""
+"Le critère de recherche n'est pas suffisamment spécifique. Une valeur "
+"attendue, mais %(found)d trouvées."
 
 #: ipalib/errors.py:1254
 #, python-format
@@ -387,7 +394,8 @@ msgid "Results are truncated, try a more specific search"
 msgstr "Résultats tronqués, essayer un recherche plus spécifique"
 
 #: ipalib/frontend.py:821
-msgid "Retrieve and print all attributes from the server. Affects command output."
+msgid ""
+"Retrieve and print all attributes from the server. Affects command output."
 msgstr ""
 "Récupérer et imprimer tous les attributs du serveur. Affecte la sortie "
 "standard de la commande."
@@ -611,7 +619,8 @@ msgid "Permissions"
 msgstr "Permissions"
 
 #: ipalib/plugins/aci.py:436
-msgid "comma-separated list of permissions to grant(read, write, add, delete, all)"
+msgid ""
+"comma-separated list of permissions to grant(read, write, add, delete, all)"
 msgstr ""
 "Liste séparée par des virgules de permissions à accorder (read, write, add, "
 "delete, all)"
@@ -892,8 +901,8 @@ msgid ""
 "Attribute to filter via regex. For example fqdn for a host, or manager for a"
 " user"
 msgstr ""
-"Attribut à filtrer via l'expression rationnelle. Par exemple fqdn pour un "
-" système, ou manager pour un utilisateur"
+"Attribut à filtrer via l'expression rationnelle. Par exemple fqdn pour un  "
+"système, ou manager pour un utilisateur"
 
 #: ipalib/plugins/automember.py:135
 msgid "Grouping Type"
@@ -1001,8 +1010,7 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        Outrepasser ceci afin de pouvoir préciser les ajouts et échecs aux "
-"        résultats renvoyé.\n"
+"        Outrepasser ceci afin de pouvoir préciser les ajouts et échecs aux         résultats renvoyé.\n"
 "        "
 
 #: ipalib/plugins/automember.py:345
@@ -1385,7 +1393,8 @@ msgid "Automount master file."
 msgstr "Fichier maître automount"
 
 #: ipalib/plugins/automount.py:331
-msgid "Continuous operation mode. Errors are reported but the process continues."
+msgid ""
+"Continuous operation mode. Errors are reported but the process continues."
 msgstr ""
 "Mode opération continue. Les erreurs seront rapportées mais le processus "
 "continuera."
@@ -1886,7 +1895,9 @@ msgstr "Clé primaire uniquement"
 #: ipalib/plugins/baseldap.py:1587
 #, python-format
 msgid "Results should contain primary key attribute only (\"%s\")"
-msgstr "Les résultats devraient contenir uniquement des attributs clé primaire uniquement (\"%s\")"
+msgstr ""
+"Les résultats devraient contenir uniquement des attributs clé primaire "
+"uniquement (\"%s\")"
 
 #: ipalib/plugins/baseldap.py:1881
 msgid "added"
@@ -2016,7 +2027,7 @@ msgstr ""
 "    * 9 - privilegeWithdrawn\n"
 "    * 10 - aACompromise\n"
 "\n"
-"N.B.: le code 7 n'est pas utilisé.  Cf. RFC 5280 pour plus de détails :\n"
+"N.B.: le code 7 n'est pas utilisé.  Cf. RFC 5280 pour les détails :\n"
 "\n"
 "http://www.ietf.org/rfc/rfc5280.txt\n"
 "\n"
@@ -2048,7 +2059,8 @@ msgstr "Principal"
 
 #: ipalib/plugins/cert.py:221
 msgid "Service principal for this certificate (e.g. HTTP/test.example.com)"
-msgstr "Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
+msgstr ""
+"Principal de service pour ce certificat (par ex.: HTTP/test.example.com)"
 
 #: ipalib/plugins/cert.py:228
 msgid "automatically add the principal if it doesn't exist"
@@ -2299,7 +2311,8 @@ msgid "Search time limit"
 msgstr "Durée de recherche limite"
 
 #: ipalib/plugins/config.py:121
-msgid "Maximum amount of time (seconds) for a search (> 0, or -1 for unlimited)"
+msgid ""
+"Maximum amount of time (seconds) for a search (> 0, or -1 for unlimited)"
 msgstr "Durée maximale (secondes) pour une recherche (> 0, -1 pour illimité)"
 
 #: ipalib/plugins/config.py:126
@@ -2316,11 +2329,16 @@ msgstr "Champs de recherche utilisateur"
 
 #: ipalib/plugins/config.py:133
 msgid "A comma-separated list of fields to search in when searching for users"
-msgstr "Une liste séparée par des virgules des champs à fouiller lors d'une recherche d'utilisateurs"
+msgstr ""
+"Une liste séparée par des virgules des champs à fouiller lors d'une "
+"recherche d'utilisateurs"
 
 #: ipalib/plugins/config.py:138
-msgid "A comma-separated list of fields to search in when searching for groups"
-msgstr "Une liste séparée par des virgules des champs à fouiller lors d'une recherche de groupes"
+msgid ""
+"A comma-separated list of fields to search in when searching for groups"
+msgstr ""
+"Une liste séparée par des virgules des champs à fouiller lors d'une "
+"recherche de groupes"
 
 #: ipalib/plugins/config.py:142 ipalib/plugins/config.py:143
 msgid "Enable migration mode"
@@ -2340,7 +2358,9 @@ msgstr "Classes d'objets par défaut pour les groupes"
 
 #: ipalib/plugins/config.py:154
 msgid "Default group objectclasses (comma-separated list)"
-msgstr "Classes d'objets par défaut pour les groupes (liste séparée par des virgules)"
+msgstr ""
+"Classes d'objets par défaut pour les groupes (liste séparée par des "
+"virgules)"
 
 #: ipalib/plugins/config.py:159
 msgid "Default user objectclasses"
@@ -2348,7 +2368,9 @@ msgstr "Classes d'objets par défaut pour les utilisateurs"
 
 #: ipalib/plugins/config.py:160
 msgid "Default user objectclasses (comma-separated list)"
-msgstr "Classes d'objets par défaut pour les utilisateurs (liste séparée par des virgules)"
+msgstr ""
+"Classes d'objets par défaut pour les utilisateurs (liste séparée par des "
+"virgules)"
 
 #: ipalib/plugins/config.py:165
 msgid "Password Expiration Notification (days)"
@@ -2364,7 +2386,9 @@ msgstr "Fonctionnalités du greffon de gestion des mots de passe"
 
 #: ipalib/plugins/config.py:172
 msgid "Extra hashes to generate in password plug-in"
-msgstr "Hachages supplémentaires à générer dans le greffon de gestion des mots de passe"
+msgstr ""
+"Hachages supplémentaires à générer dans le greffon de gestion des mots de "
+"passe"
 
 #: ipalib/plugins/config.py:184
 msgid "Modify configuration options."
@@ -2730,16 +2754,16 @@ msgid ""
 "format must be specified as \"priority weight port target\" (see RFC 2782 "
 "for details)"
 msgstr ""
-"le format doit être spécifié comme \"priorité poids port cible\" "
-"(cf. RFC 2782 pour plus de détails)"
+"le format doit être spécifié comme \"priorité poids port cible\" (cf. RFC "
+"2782 pour les détails)"
 
 #: ipalib/plugins/dns.py:205
 msgid ""
 "format must be specified as \"priority mailserver\" (see RFC 1035 for "
 "details)"
 msgstr ""
-"le format doit être spécifié comme \"priorité serveur_de_messagerie\" "
-"(cf. RFC 1035 pour plus de détails)"
+"le format doit être spécifié comme \"priorité serveur_de_messagerie\" (cf. "
+"RFC 1035 pour les détails)"
 
 #: ipalib/plugins/dns.py:211
 msgid "the value of priority must be integer"
@@ -2754,8 +2778,8 @@ msgid ""
 "format must be specified as \"order preference flags service regexp "
 "replacement\" (see RFC 2915 for details)"
 msgstr ""
-"le format doit être spécifié comme \"ordre préférence drapeaux service regexp"
-"remplacement\" (cf. RFC 2915 pour plus de détails)"
+"le format doit être spécifié comme \"ordre préférence drapeaux service "
+"regexpremplacement\" (cf. RFC 2915 pour les détails)"
 
 #: ipalib/plugins/dns.py:230
 msgid "order and preference must be integers"
@@ -2763,19 +2787,26 @@ msgstr "ordre et préférences doivent être des entiers"
 
 #: ipalib/plugins/dns.py:233
 msgid "the value of order and preference must be between 0 and 65535"
-msgstr "la valeur de l'ordre et de la préférence doivent être compris entre 0 et 65535"
+msgstr ""
+"la valeur de l'ordre et de la préférence doivent être compris entre 0 et "
+"65535"
 
 #: ipalib/plugins/dns.py:238
 msgid "flag must be a single character (quotation is allowed)"
-msgstr "le drapeau doit être un caractère unique (avec éventuellement des guillemets)"
+msgstr ""
+"le drapeau doit être un caractère unique (avec éventuellement des "
+"guillemets)"
 
 #: ipalib/plugins/dns.py:240
 msgid "flag must be one of \"S\", \"A\", \"U\", or \"P\""
 msgstr "le drapeau doit être une lettre parmi \"S\", \"A\", \"U\", or \"P\""
 
 #: ipalib/plugins/dns.py:249
-msgid "format must be specified as \"subtype hostname\" (see RFC 1183 for details)"
-msgstr "le format doit être spécifié ainsi : \"sous_type nom_de_système\" (cf. RFC 1183 pour plus de détails)"
+msgid ""
+"format must be specified as \"subtype hostname\" (see RFC 1183 for details)"
+msgstr ""
+"le format doit être spécifié ainsi : \"sous_type nom_de_système\" (cf. RFC "
+"1183 pour les détails)"
 
 #: ipalib/plugins/dns.py:254
 msgid "the value of subtype must be integer"
@@ -2789,7 +2820,9 @@ msgstr "la valeur du sous-type doit être comprise entre 0 et 65535"
 msgid ""
 "format must be specified as \"type key_tag algorithm certificate_or_crl\" "
 "(see RFC 4398 for details)"
-msgstr "le format doit être spécifié comme \"type key_tag algorithme certificat_ou_crl\" (cf. RFC 4398 pour plus de détails)"
+msgstr ""
+"le format doit être spécifié comme \"type key_tag algorithme "
+"certificat_ou_crl\" (cf. RFC 4398 pour les détails)"
 
 #: ipalib/plugins/dns.py:274 ipalib/plugins/dns.py:317
 msgid "key_tag, algorithm and digest_type must be integers"
@@ -2806,18 +2839,24 @@ msgstr "la valeur de algorithme doit être comprise entre 0 et 255"
 #: ipalib/plugins/dns.py:289 ipalib/plugins/dns.py:457
 #, python-format
 msgid "format must be specified as \"domain_name\" (see RFC 1035 for details): %s"
-msgstr "le format doit être spécifié comme \"nom_de_domaine\" (cf. RFC 1035 pour plus de détails) : %s"
+msgstr ""
+"le format doit être spécifié comme \"nom_de_domaine\" (cf. RFC 1035 pour les"
+" détails) : %s"
 
 #: ipalib/plugins/dns.py:299
 #, python-format
 msgid "format must be specified as \"target\" (see RFC 2672 for details): %s"
-msgstr "le format doit être spécifié comme \"cible\" (cf. RFC 2672 pour plus de détails) : %s"
+msgstr ""
+"le format doit être spécifié comme \"cible\" (cf. RFC 2672 pour les détails)"
+" : %s"
 
 #: ipalib/plugins/dns.py:309
 msgid ""
 "format must be specified as \"key_tag algorithm digest_type digest\" (see "
 "RFC 4034 for details)"
-msgstr "le format doit être spécifié comme \"key_tag algorithme digest_type digest\" (cf. RFC 4034 pour plus de détails)"
+msgstr ""
+"le format doit être spécifié comme \"key_tag algorithme digest_type digest\""
+" (cf. RFC 4034 pour les détails)"
 
 #: ipalib/plugins/dns.py:320 ipalib/plugins/dns.py:343
 msgid "the value of flags must be between 0 and 65535"
@@ -2825,21 +2864,25 @@ msgstr "la valeur de drapeaux doit être comprise entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:323
 msgid "the value of algorithm and digest_type must be between 0 and 255"
-msgstr "les valeurs de algorithme et digest_type doivent être comprises entre 0 et 255"
+msgstr ""
+"les valeurs de algorithme et digest_type doivent être comprises entre 0 et "
+"255"
 
 #: ipalib/plugins/dns.py:332
 msgid ""
 "format must be specified as \"flags protocol algorithm public_key\" (see RFC"
 " 2535 for details)"
 msgstr ""
+"le format doit être spécifié comme \"drapeaux protocole algorithme "
+"clé_publique\" (cf. RFC 2535 pour les détails)"
 
 #: ipalib/plugins/dns.py:340
 msgid "flags, protocol and algorithm must be integers"
-msgstr ""
+msgstr "drapeaux, protocole et algorithme doivent être des entiers"
 
 #: ipalib/plugins/dns.py:346
 msgid "the value of protocol must be between 0 and 255"
-msgstr ""
+msgstr "la valeur de protocole doit être comprise entre 0 et 255"
 
 #: ipalib/plugins/dns.py:367
 msgid ""
@@ -2854,60 +2897,76 @@ msgid ""
 "       siz, hp, vp: [0 .. 90000000.00] (size/precision in meters)\n"
 "    See RFC 1876 for details"
 msgstr ""
+"le format doit être spécifié comme \n"
+"    \"d1 [m1 [s1]] {\"N\"|\"S\"}  d2 [m2 [s2]] {\"E\"|\"W\"} alt[\"m\"] [siz[\"m\"] [hp[\"m\"] [vp[\"m\"]]]]\"\n"
+"    where:\n"
+"       d1:     [0 .. 90]            (degrés latitude)\n"
+"       d2:     [0 .. 180]           (degrés longitude)\n"
+"       m1, m2: [0 .. 59]            (minutes latitude/longitude)\n"
+"       s1, s2: [0 .. 59.999]        (secondes latitude/longitude)\n"
+"       alt:    [-100000.00 .. 42849672.95] par .01 (altitude en mètres)\n"
+"       siz, hp, vp: [0 .. 90000000.00] (taille/précision en mètres)\n"
+"    Cf. RFC 1876 plus les détails"
 
 #: ipalib/plugins/dns.py:384
 #, python-format
 msgid "%s must be integer"
-msgstr ""
+msgstr "%s doit être un entier"
 
 #: ipalib/plugins/dns.py:391
 #, python-format
 msgid "%s must be float"
-msgstr ""
+msgstr "%s doit être un nombre à virgule flottante"
 
 #: ipalib/plugins/dns.py:394
 msgid "d1 and d2 must be between 0 and 90"
-msgstr ""
+msgstr "d1 et d2 doivent être compris entre 0 et 90"
 
 #: ipalib/plugins/dns.py:398
 msgid "m1, m2, s1 and s2 must be between 0 and 59.999"
-msgstr ""
+msgstr "m1, m2, s1 and s2 doivent être compris entre 0 et 59.999"
 
 #: ipalib/plugins/dns.py:401
 msgid "alt must be between -100000.00 and 42849672.95"
-msgstr ""
+msgstr "alt doit être compris entre -100000.00 et 42849672.95"
 
 #: ipalib/plugins/dns.py:405
 msgid "siz, hp and vp must be between 0 and 90000000.00"
-msgstr ""
+msgstr "siz, hp and vp doivent être compris entre 0 and 90000000.00"
 
 #: ipalib/plugins/dns.py:414
 msgid "format must be specified as \"domain_name\" (see RFC 1035 for details)"
 msgstr ""
+"le format doit être spécifié comme \"nom_domaine\" (cf. RFC 1035 pour les "
+"détails)"
 
 #: ipalib/plugins/dns.py:423
 msgid ""
 "format must be specified as \"next_domain_name type1 [type2 [type3 [...]]]\""
 " (see RFC 4034 for details)"
 msgstr ""
+"le format doit être spécifié comme \"nom_domaine_suivant type1 [type2 [type3"
+" [...]]]\" (cf. RFC 4034 pour les détails)"
 
 #: ipalib/plugins/dns.py:430
 msgid "type must be one of "
-msgstr ""
+msgstr "le type doit être une valeur parmi "
 
 #: ipalib/plugins/dns.py:439
 msgid ""
 "format must be specified as \"preference exchanger\" (see RFC 2230 for "
 "details)"
 msgstr ""
+"le format doit être spécifié comme \"préférence \" (cf. RFC 2230 pour les "
+"détails)"
 
 #: ipalib/plugins/dns.py:445
 msgid "the value of preference must be integer"
-msgstr ""
+msgstr "la valeur de la préférence doit être un entier"
 
 #: ipalib/plugins/dns.py:448
 msgid "the value of preference must be between 0 and 65535"
-msgstr ""
+msgstr "la valeur de la préférence doit être comprise entre 0 et 65535"
 
 #: ipalib/plugins/dns.py:468
 msgid ""
@@ -2963,7 +3022,8 @@ msgstr ""
 #: ipalib/plugins/dns.py:611
 #, python-format
 msgid "Nameserver '%(host)s' does not have a corresponding A/AAAA record"
-msgstr "Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
+msgstr ""
+"Le serveur de noms '%(host)s' n'a pas d'enregistrement A/AAAA correspondant"
 
 #: ipalib/plugins/dns.py:638
 msgid "DNS zone"
@@ -5959,7 +6019,8 @@ msgstr ""
 
 #: ipalib/plugins/migration.py:86
 #, python-format
-msgid "Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
+msgid ""
+"Kerberos principal %s already exists. Use 'ipa user-mod' to set it manually."
 msgstr ""
 "Le principal Kerberos %s existe déjà. Utiliser la commande 'ipa user-mod' "
 "pour le créer manuellement."
@@ -6031,7 +6092,8 @@ msgid "User object class"
 msgstr "Classes d'objet utilisateur"
 
 #: ipalib/plugins/migration.py:357
-msgid "Comma-separated list of objectclasses used to search for user entries in DS"
+msgid ""
+"Comma-separated list of objectclasses used to search for user entries in DS"
 msgstr ""
 "Liste séparée par des virgules des classes d'objet à utiliser pour la "
 "recherche d'entrées utilisateurs dans l'annuaire"
@@ -6041,7 +6103,8 @@ msgid "Group object class"
 msgstr "Classes d'objets groupes"
 
 #: ipalib/plugins/migration.py:365
-msgid "Comma-separated list of objectclasses used to search for group entries in DS"
+msgid ""
+"Comma-separated list of objectclasses used to search for group entries in DS"
 msgstr ""
 "Liste séparée par des virgules des classes d'objet à utiliser pour la "
 "recherche d'entrées groupes dans l'annuaire"
@@ -6051,7 +6114,8 @@ msgid "Ignore user object class"
 msgstr ""
 
 #: ipalib/plugins/migration.py:373
-msgid "Comma-separated list of objectclasses to be ignored for user entries in DS"
+msgid ""
+"Comma-separated list of objectclasses to be ignored for user entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:380
@@ -6059,7 +6123,8 @@ msgid "Ignore user attribute"
 msgstr ""
 
 #: ipalib/plugins/migration.py:381
-msgid "Comma-separated list of attributes to be ignored for user entries in DS"
+msgid ""
+"Comma-separated list of attributes to be ignored for user entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:388
@@ -6067,7 +6132,8 @@ msgid "Ignore group object class"
 msgstr ""
 
 #: ipalib/plugins/migration.py:389
-msgid "Comma-separated list of objectclasses to be ignored for group entries in DS"
+msgid ""
+"Comma-separated list of objectclasses to be ignored for group entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:396
@@ -6075,7 +6141,8 @@ msgid "Ignore group attribute"
 msgstr ""
 
 #: ipalib/plugins/migration.py:397
-msgid "Comma-separated list of attributes to be ignored for group entries in DS"
+msgid ""
+"Comma-separated list of attributes to be ignored for group entries in DS"
 msgstr ""
 
 #: ipalib/plugins/migration.py:404
@@ -6105,7 +6172,8 @@ msgid "Continue"
 msgstr ""
 
 #: ipalib/plugins/migration.py:418
-msgid "Continuous operation mode. Errors are reported but the process continues"
+msgid ""
+"Continuous operation mode. Errors are reported but the process continues"
 msgstr "Mode continu. Les erreurs sont rapportées mais le processus continue"
 
 #: ipalib/plugins/migration.py:426
@@ -6178,7 +6246,8 @@ msgid "%(count)d variables"
 msgstr "%(count)d variables"
 
 #: ipalib/plugins/misc.py:47 ipalib/plugins/misc.py:115
-msgid "retrieve and print all attributes from the server. Affects command output."
+msgid ""
+"retrieve and print all attributes from the server. Affects command output."
 msgstr ""
 "récupère et affiche tous les attributs du serveur. Modifie la sortie de la "
 "commande."
@@ -6528,14 +6597,17 @@ msgid "Permission name"
 msgstr "Nom de permission"
 
 #: ipalib/plugins/permission.py:120
-msgid "Comma-separated list of permissions to grant (read, write, add, delete, all)"
+msgid ""
+"Comma-separated list of permissions to grant (read, write, add, delete, all)"
 msgstr ""
 "Liste séparée par des virgules des permissions à accorder (read, write, add,"
 " delete, all)"
 
 #: ipalib/plugins/permission.py:135
-msgid "Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
-msgstr "Type d'objet IPA (user, group, host, hostgroup, service, netgroup, dns)"
+msgid ""
+"Type of IPA object (user, group, host, hostgroup, service, netgroup, dns)"
+msgstr ""
+"Type d'objet IPA (user, group, host, hostgroup, service, netgroup, dns)"
 
 #: ipalib/plugins/permission.py:141
 msgid "Member of group"
@@ -6903,7 +6975,8 @@ msgstr "Intervalle de réinitialisation sur échec"
 
 #: ipalib/plugins/pwpolicy.py:209
 msgid "Period after which failure count will be reset (seconds)"
-msgstr "Période après laquelle le compteur d'échec sera réinitialisé (secondes)"
+msgstr ""
+"Période après laquelle le compteur d'échec sera réinitialisé (secondes)"
 
 #: ipalib/plugins/pwpolicy.py:214
 msgid "Lockout duration"
@@ -6975,7 +7048,8 @@ msgstr "Priorité de la polique (une valeur élevé indique une priorité basse)
 
 #: ipalib/plugins/pwpolicy.py:317
 msgid "Maximum password life must be greater than minimum."
-msgstr "La durée de vie maximale du mot de passe doit être supérieure au minimum."
+msgstr ""
+"La durée de vie maximale du mot de passe doit être supérieure au minimum."
 
 #: ipalib/plugins/pwpolicy.py:336
 msgid "Add a new group password policy."
@@ -8175,7 +8249,8 @@ msgstr "Moi-même"
 
 #: ipalib/plugins/user.py:518
 msgid "Display user record for current Kerberos principal"
-msgstr "Afficher l'enregistrement utilisateur pour le principal Kerberos actuel"
+msgstr ""
+"Afficher l'enregistrement utilisateur pour le principal Kerberos actuel"
 
 #: ipalib/plugins/user.py:539
 #, python-format
@@ -8495,7 +8570,8 @@ msgid "Server Name"
 msgstr "Nom de serveur"
 
 #: ipa-client/ipa-getkeytab.c:798 ipa-client/ipa-rmkeytab.c:171
-msgid "The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
+msgid ""
+"The principal to get a keytab for (ex: ftp/ftp.example.com@EXAMPLE.COM)"
 msgstr ""
 "Le principal pour lequel obtenir le (par ex: "
 "ftp/ftp.example.com@EXAMPLE.COM)"
@@ -8589,11 +8665,13 @@ msgstr "Nom de principal de service invalide\n"
 #: ipa-client/ipa-getkeytab.c:910
 #, c-format
 msgid "Kerberos Credential Cache not found. Do you have a Kerberos Ticket?\n"
-msgstr "Cache de crédits Kerberos introuvable. Possédez-vous un ticket Kerberos ?\n"
+msgstr ""
+"Cache de crédits Kerberos introuvable. Possédez-vous un ticket Kerberos ?\n"
 
 #: ipa-client/ipa-getkeytab.c:918
 #, c-format
-msgid "Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
+msgid ""
+"Kerberos User Principal not found. Do you have a valid Credential Cache?\n"
 msgstr ""
 "Principal d'utilisateur Kerberos introuvable. Possédez-vous un cache de "
 "crédits Kerberos ?\n"
@@ -8783,7 +8861,8 @@ msgstr "résultat de la réponse XML-RPC introuvable\n"
 #: ipa-client/ipa-join.c:919
 #, c-format
 msgid "Unable to join host: Kerberos Credential Cache not found\n"
-msgstr "Impossible d'inscrire le système : cache de crédit Kerberos introuvable\n"
+msgstr ""
+"Impossible d'inscrire le système : cache de crédit Kerberos introuvable\n"
 
 #: ipa-client/ipa-join.c:927
 #, c-format
