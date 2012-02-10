@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: FreeIPA\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?product=freeIPA\n"
 "POT-Creation-Date: 2011-12-08 16:05-0500\n"
-"PO-Revision-Date: 2012-02-10 16:01+0100\n"
+"PO-Revision-Date: 2012-02-10 20:34+0100\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -3214,15 +3214,15 @@ msgstr "Enregistrement de ressource DNS"
 
 #: ipalib/plugins/dns.py:923
 msgid "DNS resource records"
-msgstr "Enregistrements de ressource DNS"
+msgstr "Enregistrements de ressources DNS"
 
 #: ipalib/plugins/dns.py:927
 msgid "DNS Resource Records"
-msgstr "Enregistrements de ressource DNS"
+msgstr "Enregistrements de ressources DNS"
 
 #: ipalib/plugins/dns.py:928
 msgid "DNS Resource Record"
-msgstr "Enregistrement de ressource DNS"
+msgstr "Enregistrement de ressources DNS"
 
 #: ipalib/plugins/dns.py:933 ipalib/plugins/dns.py:934
 msgid "Record name"
@@ -3258,7 +3258,7 @@ msgstr ""
 
 #: ipalib/plugins/dns.py:1149
 msgid "Add new DNS resource record."
-msgstr "Ajouter un nouvel enregistrement de ressource DNS."
+msgstr "Ajouter un nouvel enregistrement de ressources DNS."
 
 #: ipalib/plugins/dns.py:1157
 msgid "force NS record creation even if its hostname is not in DNS"
@@ -3268,7 +3268,7 @@ msgstr ""
 
 #: ipalib/plugins/dns.py:1210
 msgid "Modify a DNS resource record."
-msgstr "Modifier un enregistrement de ressource DNS."
+msgstr "Modifier un enregistrement de ressources DNS."
 
 #: ipalib/plugins/dns.py:1250
 #, python-format
@@ -3277,7 +3277,7 @@ msgstr "Enregistrement \"%(value)s\" supprimé"
 
 #: ipalib/plugins/dns.py:1257
 msgid "Delete DNS resource record."
-msgstr "Supprimer un enregistrement de ressource DNS."
+msgstr "Supprimer un enregistrement de ressources DNS."
 
 #: ipalib/plugins/dns.py:1259
 msgid ""
@@ -3315,11 +3315,11 @@ msgstr "enregistrement %s de valeur %s introuvable"
 
 #: ipalib/plugins/dns.py:1345
 msgid "Display DNS resource."
-msgstr "Afficher un enregistrement de ressource DNS."
+msgstr "Afficher un enregistrement de ressources DNS."
 
 #: ipalib/plugins/dns.py:1360
 msgid "Search for DNS resources."
-msgstr "Recherchez des enregistrements de ressource DNS."
+msgstr "Rechercher des enregistrements de ressources DNS."
 
 #: ipalib/plugins/dns.py:1386
 msgid "Resolve a host name in DNS."
@@ -3539,14 +3539,64 @@ msgid ""
 " Display information about a named group.\n"
 "   ipa group-show localadmins\n"
 msgstr ""
+"\n"
+"Groupes d'utilisateurs\n"
+"\n"
+"Gestion des groupes d'utilisateur. Par défaut, les nouveaux groupes sont\n"
+"des groupes POSIX. Vous pouvez utiliser l'option --nonposix de la commande\n"
+"group-add pour le marquer comme non-POSIX. Vous pouvez utiliser l'option\n"
+"--posix de la commande group-mod pour convertir un groupe non-POSIX en groupe\n"
+"POSIX. Les groupes POSIX ne peuvent être convertis en groupes non-POSIX.\n"
+"\n"
+"Chaque groupe doit avoir une description.\n"
+"\n"
+"Les groupes POSIX doivent avoir un numéro d'identifiant de groupe (GID).\n"
+"La modification d'un GID est supportée, mais peut avoir un impact sur les\n"
+"permissions de vos fichiers. Il n'est pas nécessaire de fournir un GID à\n"
+"la création d'un groupe. IPA en créera un automatiquement s'il n'est pas\n"
+"spécifié.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Ajouter un nouveau groupe :\n"
+"   ipa group-add --desc='administrateurs locaux' localadmins\n"
+"\n"
+" Ajouter un nouveau groupe non-POSIX :\n"
+"   ipa group-add --nonposix --desc='administrateurs distants' remoteadmins\n"
+"\n"
+" Convertir un groupe non-POSIX en POSIX :\n"
+"   ipa group-mod --posix remoteadmins\n"
+"\n"
+" Ajouter un nouveau groupe POSIX avec un numéro d'identifiant\n"
+" de groupe spécifique :\n"
+"   ipa group-add --gid=500 --desc='Administrateurs Unix' unixadmins\n"
+"\n"
+" Ajouter un nouveau groupe POSIX en laissant IPA choisir le numéro\n"
+" d'identifiant de groupe :\n"
+"   ipa group-add --desc='printer admins' printeradmins\n"
+"\n"
+" Supprimer un groupe :\n"
+"   ipa group-del unixadmins\n"
+"\n"
+" Pour ajouter le groupe \"remoteadmins\" au groupe \"localadmins\" :\n"
+"   ipa group-add-member --groups=remoteadmins localadmins\n"
+"\n"
+" Ajouter une liste d'utilisateurs au groupe \"localadmins\" :\n"
+"   ipa group-add-member --users=test1,test2 localadmins\n"
+"\n"
+" Supprimer un utilisateur du groupe \"localadmins\" :\n"
+"   ipa group-remove-member --users=test2 localadmins\n"
+"\n"
+" Afficher l'information sur un groupe nommé.\n"
+"   ipa group-show localadmins\n"
 
 #: ipalib/plugins/group.py:80
 msgid "group"
-msgstr ""
+msgstr "groupe"
 
 #: ipalib/plugins/group.py:81
 msgid "groups"
-msgstr ""
+msgstr "groupes"
 
 #: ipalib/plugins/group.py:100 ipalib/plugins/hbacrule.py:192
 #: ipalib/plugins/sudorule.py:144
@@ -3555,7 +3605,7 @@ msgstr "Groupes d'utilisateurs"
 
 #: ipalib/plugins/group.py:101
 msgid "User Group"
-msgstr ""
+msgstr "Groupe de l'utilisateur"
 
 #: ipalib/plugins/group.py:109
 msgid "Group name"
@@ -3575,7 +3625,7 @@ msgstr "GID (utiliser cette option pour le positionner manuellement)"
 
 #: ipalib/plugins/group.py:129
 msgid "Create a new group."
-msgstr ""
+msgstr "Créer un nouveau groupe."
 
 #: ipalib/plugins/group.py:131
 #, python-format
@@ -3588,7 +3638,7 @@ msgstr "Créer en tant que groupe non-POSIX"
 
 #: ipalib/plugins/group.py:153
 msgid "Delete group."
-msgstr ""
+msgstr "Supprimer un groupe."
 
 #: ipalib/plugins/group.py:155
 #, python-format
@@ -3597,12 +3647,12 @@ msgstr "Groupe \"%(value)s\" supprimé"
 
 #: ipalib/plugins/group.py:183
 msgid "Modify a group."
-msgstr ""
+msgstr "Modifier un groupe."
 
 #: ipalib/plugins/group.py:185
 #, python-format
 msgid "Modified group \"%(value)s\""
-msgstr "Group \"%(value)s\" modifié"
+msgstr "Groupe \"%(value)s\" modifié"
 
 #: ipalib/plugins/group.py:190
 msgid "change to a POSIX group"
@@ -3610,7 +3660,7 @@ msgstr "Transformer en groupe POSIX"
 
 #: ipalib/plugins/group.py:222
 msgid "Search for groups."
-msgstr ""
+msgstr "Rechercher des groupes."
 
 #: ipalib/plugins/group.py:227
 #, python-format
@@ -3621,23 +3671,23 @@ msgstr[1] "%(count)d groupes correspondants"
 
 #: ipalib/plugins/group.py:233
 msgid "search for private groups"
-msgstr "chercher des groupes privés"
+msgstr "rechercher des groupes privés"
 
 #: ipalib/plugins/group.py:263
 msgid "Display information about a named group."
-msgstr ""
+msgstr "Afficher les informations d'un groupe nommé."
 
 #: ipalib/plugins/group.py:269
 msgid "Add members to a group."
-msgstr ""
+msgstr "Ajouter des membres à un groupe."
 
 #: ipalib/plugins/group.py:275
 msgid "Remove members from a group."
-msgstr ""
+msgstr "Supprimer des membres d'un groupe."
 
 #: ipalib/plugins/group.py:281
 msgid "Detach a managed group from a user."
-msgstr ""
+msgstr "Détacher un groupe administré d'un utilisateur."
 
 #: ipalib/plugins/group.py:284
 #, python-format
@@ -3705,26 +3755,77 @@ msgid ""
 " Remove a named HBAC rule:\n"
 "   ipa hbacrule-del allow_server\n"
 msgstr ""
+"\n"
+"Contrôle d'accès des systèmes (HBAC)\n"
+"\n"
+"HBAC (Host-based acces control) permet de contrôler qui peut accéder\n"
+"à quels services sur quels systèmes, et d'où. Il est possible\n"
+"d'utiliser le système HBAC afin de contrôler quels utilisateurs ou\n"
+"groupes d'un système source peuvent accéder quels services, ou groupes\n"
+"de services, sur un système cible.\n"
+"\n"
+"Vous pouvez aussi spécifier une catégorie d'utilisateur, de systèmes\n"
+"cibles et de systèmes sources. La seule catégorie existante pour le\n"
+"moment est \"all\", mais pourra être étendu dans le futur.\n"
+"\n"
+"Les systèmes sources et cibles des règles HBAC doivent être des systèmes\n"
+"administrés par IPA.\n"
+"\n"
+"Les services et groupes de services disponibles sont gérés respectivement\n"
+"par les greffons hbacsvc and hbacsvcgroup.\n"
+"\n"
+"EXEMPLES:\n"
+"\n"
+" Créer une règle \"test1\" autorisant tous les utilisateurs à accéder\n"
+" le serveur \"server\" depuis n'importe où :\n"
+"   ipa hbacrule-add --type=allow --usercat=all --srchostcat=all test1\n"
+"   ipa hbacrule-add-host --hosts=server.example.com test1\n"
+"\n"
+" Afficher les propriétés d'une règle nommée HBAC :\n"
+"   ipa hbacrule-show test1\n"
+"\n"
+" Créer une règle pour un service spécifique, permettant à\n"
+" l'utilisateur john d'accéder au service sshd sur toute machine depuis\n"
+" n'importe quelle machine :\n"
+"   ipa hbacrule-add --type=allow --hostcat=all --srchostcat=all john_sshd\n"
+"   ipa hbacrule-add-user --users=john john_sshd\n"
+"   ipa hbacrule-add-service --hbacsvcs=sshd john_sshd\n"
+"\n"
+" Créer une règle pour un nouveau groupe de services, permettant à\n"
+" l'utilisateur john d'accéder au service FTP de toute machine depuis\n"
+" n'importe quelle machine.\n"
+"   ipa hbacsvcgroup-add ftpers\n"
+"   ipa hbacsvc-add sftp\n"
+"   ipa hbacsvcgroup-add-member --hbacsvcs=ftp,sftp ftpers\n"
+"   ipa hbacrule-add --type=allow --hostcat=all --srchostcat=all john_ftp\n"
+"   ipa hbacrule-add-user --users=john john_ftp\n"
+"   ipa hbacrule-add-service --hbacsvcgroups=ftpers john_ftp\n"
+"\n"
+" Désactiver une règle HBAC nommée :\n"
+"   ipa hbacrule-disable test1\n"
+"\n"
+" Supprimer une règle HBAC nommée :\n"
+"   ipa hbacrule-del allow_server\n"
 
 #: ipalib/plugins/hbacrule.py:89
 msgid "Host-based access control commands"
-msgstr ""
+msgstr "Commandes de contrôle d'accès des systèmes"
 
 #: ipalib/plugins/hbacrule.py:93
 msgid "The deny type has been deprecated."
-msgstr ""
+msgstr "Le type deny est obsolète."
 
 #: ipalib/plugins/hbacrule.py:112
 msgid "HBAC rule"
-msgstr ""
+msgstr "Règle HBAC"
 
 #: ipalib/plugins/hbacrule.py:113
 msgid "HBAC rules"
-msgstr ""
+msgstr "Règles HBAC"
 
 #: ipalib/plugins/hbacrule.py:131
 msgid "HBAC Rules"
-msgstr ""
+msgstr "Règles HBAC"
 
 #: ipalib/plugins/hbacrule.py:132
 msgid "HBAC Rule"
@@ -3736,7 +3837,7 @@ msgstr "Nom de règle"
 
 #: ipalib/plugins/hbacrule.py:142
 msgid "Rule type (allow)"
-msgstr ""
+msgstr "Type de règle (allow)"
 
 #: ipalib/plugins/hbacrule.py:143
 msgid "Rule type"
@@ -3768,7 +3869,7 @@ msgstr "Catégorie de système source"
 
 #: ipalib/plugins/hbacrule.py:166
 msgid "Source host category the rule applies to"
-msgstr "Catégorie de système source sur laquelle la règle s'applique"
+msgstr "Catégorie de système sources sur laquelle la règle s'applique"
 
 #: ipalib/plugins/hbacrule.py:171
 msgid "Service category"
@@ -3799,11 +3900,11 @@ msgstr "Groupes de systèmes"
 
 #: ipalib/plugins/hbacrule.py:204
 msgid "Source Hosts"
-msgstr ""
+msgstr "Systèmes sources"
 
 #: ipalib/plugins/hbacrule.py:208
 msgid "Source Host Groups"
-msgstr ""
+msgstr "Groupes de systèmes source"
 
 #: ipalib/plugins/hbacrule.py:212 ipalib/plugins/internal.py:359
 #: ipalib/plugins/service.py:222
@@ -3816,7 +3917,7 @@ msgstr "Groupes de services"
 
 #: ipalib/plugins/hbacrule.py:225
 msgid "Create a new HBAC rule."
-msgstr ""
+msgstr "Créer une nouvelle règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:227
 #, python-format
@@ -3825,7 +3926,7 @@ msgstr "Règle HBAC \"%(value)s\" ajoutée"
 
 #: ipalib/plugins/hbacrule.py:238
 msgid "Delete an HBAC rule."
-msgstr ""
+msgstr "Supprimer une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:240
 #, python-format
@@ -3834,7 +3935,7 @@ msgstr "Règle HBAC \"%(value)s\" supprimée"
 
 #: ipalib/plugins/hbacrule.py:246
 msgid "Modify an HBAC rule."
-msgstr ""
+msgstr "Modifier une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:248
 #, python-format
@@ -3843,7 +3944,7 @@ msgstr "Règle HBAC \"%(value)s\" modifiée"
 
 #: ipalib/plugins/hbacrule.py:270
 msgid "Search for HBAC rules."
-msgstr ""
+msgstr "Rechercher des règles HBAC."
 
 #: ipalib/plugins/hbacrule.py:273
 #, python-format
@@ -3854,11 +3955,11 @@ msgstr[1] "%(count)d règles HBAC correspondantes"
 
 #: ipalib/plugins/hbacrule.py:280
 msgid "Display the properties of an HBAC rule."
-msgstr ""
+msgstr "Afficher les propriétés d'une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:286
 msgid "Enable an HBAC rule."
-msgstr ""
+msgstr "Activer une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:288
 #, python-format
@@ -3867,7 +3968,7 @@ msgstr "Règle HBAC \"%(value)s\" activée"
 
 #: ipalib/plugins/hbacrule.py:313
 msgid "Disable an HBAC rule."
-msgstr ""
+msgstr "Désactiver une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:315
 #, python-format
@@ -3880,35 +3981,35 @@ msgstr "Horaire d'accès"
 
 #: ipalib/plugins/hbacrule.py:421
 msgid "Add users and groups to an HBAC rule."
-msgstr ""
+msgstr "Ajouter des utilisateurs et groupes à une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:440
 msgid "Remove users and groups from an HBAC rule."
-msgstr ""
+msgstr "Retirer des utilisateurs et groupes d'une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:449
 msgid "Add target hosts and hostgroups to an HBAC rule."
-msgstr ""
+msgstr "Ajouter des systèmes et groupes de systèmes cibles à une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:468
 msgid "Remove target hosts and hostgroups from an HBAC rule."
-msgstr ""
+msgstr "Retirer des systèmes et groupes de systèmes cibles d'une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:477
 msgid "Add source hosts and hostgroups from a HBAC rule."
-msgstr ""
+msgstr "Ajouter des systèmes et groupes de systèmes sources à une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:524
 msgid "Remove source hosts and hostgroups from an HBAC rule."
-msgstr ""
+msgstr "Retirer des systèmes et groupes de systèmes sources d'une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:558
 msgid "Add services to an HBAC rule."
-msgstr ""
+msgstr "Ajouter des services à une règle HBAC."
 
 #: ipalib/plugins/hbacrule.py:577
 msgid "Remove service and service groups from an HBAC rule."
-msgstr ""
+msgstr "Ajouter des services et groupes de services d'une règle HBAC."
 
 #: ipalib/plugins/hbacsvc.py:27
 msgid ""
@@ -3957,7 +4058,7 @@ msgstr ""
 
 #: ipalib/plugins/hbacsvc.py:50 ipalib/plugins/hbacsvcgroup.py:49
 msgid "Host based access control commands"
-msgstr ""
+msgstr "Commandes HBAC."
 
 #: ipalib/plugins/hbacsvc.py:57 ipalib/plugins/hbacsvc.py:73
 msgid "HBAC service"
@@ -3965,7 +4066,7 @@ msgstr "Service HBAC"
 
 #: ipalib/plugins/hbacsvc.py:58
 msgid "HBAC services"
-msgstr ""
+msgstr "Services HBAC"
 
 #: ipalib/plugins/hbacsvc.py:66
 msgid "HBAC Services"
@@ -3973,7 +4074,7 @@ msgstr "Services HBAC"
 
 #: ipalib/plugins/hbacsvc.py:67
 msgid "HBAC Service"
-msgstr ""
+msgstr "Service HBAC"
 
 #: ipalib/plugins/hbacsvc.py:72
 msgid "Service name"
@@ -3985,7 +4086,7 @@ msgstr "Description de service HBAC"
 
 #: ipalib/plugins/hbacsvc.py:88
 msgid "Add a new HBAC service."
-msgstr ""
+msgstr "Ajouter un nouveau service HBAC."
 
 #: ipalib/plugins/hbacsvc.py:90
 #, python-format
@@ -3994,7 +4095,7 @@ msgstr "Service HBAC \"%(value)s\" ajouté"
 
 #: ipalib/plugins/hbacsvc.py:96
 msgid "Delete an existing HBAC service."
-msgstr ""
+msgstr "Supprimer un service HBAC existant."
 
 #: ipalib/plugins/hbacsvc.py:98
 #, python-format
@@ -4003,7 +4104,7 @@ msgstr "Service HBAC \"%(value)s\" supprimé"
 
 #: ipalib/plugins/hbacsvc.py:104
 msgid "Modify an HBAC service."
-msgstr ""
+msgstr "Modifier un service HBAC."
 
 #: ipalib/plugins/hbacsvc.py:106
 #, python-format
@@ -4012,7 +4113,7 @@ msgstr "Service HBAC \"%(value)s\" modifié"
 
 #: ipalib/plugins/hbacsvc.py:112
 msgid "Search for HBAC services."
-msgstr ""
+msgstr "Rechercher des services HBAC."
 
 #: ipalib/plugins/hbacsvc.py:115
 #, python-format
@@ -4023,7 +4124,7 @@ msgstr[1] "%(count)d services HBAC correspondants"
 
 #: ipalib/plugins/hbacsvc.py:122
 msgid "Display information about an HBAC service."
-msgstr ""
+msgstr "Afficher les informations sur un service HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:24
 msgid ""
@@ -4078,19 +4179,19 @@ msgstr ""
 
 #: ipalib/plugins/hbacsvcgroup.py:56
 msgid "HBAC service group"
-msgstr ""
+msgstr "Groupe de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:57
 msgid "HBAC service groups"
-msgstr ""
+msgstr "Groupes de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:65
 msgid "HBAC Service Groups"
-msgstr ""
+msgstr "Groupes de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:66
 msgid "HBAC Service Group"
-msgstr ""
+msgstr "Groupe de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:71
 msgid "Service group name"
@@ -4102,7 +4203,7 @@ msgstr "Description de groupe de services HBAC"
 
 #: ipalib/plugins/hbacsvcgroup.py:86
 msgid "Add a new HBAC service group."
-msgstr ""
+msgstr "Ajouter un nouveau groupe de services HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:88
 #, python-format
@@ -4111,7 +4212,7 @@ msgstr "Groupe de services HBAC \"%(value)s\" ajouté"
 
 #: ipalib/plugins/hbacsvcgroup.py:94
 msgid "Delete an HBAC service group."
-msgstr ""
+msgstr "Supprimer un groupe de services HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:96
 #, python-format
@@ -4120,7 +4221,7 @@ msgstr "Groupe de services HBAC \"%(value)s\" supprimé"
 
 #: ipalib/plugins/hbacsvcgroup.py:102
 msgid "Modify an HBAC service group."
-msgstr ""
+msgstr "Supprimer un groupe de services HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:104
 #, python-format
@@ -4129,7 +4230,7 @@ msgstr "Groupe de services HBAC \"%(value)s\" modifié"
 
 #: ipalib/plugins/hbacsvcgroup.py:110
 msgid "Search for an HBAC service group."
-msgstr ""
+msgstr "Rechercher des groupes de services HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:113
 #, python-format
@@ -4140,15 +4241,15 @@ msgstr[1] "%(count)d groupes de services HBAC correspondants"
 
 #: ipalib/plugins/hbacsvcgroup.py:120
 msgid "Display information about an HBAC service group."
-msgstr ""
+msgstr "Afficher les informations sur un groupe de services HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:126
 msgid "Add members to an HBAC service group."
-msgstr ""
+msgstr "Ajouter des membres à un groupe de services HBAC."
 
 #: ipalib/plugins/hbacsvcgroup.py:132
 msgid "Remove members from an HBAC service group."
-msgstr ""
+msgstr "Supprimer des membres d'un groupe de services HBAC."
 
 #: ipalib/plugins/hbactest.py:27
 msgid ""
