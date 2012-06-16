@@ -1,0 +1,2462 @@
+#
+# Translators:
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jérôme Fenal <jfenal@gmail.com>, 2012.
+# Sam Friedmann <sam.friedmann@redhat.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fedora Resource Management Guide\n"
+"Report-Msgid-Bugs-To: https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&component=resource-management-guide&product=Fedora%20Documentation&classification=Fedora\n"
+"POT-Creation-Date: 2012-05-22T11:56:55\n"
+"PO-Revision-Date: 2012-06-16 22:22+0200\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
+"Language-Team: ipa-admin <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Lokalize 1.0\n"
+
+#. Tag: title
+#, no-c-format
+msgid "Subsystems and Tunable Parameters"
+msgstr "Sous-systèmes et paramètres configurables"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<firstterm>Subsystems</firstterm> are kernel modules that are aware of "
+"cgroups. Typically, they are resource controllers that allocate varying "
+"levels of system resources to different cgroups. However, subsystems could "
+"be programmed for any other interaction with the kernel where the need "
+"exists to treat different groups of processes differently. The "
+"<firstterm>application programming interface</firstterm> (API) to develop "
+"new subsystems is documented in <filename>cgroups.txt</filename> in the "
+"kernel documentation, installed on your system at <filename>/usr/share/doc"
+"/kernel-doc-<replaceable>kernel-"
+"version</replaceable>/Documentation/cgroups/</filename> (provided by the "
+"<package>kernel-doc</package> package). The latest version of the cgroups "
+"documentation is also available on line at <ulink "
+"url=\"http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt\" />. "
+"Note, however, that the features in the latest documentation might not match"
+" those available in the kernel installed on your system."
+msgstr ""
+"Les <firstterm>sous-systèmes</firstterm> sont des modules du noyau prenant en charge les groupes de contrôle (cgroups). Il s'agit typiquement de contrôleurs de ressources qui allouent différents niveaux de ressources système à différents groupes de contrôle. Cependant, les sous-systèmes pourraient être programmés pour toute autre interaction avec le noyau si le besoin de traiter les divers groupes de processus différemment existe. L'<firstterm>interface de programmation</firstterm> (API) servant à développer de nouveaux sous-systèmes est documentée dans <filename>cgroups.txt</filename> dans la documentation du noyau qui est installée sur <filename>/usr/share/doc/kernel-doc-<replaceable>kernel-version</replaceable>/Documentation/cgroups/</filename> (fourni par le paquetage <package>kernel-doc</package>). La version la plus récente de la documentation des groupes de contrôle est disponible en ligne à l'adresse suivante : <ulink url=\"http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt\" />. On remarque cependant que les fonctionnalités décrites dans les documents les plus récents pourraient ne pas correspondre à celles qui sont disponibles dans le noyau installé sur votre système."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<firstterm>State objects</firstterm> that contain the subsystem parameters "
+"for a cgroup are represented as <firstterm>pseudofiles</firstterm> within "
+"the cgroup virtual file system. These pseudo-files can be manipulated by "
+"shell commands or their equivalent system calls. For example, "
+"<filename>cpuset.cpus</filename> is a pseudo-file that specifies which CPUs "
+"a cgroup is permitted to access. If "
+"<systemitem>/cgroup/cpuset/webserver</systemitem> is a cgroup for the web "
+"server that runs on a system, and we run the following command:"
+msgstr "Les <firstterm>objets d'état</firstterm> qui contiennent les paramètres de sous-système pour un groupe de contrôle (cgroup) sont représentés en tant que <firstterm>pseudo-fichiers</firstterm> dans le système de fichiers virtuel du groupe de contrôle. Ces pseudo-fichiers peuvent être manipulés à l'aide de commandes shell ou des appels système équivalents. Par exemple, <filename>cpuset.cpus</filename> est un pseudo-fichier qui spécifie à quels CPUs un groupe de contrôle peut accéder. Si <systemitem>/cgroup/cpuset/webserver</systemitem> est un groupe de contrôle pour le serveur web exécuté sur un système et que nous exécutons la commande suivante :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo 0,2 &gt; /cgroup/cpuset/webserver/cpuset.cpus</command>\n"
+"  "
+msgstr ""
+"~]# <command>echo 0,2 &gt; /cgroup/cpuset/webserver/cpuset.cpus</command>\n"
+"  "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The value <literal>0,2</literal> is written to the "
+"<filename>cpuset.cpus</filename> pseudofile and therefore limits any tasks "
+"whose PIDs are listed in <filename>/cgroup/cpuset/webserver/tasks</filename>"
+" to use only CPU&nbsp;0 and CPU&nbsp;2 on the system."
+msgstr "La valeur <literal>0,2</literal> est écrite sur le pseudofichier <filename>cpuset.cpus</filename> et limite ainsi toutes les tâches dont les PID sont répertoriés sur  <filename>/cgroup/cpuset/webserver/tasks</filename> afin d'uniquement utiliser CPU&nbsp;0 et CPU&nbsp;2 sur le système."
+
+#. Tag: title
+#, no-c-format
+msgid "blkio"
+msgstr "blkio"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The Block I/O (<systemitem>blkio</systemitem>) subsystem controls and "
+"monitors access to I/O on block devices by tasks in cgroups. Writing values "
+"to some of these pseudofiles limits access or bandwidth, and reading values "
+"from some of these pseudofiles provides information on I/O operations."
+msgstr "Le sous-système Block I/O (<systemitem>blkio</systemitem>) surveille et contrôle l'accès des tâches de groupes de contrôle aux E/S sur des périphériques blocs. L'écriture de valeurs sur certains de ces pseudo-fichiers limite l'accès ou la bande passante, la lecture des valeurs de certains de ces pseudos-fichiers fournit des informations sur les opérations d'E/S."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>blkio</systemitem> subsystem offers two policies for "
+"controlling access to I/O:"
+msgstr "Le sous-système <systemitem>blkio</systemitem> offre deux politiques pour contrôler l'accès aux entrées/sorties :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>Proportional weight division</emphasis> &mdash; implemented in the"
+" Completely Fair Queuing I/O scheduler, this policy allows you to set "
+"weights to specific cgroups. This means that each cgroup has a set "
+"percentage (depending on the weight of the cgroup) of all I/O operations "
+"reserved. For more information, refer to <xref linkend=\"blkio-weight\" />"
+msgstr "<emphasis>Répartition proportionnelle pondérée</ emphasis> &mdash; mise en œuvre dans l'ordonnanceur d'entrées/sorties Completely Fair Queuing, cette politique permet de définir des poids sur des cgroups spécifiques. Cela signifie que chaque cgroup dispose d'une portion (en fonction du poids du cgroup) de toutes les opérations d'entrées/sorties réservés. Pour plus d'informations, se reporter à <xref linkend=\"blkio-weight\" />"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>I/O throttling (Upper limit)</emphasis> &mdash; used to set an "
+"upper limit for the number of I/O operations performed by a specific device."
+" This means that a device can have a limited rate of "
+"<emphasis>read</emphasis> or <emphasis>write</emphasis> operations. For more"
+" information, refer to <xref linkend=\"blkio-throttling\" />"
+msgstr ""
+"<emphasis>Limitation d'entrées/sorties (limite supérieure)</emphasis> &mdash; utilisé pour définir une"
+"limite supérieure pour le nombre de opérations d'entrées/sorties exécutées par un périphérique spécifique."
+"Cela signifie qu'un périphérique peut avoir un taux limité d'opérations en "
+"<emphasis>lecture</ emphasis> ou en <emphasis>écriture</ emphasis>. "
+"Pour de plus amples d'informations, se reporter à <xref linkend=\"blkio-throttling\" />"
+
+#. Tag: title
+#, no-c-format
+msgid "Buffered <emphasis>write</emphasis> operations"
+msgstr "Les opérations d'<emphasis>écriture</emphasis> en mémoire tampon"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Currently, the Block I/O subsystem does not work for buffered "
+"<emphasis>write</emphasis> operations. It is primarily targeted at direct "
+"I/O, although it works for buffered <emphasis>read</emphasis> operations."
+msgstr ""
+"Actuellement, le sous-système d'E/S en mode bloc ne fonctionne pas pour les opérations en <emphasis>écriture</emphasis> passant par la mémoire tampon. "
+"Il est principalement destiné aux E/S directes, bien qu'il fonctionne pour les opérations en <emphasis>lecture</emphasis> tamponnées."
+
+#. Tag: title
+#, no-c-format
+msgid "Proportional Weight Division Configuration Options"
+msgstr "Options de configuration de la répartition proportionnelle pondérée"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.weight"
+msgstr "blkio.weight"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the relative proportion (<firstterm>weight</firstterm>) of block "
+"I/O access available by default to a cgroup, in the range "
+"<literal>100</literal> to <literal>1000</literal>. This value is overridden "
+"for specific devices by the <filename>blkio.weight_device</filename> "
+"parameter. For example, to assign a default weight of <literal>500</literal>"
+" to a cgroup for access to block devices, run:"
+msgstr "spécifie la proportion relative (<firstterm>poids</firstterm>) de l'accès de Block I/O disponible par défaut à un groupe de contrôle dans une gamme de <literal>100</literal> à <literal>1000</literal>. Cette valeur est remplacée par le paramètre <filename>blkio.weight_device</filename> pour des périphériques spécifiques. Par exemple, pour assigner un poids par défaut de <literal>500</literal> à un groupe de contrôle pour accéder aux périphériques blocs, exécuter :"
+
+#. Tag: screen
+#, no-c-format
+msgid "<command>echo 500 &gt; blkio.weight</command>"
+msgstr "<command>echo 500 &gt; blkio.weight</command>"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.weight_device"
+msgstr "blkio.weight_device"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the relative proportion (<firstterm>weight</firstterm>) of I/O "
+"access on specific devices available to a cgroup, in the range "
+"<literal>100</literal> to <literal>1000</literal>. The value of this "
+"parameter overrides the value of the <filename>blkio.weight</filename> "
+"parameter for the devices specified. Values take the format "
+"<replaceable>major</replaceable>:<replaceable>minor</replaceable>&nbsp;<replaceable>weight</replaceable>,"
+" where <replaceable>major</replaceable> and <replaceable>minor</replaceable>"
+" are device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, otherwise known as the <citetitle>Linux Devices "
+"List</citetitle> and available from <ulink "
+"url=\"http://www.kernel.org/doc/Documentation/devices.txt\" />. For example,"
+" to assign a weight of <literal>500</literal> to a cgroup for access to "
+"<systemitem>/dev/sda</systemitem>, run:"
+msgstr "spécifie la proportion relative (<firstterm>poids</firstterm>) de l'accès des E/S à un groupe de contrôle sur des périphériques spécifiques dans la gamme de <literal>100</literal> à <literal>1000</literal>. La valeur de ce paramètre remplace la valeur du paramètre <filename>blkio.weight</filename> pour des périphériques spécifiés. Les valeurs prennent le format <replaceable>majeur</replaceable>:<replaceable>mineur</replaceable>&nbsp;<replaceable>poids</replaceable>, où <replaceable>majeur</replaceable> et <replaceable>mineur</replaceable> sont des types de périphériques et des numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, aussi connus sous le nom de <citetitle>Liste des périphériques Linux</citetitle> et disponible sur <ulink url=\"http://www.kernel.org/doc/Documentation/devices.txt\" />. Par exemple, pour assigner un poids de <literal>500</literal> à un groupe de contrôle pour accéder à <systemitem>/dev/sda</systemitem>, exécuter :"
+
+#. Tag: screen
+#, no-c-format
+msgid "<command>echo 8:0 500 &gt; blkio.weight_device</command>"
+msgstr "<command>echo 8:0 500 &gt; blkio.weight_device</command>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"In the <citetitle>Linux Allocated Devices</citetitle> notation, "
+"<literal>8:0</literal> represents <systemitem>/dev/sda</systemitem>."
+msgstr "Dans la notation des <citetitle>périphériques alloués de Linux</citetitle>, <literal>8:0</literal> représente <systemitem>/dev/sda</systemitem>."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.time"
+msgstr "blkio.time"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the time that a cgroup had I/O access to specific devices. Entries "
+"have three fields: <replaceable>major</replaceable>, "
+"<replaceable>minor</replaceable>, and <replaceable>time</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, and <replaceable>time</replaceable> is the length of "
+"time in milliseconds (ms)."
+msgstr "rapporte le moment auquel un groupe de contrôle possédait un accès d'E/S à des périphériques spécifiques. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>durée</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont des types de périphériques et des numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>durée</replaceable> est la durée en millisecondes (ms)."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.sectors"
+msgstr "blkio.sectors"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of sectors transferred to or from specific devices by a "
+"cgroup. Entries have three fields: <replaceable>major</replaceable>, "
+"<replaceable>minor</replaceable>, and <replaceable>sectors</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, and <replaceable>sectors</replaceable> is the number of"
+" disk sectors."
+msgstr "rapporte le nombre de secteurs transférés depuis ou vers des périphériques spécifiques d'un groupe de contrôle. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>secteurs</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont des types de périphériques et des numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>secteurs</replaceable> est le nombre de secteurs du disque."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.io_serviced"
+msgstr "blkio.io_serviced"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of I/O operations performed on specific devices by a "
+"cgroup as seen by the CFQ scheduler. Entries have four fields: "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, "
+"<replaceable>operation</replaceable>, and <replaceable>number</replaceable>."
+" <replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, <replaceable>operation</replaceable> represents the "
+"type of operation (<literal>read</literal>, <literal>write</literal>, "
+"<literal>sync</literal>, or <literal>async</literal>) and "
+"<replaceable>number</replaceable> represents the number of operations."
+msgstr "rapporte le nombre d'opérations d'E/S effectuées sur des périphériques spécifiques par un groupe de contrôle comme vu par l'ordonnanceur CFQ. Les entrées possèdent quatre champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable>, <replaceable>opération</replaceable> et <replaceable>octets</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphériques et numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal> ou <literal>async</literal>) et <replaceable>nombre</replaceable> représente le nombre d'opérations."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.io_service_bytes"
+msgstr "blkio.io_service_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of bytes transferred to or from specific devices by a "
+"cgroup as seen by the CFQ scheduler. Entries have four fields: "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, "
+"<replaceable>operation</replaceable>, and <replaceable>bytes</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, <replaceable>operation</replaceable> represents the "
+"type of operation (<literal>read</literal>, <literal>write</literal>, "
+"<literal>sync</literal>, or <literal>async</literal>) and "
+"<replaceable>bytes</replaceable> is the number of bytes transferred."
+msgstr "rapporte le nombre d'octets transférés depuis ou vers des périphériques spécifiques par un groupe de contrôle comme vu par l'ordonnanceur CFQ. Les entrées possèdent quatre champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable>, <replaceable>opération</replaceable> et <replaceable>octets</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphériques et des numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal> ou <literal>async</literal>) et <replaceable>octets</replaceable> est le nombre d'octets transférés."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.io_service_time"
+msgstr "blkio.io_service_time"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total time between request dispatch and request completion for "
+"I/O operations on specific devices by a cgroup as seen by the CFQ scheduler."
+" Entries have four fields: <replaceable>major</replaceable>, "
+"<replaceable>minor</replaceable>, <replaceable>operation</replaceable>, and "
+"<replaceable>time</replaceable>. <replaceable>Major</replaceable> and "
+"<replaceable>minor</replaceable> are device types and node numbers specified"
+" in <citetitle>Linux Allocated Devices</citetitle>, "
+"<replaceable>operation</replaceable> represents the type of operation "
+"(<literal>read</literal>, <literal>write</literal>, <literal>sync</literal>,"
+" or <literal>async</literal>) and <replaceable>time</replaceable> is the "
+"length of time in nanoseconds (ns). The time is reported in nanoseconds "
+"rather than a larger unit so that this report is meaningful even for solid-"
+"state devices."
+msgstr ""
+"rapporte la totalité du temps pris entre l'envoi de la demande et l'achèvement de celle-ci pour des opérations d'E/S sur des périphériques spécifiques par un groupe de contrôle comme vu par l'ordonnanceur CFQ. "
+"Les entrées possèdent quatre champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable>, <replaceable>opération</replaceable> et <replaceable>octets</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphériques et numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal>, ou <literal>async</literal>) et <replaceable>durée</replaceable> représente la durée en nanosecondes (ns). La durée rapportée utilise des nanosecondes plutôt qu'une unité plus importante afin que ce rapport puisse être utile même lors de l'utilisation de périphériques SSD."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.io_wait_time"
+msgstr "blkio.io_wait_time"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total time I/O operations on specific devices by a cgroup spent "
+"waiting for service in the scheduler queues. When you interpret this report,"
+" note:"
+msgstr "rapporte le temps total attendu pour un service dans les files d'attente des opérations d'E/S sur des périphériques spécifiques d'un groupe de contrôle. Lorsque l'on interpréte ce rapport, on remarque que :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"the time reported can be greater than the total time elapsed, because the "
+"time reported is the cumulative total of all I/O operations for the cgroup "
+"rather than the time that the cgroup itself spent waiting for I/O "
+"operations. To find the time that the group as a whole has spent waiting, "
+"use the <filename>blkio.group_wait_time</filename> parameter."
+msgstr "le temps rapporté peut être plus important que la totalité du temps écoulé car le temps rapporté est le total cumulé des toutes les opérations d'E/S pour le groupe de contrôle plutôt que le temps que le groupe de contrôle a lui-même attendu pour les opérations d'E/S. Pour obtenir le temps pendant lequel le groupe en tant que tel a dû attendre, utiliser <filename>blkio.group_wait_time</filename>."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"if the device has a <envar>queue_depth</envar> &gt; 1, the time reported "
+"only includes the time until the request is dispatched to the device, not "
+"any time spent waiting for service while the device re-orders requests."
+msgstr "si <envar>queue_depth</envar> &gt; 1 (sur le périphérique), alors la durée rapportée inclut uniquement le temps attendu jusqu'à ce que la requête soit envoyée au périphérique, et pas le temps attendu pour le service pendant que le périphériques effectuait de nouvelles commandes de requêtes."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Entries have four fields: <replaceable>major</replaceable>, "
+"<replaceable>minor</replaceable>, <replaceable>operation</replaceable>, and "
+"<replaceable>time</replaceable>. <replaceable>Major</replaceable> and "
+"<replaceable>minor</replaceable> are device types and node numbers specified"
+" in <citetitle>Linux Allocated Devices</citetitle>, "
+"<replaceable>operation</replaceable> represents the type of operation "
+"(<literal>read</literal>, <literal>write</literal>, <literal>sync</literal>,"
+" or <literal>async</literal>) and <replaceable>time</replaceable> is the "
+"length of time in nanoseconds (ns). The time is reported in nanoseconds "
+"rather than a larger unit so that this report is meaningful even for solid-"
+"state devices."
+msgstr "Les entrées possèdent quatre champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable>, <replaceable>opération</replaceable> et <replaceable>octets</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphériques et numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, <replaceable>opération</replaceable> (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal> ou <literal>async</literal>) et <replaceable>durée</replaceable> est la durée en nanosecondes (ns). La durée rapportée utilise des nanosecondes plutôt qu'une unité plus importante afin que ce rapport puisse être utile même pour des périphériques SSD."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.io_merged"
+msgstr "blkio.io_merged"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of BIOS requests merged into requests for I/O operations "
+"by a cgroup. Entries have two fields: <replaceable>number</replaceable> and "
+"<replaceable>operation</replaceable>. <replaceable>Number</replaceable> is "
+"the number of requests, and <replaceable>operation</replaceable> represents "
+"the type of operation (<literal>read</literal>, <literal>write</literal>, "
+"<literal>sync</literal>, or <literal>async</literal>)."
+msgstr "rapporte le nombre de requêtes BIOS fusionnées en requêtes pour des opérations d'E/S d'un groupe de contrôle. Les entrées possèdent deux champs : <replaceable>nombre</replaceable> et <replaceable>opération</replaceable>. <replaceable>Nombre</replaceable> est le nombre de requêtes et <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal>, ou <literal>async</literal>)."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.io_queued"
+msgstr "blkio.io_queued"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of requests queued for I/O operations by a cgroup. "
+"Entries have two fields: <replaceable>number</replaceable> and "
+"<replaceable>operation</replaceable>. <replaceable>Number</replaceable> is "
+"the number of requests, and <replaceable>operation</replaceable> represents "
+"the type of operation (<literal>read</literal>, <literal>write</literal>, "
+"<literal>sync</literal>, or <literal>async</literal>)."
+msgstr "rapporte le nombre de requêtes en file d'attente pour des opérations d'E/S d'un groupe de contrôle. Les entrées possèdent deux champs : <replaceable>nombre</replaceable> et <replaceable>opération</replaceable>. <replaceable>Nombre</replaceable> est le nombre de requêtes et <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal> ou <literal>async</literal>)."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.avg_queue_size"
+msgstr "blkio.avg_queue_size"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the average queue size for I/O operations by a cgroup, over the "
+"entire length of time of the group's existence. The queue size is sampled "
+"every time a queue for this cgroup gets a timeslice. Note that this report "
+"is available only if <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on "
+"the system."
+msgstr "rapporte la taille moyenne des files d'attente pour des opérations d'E/S d'un groupe de contrôle sur la durée totale de l'existance du groupe. La taille de la file d'attente est échantillonnée chaque fois qu'une file d'attente de ce groupe de contrôle obtient une tranche de temps. On remarque que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est activé sur le système."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.group_wait_time"
+msgstr "blkio.group_wait_time"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total time (in nanoseconds — ns) a cgroup spent waiting for a "
+"timeslice for one of its queues. The report is updated every time a queue "
+"for this cgroup gets a timeslice, so if you read this pseudofile while the "
+"cgroup is waiting for a timeslice, the report will not contain time spent "
+"waiting for the operation currently queued. Note that this report is "
+"available only if <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the"
+" system."
+msgstr "rapporte la durée totale (en nanosecondes — ns) qu'un groupe de contrôle a attendu une tranche de temps pour l'une de ses files d'attente. Le rapport est mis à jour à chaque fois qu'une file d'attente de ce groupe de contrôle obtient une tranche de temps. Ainsi, si vous lisez ce pseudo-fichier alors que le groupe de contrôle attend sa tranche de temps, le rapport ne contiendra pas le temps attendu pour l'opération se trouvant actuellement en file d'attente. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.empty_time"
+msgstr "blkio.empty_time"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total time (in nanoseconds — ns) a cgroup spent without any "
+"pending requests. The report is updated every time a queue for this cgroup "
+"has a pending request, so if you read this pseudofile while the cgroup has "
+"no pending requests, the report will not contain time spent in the current "
+"empty state. Note that this report is available only if "
+"<literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the system."
+msgstr "rapporte la durée totale (en nanosecondes — ns) qu'un groupe de contrôle a attendu sans requête en attente. Le rapport est mis à jour à chaque fois qu'une file d'attente de ce groupe de contrôle possède une requête en attente. Ainsi, si vous lisez ce pseudo-fichier alors que le groupe de contrôle ne possède pas de requêtes en attente, le rapport ne contiendra pas le temps attendu dans l'état actuel. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.idle_time"
+msgstr "blkio.idle_time"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total time (in nanoseconds — ns) the scheduler spent idling for "
+"a cgroup in anticipation of a better request than those requests already in "
+"other queues or from other groups. The report is updated every time the "
+"group is no longer idling, so if you read this pseudofile while the cgroup "
+"is idling, the report will not contain time spent in the current idling "
+"state. Note that this report is available only if "
+"<literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the system."
+msgstr "rapporte le temps total (en nanosecondes — ns) que le planificateur a passé à attendre un groupe de contrôle dans l'attente d'une meilleure requête que les requêtes se trouvant déjà dans des files d'attente ou provenant d'autres groupes. Le rapport est mis à jour à chaque fois qu'un groupe redevient actif. Ainsi, si vous lisez ce pseudo-fichier alors que le groupe de contrôle est inactif (idling), le rapport ne contiendra pas le temps passé à attendre dans l'état inactif (idling) actuel. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.dequeue"
+msgstr "blkio.dequeue"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of times requests for I/O operations by a cgroup were "
+"dequeued by specific devices. Entries have three fields: "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, and "
+"<replaceable>number</replaceable>. <replaceable>Major</replaceable> and "
+"<replaceable>minor</replaceable> are device types and node numbers specified"
+" in <citetitle>Linux Allocated Devices</citetitle>, and "
+"<replaceable>number</replaceable> is the number of requests the group was "
+"dequeued. Note that this report is available only if "
+"<literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the system."
+msgstr "rapporte le nombre de fois que des requêtes d'opérations d'E/S d'un groupe de contrôle ont été retirées des files d'attente par des périphériques spécifiques. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>nombre</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>nombre</replaceable> est le nombre de requêtes que le groupe a retiré de la file d'attente. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+
+#. Tag: title
+#, no-c-format
+msgid "I/O Throttling Configuration Options"
+msgstr "Options de configuration de limitation des entrées/sorties"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.throttle.read_bps_device"
+msgstr "blkio.throttle.read_bps_device"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the upper limit on the number of <emphasis>read</emphasis> "
+"operations a device can perform. The rate of the <emphasis>read</emphasis> "
+"operations is specified in bytes per second. Entries have three fields: "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, and "
+"<replaceable>bytes_per_second</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, and <replaceable>bytes_per_second</replaceable> is the "
+"upper limit rate at which <emphasis>read</emphasis> operations can be "
+"performed. For example, to allow the <filename>/dev/sda</filename> device to"
+" perform <emphasis>read</emphasis> operations at a maximum of 10 MBps, run:"
+msgstr ""
+"spécifie la limite supérieure sur le nombre d'opérations en <emphasis>lecture</emphasis> que peut effectuer un périphérique. Le débit d'opérations en <emphasis>lecture</emphasis> est en octets par seconde. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>octets_par_secondes</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>octets_par_secondes</replaceable> est la limite supérieure du débit à laquelle ont droit les opérations en <emphasis>lecture</emphasis>."
+"Par exemple, pour autoriser le périphérique <filename>/dev/sda</filename> à effectuer des opérations en <emphasis>lecture</emphasis> à un débit maximum de 10 Mio/s, utiliser :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo \"8:0 10485760\" &gt; /cgroups/blkio/test/blkio.throttle.read_bps_device</command>\n"
+"\t"
+msgstr ""
+"~]# <command>echo \"8:0 10485760\" &gt; /cgroups/blkio/test/blkio.throttle.read_bps_device</command>\n"
+"\t"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.throttle.read_iops_device"
+msgstr "blkio.throttle.read_iops_device"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the upper limit on the number of <emphasis>read</emphasis> "
+"operations a device can perform. The rate of the <emphasis>read</emphasis> "
+"operations is specified in operations per second. Entries have three fields:"
+" <replaceable>major</replaceable>, <replaceable>minor</replaceable>, and "
+"<replaceable>operations_per_second</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, and <replaceable>operations_per_second</replaceable> is"
+" the upper limit rate at which <emphasis>read</emphasis> operations can be "
+"performed. For example, to allow the <filename>/dev/sda</filename> device to"
+" perform a maximum of 10 <emphasis>read</emphasis> operations per second, "
+"run:"
+msgstr ""
+"spécifie la limite supérieure sur le nombre d'opérations en <emphasis>lecture</emphasis> que peut effectuer un périphérique. Le débit d'opérations en <emphasis>lecture</emphasis> est en opérations par seconde. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>operations_par_secondes</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>operations_par_secondes</replaceable> est la limite supérieure du nombre d'opérations en <emphasis>lecture</emphasis>."
+"Par exemple, pour autoriser le périphérique <filename>/dev/sda</filename> à effectuer un maximum de 10 opérations en <emphasis>lecture</emphasis> par seconde, utiliser :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo \"8:0 10\" &gt; /cgroups/blkio/test/blkio.throttle.read_iops_device</command>\n"
+"\t"
+msgstr ""
+"~]# <command>echo \"8:0 10\" &gt; /cgroups/blkio/test/blkio.throttle.read_iops_device</command>\n"
+"\t"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.throttle.write_bps_device"
+msgstr "blkio.throttle.write_bps_device"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the upper limit on the number of <emphasis>write</emphasis> "
+"operations a device can perform. The rate of the <emphasis>write</emphasis> "
+"operations is specified in bytes per second. Entries have three fields: "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, and "
+"<replaceable>bytes_per_second</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, and <replaceable>bytes_per_second</replaceable> is the "
+"upper limit rate at which <emphasis>write</emphasis> operations can be "
+"performed. For example, to allow the <filename>/dev/sda</filename> device to"
+" perform <emphasis>write</emphasis> operations at a maximum of 10 MBps, run:"
+msgstr ""
+"spécifie la limite supérieure sur le nombre d'opérations en <emphasis>écriture</emphasis> que peut effectuer un périphérique. Le débit d'opérations en <emphasis>écriture</emphasis> est en octets par seconde. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>octets_par_secondes</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>octets_par_secondes</replaceable> est la limite supérieure du débit à laquelle ont droit les opérations en <emphasis>écriture</emphasis>."
+"Par exemple, pour autoriser le périphérique <filename>/dev/sda</filename> à effectuer des opérations en <emphasis>écriture</emphasis> à un débit maximum de 10 Mio/s, utiliser :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo \"8:0 10485760\" &gt; /cgroups/blkio/test/blkio.throttle.write_bps_device</command>\n"
+"\t"
+msgstr ""
+"~]# <command>echo \"8:0 10485760\" &gt; /cgroups/blkio/test/blkio.throttle.write_bps_device</command>\n"
+"\t"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.throttle.write_iops_device"
+msgstr "blkio.throttle.write_iops_device"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the upper limit on the number of <emphasis>write</emphasis> "
+"operations a device can perform. The rate of the <emphasis>write</emphasis> "
+"operations is specified in operations per second. Entries have three fields:"
+" <replaceable>major</replaceable>, <replaceable>minor</replaceable>, and "
+"<replaceable>operations_per_second</replaceable>. "
+"<replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, and <replaceable>operations_per_second</replaceable> is"
+" the upper limit rate at which <emphasis>read</emphasis> operations can be "
+"performed. For example, to allow the <filename>/dev/sda</filename> device to"
+" perform a maximum of 10 <emphasis>write</emphasis> operations per second, "
+"run:"
+msgstr ""
+"spécifie la limite supérieure sur le nombre d'opérations en <emphasis>écriture</emphasis> que peut effectuer un périphérique. Le débit d'opérations en <emphasis>écriture</emphasis> est en opérations par seconde. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>operations_par_secondes</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>operations_par_secondes</replaceable> est la limite supérieure du nombre d'opérations en <emphasis>écriture</emphasis>."
+"Par exemple, pour autoriser le périphérique <filename>/dev/sda</filename> à effectuer un maximum de 10 opérations en <emphasis>écriture</emphasis> par seconde, utiliser :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo \"8:0 10\" &gt; /cgroups/blkio/test/blkio.throttle.write_iops_device</command>\n"
+"\t"
+msgstr ""
+"~]# <command>echo \"8:0 10\" &gt; /cgroups/blkio/test/blkio.throttle.write_iops_device</command>\n"
+"\t"
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.throttle.io_serviced"
+msgstr "blkio.throttle.io_serviced"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of I/O operations performed on specific devices by a "
+"cgroup as seen by the throttling policy. Entries have four fields: "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, "
+"<replaceable>operation</replaceable>, and <replaceable>number</replaceable>."
+" <replaceable>Major</replaceable> and <replaceable>minor</replaceable> are "
+"device types and node numbers specified in <citetitle>Linux Allocated "
+"Devices</citetitle>, <replaceable>operation</replaceable> represents the "
+"type of operation (<literal>read</literal>, <literal>write</literal>, "
+"<literal>sync</literal>, or <literal>async</literal>) and "
+"<replaceable>number</replaceable> represents the number of operations."
+msgstr "rapporte le nombre d'opérations d'E/S effectuées sur des périphériques spécifiques par un groupe de contrôle comme vu par la politique de limitation. Les entrées possèdent quatre champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable>, <replaceable>opération</replaceable> et <replaceable>octets</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphériques et numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal> ou <literal>async</literal>) et <replaceable>nombre</replaceable> représente le nombre d'opérations."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.throttle.io_service_bytes"
+msgstr "blkio.throttle.io_service_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of bytes transferred to or from specific devices by a "
+"cgroup. The only difference between "
+"<parameter>blkio.io_service_bytes</parameter> and "
+"<parameter>blkio.throttle.io_service_bytes</parameter> is that the former is"
+" not updated when the CFQ scheduler is operating on a request queue. Entries"
+" have four fields: <replaceable>major</replaceable>, "
+"<replaceable>minor</replaceable>, <replaceable>operation</replaceable>, and "
+"<replaceable>bytes</replaceable>. <replaceable>Major</replaceable> and "
+"<replaceable>minor</replaceable> are device types and node numbers specified"
+" in <citetitle>Linux Allocated Devices</citetitle>, "
+"<replaceable>operation</replaceable> represents the type of operation "
+"(<literal>read</literal>, <literal>write</literal>, <literal>sync</literal>,"
+" or <literal>async</literal>) and <replaceable>bytes</replaceable> is the "
+"number of bytes transferred."
+msgstr ""
+"rapporte le nombre d'octets transférés depuis ou vers des périphériques spécifiques par un groupe de contrôle. "
+"La seule différence entre <parameter>blkio.io_service_bytes</parameter> et "
+"<parameter>blkio.throttle.io_service_bytes</parameter> tient au fait que le premier n'est pas mis à jour quand l'ordonnanceur CFQ opère sur une file d'attente. Les entrées possèdent quatre champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable>, <replaceable>opération</replaceable> et <replaceable>octets</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphériques et des numéros de noeuds spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle>, <replaceable>opération</replaceable> représente le type d'opération (<literal>lecture</literal>, <literal>écriture</literal>, <literal>sync</literal> ou <literal>async</literal>) et <replaceable>octets</replaceable> est le nombre d'octets transférés."
+
+#. Tag: title
+#, no-c-format
+msgid "Common Configuration Option"
+msgstr "Options de configuration courantes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The following configuration option may be used for either of the policies "
+"listed in <xref linkend=\"sec-blkio\" />."
+msgstr ""
+"L'option de configuration suivante peut être utilisée pour l'une ou l'autre "
+"des politiques listées dans <xref linkend=\"sec-blkio\" />."
+
+#. Tag: term
+#, no-c-format
+msgid "blkio.reset_stats"
+msgstr "blkio.reset_stats"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"resets the statistics recorded in the other pseudofiles. Write an integer to"
+" this file to reset the statistics for this cgroup."
+msgstr "réinitialise les statistiques enregistrées dans les autres pseudo-fichiers. Saisissez un entier sur ce fichier pour réinitialiser les statistiques de ce groupe de contrôle."
+
+#. Tag: title
+#, no-c-format
+msgid "Example Usage"
+msgstr "Exemples d'utilisation"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Refer to <xref linkend=\"ex-blkio_usage\" /> for a simple test of running "
+"two <command>dd</command> threads in two different cgroups with various "
+"<filename>blkio.weight</filename> values."
+msgstr "Se reporter à <xref linkend=\"ex-blkio_usage\" /> pour un test simple utilisant l'exécution de deux fils <command>dd</command> dans deux cgroups différents avec des valeurs <filename>blkio.weight</filename> variées."
+
+#. Tag: title
+#, no-c-format
+msgid "blkio proportional weight division"
+msgstr "répartition proportionnelle pondérée blkio"
+
+#. Tag: para
+#, no-c-format
+msgid "Mount the <systemitem class=\"resource\">blkio</systemitem> subsystem:"
+msgstr "Monter le sous-système <systemitem class=\"resource\">blkio</systemitem> :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>mount -t cgroup -o blkio blkio /cgroup/blkio/</command>\n"
+"\t"
+msgstr "~]#&nbsp;<command>mount -t cgroup -o blkio blkio /cgroup/blkio/</command>\n\t"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Create two cgroups for the <systemitem class=\"resource\">blkio</systemitem>"
+" subsystem:"
+msgstr "Créer deux cgroups pour le sous-système <systemitem class=\"resource\">blkio</systemitem> :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"~]# <command>mkdir /cgroup/blkio/test1/</command>\n"
+"~]# <command>mkdir /cgroup/blkio/test2/</command>\n"
+"\t"
+msgstr ""
+"\n"
+"~]# <command>mkdir /cgroup/blkio/test1/</command>\n"
+"~]# <command>mkdir /cgroup/blkio/test2/</command>\n"
+"\t"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Set various <systemitem class=\"resource\">blkio</systemitem> weights in the"
+" previously-created cgroups:"
+msgstr "Définir différentes pondérations <systemitem class=\"resource\">blkio</systemitem> dans le cgroup précédemment créé :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"~]# <command>echo 1000 &gt; /cgroup/blkio/test1/blkio.weight</command>\n"
+"~]# <command>echo 500 &gt; /cgroup/blkio/test2/blkio.weight</command>\n"
+"\t"
+msgstr ""
+"\n"
+"~]# <command>echo 1000 &gt; /cgroup/blkio/test1/blkio.weight</command>\n"
+"~]# <command>echo 500 &gt; /cgroup/blkio/test2/blkio.weight</command>\n"
+"\t"
+
+#. Tag: para
+#, no-c-format
+msgid "Create two large files:"
+msgstr "Créer deux fichiers de grande taille :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"~]# <command>dd if=/dev/zero of=file_1 bs=1M count=4000</command>\n"
+"~]# <command>dd if=/dev/zero of=file_2 bs=1M count=4000</command>\n"
+"\t"
+msgstr ""
+"\n"
+"~]# <command>dd if=/dev/zero of=file_1 bs=1M count=4000</command>\n"
+"~]# <command>dd if=/dev/zero of=file_2 bs=1M count=4000</command>\n"
+"\t"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The above commands create two files (<filename>file_1</filename> and "
+"<filename>file_2</filename>) of size 4 GB."
+msgstr ""
+"Les commandes ci-dessus créent deux fichiers (<filename>file_1</filename> et "
+"<filename>file_2</filename>) de 4 Gio de taille."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"For each of the test cgroups, execute a <command>dd</command> command (which"
+" reads the contents of a file and outputs it to the null device) on one of "
+"the large files:"
+msgstr "Pour chaque cgroups de test, lancer une commande <command>dd</command> (qui lit le contenu d'un fichier et l'envoie en sortie sur le périphérique null) sur l'un des les fichiers de grande taille :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"~]# <command>cgexec -g blkio:test1 time dd if=file_1 of=/dev/null</command>\n"
+"~]# <command>cgexec -g blkio:test2 time dd if=file_2 of=/dev/null</command>\n"
+"\t"
+msgstr ""
+"\n"
+"~]# <command>cgexec -g blkio:test1 time dd if=file_1 of=/dev/null</command>\n"
+"~]# <command>cgexec -g blkio:test2 time dd if=file_2 of=/dev/null</command>\n"
+"\t"
+
+#. Tag: para
+#, no-c-format
+msgid "Both commands will output their completion time once they have finished."
+msgstr "Les deux commandes indiqueront leur durée d'exécution dès qu'elles auront terminé."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Simultaneously with the two running <command>dd</command> threads, you can "
+"monitor the performance in real time by using the "
+"<application>iotop</application> utility. To install the "
+"<application>iotop</application> utility, execute, as root, the <command>yum"
+" install iotop</command> command. The following is an example of the output "
+"as seen in the <application>iotop</application> utility while running the "
+"previously-started <command>dd</command> threads:"
+msgstr ""
+"Simultanément à l'exécution des deux commandes <command>dd</command>, on peut surveiller les performances en temps réel en utilisant l'utilitaire "
+"<application>iotop</application>. Pour installer cet utilitaire "
+"<application>iotop</application>, exécuter en tant que root la commande <command>yum install iotop</command>. Ce qui suit est un exemple de la sortie"
+"de l'utilitaire <application>iotop</application> pendant l'exécution des commandes <command>dd</command> lancées précédemment :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"Total DISK READ: 83.16 M/s | Total DISK WRITE: 0.00 B/s\n"
+"    TIME  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND\n"
+"15:18:04 15071 be/4 root       27.64 M/s    0.00 B/s  0.00 % 92.30 % dd if=file_2 of=/dev/null\n"
+"15:18:04 15069 be/4 root       55.52 M/s    0.00 B/s  0.00 % 88.48 % dd if=file_1 of=/dev/null\n"
+"\t"
+msgstr ""
+"\n"
+"Total DISK READ: 83.16 M/s | Total DISK WRITE: 0.00 B/s\n"
+"    TIME  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND\n"
+"15:18:04 15071 be/4 root       27.64 M/s    0.00 B/s  0.00 % 92.30 % dd if=file_2 of=/dev/null\n"
+"15:18:04 15069 be/4 root       55.52 M/s    0.00 B/s  0.00 % 88.48 % dd if=file_1 of=/dev/null\n"
+"\t"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"In order to get the most accurate result in <xref linkend=\"ex-blkio_usage\""
+" />, prior to the execution of the <command>dd</command> commands, flush all"
+" file system buffers and free pagecache, dentries and inodes using the "
+"following commands:"
+msgstr "Afin d'obtenir le résultat le plus précis possible dans <xref linkend=\"ex-blkio_usage\" />, il faut avant de lancer les commandes <command>dd</command> vider tous les tampons du système de fichiers et libérer les caches de pages, d'entrées de répertoire et de nœuds en utilisant la commande suivante :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"~]# <command>sync</command>\n"
+"~]# <command>echo 3 &gt; /proc/sys/vm/drop_caches</command>\n"
+"  "
+msgstr ""
+"\n"
+"~]# <command>sync</command>\n"
+"~]# <command>echo 3 &gt; /proc/sys/vm/drop_caches</command>\n"
+"  "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Additionally, you can enable <firstterm>group isolation</firstterm> which "
+"provides stronger isolation between groups at the expense of throughput. "
+"When group isolation is disabled, fairness can be expected only for a "
+"sequential workload. By default, group isolation is enabled and fairness can"
+" be expected for random I/O workloads as well. To enable group isolation, "
+"use the following command:"
+msgstr ""
+"En outre, vous pouvez activer l'<firstterm>isolement de groupe</firstterm> qui"
+"offre un meilleur isolement entre les groupes au détriment du débit."
+"Lorsque l'isolement de groupe est désactivé, l'équité ne peut être attendu que pour une charge de travail séquentielle. Par défaut, l'isolement de groupe est activé et l'équité peut aussi être attendue pour des aléatoires charges de travail d'entrées/sorties aléatoires. Pour activer l'isolement du groupe,"
+"utiliser la commande suivante :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo 1 &gt; /sys/block/<replaceable>&lt;disk_device&gt;</replaceable>/queue/iosched/group_isolation</command>\n"
+"  "
+msgstr ""
+"~]# <command>echo 1 &gt; /sys/block/<replaceable>&lt;disk_device&gt;</replaceable>/queue/iosched/group_isolation</command>\n"
+"  "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"where <replaceable>&lt;disk_device&gt;</replaceable> stands for the name of "
+"the desired device, for example <systemitem>sda</systemitem>."
+msgstr "où <replaceable>&lt;disk_device&gt;</replaceable> est le nom du périphérique voulu, par exemple <systemitem>sda</systemitem>."
+
+#. Tag: title
+#, no-c-format
+msgid "cpu"
+msgstr "cpu"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>cpu</systemitem> subsystem schedules CPU access to cgroups. "
+"Access to CPU resources can be scheduled according to the following "
+"parameters, each one in a separate <firstterm>pseudofile</firstterm> within "
+"the cgroup virtual file system:"
+msgstr "Le sous-système <systemitem>cpu</systemitem> planifie l'accès du CPU aux groupes de contrôle. L'accès aux ressources CPU peut être planifié en fonction des paramètres suivants, chacun dans un fichier <firstterm>pseudofile</firstterm> (un pseudo-fichier) à l'intérieur du système de fichiers virtuels du groupe de contrôle :"
+
+#. Tag: term
+#, no-c-format
+msgid "cpu.shares"
+msgstr "cpu.shares"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains an integer value that specifies a relative share of CPU time "
+"available to the tasks in a cgroup. For example, tasks in two cgroups that "
+"have <filename>cpu.shares</filename> set to <literal>1</literal> will "
+"receive equal CPU time, but tasks in a cgroup that has "
+"<filename>cpu.shares</filename> set to <literal>2</literal> receive twice "
+"the CPU time of tasks in a cgroup where <filename>cpu.shares</filename> is "
+"set to <literal>1</literal>."
+msgstr "contient une valeur entière spécifiant une part relative du temps du CPU disponible pour les tâches dans un groupe de contrôle (un cgroup). Par exemple, des tâches dans deux groupes de contrôle possédant <filename>cpu.shares</filename> paramétré sur <literal>1</literal> recevront le même temps de CPU, mais des tâches dans un groupe de contrôle possédant <filename>cpu.shares</filename> paramétré sur <literal>2</literal> recevront deux fois plus de temps de CPU que les tâches où <filename>cpu.shares</filename> est paramétré sur <literal>1</literal>."
+
+#. Tag: term
+#, no-c-format
+msgid "cpu.rt_runtime_us"
+msgstr "cpu.rt_runtime_us"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"applicable to realtime scheduling tasks only, this parameter specifies a "
+"period of time in microseconds (µs, represented here as "
+"\"<parameter>us</parameter>\") for the longest continuous period in which "
+"the tasks in a cgroup have access to CPU resources. Establishing this limit "
+"prevents tasks in one cgroup from monopolizing CPU time. If the tasks in a "
+"cgroup should be able to access CPU resources for 4 seconds out of every 5 "
+"seconds, set <filename>cpu.rt_runtime_us</filename> to "
+"<literal>4000000</literal> and <filename>cpu.rt_period_us</filename> to "
+"<literal>5000000</literal>."
+msgstr "applicables aux seules tâches gérées par l'ordonnanceur temps-réel, ce paramètre spécifie une période de temps en microsecondes (µs, représenté ici sous la forme \"us\") pour la plus longue période continue pendant laquelle les tâches d'un groupe de contrôle ont accès aux ressources du CPU. Établir cette limite permet d'empêcher les tâches d'un groupe de contrôle de monopoliser le temps du CPU. Si les tâches dans un groupe de contrôle doivent pouvoir accéder aux ressources du CPU pendant 4 secondes sur chaque période de 5 secondes, ajustez <filename>cpu.rt_runtime_us</filename> sur <literal>4000000</literal> et <filename>cpu.rt_period_us</filename> sur <literal>5000000</literal>."
+
+#. Tag: term
+#, no-c-format
+msgid "cpu.rt_period_us"
+msgstr "cpu.rt_period_us"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"applicable to realtime scheduling tasks only, this parameter specifies a "
+"period of time in microseconds (µs, represented here as "
+"\"<parameter>us</parameter>\") for how regularly a cgroup's access to CPU "
+"resource should be reallocated. If the tasks in a cgroup should be able to "
+"access CPU resources for 4 seconds out of every 5 seconds, set "
+"<filename>cpu.rt_runtime_us</filename> to <literal>4000000</literal> and "
+"<filename>cpu.rt_period_us</filename> to <literal>5000000</literal>."
+msgstr "applicables aux seules tâches gérées par l'ordonnanceur temps-réel, ce paramètre spécifie une période de temps en microsecondes (µs, représenté ici sous la forme \"us\") pour définir à quelle fréquence réallouer l'accès d'un groupe de contrôle aux ressources du CPU. Si les tâches d'un groupe de contrôle doivent pouvoir accéder aux ressources du CPU pendant 4 secondes sur chaque période de 5 secondes, ajustez <filename>cpu.rt_runtime_us</filename> sur <literal>4000000</literal> et <filename>cpu.rt_period_us</filename> sur <literal>5000000</literal>."
+
+#. Tag: title
+#, no-c-format
+msgid "cpuacct"
+msgstr "cpuacct"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The CPU Accounting (<systemitem>cpuacct</systemitem>) subsystem generates "
+"automatic reports on CPU resources used by the tasks in a cgroup, including "
+"tasks in child groups. Three reports are available:"
+msgstr "Le sous-système <systemitem>cpuacct</systemitem> génère des rapports automatiques sur les ressources CPU utilisées par les tâches dans un groupe de contrôle, y compris les tâches dans les groupes enfants. Trois rapports sont disponibles :"
+
+#. Tag: term
+#, no-c-format
+msgid "cpuacct.usage"
+msgstr "cpuacct.usage"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total CPU time (in nanoseconds) consumed by all tasks in this "
+"cgroup (including tasks lower in the hierarchy)."
+msgstr "rapporte le temps de CPU total (en nanosecondes) pris par toutes les tâches dans ce groupe de contrôle (y compris les tâches situées plus bas dans la hiérarchie)."
+
+#. Tag: title
+#, no-c-format
+msgid "Resetting cpuacct.usage"
+msgstr "Remise à zéro de cpuacct.usage"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"To reset the value in <systemitem>cpuacct.usage</systemitem>, execute the "
+"following command:"
+msgstr "Pour réinitialiser la valeur de <systemitem>cpuacct.usage</systemitem>, exécuter la commande suivante :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo 0 &gt; /cgroups/cpuacct/cpuacct.usage</command>\n"
+"\t    "
+msgstr ""
+"~]# <command>echo 0 &gt; /cgroups/cpuacct/cpuacct.usage</command>\n"
+"\t    "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The above command also resets values in "
+"<systemitem>cpuacct.usage_percpu</systemitem>."
+msgstr ""
+"La commande ci-dessus réinitialise aussi les valeurs de "
+"<systemitem>cpuacct.usage_percpu</systemitem>."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuacct.stat"
+msgstr "cpuacct.stat"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the user and system CPU time consumed by all tasks in this cgroup "
+"(including tasks lower in the hierarchy) in the following way:"
+msgstr "rapporte comme suit le temps de CPU total (en nanosecondes) pris par toutes les tâches dans ce groupe de contrôle (y compris les tâches situées plus bas dans la hiérarchie) :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem>user</systemitem> &mdash; CPU time consumed by tasks in user "
+"mode."
+msgstr "<systemitem>user</systemitem> &mdash; temps CPU consommé par les tâches en mode utilisateur."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem>system</systemitem> &mdash; CPU time consumed by tasks in system"
+" (kernel) mode."
+msgstr "<systemitem>system</systemitem> &mdash; temps CPU consommé par les tâches en mode système (noyau)."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"CPU time is reported in the units defined by the "
+"<systemitem>USER_HZ</systemitem> variable."
+msgstr ""
+"Le temps CPU time est rapporté dans les unités définies "
+"par la variable <systemitem>USER_HZ</systemitem>."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuacct.usage_percpu"
+msgstr "cpuacct.usage_percpu"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the CPU time (in nanoseconds) consumed on each CPU by all tasks in "
+"this cgroup (including tasks lower in the hierarchy)."
+msgstr "rapporte le temps de CPU (en nanosecondes) pris sur chaque CPU par toutes les tâches présentes dans ce groupe de contrôle (y compris les tâches situées plus bas dans la hiérarchie)."
+
+#. Tag: title
+#, no-c-format
+msgid "cpuset"
+msgstr "cpuset"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>cpuset</systemitem> subsystem assigns individual CPUs and "
+"memory nodes to cgroups. Each cpuset can be specified according to the "
+"following parameters, each one in a separate "
+"<firstterm>pseudofile</firstterm> within the cgroup virtual file system:"
+msgstr "Le sous-système <systemitem>cpuset</systemitem> assigne les CPU individuels et les noeuds de mémoire à des groupes de contrôle. Chaque cpuset peut être spécifié en fonction des paramètres suivants, chacun dans un <firstterm>pseudo-fichier</firstterm> différent du système de fichiers virtuel du groupe de contrôle :"
+
+#. Tag: title
+#, no-c-format
+msgid "Mandatory parameters"
+msgstr "Paramètres obligatoires"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Some subsystems have mandatory parameters that must be set before you can "
+"move a task into a cgroup which uses any of those subsystems. For example, "
+"before you move a task into a cgroup which uses the <systemitem "
+"class=\"resource\">cpuset</systemitem> subsystem, the "
+"<filename>cpuset.cpus</filename> and <filename>cpuset.mems</filename> "
+"parameters must be defined for that cgroup."
+msgstr "Certains sous-systèmes ont des paramètres obligatoires à définir avant de pouvoir déplacer une tâche dans un groupe de contrôle qui utilise l'un de ces sous-systèmes. Par exemple, avant de déplacer une tâche dans un cgroup qui utilise le sous-système <systemitem class=\"resource\">cpuset</systemitem>. les paramètres  <filename>cpuset.cpus</filename> et <filename>cpuset.mems</filename> doivent être définis pour ce cgroup."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.cpus (mandatory)"
+msgstr "cpuset.cpus (obligatoire)"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the CPUs that tasks in this cgroup are permitted to access. This "
+"is a comma-separated list in ASCII format, with dashes "
+"(\"<literal>-</literal>\") to represent ranges. For example,"
+msgstr "spécifie à quels CPU les tâches dans ce groupe de contrôle ont la permission d'accéder. Ceci est une liste séparée par des virgules sous le format ASCII, avec des tirets (\"<literal>-</literal>\") pour représenter l'étendue. Par exemple :"
+
+#. Tag: programlisting
+#, no-c-format
+msgid "0-2,16"
+msgstr "0-2,16"
+
+#. Tag: para
+#, no-c-format
+msgid "represents CPUs 0, 1, 2, and 16."
+msgstr "représente les CPUs 0, 1, 2, et 16."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.mems (mandatory)"
+msgstr "cpuset.mems (obligatoire)"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies the memory nodes that tasks in this cgroup are permitted to "
+"access. This is a comma-separated list in ASCII format, with dashes "
+"(\"<literal>-</literal>\") to represent ranges. For example,"
+msgstr "spécifie les noeuds de mémoire auxquels les tâches de ce groupe de contrôle auront la permission d'accéder. Ceci est une liste séparée par des virgules sous le format ASCII, avec des tirets (\"<literal>-</literal>\") pour repésenter l'étendue. Par exemple, "
+
+#. Tag: para
+#, no-c-format
+msgid "represents memory nodes 0, 1, 2, and 16."
+msgstr "représente les noeuds de mémoire 0, 1, 2, et 16."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.memory_migrate"
+msgstr "cpuset.memory_migrate"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether a page in memory should migrate to a new node if the "
+"values in <filename>cpuset.mems</filename> change. By default, memory "
+"migration is disabled (<literal>0</literal>) and pages stay on the node to "
+"which they were originally allocated, even if this node is no longer one of "
+"the nodes now specified in <filename>cpuset.mems</filename>. If enabled "
+"(<literal>1</literal>), the system will migrate pages to memory nodes within"
+" the new parameters specified by <filename>cpuset.mems</filename>, "
+"maintaining their relative placement if possible — for example, pages on the"
+" second node on the list originally specified by "
+"<filename>cpuset.mems</filename> will be allocated to the second node on the"
+" list now specified by <filename>cpuset.mems</filename>, if this place is "
+"available."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si une page en mémoire devrait migrer vers un nouveau noeud si les valeurs dans <filename>cpuset.mems</filename> changent. Par défaut, la migration de mémoire est désactivée (<literal>0</literal>) et les pages restent sur le noeud auquel elles ont été assignées à l'origine, même si celui-ci ne fait maintenant plus partie des noeuds spécifiés dans <filename>cpuset.mems</filename>. Si la migration est activée (<literal>1</literal>), le système migrera les pages vers les noeuds de mémoire faisant partie des nouveaux paramètres spécifiés par <filename>cpuset.mems</filename>, tout en maintenant leur position respective dans la mesure du possible — par exemple, les pages sur le second noeud sur la liste spécifiée à l'origine par <filename>cpuset.mems</filename> seront allouées au second noeud sur la liste maintenant spécifiée par <filename>cpuset.mems</filename>, si cette position est disponible."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.cpu_exclusive"
+msgstr "cpuset.cpu_exclusive"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether cpusets other than this one and its parents and children "
+"can share the CPUs specified for this cpuset. By default "
+"(<literal>0</literal>), CPUs are not allocated exclusively to one cpuset."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si des cpusets autres que celui-ci, que ses parents ou que ses enfants peuvent partager les CPUs spécifiés pour ce cpuset. Par défaut (<literal>0</literal>), les CPUs ne sont pas exclusivement alloués à un seul cpuset."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.mem_exclusive"
+msgstr "cpuset.mem_exclusive"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether other cpusets can share the memory nodes specified for "
+"this cpuset. By default (<literal>0</literal>), memory nodes are not "
+"allocated exclusively to one cpuset. Reserving memory nodes for the "
+"exclusive use of a cpuset (<literal>1</literal>) is functionally the same as"
+" enabling a memory hardwall with the "
+"<filename>cpuset.mem_hardwall</filename> parameter."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si d'autres cpusets peuvent partager les noeuds de mémoire spécifiés pour ce cpuset. Par défaut (<literal>0</literal>), les noeuds de mémoire ne sont pas exclusivement alloués à un seul cpuset. Réserver des noeuds de mémoire pour une utilisation exclusive d'un seul cpuset ((<literal>1</literal>) est fonctionnellement identique à l'activation d'un hardwall mémoire avec <filename>cpuset.mem_hardwall</filename>."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.mem_hardwall"
+msgstr "cpuset.mem_hardwall"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether kernel allocations of memory page and buffer data should "
+"be restricted to the memory nodes specified for this cpuset. By default "
+"(<literal>0</literal>), page and buffer data is shared across processes "
+"belonging to multiple users. With a hardwall enabled (<literal>1</literal>),"
+" each tasks' user allocation can be kept separate."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si les allocations au noyau de pages mémoire et de données de tampon devraient être restreintes aux noeuds de mémoire spécifiés pour ce cpuset. Par défaut (<literal>0</literal>), les pages et les données de tampon sont partagées par les processus appartenant à de multiples utilisateurs. Avec un hardwall activé (<literal>1</literal>), la mémoire allouée aux tâches de chaque utilisateur peut être séparée de la mémoire allouée aux tâches de tous les autres utilisateurs."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.memory_pressure"
+msgstr "cpuset.memory_pressure"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"a read-only file that contains a running average of the <firstterm>memory "
+"pressure</firstterm> created by the processes in this cpuset. The value in "
+"this pseudofile is automatically updated when "
+"<filename>cpuset.memory_pressure_enabled</filename> is enabled, otherwise, "
+"the pseudofile contains the value <literal>0</literal>."
+msgstr "un fichier en lecture seule qui contient une moyenne en cours d'exécution de la solicitation de mémoire (<firstterm>memory pressure</firstterm>), créée par les processus dans ce cpuset. La valeur dans ce pseudofichier est automatiquement mise à jour lorsque <filename>cpuset.memory_pressure_enabled</filename> est activé, sinon le pseudofichier contient la valeur <literal>0</literal>."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.memory_pressure_enabled"
+msgstr "cpuset.memory_pressure_enabled"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether the system should compute the <firstterm>memory "
+"pressure</firstterm> created by the processes in this cgroup. Computed "
+"values are output to <filename>cpuset.memory_pressure</filename> and "
+"represent the rate at which processes attempt to free in-use memory, "
+"reported as an integer value of attempts to reclaim memory per second, "
+"multiplied by 1000."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si le système doit calculer la solicitation de mémoire (<firstterm>memory pressure</firstterm>) créée par les processus dans ce groupe de contrôle. Les valeurs calculées sortent dans <filename>cpuset.memory_pressure</filename> et représentent le taux auquel les processus tentent de libérer la mémoire utilisée, ces valeurs sont rapportées en chiffres entiers et s'expliquent par le nombre de tentatives de récupération de mémoire par seconde, multiplié par 1000."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.memory_spread_page"
+msgstr "cpuset.memory_spread_page"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether file system buffers should be spread evenly across the "
+"memory nodes allocated to this cpuset. By default (<literal>0</literal>), no"
+" attempt is made to spread memory pages for these buffers evenly, and "
+"buffers are placed on the same node on which the process that created them "
+"is running."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si les tampons de systèmes de fichiers doivent être placés de manière régulièresur les noeuds de mémoire alloués à ce cpuset. Par défaut (<literal>0</literal>), aucune tentative de placer les pages de mémoire sur ces tampons de manière régulière n'est faite, et ceux-ci sont placés sur le noeud où le processus qui les a créés est en cours d'exécution."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.memory_spread_slab"
+msgstr "cpuset.memory_spread_slab"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether kernel slab caches for file input/output operations should"
+" be spread evenly across the cpuset. By default (<literal>0</literal>), no "
+"attempt is made to spread kernel slab caches evenly, and slab caches are "
+"placed on the same node on which the process that created them is running."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si les caches slab du noyau pour opérations d'entrée/sortie doivet être placés de manière régulière sur le cpuset. Par défaut (<literal>0</literal>), aucune tentative de placer les caches slab du noyau de manière régulière n'est faite, et ceux-ci sont placés sur le noeud où le processus qui les a créés est en cours d'exécution."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.sched_load_balance"
+msgstr "cpuset.sched_load_balance"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether the kernel will balance loads across the CPUs in this "
+"cpuset. By default (<literal>1</literal>), the kernel balances loads by "
+"moving processes from overloaded CPUs to less heavily used CPUs."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si le noyau va équilibrer les charges sur les CPU dans ce cpuset. Par défaut (<literal>1</literal>), le noyau équilibre les charges en déplaçant les processus des CPUs surchargés sur des CPUs moins solicités."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Note, however, that setting this flag in a cgroup has no effect if load "
+"balancing is enabled in any parent cgroup, as load balancing is already "
+"being carried out at a higher level. Therefore, to disable load balancing in"
+" a cgroup, disable load balancing also in each of its parents in the "
+"hierarchy. In this case, you should also consider whether load balancing "
+"should be enabled for any siblings of the cgroup in question."
+msgstr "Remarquez cependant que définir cet indicateur dans un cgroup n'a aucun effet si l'équilibrage des charges est activé dans tout cgroup parent, car l'équilibrage des charges est déjà en cours à un niveau plus élevé. Ainsi, pour désactiver l'équilibrage des charges dans un cgroup, désactivez aussi l'équilibrage des charges dans chacun de ses parents dans la hiérarchie. Dans ce cas, vous devriez aussi vous demander si l'équilibrage des charges devrait être activé sur les autres relations de même parenté du groupe de contrôle en question."
+
+#. Tag: term
+#, no-c-format
+msgid "cpuset.sched_relax_domain_level"
+msgstr "cpuset.sched_relax_domain_level"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains an integer between <literal>-1</literal> and a small positive "
+"value, which represents the width of the range of CPUs across which the "
+"kernel should attempt to balance loads. This value is meaningless if "
+"<filename>cpuset.sched_load_balance</filename> is disabled."
+msgstr "contient un entier entre <literal>-1</literal> et une petite valeur positive, qui représente la largeur de l'étendue des CPUs sur laquelle le noyau va essayer d'équilibrer les charges. Cette valeur n'a aucun sens si <filename>cpuset.sched_load_balance</filename> est désactivé."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The precise effect of this value varies according to system architecture, "
+"but the following values are typical:"
+msgstr "L'effet précis de cette valeur varie en fonction de l'architecture du système, mais les valeurs suivantes sont typiques :"
+
+#. Tag: title
+#, no-c-format
+msgid "Values of cpuset.sched_relax_domain_level"
+msgstr "Valeurs de cpuset.sched_relax_domain_level"
+
+#. Tag: segtitle
+#, no-c-format
+msgid "Value"
+msgstr "Valeur"
+
+#. Tag: segtitle
+#, no-c-format
+msgid "Effect"
+msgstr "Effet"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>-1</literal>"
+msgstr "<literal>-1</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid "Use the system default value for load balancing"
+msgstr "Utilise la valeur par défaut du système pour l'équilibrage des charges"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>0</literal>"
+msgstr "<literal>0</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid "Do not perform immediate load balancing; balance loads only periodically"
+msgstr "N'effectue pas d'équilibrage des charges immédiat ; équilibre les charges de manière périodique uniquement"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>1</literal>"
+msgstr "<literal>1</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid "Immediately balance loads across threads on the same core"
+msgstr "Équilibre immédiatement les charges sur les threads du même coeur"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>2</literal>"
+msgstr "<literal>2</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid "Immediately balance loads across cores in the same package"
+msgstr "Équilibre immédiatement les charges sur les coeurs dans le même paquetage"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>3</literal>"
+msgstr "<literal>3</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid "Immediately balance loads across CPUs on the same node or blade"
+msgstr "Équilibre immédiatement les charges sur les CPUs du même noeud ou de la même lame"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>4</literal>"
+msgstr "<literal>4</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid ""
+"Immediately balance loads across several CPUs on architectures with non-"
+"uniform memory access (NUMA)"
+msgstr "Équilibre immédiatement les charges sur plusieurs CPUs sur des architectures à accès non uniforme à la mémoire (NUMA)"
+
+#. Tag: seg
+#, no-c-format
+msgid "<literal>5</literal>"
+msgstr "<literal>5</literal>"
+
+#. Tag: seg
+#, no-c-format
+msgid "Immediately balance loads across all CPUs on architectures with NUMA"
+msgstr "Équilibre immédiatement les charges sur tous les CPUs sur architectures avec NUMA"
+
+#. Tag: title
+#, no-c-format
+msgid "devices"
+msgstr "Périphériques"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>devices</systemitem> subsystem allows or denies access to "
+"devices by tasks in a cgroup."
+msgstr "Le sous-système <systemitem>devices</systemitem> autorise ou refuse l'accès des tâches aux périphériques dans un groupe de contrôle."
+
+#. Tag: term
+#, no-c-format
+msgid "devices.allow"
+msgstr "devices.allow"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies devices to which tasks in a cgroup have access. Each entry has "
+"four fields: <replaceable>type</replaceable>, "
+"<replaceable>major</replaceable>, <replaceable>minor</replaceable>, and "
+"<replaceable>access</replaceable>. The values used in the "
+"<replaceable>type</replaceable>, <replaceable>major</replaceable>, and "
+"<replaceable>minor</replaceable> fields correspond to device types and node "
+"numbers specified in <citetitle>Linux Allocated Devices</citetitle>, "
+"otherwise known as the <citetitle>Linux Devices List</citetitle> and "
+"available from <ulink "
+"url=\"http://www.kernel.org/doc/Documentation/devices.txt\" />."
+msgstr "spécifie à quels périphériques les tâches d'un groupe de contrôle peuvent avoir accès. Chaque entrée possède quatre champs : <replaceable>type</replaceable>, <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>accès</replaceable>. Les valeurs utilisées dans les champs <replaceable>type</replaceable>, <replaceable>majeur</replaceable> et <replaceable>mineur</replaceable> correspondent au type de périphérique et aux numéros de noeuds spécifiés dans <citetitle>périphériques alloués de Linux</citetitle>, aussi connu sous le nom de <citetitle>Liste des périphériques Linux</citetitle> et disponible depuis <ulink url=\"http://www.kernel.org/doc/Documentation/devices.txt\" />."
+
+#. Tag: term
+#, no-c-format
+msgid "type"
+msgstr "type"
+
+#. Tag: para
+#, no-c-format
+msgid "<replaceable>type</replaceable> can have one of the following three values:"
+msgstr "<replaceable>type</replaceable> peut avoir l'une des trois valeurs suivantes :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<literal>a</literal> — applies to all devices, both <firstterm>character "
+"devices</firstterm> and <firstterm>block devices</firstterm>"
+msgstr "<literal>a</literal> — s'applique à tous les périphériques, <firstterm>périphérique de type caractère</firstterm> et <firstterm>périphériques blocs</firstterm>"
+
+#. Tag: para
+#, no-c-format
+msgid "<literal>b</literal> — specifies a block device"
+msgstr "<literal>b</literal> — spécifie un périphérique bloc"
+
+#. Tag: para
+#, no-c-format
+msgid "<literal>c</literal> — specifies a character device"
+msgstr "<literal>c</literal> — spécifie un périphérique de type caractère"
+
+#. Tag: term
+#, no-c-format
+msgid "major"
+msgstr "majeur"
+
+#. Tag: term
+#, no-c-format
+msgid "minor"
+msgstr "mineur"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<replaceable>major</replaceable> and <replaceable>minor</replaceable> are "
+"device node numbers specified by <citetitle>Linux Allocated "
+"Devices</citetitle>. The major and minor numbers are separated by a colon. "
+"For example, <literal>8</literal> is the major number that specifies SCSI "
+"disk drives, and the minor number <literal>1</literal> specifies the first "
+"partition on the first SCSI disk drive; therefore <literal>8:1</literal> "
+"fully specifies this partition, corresponding to a file system location of "
+"<filename>/dev/sda1</filename>."
+msgstr "<replaceable>majeur</replaceable> et <replaceable>mineur</replaceable> sont des numéros de noeuds de périphériques spécifiés par <citetitle>périphériques alloués de Linux</citetitle>. Les numéros majeurs et mineurs sont séparés par deux points. Par exemple, <literal>8</literal> est le numéro majeur spécifiant les lecteurs de disques SCSI, et le numéro mineur <literal>1</literal> spécifie la première partition du premier lecteur de disque SCSI ; ainsi,  <literal>8:1</literal> spécifie cette partition en détails, correspondant à l'emplacement sur le système de fichiers de <filename>/dev/sda1</filename>."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<literal>*</literal> can stand for all major or all minor device nodes, for "
+"example <literal>9:*</literal> (all RAID devices) or <literal>*:*</literal> "
+"(all devices)."
+msgstr "<literal>*</literal> peut remplacer tous les noeuds de périphériques majeurs ou mineurs. Par exemple, <literal>9:*</literal> (tous les périphériques RAID), ou même <literal>*:*</literal> (tous les périphériques)."
+
+#. Tag: term
+#, no-c-format
+msgid "access"
+msgstr "accès"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<replaceable>access</replaceable> is a sequence of one or more of the "
+"following letters:"
+msgstr "<replaceable>accès</replaceable> est une séquence d'une ou plusieurs des lettres suivantes :"
+
+#. Tag: para
+#, no-c-format
+msgid "<literal>r</literal> — allows tasks to read from the specified device"
+msgstr "<literal>r</literal> — autorise les tâches à lire le périphérique spécifié"
+
+#. Tag: para
+#, no-c-format
+msgid "<literal>w</literal> — allows tasks to write to the specified device"
+msgstr "<literal>w</literal> — autorise les tâches à écrire sur le périphérique spécifié"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<literal>m</literal> — allows tasks to create device files that do not yet "
+"exist"
+msgstr "<literal>m</literal> — autorise les tâches à créer des fichiers de périphériques qui n'existent pas encore"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"For example, when <replaceable>access</replaceable> is specified as "
+"<literal>r</literal>, tasks can only read from the specified device, but "
+"when <replaceable>access</replaceable> is specified as "
+"<literal>rw</literal>, tasks can read from and write to the device."
+msgstr "Par exemple, lorsque l'<replaceable>accès</replaceable> est spécifié en tant que <literal>r</literal>, les tâches peuvent uniquement lire le périphérique spécifié, mais lorsque l'<replaceable>accès</replaceable> est spécifié en tant que <literal>rw</literal>, les tâches peuvent lire et écrire sur le périphérique."
+
+#. Tag: term
+#, no-c-format
+msgid "devices.deny"
+msgstr "devices.deny"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"specifies devices that tasks in a cgroup cannot access. The syntax of "
+"entries is identical with <filename>devices.allow</filename>."
+msgstr "spécifie à quels périphériques les tâches dans un groupe de contrôle ne peuvent pas avoir accès. La syntaxe des entrées est identique à celle de <filename>devices.allow</filename>."
+
+#. Tag: term
+#, no-c-format
+msgid "devices.list"
+msgstr "devices.list"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the devices for which access controls have been set for tasks in "
+"this cgroup."
+msgstr "rapporte les périphériques pour lesquels les contrôles d'accès ont été définis pour des tâches dans ce groupe de contrôle."
+
+#. Tag: title
+#, no-c-format
+msgid "freezer"
+msgstr "freezer"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>freezer</systemitem> subsystem suspends or resumes tasks in "
+"a cgroup."
+msgstr "Le sous-système <systemitem>freezer</systemitem> suspend ou réactive les tâches dans un groupe de contrôle."
+
+#. Tag: term
+#, no-c-format
+msgid "freezer.state"
+msgstr "freezer.state"
+
+#. Tag: para
+#, no-c-format
+msgid "<systemitem>freezer.state</systemitem> has three possible values:"
+msgstr "<systemitem>freezer.state</systemitem> possède trois valeurs possibles :"
+
+#. Tag: para
+#, no-c-format
+msgid "<literal>FROZEN</literal> — tasks in the cgroup are suspended."
+msgstr "<literal>FROZEN</literal> — les tâches dans le groupe de contrôle sont suspendues."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<literal>FREEZING</literal> — the system is in the process of suspending "
+"tasks in the cgroup."
+msgstr "<literal>FREEZING</literal> — le système est en train de suspendre les tâches dans le groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid "<literal>THAWED</literal> — tasks in the cgroup have resumed."
+msgstr "<literal>THAWED</literal> — les tâches dans le groupe de contrôle sont réactivées."
+
+#. Tag: para
+#, no-c-format
+msgid "To suspend a specific process:"
+msgstr "Pour suspendre un processus spécifique :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Move that process to a cgroup in a hierarchy which has the <systemitem "
+"class=\"resource\">freezer</systemitem> subsystem attached to it."
+msgstr "Déplacez ce processus dans un groupe de contrôle se trouvant dans une hiérarchie à laquelle le sous-système <systemitem class=\"resource\">freezer</systemitem> est attaché."
+
+#. Tag: para
+#, no-c-format
+msgid "Freeze that particular cgroup to suspend the process contained in it."
+msgstr "Gelez ce groupe de contrôle en particulier pour suspendre le processus qu'il contient."
+
+#. Tag: para
+#, no-c-format
+msgid "It is not possible to move a process into a suspended (frozen) cgroup."
+msgstr "Il n'est pas possible de déplacer un processus dans un groupe de contrôle suspendu (frozen)."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Note that while the <literal>FROZEN</literal> and <literal>THAWED</literal> "
+"values can be written to <filename>freezer.state</filename>, "
+"<literal>FREEZING</literal> cannot be written, only read."
+msgstr "Remarquez que les valeurs <literal>FROZEN</literal> et <literal>THAWED</literal> peuvent être écrites sur <filename>freezer.state</filename>, alors que <literal>FREEZING</literal> peut seulement être lu."
+
+#. Tag: title
+#, no-c-format
+msgid "memory"
+msgstr "mémoire"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>memory</systemitem> subsystem generates automatic reports on"
+" memory resources used by the tasks in a cgroup, and sets limits on memory "
+"use by those tasks:"
+msgstr "Le sous-système <systemitem>mémoire</systemitem> génère des rapports automatiques sur les ressources mémoire utilisées par les tâches dans un groupe de contrôle. Il définit aussi les limites d'utilisation de mémoire de ces tâches :"
+
+#. Tag: term
+#, no-c-format
+msgid "memory.stat"
+msgstr "memory.stat"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports a wide range of memory statistics, as described in the following "
+"table:"
+msgstr "rapporte un large éventail de statistiques de mémoire, comme décrit dans le tableau suivant :"
+
+#. Tag: title
+#, no-c-format
+msgid "Values reported by memory.stat"
+msgstr "Les valeurs rapportées par memory.stat"
+
+#. Tag: entry
+#, no-c-format
+msgid "Statistic"
+msgstr "Statistique"
+
+#. Tag: entry
+#, no-c-format
+msgid "Description"
+msgstr "Description"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>cache</systemitem>"
+msgstr "<systemitem>cache</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"page cache, including <systemitem>tmpfs</systemitem> "
+"(<systemitem>shmem</systemitem>), in bytes"
+msgstr "cache de la page, inclut <systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>rss</systemitem>"
+msgstr "<systemitem>rss</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"anonymous and swap cache, <emphasis>not</emphasis> including "
+"<systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), in bytes"
+msgstr "caches swap et anonyme, <emphasis>n'inclut pas</emphasis> <systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>mapped_file</systemitem>"
+msgstr "<systemitem>mapped_file</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"size of memory-mapped mapped files, including <systemitem>tmpfs</systemitem>"
+" (<systemitem>shmem</systemitem>), in bytes"
+msgstr "taille des fichiers mappé en mémoire, inclut <systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>pgpgin</systemitem>"
+msgstr "<systemitem>pgpgin</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid "number of pages paged into memory"
+msgstr "nombre de pages chargées en mémoire"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>pgpgout</systemitem>"
+msgstr "<systemitem>pgpgout</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid "number of pages paged out of memory"
+msgstr "nombre de pages renvoyées de la mémoire"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>swap</systemitem>"
+msgstr "<systemitem>swap</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid "swap usage, in bytes"
+msgstr "usage swap, en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>active_anon</systemitem>"
+msgstr "<systemitem>active_anon</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"anonymous and swap cache on active least-recently-used (LRU) list, including"
+" <systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), in bytes"
+msgstr "caches swap et anonyme de la liste des LRU (dernier récemment utilisé) actifs, inclut <systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>inactive_anon</systemitem>"
+msgstr "<systemitem>inactive_anon</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"anonymous and swap cache on inactive LRU list, including "
+"<systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), in bytes"
+msgstr "caches swap et anonyme de la liste des LRU (dernier récemment utilisé) inactifs, inclut <systemitem>tmpfs</systemitem> (<systemitem>shmem</systemitem>), en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>active_file</systemitem>"
+msgstr "<systemitem>active_file</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid "file-backed memory on active LRU list, in bytes"
+msgstr "mémoire sauvegardée sur fichier de la liste des LRU actifs, en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>inactive_file</systemitem>"
+msgstr "<systemitem>inactive_file</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid "file-backed memory on inactive LRU list, in bytes"
+msgstr "mémoire sauvegardée sur fichier de la liste des LRU inactifs, en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>unevictable</systemitem>"
+msgstr "<systemitem>unevictable</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid "memory that cannot be reclaimed, in bytes"
+msgstr "mémoire ne pouvant pas être récupérée, en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>hierarchical_memory_limit</systemitem>"
+msgstr "<systemitem>hierarchical_memory_limit</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"memory limit for the hierarchy that contains the "
+"<systemitem>memory</systemitem> cgroup, in bytes"
+msgstr "limite de la mémoire pour la hiérarchie contenant le groupe de contrôle <systemitem>memory</systemitem>, en octets"
+
+#. Tag: entry
+#, no-c-format
+msgid "<systemitem>hierarchical_memsw_limit</systemitem>"
+msgstr "<systemitem>hierarchical_memsw_limit</systemitem>"
+
+#. Tag: entry
+#, no-c-format
+msgid ""
+"memory plus swap limit for the hierarchy that contains the "
+"<systemitem>memory</systemitem> cgroup, in bytes"
+msgstr "limite de la mémoire plus le swap pour la hiérarchie contenant le groupe de contrôle <systemitem>memory</systemitem>, en octets"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Additionally, each of these files other than "
+"<systemitem>hierarchical_memory_limit</systemitem> and "
+"<systemitem>hierarchical_memsw_limit</systemitem> has a counterpart prefixed"
+" <systemitem>total_</systemitem> that reports not only on the cgroup, but on"
+" all its children as well. For example, <systemitem>swap</systemitem> "
+"reports the swap usage by a cgroup and <systemitem>total_swap</systemitem> "
+"reports the total swap usage by the cgroup and all its child groups."
+msgstr "En outre, à l'exception de <systemitem>hierarchical_memory_limit</systemitem> et de <systemitem>hierarchical_memsw_limit</systemitem>, tous les fichiers possèdent un préfixe <systemitem>total_</systemitem> qui effectue un rapport non seulement sur le groupe de contrôle, mais aussi sur ses enfants. Par exemple, <systemitem>swap</systemitem> rapporte l'utilisation du swap d'un groupe de contrôle et <systemitem>total_swap</systemitem> rapporte l'utilisation totale du swap du groupe de contrôle et de tous ses groupes enfants."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"When you interpret the values reported by "
+"<systemitem>memory.stat</systemitem>, note how the various statistics inter-"
+"relate:"
+msgstr "Lorsque vous interprétez les valeurs rapportées par <systemitem>memory.stat</systemitem>, remarquez comme les diverses statistiques sont reliées entres elles :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem>active_anon</systemitem> + "
+"<systemitem>inactive_anon</systemitem> = anonymous memory + file cache for "
+"<systemitem>tmpfs</systemitem> + swap cache"
+msgstr "<systemitem>active_anon</systemitem> + <systemitem>inactive_anon</systemitem> = mémoire anonyme + cache du fichier de <systemitem>tmpfs</systemitem> + cache du swap"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Therefore, <systemitem>active_anon</systemitem> + "
+"<systemitem>inactive_anon</systemitem> ≠ <systemitem>rss</systemitem>, "
+"because <systemitem>rss</systemitem> does not include "
+"<systemitem>tmpfs</systemitem>."
+msgstr "Ainsi, <systemitem>active_anon</systemitem> + <systemitem>inactive_anon</systemitem> ≠ <systemitem>rss</systemitem>, car <systemitem>rss</systemitem> n'inclut pas <systemitem>tmpfs</systemitem>."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem>active_file</systemitem> + "
+"<systemitem>inactive_file</systemitem> = cache - size of "
+"<systemitem>tmpfs</systemitem>"
+msgstr "<systemitem>active_file</systemitem> + <systemitem>inactive_file</systemitem> = cache - taille de <systemitem>tmpfs</systemitem>"
+
+#. Tag: term
+#, no-c-format
+msgid "memory.usage_in_bytes"
+msgstr "memory.usage_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the total current memory usage by processes in the cgroup (in "
+"bytes)."
+msgstr "rapporte la totalité de l'utilisation de mémoire actuelle par les processus dans le groupe de contrôle (en octets)."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.memsw.usage_in_bytes"
+msgstr "memory.memsw.usage_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the sum of current memory usage plus swap space used by processes in"
+" the cgroup (in bytes)."
+msgstr "rapporte la somme de l'utilisation actuelle de la mémoire et de l'espace swap utilisé par les processus dans le groupe de contrôle (en octets)."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.max_usage_in_bytes"
+msgstr "memory.max_usage_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid "reports the maximum memory used by processes in the cgroup (in bytes)."
+msgstr "rapporte le montant maximum de mémoire utilisée par les processus dans le groupe de contrôle (en octets)."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.memsw.max_usage_in_bytes"
+msgstr "memory.memsw.max_usage_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the maximum amount of memory and swap space used by processes in the"
+" cgroup (in bytes)."
+msgstr "rapporte le montant maximum de mémoire et d'espace swap utilisé par les processus dans le groupe de contrôle (en octets)."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.limit_in_bytes"
+msgstr "memory.limit_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"sets the maximum amount of user memory (including file cache). If no units "
+"are specified, the value is interpreted as bytes. However, it is possible to"
+" use suffixes to represent larger units — <literal>k</literal> or "
+"<literal>K</literal> for kilobytes, <literal>m</literal> or "
+"<literal>M</literal> for Megabytes, and <literal>g</literal> or "
+"<literal>G</literal> for Gigabytes."
+msgstr "définit le montant maximum de mémoire utilisateur (y compris le cache du fichier). Si aucune unité n'est saisie, la valeur sera interprétée en octets. Il est cependant possible d'utiliser des suffixes afin de représenter de plus grandes unités — <literal>k</literal> ou <literal>K</literal> pour des kilo-octets, <literal>m</literal> ou <literal>M</literal> pour des mégaoctets, et <literal>g</literal> ou <literal>G</literal> pour des gigaoctets."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"You cannot use <systemitem>memory.limit_in_bytes</systemitem> to limit the "
+"root cgroup; you can only apply values to groups lower in the hierarchy."
+msgstr "L'utilisation de <systemitem>memory.limit_in_bytes</systemitem> pour limiter le groupe de contrôle racine est impossible ; l'application de valeurs est uniquement possible sur des groupes se trouvant plus bas dans la hiérarchie."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Write <literal>-1</literal> to "
+"<systemitem>memory.limit_in_bytes</systemitem> to remove any existing "
+"limits."
+msgstr "Écrire <literal>-1</literal> sur <systemitem>memory.limit_in_bytes</systemitem> pour supprimer toutes les limites existantes."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.memsw.limit_in_bytes"
+msgstr "memory.memsw.limit_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"sets the maximum amount for the sum of memory and swap usage. If no units "
+"are specified, the value is interpreted as bytes. However, it is possible to"
+" use suffixes to represent larger units — <literal>k</literal> or "
+"<literal>K</literal> for kilobytes, <literal>m</literal> or "
+"<literal>M</literal> for Megabytes, and <literal>g</literal> or "
+"<literal>G</literal> for Gigabytes."
+msgstr "définit le montant maximum de la somme de l'utilisation de la mémoire et du swap. Si aucune unité n'est saisie, la valeur sera interprétée en octets. Il est cependant possible d'utiliser des suffixes afin de représenter de plus grandes unités — <literal>k</literal> ou <literal>K</literal> pour des kilo-octets, <literal>m</literal> ou <literal>M</literal> pour des mégaoctets, et <literal>g</literal> ou <literal>G</literal> pour des gigaoctets."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"You cannot use <systemitem>memory.memsw.limit_in_bytes</systemitem> to limit"
+" the root cgroup; you can only apply values to groups lower in the "
+"hierarchy."
+msgstr "L'utilisation de <systemitem>memory.memsw.limit_in_bytes</systemitem> pour limiter le groupe de contrôle racine est impossible ; l'application de valeurs est uniquement possible sur des groupes se trouvant plus bas dans la hiérarchie."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Write <literal>-1</literal> to "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> to remove any existing "
+"limits."
+msgstr "Écrire <literal>-1</literal> sur <systemitem>memory.memsw.limit_in_bytes</systemitem> pour supprimer toutes les limites existantes."
+
+#. Tag: title
+#, no-c-format
+msgid "Setting the memory.memsw.limit_in_bytes and memory.limit_in_bytes parameters"
+msgstr "Réglage des paramètres memory.memsw.limit_in_bytes et memory.limit_in_bytes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"It is important to set the <systemitem>memory.limit_in_bytes</systemitem> "
+"parameter <emphasis>before</emphasis> setting the "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> parameter; attempting "
+"to do so in the reverse order results in an error. This is because "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> becomes available only "
+"after all memory limitations (previously set in "
+"<systemitem>memory.limit_in_bytes</systemitem>) are exhausted."
+msgstr ""
+"Il est important de définir le paramètre <systemitem>memory.limit_in_bytes</systemitem> "
+"<emphasis>avant</emphasis> le réglage du paramètre "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> ; "
+"une tentative de le faire dans l'ordre inverse provoque une erreur. Ceci s'explique par le fait que <systemitem>memory.memsw.limit_in_bytes</systemitem> ne devient disponible "
+"qu'après toutes les autres limitations sur la mémoire (précédemment indiquées dans <systemitem>memory.limit_in_bytes</systemitem>) sont épuisées."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Consider the following example: setting <systemitem>memory.limit_in_bytes = "
+"2G</systemitem> and <systemitem>memory.memsw.limit_in_bytes = "
+"4G</systemitem> for a certain cgroup will allow processes in that cgroup to "
+"allocate 2 GB of memory and, once exhausted, allocate another 2 GB of swap "
+"only; the <systemitem>memory.memsw.limit_in_bytes</systemitem> parameter "
+"represents a sum of memory and swap. Processes in a cgroup that does not "
+"have the <systemitem>memory.memsw.limit_in_bytes</systemitem> parameter set "
+"can potentially use up all the available swap (after exhausting the set "
+"memory limitation) and trigger an Out Of Memory situation caused by the lack"
+" of available swap."
+msgstr ""
+"Prenons l'exemple suivant : les réglages <systemitem>memory.limit_in_bytes = "
+"2G</systemitem> et <systemitem>memory.memsw.limit_in_bytes = 4G</systemitem>"
+"pour un cgroup donné permettront aux processus dans ce cgroup d'allouer 2 Gio de mémoire et, une fois cette limite épuisée, d'allouer 2 Gio de swap seulement ; "
+"le paramètre <systemitem>memory.memsw.limit_in_bytes</systemitem>"
+"représente la somme de la mémoire et du swap. Les processus dans un cgroup dont le paramètre "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> n'est pas positionné peuvent potentiellement utiliser l'intégralité du swap disponible (après avoir épuisé l'ensemble"
+"de la mémoire autorisée) et ainsi déclencher une situation d'épuisement de la mémoire causé par le manque de swap disponible."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The order in which the <systemitem>memory.limit_in_bytes</systemitem> and "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> parameters are set in "
+"the <filename>/etc/cgconfig.conf</filename> file is important as well. The "
+"following is a correct example of such a configuration:"
+msgstr ""
+"L'ordre dans lequel les paramètres <systemitem>memory.limit_in_bytes</systemitem> et "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem> sont définis dans le fichier <filename>/etc/cgconfig.conf</filename> est tout aussi important. Ce qui suit est un exemple correct d'une telle configuration :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"memory {\n"
+"    memory.limit_in_bytes = 1G;\n"
+"    memory.memsw.limit_in_bytes = 1G;\n"
+"}\n"
+"              "
+msgstr ""
+"\n"
+"memory {\n"
+"    memory.limit_in_bytes = 1G;\n"
+"    memory.memsw.limit_in_bytes = 1G;\n"
+"}\n"
+"              "
+
+#. Tag: term
+#, no-c-format
+msgid "memory.failcnt"
+msgstr "memory.failcnt"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of times that the memory limit has reached the value set "
+"in <systemitem>memory.limit_in_bytes</systemitem>."
+msgstr "rapporte le nombre de fois que la limite de mémoire a atteint la valeur définie dans <systemitem>memory.limit_in_bytes</systemitem>."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.memsw.failcnt"
+msgstr "memory.memsw.failcnt"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"reports the number of times that the memory plus swap space limit has "
+"reached the value set in "
+"<systemitem>memory.memsw.limit_in_bytes</systemitem>."
+msgstr "rapporte le nombre de fois que la limite de la somme de la mémoire et de l'espace swap a atteint la valeur définie dans <systemitem>memory.memsw.limit_in_bytes</systemitem>."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.force_empty"
+msgstr "memory.force_empty"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"when set to <literal>0</literal>, empties memory of all pages used by tasks "
+"in this cgroup. This interface can only be used when the cgroup has no "
+"tasks. If memory cannot be freed, it is moved to a parent cgroup if "
+"possible. Use the <systemitem>memory.force_empty</systemitem> parameter "
+"before removing a cgroup to avoid moving out-of-use page caches to its "
+"parent cgroup."
+msgstr "vide la mémoire de toutes les pages utilisées par des tâches dans ce groupe de contrôle lorsque défini à <literal>0</literal>. Cette interface peut uniquement être utilisée lorsque le groupe de contrôle ne possède aucune tâche. Si la mémoire ne peut pas être libérée, celle-ci sera si possible déplacée vers un groupe de contrôle parent. Utiliser <systemitem>memory.force_empty</systemitem> avant de supprimer un groupe de contrôle permet d'éviter de déplacer les caches des pages hors d'usage sur son groupe de contrôle parent."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.swappiness"
+msgstr "memory.swappiness"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"sets the tendency of the kernel to swap out process memory used by tasks in "
+"this cgroup instead of reclaiming pages from the page cache. This is the "
+"same tendency, calculated the same way, as set in "
+"<filename>/proc/sys/vm/swappiness</filename> for the system as a whole. The "
+"default value is <literal>60</literal>. Values lower than "
+"<literal>60</literal> decrease the kernel's tendency to swap out process "
+"memory, values greater than <literal>60</literal> increase the kernel's "
+"tendency to swap out process memory, and values greater than "
+"<literal>100</literal> permit the kernel to swap out pages that are part of "
+"the address space of the processes in this cgroup."
+msgstr "définit la tendance du noyau à déloger la mémoire de processus utilisée par les tâches dans ce groupe de contrôle plutôt que de réclamer des pages depuis le cache de page. Il s'agit de la même tendance et du même calcul que ce qui figure dans <filename>/proc/sys/vm/swappiness</filename> pour le système en tant que tout. La valeur par défaut est <literal>60</literal>. Des valeurs plus petites diminueront la tendance à déloger la mémoire de processus. Des valeurs plus élevées que <literal>60</literal> augmenteront la tendance du noyau à déloger la mémoire de processus, et les valeurs supérieures à <literal>100</literal> permettront au noyau de déloger des pages faisant partie de l'espace adresse pour ce groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Note that a value of <literal>0</literal> does not prevent process memory "
+"being swapped out; swap out might still happen when there is a shortage of "
+"system memory because the global virtual memory management logic does not "
+"read the cgroup value. To lock pages completely, use "
+"<function>mlock()</function> instead of cgroups."
+msgstr "Remarquez que la valeur <literal>0</literal> n'empêchera pas la mémoire de processus d'être délogée; celui-ci pourra tout de même se produire lorsqu'il y a un manque de mémoire système car la logique de gestion de la mémoire virtuelle globale ne lit pas la valeur du groupe de contrôle. Pour complètement verrouiller les pages, veuillez utiliser <function>mlock()</function> au lieu des groupes de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid "You cannot change the swappiness of the following groups:"
+msgstr "Il n'est pas possible de modifier le \"swappiness\" des groupes suivants :"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"the root cgroup, which uses the swappiness set in "
+"<filename>/proc/sys/vm/swappiness</filename>."
+msgstr "le groupe de contrôle racine, qui utilise le \"swappiness\" installé dans <filename>/proc/sys/vm/swappiness</filename>."
+
+#. Tag: para
+#, no-c-format
+msgid "a cgroup that has child groups below it."
+msgstr "un groupe de contrôle possédant des groupes enfants."
+
+#. Tag: term
+#, no-c-format
+msgid "memory.use_hierarchy"
+msgstr "memory.use_hierarchy"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a flag (<literal>0</literal> or <literal>1</literal>) that "
+"specifies whether memory usage should be accounted for throughout a "
+"hierarchy of cgroups. If enabled (<literal>1</literal>), the memory "
+"subsystem reclaims memory from the children of and process that exceeds its "
+"memory limit. By default (<literal>0</literal>), the subsystem does not "
+"reclaim memory from a task's children."
+msgstr "contient un indicateur (<literal>0</literal> ou <literal>1</literal>) spécifiant si la mémoire utilisée devrait être prise en compte sur une hiérarchie de groupes de contrôle. Si activé (<literal>1</literal>), le sous-système de la mémoire récupèrera la mémoire de tous les processus enfants excédant la limite de mémoire. Par défaut (<literal>0</literal>), le sous-système ne récupère pas la mémoire d'une tâche enfant. "
+
+#. Tag: title
+#, no-c-format
+msgid "net_cls"
+msgstr "net_cls"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>net_cls</systemitem> subsystem tags network packets with a "
+"class identifier (classid) that allows the Linux traffic controller "
+"(<application>tc</application>) to identify packets originating from a "
+"particular cgroup. The traffic controller can be configured to assign "
+"different priorities to packets from different cgroups."
+msgstr "Le sous-système  <systemitem>net_cls</systemitem> repère les paquets réseau avec un identifiant de classe (classid) qui permet au contrôleur de trafic Linux (<application>tc</application>) d'identifier les paquets provenant d'un groupe de contrôle particulier. Le contrôleur de trafic peut être configuré de manière à assigner différentes priorités à des paquets provenant de différents groupes de contrôle."
+
+#. Tag: term
+#, no-c-format
+msgid "net_cls.classid"
+msgstr "net_cls.classid"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<filename>net_cls.classid</filename> contains a single value that indicates "
+"a traffic control <firstterm>handle</firstterm>. The value of "
+"<parameter>classid</parameter> read from the "
+"<filename>net_cls.classid</filename> file is presented in the decimal format"
+" while the value to be written to the file is expected in the hexadecimal "
+"format. For example, <literal>0x100001</literal> represents the handle "
+"conventionally written as <literal>10:1</literal> in the format used by "
+"<package>iproute2</package>. In the <filename>net_cls.classid</filename> "
+"file, it would be represented by the number <literal>1048577</literal>."
+msgstr ""
+"Le fichier <filename>net_cls.classid</filename> contient une valeur unique qui indique"
+"un <firstterm>descripteur</firstterm> de contrôle du trafic. La valeur de "
+"<parameter>classid</parameter> lue à partir du fichier <filename>net_cls.classid</filename> "
+" est présenté dans le format décimal tandis que la valeur à écrire dans le fichier est attendue dans le format hexadécimal. Ainsi, <literal>0x100001</literal> représente le descripteur écrit habituellement comme <literal>10:1</literal> dans le format utilisé par "
+"<package>iproute2</package>. Dans le fichier <filename>net_cls.classid</filename>, il serait représenté par le nombre <literal>1048577</literal>."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The format for these handles is: "
+"<literal>0x<replaceable>AAAA</replaceable><replaceable>BBBB</replaceable></literal>,"
+" where <replaceable>AAAA</replaceable> is the major number in hexadecimal "
+"and <replaceable>BBBB</replaceable> is the minor number in hexadecimal. You "
+"can omit any leading zeroes; <literal>0x10001</literal> is the same as "
+"<literal>0x00010001</literal>, and represents <literal>1:1</literal>. The "
+"following is an example of setting a <literal>10:1</literal> handle in the "
+"<filename>net_cls.classid</filename> file:"
+msgstr "Le format de ces descripteurs (handles) est comme suit : <literal>0x<replaceable>AAAA</replaceable><replaceable>BBBB</replaceable></literal>, où <replaceable>AAAA</replaceable> est le numéro majeur en hexadécimal et où <replaceable>BBBB</replaceable> est le numéro mineur en hexadécimal. Les zéros initiaux peuvent être omis : <literal>0x10001</literal> est la même chose que <literal>0x00010001</literal>, et représente <literal>1:1</literal>. Ce qui suit est un example positionnant le descripteur <literal>10:1</literal> dans le fichier <filename>net_cls.classid</filename> :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"\n"
+"~]# <command>echo 0x100001 &gt; /cgroup/net_cls/red/net_cls.classid</command>\n"
+"~]# <command>cat /cgroup/net_cls/red/net_cls.classid</command>\n"
+"1048577\n"
+"\t  "
+msgstr ""
+"\n"
+"~]# <command>echo 0x100001 &gt; /cgroup/net_cls/red/net_cls.classid</command>\n"
+"~]# <command>cat /cgroup/net_cls/red/net_cls.classid</command>\n"
+"1048577\n"
+"\t  "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Refer to the man page for <application>tc</application> to learn how to "
+"configure the traffic controller to use the handles that the "
+"<systemitem>net_cls</systemitem> adds to network packets."
+msgstr "Se reporter à la page de manuel de <application>tc</application> afin d'apprendre comment configurer le contrôleur de trafic pour qu'il utilise les handles que <systemitem>net_cls</systemitem> ajoute aux paquets réseau."
+
+#. Tag: title
+#, no-c-format
+msgid "net_prio"
+msgstr "net_prio"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The Network Priority (<systemitem>net_prio</systemitem>) subsystem provides "
+"a way to dynamically set the priority of network traffic per each network "
+"interface for applications within various cgroups. A network's priority is a"
+" number assigned to network traffic and used internally by the system and "
+"network devices. Network priority is used to differentiate packets that are "
+"sent, queued, or dropped. The <command>tc</command> command may be used to "
+"set a network's priority (setting the network priority via the "
+"<command>tc</command> command is outside the scope of this guide; for more "
+"information, refer to the <command>tc</command> man page)."
+msgstr ""
+"Le sous-système priorisation réseau (<systemitem>net_prio</systemitem>)  "
+"fournit un moyen de définir dynamiquement la priorité du trafic réseau pour chaque interface réseau pour les applications placées dans divers cgroups. La priorité réseau est un nombre assigné au trafic réseau et utilisé en interne par le système et les interfaces réseau. La priorité réseau est utilisée pour différencier les paquets qui sont envoyé, en attente, ou abandonnés (dropped). "
+"La commande <command>tc</command> peut être utilisée pour définir une priorité réseau (l'utilisation de <command>tc</command> pour définir la priorité réseau est en dehors du champ d'application de ce guide ; pour plus d'informations, se reporter à la plage de manuel de <command>tc</command>)."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Typically, an application sets the priority of its traffic via the "
+"<systemitem>SO_PRIORITY</systemitem> socket option. However, applications "
+"are often not coded to set the priority value, or the application's traffic "
+"is site-specific and does not provide a defined priority."
+msgstr ""
+"En général, une application définit la priorité de son trafic via l'option de socket <systemitem>SO_PRIORITY</systemitem>. Toutefois, les applications"
+"ne sont pas souvent codés pour définir la valeur de priorité, ou alors le trafic de l'application est spécifique au site et ne fournit pas une priorité définie."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Using the <systemitem>net_prio</systemitem> subsystem in a cgroup allows an "
+"administrator to assign a process to a specific cgroup which defines the "
+"priority of outgoing traffic on a given network interface:"
+msgstr "L'utilisation du sous-système <systemitem>net_prio</systemitem> dans un cgroup permet à un administrateur d'attribuer un processus à un cgroup spécifique qui définit la priorité de trafic sortant sur une interface de réseau donnée :"
+
+#. Tag: title
+#, no-c-format
+msgid "Note"
+msgstr "Note"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"In order to use the <systemitem>net_prio</systemitem> subsystem, you must "
+"have the following kernel configuration option set:"
+msgstr "Afin d'utiliser le sous-système <systemitem>net_prio</systemitem>, l'option de configuration doit avoir été positionnée :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]$ <command>grep CONFIG_NETPRIO_CGROUP /boot/config-`uname -r`</command>\n"
+"CONFIG_NETPRIO_CGROUP=m\n"
+"      "
+msgstr ""
+"~]$ <command>grep CONFIG_NETPRIO_CGROUP /boot/config-`uname -r`</command>\n"
+"CONFIG_NETPRIO_CGROUP=m\n"
+"      "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"You must have the <systemitem>netprio_cgroup</systemitem> module loaded in "
+"the kernel. To do this execute the following command:"
+msgstr ""
+"Le module <systemitem>netprio_cgroup</systemitem> doit être chargé dans"
+"le noyau. Pour ce faire, lancer la commande suivante :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>modprobe netprio_cgroup</command>\n"
+"      "
+msgstr ""
+"~]# <command>modprobe netprio_cgroup</command>\n"
+"      "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"To check whether the <systemitem>netprio_cgroup</systemitem> module is "
+"loaded, execute the following command:"
+msgstr ""
+"Pour vérifier si le module <systemitem>netprio_cgroup</systemitem> est"
+"chargé, lancer la commande suivante :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]$ <command>lsmod | grep netprio_cgroup</command>\n"
+"      "
+msgstr ""
+"~]$ <command>lsmod | grep netprio_cgroup</command>\n"
+"      "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Once the <systemitem>net_prio</systemitem> subsystem is enabled, it is "
+"visible in the list in the <filename>/proc/cgroups</filename> file."
+msgstr ""
+"Une fois le sous-système <systemitem>net_prio</systemitem> activé, il est"
+"visible dans la liste dans le fichier <filename>/proc/cgroups</filename>."
+
+#. Tag: term
+#, no-c-format
+msgid "net_prio.prioidx"
+msgstr "net_prio.prioidx"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"a read-only file which contains a unique integer value that the kernel uses "
+"as an internal representation of this cgroup."
+msgstr "fichier en lecture seule contenant une valeur entière unique que le noyau utilise comme représentation interne de ce cgroup."
+
+#. Tag: term
+#, no-c-format
+msgid "net_prio.ifpriomap"
+msgstr "net_prio.ifpriomap"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"contains a map of priorities assigned to traffic originating from processes "
+"in this group and leaving the system on various interfaces. This map is "
+"represented by a list of pairs in the form "
+"<parameter><replaceable>&lt;network_interface&gt;</replaceable> "
+"<replaceable>&lt;priority&gt;</replaceable></parameter>:"
+msgstr ""
+"contient une carte des priorités assignées au trafic provenant de processus"
+"dans ce groupe et sortant du système sur différentes interfaces. Cette carte est représentée par une liste de paires sous la forme <parameter><replaceable>&lt;interface_reseau&gt;</replaceable> "
+"<replaceable>&lt;priorite&gt;</replaceable></parameter>:"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>cat /cgroups/net_prio/iscsi/net_prio.ifpriomap</command>\n"
+"eth0 5\n"
+"eth1 4\n"
+"eth2 6\n"
+"\t  "
+msgstr ""
+"~]# <command>cat /cgroups/net_prio/iscsi/net_prio.ifpriomap</command>\n"
+"eth0 5\n"
+"eth1 4\n"
+"eth2 6\n"
+"\t  "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Contents of the <filename>net_prio.ifpriomap</filename> file can be modified"
+" by echoing a string into the file using the above format, for example:"
+msgstr "Le contenu du fichier <filename>net_prio.ifpriomap</filename> peut être modifié en faisant écrivant une chaîne dans le fichier en utilisant le format ci-dessus, par exemple :"
+
+#. Tag: screen
+#, no-c-format
+msgid ""
+"~]# <command>echo \"eth0 5\" &gt; /cgroups/net_prio/iscsi/net_prio.ifpriomap</command>\n"
+"\t  "
+msgstr ""
+"~]# <command>echo \"eth0 5\" &gt; /cgroups/net_prio/iscsi/net_prio.ifpriomap</command>\n"
+"\t  "
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The above command forces any traffic originating from processes belonging to"
+" the <systemitem>iscsi</systemitem> <systemitem>net_prio</systemitem> "
+"cgroup, and with traffic outgoing on the <systemitem>eth0</systemitem> "
+"network interface, to have the priority set to the value "
+"<constant>5</constant>. The parent cgroup also has a writable "
+"<filename>net_prio.ifpriomap</filename> file that can be used to set a "
+"system default priority."
+msgstr "La commande ci-dessus oblige tout le trafic provenant de processus appartenant aux cgroup <systemitem>iscsi</systemitem> <systemitem>net_prio</systemitem>, dont le trafic sortant par l'interface réseau <systemitem>eth0</systemitem> d'avoir une priorité fixée à <constant>5</constant>. Le cgroup parent dispose également d'un fichier accessible en écriture <filename>net_prio.ifpriomap</filename> pouvant être utilisé pour définir la priorité par défaut du système."
+
+#. Tag: title
+#, no-c-format
+msgid "ns"
+msgstr "ns"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The <systemitem>ns</systemitem> subsystem provides a way to group processes "
+"into separate <firstterm>namespaces</firstterm>. Within a particular "
+"namespace, processes can interact with each other but are isolated from "
+"processes running in other namespaces. These separate namespaces are "
+"sometimes referred to as <firstterm>containers</firstterm> when used for "
+"operating-system-level virtualization."
+msgstr "Le sous-système <systemitem>ns</systemitem> fournit une manière de grouper les processus dans des <firstterm>espaces de noms</firstterm> (<firstterm>namespaces</firstterm>) séparés. Dans un espace de nom particulier, les processus peuvent interagir ensemble mais sont isolés des processus exécutés dans d'autres espaces de noms. Ces autres espaces de noms sont parfois appelés des <firstterm>conteneurs</firstterm> (<firstterm>containers</firstterm>) lors de leur utilisation pour une virtualisation au niveau du système d'exploitation."
+
+#. Tag: title
+#, no-c-format
+msgid "Additional Resources"
+msgstr "Ressources supplémentaires"
+
+#. Tag: title
+#, no-c-format
+msgid "Subsystem-Specific Kernel Documentation"
+msgstr "Documentation sur les noyaux spécifiques aux sous-systèmes"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"All of the following files are located under the <filename "
+"class=\"directory\">/usr/share/doc/kernel-"
+"doc-<replaceable>&lt;kernel_version&gt;</replaceable>/Documentation/cgroups/</filename>"
+" directory (provided by the <package>kernel-doc</package> package)."
+msgstr "Tous les fichiers suivants se trouvent sous le répertoire <filename class=\"directory\">/usr/share/doc/kernel-doc-<replaceable>&lt;kernel_version&gt;</replaceable>/Documentation/cgroups/</filename> (fournit par le paquetage <package>kernel-doc</package>)."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">blkio</systemitem> subsystem — <filename"
+">blkio-controller.txt</filename>"
+msgstr "Sous-système <systemitem class=\"resource\">blkio</systemitem> — <filename>blkio-controller.txt</filename>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">cpuacct</systemitem> subsystem — "
+"<filename>cpuacct.txt</filename>"
+msgstr "Sous-système <systemitem class=\"resource\">cpuacct</systemitem> — <filename>cpuacct.txt</filename>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">cpuset</systemitem> subsystem — "
+"<filename>cpusets.txt</filename>"
+msgstr "Sous-système <systemitem class=\"resource\">cpuset</systemitem> — <filename>cpusets.txt</filename>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">devices</systemitem> subsystem — "
+"<filename>devices.txt</filename>"
+msgstr "Sous-système <systemitem class=\"resource\">devices</systemitem> — <filename>devices.txt</filename>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">freezer</systemitem> subsystem — <filename"
+">freezer-subsystem.txt</filename>"
+msgstr "Sous-système <systemitem class=\"resource\">freezer</systemitem> — <filename>freezer-subsystem.txt</filename>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">memory</systemitem> subsystem — "
+"<filename>memory.txt</filename>"
+msgstr "Sous-système <systemitem class=\"resource\">memory</systemitem> — <filename>memory.txt</filename>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">net_prio</systemitem> subsystem &mdash; "
+"<filename>net_prio.txt</filename>"
+msgstr ""
+"sous-système <systemitem class=\"resource\">net_prio</systemitem> &mdash; "
+"<filename>net_prio.txt</filename>"
+
