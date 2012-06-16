@@ -1,0 +1,512 @@
+#
+# Translators:
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jérôme Fenal <jfenal@gmail.com>, 2012.
+# Sam Friedmann <sam.friedmann@redhat.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fedora Resource Management Guide\n"
+"Report-Msgid-Bugs-To: https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&component=resource-management-guide&product=Fedora%20Documentation&classification=Fedora\n"
+"POT-Creation-Date: 2012-05-22T11:56:54\n"
+"PO-Revision-Date: 2012-06-16 13:18+0200\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
+"Language-Team: ipa-admin <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Lokalize 1.0\n"
+
+#. Tag: title
+#, no-c-format
+msgid "Introduction to Control Groups (Cgroups)"
+msgstr "Introduction aux groupes de contrôle (Cgroups)"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"&MAJOROSVER; provides a way to manage system resources: <firstterm>control "
+"groups</firstterm>, which are called by their shorter name "
+"<firstterm>cgroups</firstterm> in this guide. Cgroups allow you to allocate "
+"resources—such as CPU time, system memory, network bandwidth, or "
+"combinations of these resources—among user-defined groups of tasks "
+"(processes) running on a system. You can monitor the cgroups you configure, "
+"deny cgroups access to certain resources, and even reconfigure your cgroups "
+"dynamically on a running system. The <systemitem "
+"class=\"daemon\">cgconfig</systemitem> (<quote><emphasis>control group "
+"config</emphasis> </quote>) service can be configured to start up at boot "
+"time and reestablish your predefined cgroups, thus making them persistent "
+"across reboots."
+msgstr ""
+"&MAJOROSVER; fournit un moyen de gérer les ressources système : les <firstterm>groupes de "
+"contrôle</firstterm> , qui sont appelés par leur nom abrégé"
+"<firstterm>cgroups</firstterm> dans le présent guide. "
+"Less cgroups vous permettent d'allouer des ressources telles que le temps CPU, la mémoire système, la bande passante réseau, ou une combinaisons de ces ressources entre des groupes de tâches"
+"(processus) fonctionnant sur un système définis par l'utilisateur. "
+"Il est possible de superviser les cgroups configurés, de leur interdire l'accès à certaines ressources, et même de reconfigurer les cgroups dynamiquement sur un système en marche. "
+"Le service <systemitem class=\"daemon\">cgconfig</systemitem> (<quote><emphasis>control group "
+"config</emphasis> peut être configuré pour être lancé au moment du démarrage"
+"du système et rétablir vos cgroups prédéfinis, ce qui les rend persistants"
+"entre les redémarrages du système."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"By using cgroups, system administrators gain fine-grained control over "
+"allocating, prioritizing, denying, managing, and monitoring system "
+"resources. Hardware resources can be smartly divided up amongst tasks and "
+"users, increasing overall efficiency."
+msgstr "En utilisant les groupes de contrôle, les administrateurs système obtiennent un contrôle précis sur l'allocation, la priorisation, l'interdication, la gestion et la surveillance des ressources système. Les ressources matérielles peuvent être intelligemment divisées entre les tâches et les utilisateurs, améliorant ainsi l'efficacité générale."
+
+#. Tag: title
+#, no-c-format
+msgid "How Control Groups Are Organized"
+msgstr "Organisation des groupes de contrôle"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Cgroups are organized hierarchically, like processes, and child cgroups "
+"inherit some of the attributes of their parents. However, there are "
+"differences between the two models."
+msgstr "Les groupes de contrôle sont organisés de manière hiérarchique, comme des processus, et les groupes de contrôle enfants héritent de certains des attributs de leurs parents. Il existe cependant des différences entre les deux modèles."
+
+#. Tag: bridgehead
+#, no-c-format
+msgid "The Linux Process Model"
+msgstr "Modèle du processus Linux"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"All processes on a Linux system are child processes of a common parent: the "
+"<command>init</command> process, which is executed by the kernel at boot "
+"time and starts other processes (which may in turn start child processes of "
+"their own). Because all processes descend from a single parent, the Linux "
+"process model is a single hierarchy, or tree."
+msgstr "Tous les processus sur un système Linux sont des processus enfants d'un parent commun : le processus <command>init</command>, qui est exécutépar le noyau lors du démarrage et démarre d'autres processus (qui pourraient démarrer des processus enfants à leur tour). Comme tous les processus proviennent d'un seul parent, le modèle du processus Linux est consiste d'une hiérarchie ou arborescence unique."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Additionally, every Linux process except <command>init</command> inherits "
+"the environment (such as the PATH variable)<footnote><para>The parent "
+"process is able to alter the environment before passing it to a child "
+"process. </para> </footnote> and certain other attributes (such as open file"
+" descriptors) of its parent process."
+msgstr ""
+"De plus, tous les processus Linux hormis <command>init</command> héritent "
+"l'environnement (comme la variable PATH)<footnote><para>Le processus parent "
+"est ainsi capable d'altérer l'environnement avant de le passer à un processus enfant.</para> </footnote> mais aussi d'autres attributs (comme les descripteurs de fichiers ouverts) de son processus parent."
+
+#. Tag: bridgehead
+#, no-c-format
+msgid "The Cgroup Model"
+msgstr "Modèle des groupes de contrôle"
+
+#. Tag: para
+#, no-c-format
+msgid "Cgroups are similar to processes in that:"
+msgstr "Les groupes de contrôle sont similaires aux processus car :"
+
+#. Tag: para
+#, no-c-format
+msgid "they are hierarchical, and"
+msgstr "ils sont organisés hiérarchiquement"
+
+#. Tag: para
+#, no-c-format
+msgid "child cgroups inherit certain attributes from their parent cgroup."
+msgstr "les groupes de contrôle enfants héritent de certains attributs de leur groupe de contrôle parent."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The fundamental difference is that many different hierarchies of cgroups can"
+" exist simultaneously on a system. If the Linux process model is a single "
+"tree of processes, then the cgroup model is one or more separate, "
+"unconnected trees of tasks (i.e. processes)."
+msgstr "La différence fondamentale est que de nombreuses et diverses hiérarchies de groupes de contrôle peuvent exister simultanément sur un système. Le modèle du processus Linux est une unique arborescence de processus, et le modèle des groupes de contrôle est une ou plusieurs arborescences de tâches (ou de processus) séparées et déconnectées."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Multiple separate hierarchies of cgroups are necessary because each "
+"hierarchy is attached to <emphasis>one or more</emphasis> "
+"<firstterm>subsystems</firstterm>. A subsystem<footnote id=\"footnote-"
+"subsystems_are_also_known_as_controllers\"><para>You should be aware that "
+"subsystems are also called <firstterm>resource controllers</firstterm>, or "
+"simply <firstterm>controllers</firstterm>, in the "
+"<package>libcgroup</package> man pages and other documentation.</para> "
+"</footnote> represents a single resource, such as CPU time or memory. "
+"&MAJOROSVER; provides nine cgroup subsystems, listed below by name and "
+"function."
+msgstr "De multiples hiérarchies séparées de groupes de contrôle sont nécessaires car chaque hiérarchie est attachée à <emphasis>un ou plusieurs</emphasis> <firstterm>sous-système</firstterm>. Un sous-système<footnote id=\"footnote-subsystems_are_also_known_as_controllers\"><para>Sachez que les sous-systèmes sont aussi appelés des <firstterm>contrôleurs de ressources</firstterm>, ou <firstterm>contrôleurs</firstterm>, dans les pages man <package>libcgroup</package> et les autres documents.</para> </footnote> représente une seule ressource, comme le temps processeur ou la mémoire. &MAJOROSVER; fournit neuf sous-systèmes de groupes de contrôle, répertoriés ci-dessous par nom et par fonction."
+
+#. Tag: title
+#, no-c-format
+msgid "Available Subsystems in &MAJOROS;"
+msgstr "Sous-systèmes disponibles dans &MAJOROS;"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">blkio</systemitem> — this subsystem sets "
+"limits on input/output access to and from block devices such as physical "
+"drives (disk, solid state, USB, etc.)."
+msgstr "<systemitem class=\"resource\">blkio</systemitem> — ce sous-système établit des limites sur l'accès des entrées/sorties à partir et depuis des périphériques blocs tels que des lecteurs physiques (disques dur, disques SSD, lecteurs USB, etc.)."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">cpu</systemitem> — this subsystem uses the "
+"scheduler to provide cgroup tasks access to the CPU."
+msgstr "<systemitem class=\"resource\">cpu</systemitem> — ce sous-système utilise le planificateur pour fournir aux tâches des groupes de contrôle accès au CPU."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">cpuacct</systemitem> — this subsystem "
+"generates automatic reports on CPU resources used by tasks in a cgroup."
+msgstr "<systemitem class=\"resource\">cpuacct</systemitem> — ce sous-système génère des rapports automatiques sur les ressources CPU utilisées par les tâches dans un groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">cpuset</systemitem> — this subsystem assigns "
+"individual CPUs (on a multicore system) and memory nodes to tasks in a "
+"cgroup."
+msgstr "<systemitem class=\"resource\">cpuset</systemitem> — ce sous-système assigne des CPU individuels (sur un système multicoeur) et des noeuds de mémoire à des tâches dans un groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">devices</systemitem> — this subsystem allows "
+"or denies access to devices by tasks in a cgroup."
+msgstr "<systemitem class=\"resource\">devices</systemitem> — ce sous-système autorise ou refuse l'accès des tâches aux périphériques dans un groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">freezer</systemitem> — this subsystem "
+"suspends or resumes tasks in a cgroup."
+msgstr "<systemitem class=\"resource\">freezer</systemitem> — ce sous-système suspend ou réactive les tâches dans un groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">memory</systemitem> — this subsystem sets "
+"limits on memory use by tasks in a cgroup, and generates automatic reports "
+"on memory resources used by those tasks."
+msgstr "<systemitem class=\"resource\">memory</systemitem> — ce sous-système établit les limites d'utilisation de la mémoire par les tâches d'un groupe de contrôle et génère des rapports automatiques sur les ressources mémoire utilisées par ces tâches."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">net_cls</systemitem> — this subsystem tags "
+"network packets with a class identifier (classid) that allows the Linux "
+"traffic controller (<command>tc</command>) to identify packets originating "
+"from a particular cgroup task."
+msgstr "<systemitem class=\"resource\">net_cls</systemitem> — ce sous-système repère les paquets réseau avec un identifiant de classe (classid) qui permet au contrôleur de trafic Linux  (<command>tc</command>) d'identifier les paquets provenant d'une tâche particulière d'un groupe de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<systemitem class=\"resource\">ns</systemitem> — the "
+"<firstterm>namespace</firstterm> subsystem."
+msgstr "<systemitem class=\"resource\">ns</systemitem> — le sous-système <firstterm>namespace</firstterm>."
+
+#. Tag: title
+#, no-c-format
+msgid "Subsystems are also known as resource controllers"
+msgstr "Les sous-systèmes sont aussi appelés des contrôleurs de ressources"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"You may come across the term <firstterm>resource controller</firstterm> or "
+"simply <firstterm>controller</firstterm> in cgroup literature such as the "
+"man pages or kernel documentation. Both of these terms are synonymous with "
+"<quote>subsystem</quote>, and arise from the fact that a subsystem typically"
+" schedules a resource or applies a limit to the cgroups in the hierarchy it "
+"is attached to."
+msgstr "Vous pouvez rencontrer le terme <firstterm>contrôleur de ressources</firstterm> ou plus simplement <firstterm>contrôleur</firstterm> dans la littérature concernant les groupes de contrôle, comme dans les pages man ou dans la documentation du noyau. Ces deux termes sont des synonymes de <quote>sous-système</quote> et proviennent du fait que typiquement, un sous-système planifie une ressource ou applique une limite aux groupes de contrôle dans la hiérarchie à laquelle il est attaché."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The definition of a subsystem (resource controller) is quite general: it is "
+"something that acts upon a group of tasks, i.e. processes."
+msgstr "La définition d'un sous-système (ou contrôleur de ressources) est assez générale : il s'agit de quelquechose agissant sur un groupe de tâches, c'est-à-dire des processus."
+
+#. Tag: title
+#, no-c-format
+msgid "Relationships Between Subsystems, Hierarchies, Control Groups and Tasks"
+msgstr "Relations entre sous-systèmes, hiérarchies, groupes de contrôle et tâches"
+
+#. Tag: para
+#, no-c-format
+msgid "Remember that system processes are called tasks in cgroup terminology."
+msgstr "Souvenez-vous que les processus système sont appelés des tâches dans la terminologie des groupes de contrôle."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Here are a few simple rules governing the relationships between subsystems, "
+"hierarchies of cgroups, and tasks, along with explanatory consequences of "
+"those rules."
+msgstr "Voici quelques simples règles régissant les relations entre sous-systèmes, hiérarchies des groupes de contrôle et tâches, ainsi que les conséquences explicatives de ces règles."
+
+#. Tag: bridgehead
+#, no-c-format
+msgid "Rule 1"
+msgstr "Règle n°1"
+
+#. Tag: para
+#, no-c-format
+msgid "A single hierarchy can have one or more subsystems attached to it."
+msgstr "Une hiérarchie peut avoir au moins un sous-système qui lui est attaché."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>As a consequence, the <systemitem "
+"class=\"resource\">cpu</systemitem> and <systemitem "
+"class=\"resource\">memory</systemitem> subsystems (or any number of "
+"subsystems) can be attached to a single hierarchy, as long as each one is "
+"not attached to any other hierarchy which has any other subsystems attached "
+"to it already (see Rule 2).</emphasis>"
+msgstr ""
+"<emphasis>Ainsi, les sous-systèmes <systemitem class=\"resource\">cpu</systemitem> et <systemitem "
+"class=\"resource\">memory</systemitem> (ou un ensemble de sous-systèmes) peut être attaché à une hiérarchie unique,  pour autant qu'aucun ne soit attaché à une autre hiérarchie contenant d'autres sous-systèmes (cf. règle n°2).</emphasis>"
+
+#. Tag: para
+#, no-c-format
+msgid "Attaching one or more subsystems to a single hierarchy."
+msgstr "Attacher un ou plusieurs sous-systèmes à une hiérarchie unique"
+
+#. Tag: bridgehead
+#, no-c-format
+msgid "Rule 2"
+msgstr "Règle n°2"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Any single subsystem (such as <systemitem "
+"class=\"resource\">cpu</systemitem>) cannot be attached to more than one "
+"hierarchy if one of those hierarchies has a different subsystem attached to "
+"it already."
+msgstr ""
+"Tout sous-système unique (comme <systemitem class=\"resource\">cpu</systemitem>) ne peut être "
+"attaché à plus d'une hiérarchie si l'une de ces hiérarchies contient un sous-système différent qui lui est déjà attaché."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>As a consequence, the <systemitem "
+"class=\"resource\">cpu</systemitem> subsystem can never be attached to two "
+"different hierarchies if one of those hierarchies already has the "
+"<systemitem class=\"resource\">memory</systemitem> subsystem attached to it."
+" However, a single subsystem can be attached to two hierarchies if both of "
+"those hierarchies have only that subsystem attached.</emphasis>"
+msgstr ""
+"<emphasis>En conséquence, le sous-système <systemitem class=\"resource\">cpu</systemitem> ne peut jamais être attaché à deux hiérarchies différentes si l'une d'elle contient par exemple le sous-système "
+"<systemitem class=\"resource\">memory</systemitem> qui lui est attaché. "
+"Cependant, un sous-système uniquem peut être attaché à deux hiérarchies que "
+"si chacune d'elle ne contient que ce sous-système.</emphasis>"
+
+#. Tag: title
+#, no-c-format
+msgid ""
+"Rule 2&mdash;The numbered bullets represent a time sequence in which the "
+"subsystems are attached."
+msgstr ""
+"Règle n°2&mdash;Les puces numérotées représentent une séquence temporelle dans laquelle les"
+"sous-systèmes sont attachés."
+
+#. Tag: para
+#, no-c-format
+msgid "Attaching a single subsystem to multiple hierarchies."
+msgstr "Attachement d'un sous-système à plusieurs hiérarchies."
+
+#. Tag: bridgehead
+#, no-c-format
+msgid "Rule 3"
+msgstr "Règle n°3"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Each time a new hierarchy is created on the systems, all tasks on the system"
+" are initially members of the default cgroup of that hierarchy, which is "
+"known as the <firstterm>root cgroup</firstterm>. For any single hierarchy "
+"you create, each task on the system can be a member of <emphasis>exactly "
+"one</emphasis> cgroup in that hierarchy. A single task may be in multiple "
+"cgroups, as long as each of those cgroups is in a different hierarchy. As "
+"soon as a task becomes a member of a second cgroup in the same hierarchy, it"
+" is removed from the first cgroup in that hierarchy. At no time is a task "
+"ever in two different cgroups in the same hierarchy."
+msgstr ""
+"Chaque fois qu'une nouvelle hiérarchie est créée sur les systèmes, "
+"tous les processus sur le système sont d'abord membres du par défaut de cette hiérarchie, qui est"
+"connue comme étant le <firstterm>cgroup racine</firstterm>. "
+"Pour toute hiérarchie unique créée par la suite, chaque processus du système peut être un membre de "
+"<emphasis>exactement un</emphasis> cgroup dans cette hiérarchie. Une seule tâche peut être dans plusieurs"
+"cgroups aussi longtemps que chacun de ces cgroups sont dans des hiérarchies différentes. "
+"Dès qu'une tâche devient membre d'un second cgroup dans la même hiérarchie, il "
+"est retiré du premier cgroup de cette hiérarchie. À aucun moment une tâche "
+"ne peut être dans deux cgroups différents de la même hiérarchie."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>As a consequence, if the <systemitem "
+"class=\"resource\">cpu</systemitem> and <systemitem "
+"class=\"resource\">memory</systemitem> subsystems are attached to a "
+"hierarchy named <varname>cpu_mem_cg</varname>, and the <systemitem "
+"class=\"resource\">net_cls</systemitem> subsystem is attached to a hierarchy"
+" named <varname>net</varname>, then a running <systemitem "
+"class=\"process\">httpd</systemitem> process could be a member of any one "
+"cgroup in <varname>cpu_and_mem</varname>, and any one cgroup in "
+"<varname>net</varname>.</emphasis>"
+msgstr "<emphasis>En conséquence, si les sous-sytèmes <systemitem class=\"resource\">cpu</systemitem> et <systemitem class=\"resource\">memory</systemitem> sont attachés à une hiérarchie nommée <varname>cpu_mem_cg</varname>, et que le sous-système <systemitem class=\"resource\">net_cls</systemitem> est attaché à une hiérarchie dénommée <varname>net</varname>, alors un processus en cours d'exécution <systemitem class=\"process\">httpd</systemitem> peut être membre de tout cgroup dans <varname>cpu_and_mem</varname>, et de tout cgroup de <varname>net</varname>.</emphasis>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>The cgroup in <varname>cpu_mem_cg</varname> that the <systemitem "
+"class=\"process\">httpd</systemitem> process is a member of might restrict "
+"its CPU time to half of that allotted to other processes, and limit its "
+"memory usage to a maximum of <constant>1024</constant> MB. Additionally, the"
+" cgroup in <varname>net</varname> that it is a member of might limit its "
+"transmission rate to <constant>30</constant> megabytes per "
+"second.</emphasis>"
+msgstr "<emphasis>Le cgroup dans <varname>cpu_mem_cg</varname> dont le processus <systemitem class=\"process\">httpd</systemitem> est un membre peut restreindre le temps CPU alloué à la moitié du temps alloué aux autres processys, et limiter son utilisation de la mémoire à un maximum de <constant>1024</constant> Mio. De plus, le cgroup dans <varname>net</varname> dont il est membre peut limiter son débit de transfert réseau à <constant>30</constant> mega-octets par seconde.</emphasis>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>When the first hierarchy is created, every task on the system is a"
+" member of at least one cgroup: the root cgroup. When using cgroups, "
+"therefore, every system task is always in at least one cgroup.</emphasis>"
+msgstr ""
+"<emphasis>Quand la première hiérarchie est créée, chaque tâche du système est membre d'au moins un cgroup : le cgroup racine. "
+"Par conséquent, lorsque l'on utilise cgroups, toutes les tâches systèmes sont toujours dans au moins un cgroup.</emphasis>"
+
+#. Tag: para
+#, no-c-format
+msgid "A task cannot be a member of two different cgroups in the same hierarchy."
+msgstr "Une tâche ne peut être membre de deux cgroups différents dans la même hiérarchie."
+
+#. Tag: bridgehead
+#, no-c-format
+msgid "Rule 4"
+msgstr "Règle n°4"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Any process (task) on the system which forks itself creates a child process "
+"(task). A child task automatically inherits the cgroup membership of its "
+"parent but can be moved to different cgroups as needed. Once forked, the "
+"parent and child processes are completely independent."
+msgstr "Tout processus (tâche) du système qui se dédouble par fork crée un processus (tâche) enfant. Une tâche fille hérite automatiquement les appartenances cgroup de son parent, mais peut être déplacé vers des cgroups différents si besoin est. Une fois dédoublés, les processus parent et enfant sont complètement indépendants."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>As a consequence, consider the <systemitem "
+"class=\"process\">httpd</systemitem> task that is a member of the cgroup "
+"named <varname>half_cpu_1gb_max</varname> in the "
+"<varname>cpu_and_mem</varname> hierarchy, and a member of the cgroup "
+"<varname>trans_rate_30</varname> in the <varname>net</varname> hierarchy. "
+"When that <systemitem class=\"process\">httpd</systemitem> process forks "
+"itself, its child process automatically becomes a member of the "
+"<varname>half_cpu_1gb_max</varname> cgroup, and the "
+"<varname>trans_rate_30</varname> cgroup. It inherits the exact same cgroups "
+"its parent task belongs to.</emphasis>"
+msgstr "<emphasis>Par conséquent, prenez en considération la tâche <systemitem class=\"process\">httpd</systemitem> qui est membre du groupe de contrôle nommé <varname>half_cpu_1gb_max</varname> dans la hiérarchie <varname>cpu_and_mem</varname>  et du groupe de contrôle <varname>trans_rate_30</varname> dans la hiérarchie <varname>net</varname>. Lorsque ce processus <systemitem class=\"process\">httpd</systemitem> se copie lui-même, son processus enfant devient automatiquement membre des groupes de contrôle <varname>half_cpu_1gb_max</varname> et <varname>trans_rate_30</varname>. Celui-ci hérite des mêmes groupes de contrôle dont faisait partie sa tâche parente.</emphasis>"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"<emphasis>From that point forward, the parent and child tasks are completely"
+" independent of each other: changing the cgroups that one task belongs to "
+"does not affect the other. Neither will changing cgroups of a parent task "
+"affect any of its grandchildren in any way. To summarize: any child task "
+"always initially inherit memberships to the exact same cgroups as their "
+"parent task, but those memberships can be changed or removed "
+"later.</emphasis>"
+msgstr "<emphasis>À partir de ce moment, les tâches parent et enfant sont complètement indépendantes l'une de l'autre : modifier le groupe de contrôle auquel une tâche appartient n'affecte pas l'autre tâche. La modification des groupes de contrôle d'une tâche parent n'affectera aucune de ses tâches petits-enfants non plus. Pour résumer, toute tâche enfant commence par hériter des mêmes appartenances aux groupes de contrôle que ses tâches parentes, ces appartenances pourront être modifiées ou supprimées ultérieurement.</emphasis>"
+
+#. Tag: title
+#, no-c-format
+msgid ""
+"Rule 4&mdash;The numbered bullets represent a time sequence in which the "
+"task forks."
+msgstr "Règle n°4&mdash;Les puces numérotées représentent une séquence temporelle dans laquelle la tâche se dédouble (par fork)."
+
+#. Tag: para
+#, no-c-format
+msgid "A forked task inherits cgroup properties of its parent."
+msgstr "Une tâche dédoublée par fork hérite les propriétés cgroup de son parent."
+
+#. Tag: title
+#, no-c-format
+msgid "Implications for Resource Management"
+msgstr "Implications pour la gestion des ressources"
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Because a task can belong to only a single cgroup in any one hierarchy, "
+"there is only one way that a task can be limited or affected by any single "
+"subsystem. This is logical: a feature, not a limitation."
+msgstr "Comme une tâche ne peut appartenir qu'à un seul groupe de contrôle dans une seule hiérarchie, il n'y a qu'une seule manière par laquelle une tâche peut être limitée ou affectée par un seul sous-système. Ceci est logique : il s'agit d'une fonctionnalité, et pas d'une limitation."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"You can group several subsystems together so that they affect all tasks in a"
+" single hierarchy. Because cgroups in that hierarchy have different "
+"parameters set, those tasks will be affected differently."
+msgstr "Vous pouvez regrouper plusieurs sous-systèmes ensemble de manière à ce qu'ils affectent toutes les tâches dans une hiérarchie unique. Comme les groupes de contrôle dans cette hiérarchie possèdent de divers paramètres, ces tâches seront affectées de différemment."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"It may sometimes be necessary to <firstterm>refactor</firstterm> a "
+"hierarchy. An example would be removing a subsystem from a hierarchy that "
+"has several subsystems attached, and attaching it to a new, separate "
+"hierarchy."
+msgstr "Il peut parfois être nécessaire de <firstterm>refactoriser</firstterm> une hiérarchie. Par exemple, en supprimant un sous-système d'une hiérarchie à qui sont attachés plusieurs sous-systèmes, et en l'attachant à une nouvelle hiérarchie différente."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"Conversely, if the need for splitting subsystems among separate hierarchies "
+"is reduced, you can remove a hierarchy and attach its subsystems to an "
+"existing one."
+msgstr "À l'inverse, si le besoin de diviser des sous-systèmes entre différentes hiérarchies est réduit, vous pouvez supprimer une hiérarchie et attacher ses sous-systèmes à une autre hiérarchie existante."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The design allows for simple cgroup usage, such as setting a few parameters "
+"for specific tasks in a single hierarchy, such as one with just the "
+"<systemitem>cpu</systemitem> and <systemitem>memory</systemitem> subsystems "
+"attached."
+msgstr "La conception permet une utilisation simple de cgroup, comme la définition de quelques paramètres pour des tâches spécifiques dans une hiérarchie unique, par exemple juste sur les sous-systèmes <systemitem>cpu</systemitem> et <systemitem>memory</systemitem> qui lui sont attachés."
+
+#. Tag: para
+#, no-c-format
+msgid ""
+"The design also allows for highly specific configuration: each task "
+"(process) on a system could be a member of each hierarchy, each of which has"
+" a single attached subsystem. Such a configuration would give the system "
+"administrator absolute control over all parameters for every single task."
+msgstr "Le design permet aussi de réaliser des configurations hautement spécifiques : chaque tâche (ou processus) sur un système peut être membre de chaque hiérarchie, qui elles-mêmes ne possèdent qu'un seul sous-système attaché. Une telle configuration pourrait ainsi offrir à un administrateur système un contrôle absolu sur tous les paramètres de chaque tâche."
+
+
