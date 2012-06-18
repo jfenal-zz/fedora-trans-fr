@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fedora Resource Management Guide\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&component=resource-management-guide&product=Fedora%20Documentation&classification=Fedora\n"
 "POT-Creation-Date: 2012-05-22T11:56:55\n"
-"PO-Revision-Date: 2012-06-16 22:22+0200\n"
+"PO-Revision-Date: 2012-06-18 21:34+0200\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: ipa-admin <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -405,7 +405,7 @@ msgid ""
 "waiting for the operation currently queued. Note that this report is "
 "available only if <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the"
 " system."
-msgstr "rapporte la durée totale (en nanosecondes — ns) qu'un groupe de contrôle a attendu une tranche de temps pour l'une de ses files d'attente. Le rapport est mis à jour à chaque fois qu'une file d'attente de ce groupe de contrôle obtient une tranche de temps. Ainsi, si vous lisez ce pseudo-fichier alors que le groupe de contrôle attend sa tranche de temps, le rapport ne contiendra pas le temps attendu pour l'opération se trouvant actuellement en file d'attente. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+msgstr "rapporte la durée totale (en nanosecondes — ns) qu'un groupe de contrôle a attendu une tranche de temps pour l'une de ses files d'attente. Le rapport est mis à jour à chaque fois qu'une file d'attente de ce groupe de contrôle obtient une tranche de temps. Ainsi, si on lit ce pseudo-fichier alors que le groupe de contrôle attend sa tranche de temps, le rapport ne contiendra pas le temps attendu pour l'opération se trouvant actuellement en file d'attente. Remarquer que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
 
 #. Tag: term
 #, no-c-format
@@ -421,7 +421,7 @@ msgid ""
 "no pending requests, the report will not contain time spent in the current "
 "empty state. Note that this report is available only if "
 "<literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the system."
-msgstr "rapporte la durée totale (en nanosecondes — ns) qu'un groupe de contrôle a attendu sans requête en attente. Le rapport est mis à jour à chaque fois qu'une file d'attente de ce groupe de contrôle possède une requête en attente. Ainsi, si vous lisez ce pseudo-fichier alors que le groupe de contrôle ne possède pas de requêtes en attente, le rapport ne contiendra pas le temps attendu dans l'état actuel. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+msgstr "rapporte la durée totale (en nanosecondes — ns) qu'un groupe de contrôle a attendu sans requête en attente. Le rapport est mis à jour à chaque fois qu'une file d'attente de ce groupe de contrôle possède une requête en attente. Ainsi, si on lit ce pseudo-fichier alors que le groupe de contrôle ne possède pas de requêtes en attente, le rapport ne contiendra pas le temps attendu dans l'état actuel. Remarquer que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
 
 #. Tag: term
 #, no-c-format
@@ -438,7 +438,7 @@ msgid ""
 "is idling, the report will not contain time spent in the current idling "
 "state. Note that this report is available only if "
 "<literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the system."
-msgstr "rapporte le temps total (en nanosecondes — ns) que le planificateur a passé à attendre un groupe de contrôle dans l'attente d'une meilleure requête que les requêtes se trouvant déjà dans des files d'attente ou provenant d'autres groupes. Le rapport est mis à jour à chaque fois qu'un groupe redevient actif. Ainsi, si vous lisez ce pseudo-fichier alors que le groupe de contrôle est inactif (idling), le rapport ne contiendra pas le temps passé à attendre dans l'état inactif (idling) actuel. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+msgstr "rapporte le temps total (en nanosecondes — ns) que le planificateur a passé à attendre un groupe de contrôle dans l'attente d'une meilleure requête que les requêtes se trouvant déjà dans des files d'attente ou provenant d'autres groupes. Le rapport est mis à jour à chaque fois qu'un groupe redevient actif. Ainsi, si on lit ce pseudo-fichier alors que le groupe de contrôle est inactif (idling), le rapport ne contiendra pas le temps passé à attendre dans l'état inactif (idling) actuel. Remarquer que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
 
 #. Tag: term
 #, no-c-format
@@ -457,7 +457,7 @@ msgid ""
 "<replaceable>number</replaceable> is the number of requests the group was "
 "dequeued. Note that this report is available only if "
 "<literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> is set on the system."
-msgstr "rapporte le nombre de fois que des requêtes d'opérations d'E/S d'un groupe de contrôle ont été retirées des files d'attente par des périphériques spécifiques. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>nombre</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>nombre</replaceable> est le nombre de requêtes que le groupe a retiré de la file d'attente. Remarquez que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
+msgstr "rapporte le nombre de fois que des requêtes d'opérations d'E/S d'un groupe de contrôle ont été retirées des files d'attente par des périphériques spécifiques. Les entrées possèdent trois champs : <replaceable>majeur</replaceable>, <replaceable>mineur</replaceable> et <replaceable>nombre</replaceable>. <replaceable>Majeur</replaceable> et <replaceable>mineur</replaceable> sont les types de périphérique et numéros de noeud spécifiés dans les <citetitle>périphériques alloués de Linux</citetitle> et <replaceable>nombre</replaceable> est le nombre de requêtes que le groupe a retiré de la file d'attente. Remarquer que ce rapport est uniquement disponible si <literal>CONFIG_DEBUG_BLK_CGROUP=y</literal> est installé sur le système."
 
 #. Tag: title
 #, no-c-format
@@ -665,7 +665,7 @@ msgstr "blkio.reset_stats"
 msgid ""
 "resets the statistics recorded in the other pseudofiles. Write an integer to"
 " this file to reset the statistics for this cgroup."
-msgstr "réinitialise les statistiques enregistrées dans les autres pseudo-fichiers. Saisissez un entier sur ce fichier pour réinitialiser les statistiques de ce groupe de contrôle."
+msgstr "réinitialise les statistiques enregistrées dans les autres pseudo-fichiers. Écrire un nombre entier dans ce fichier pour réinitialiser les statistiques de ce groupe de contrôle."
 
 #. Tag: title
 #, no-c-format
@@ -855,7 +855,7 @@ msgid ""
 " be expected for random I/O workloads as well. To enable group isolation, "
 "use the following command:"
 msgstr ""
-"En outre, vous pouvez activer l'<firstterm>isolement de groupe</firstterm> qui"
+"En outre, il est possible d'activer l'<firstterm>isolement de groupe</firstterm> qui"
 "offre un meilleur isolement entre les groupes au détriment du débit."
 "Lorsque l'isolement de groupe est désactivé, l'équité ne peut être attendu que pour une charge de travail séquentielle. Par défaut, l'isolement de groupe est activé et l'équité peut aussi être attendue pour des aléatoires charges de travail d'entrées/sorties aléatoires. Pour activer l'isolement du groupe,"
 "utiliser la commande suivante :"
@@ -924,7 +924,7 @@ msgid ""
 "seconds, set <filename>cpu.rt_runtime_us</filename> to "
 "<literal>4000000</literal> and <filename>cpu.rt_period_us</filename> to "
 "<literal>5000000</literal>."
-msgstr "applicables aux seules tâches gérées par l'ordonnanceur temps-réel, ce paramètre spécifie une période de temps en microsecondes (µs, représenté ici sous la forme \"us\") pour la plus longue période continue pendant laquelle les tâches d'un groupe de contrôle ont accès aux ressources du CPU. Établir cette limite permet d'empêcher les tâches d'un groupe de contrôle de monopoliser le temps du CPU. Si les tâches dans un groupe de contrôle doivent pouvoir accéder aux ressources du CPU pendant 4 secondes sur chaque période de 5 secondes, ajustez <filename>cpu.rt_runtime_us</filename> sur <literal>4000000</literal> et <filename>cpu.rt_period_us</filename> sur <literal>5000000</literal>."
+msgstr "applicables aux seules tâches gérées par l'ordonnanceur temps-réel, ce paramètre spécifie une période de temps en microsecondes (µs, représenté ici sous la forme \"us\") pour la plus longue période continue pendant laquelle les tâches d'un groupe de contrôle ont accès aux ressources du CPU. Établir cette limite permet d'empêcher les tâches d'un groupe de contrôle de monopoliser le temps du CPU. Si les tâches dans un groupe de contrôle doivent pouvoir accéder aux ressources du CPU pendant 4 secondes sur chaque période de 5 secondes, ajuster <filename>cpu.rt_runtime_us</filename> sur <literal>4000000</literal> et <filename>cpu.rt_period_us</filename> sur <literal>5000000</literal>."
 
 #. Tag: term
 #, no-c-format
@@ -941,7 +941,7 @@ msgid ""
 "access CPU resources for 4 seconds out of every 5 seconds, set "
 "<filename>cpu.rt_runtime_us</filename> to <literal>4000000</literal> and "
 "<filename>cpu.rt_period_us</filename> to <literal>5000000</literal>."
-msgstr "applicables aux seules tâches gérées par l'ordonnanceur temps-réel, ce paramètre spécifie une période de temps en microsecondes (µs, représenté ici sous la forme \"us\") pour définir à quelle fréquence réallouer l'accès d'un groupe de contrôle aux ressources du CPU. Si les tâches d'un groupe de contrôle doivent pouvoir accéder aux ressources du CPU pendant 4 secondes sur chaque période de 5 secondes, ajustez <filename>cpu.rt_runtime_us</filename> sur <literal>4000000</literal> et <filename>cpu.rt_period_us</filename> sur <literal>5000000</literal>."
+msgstr "applicables aux seules tâches gérées par l'ordonnanceur temps-réel, ce paramètre spécifie une période de temps en microsecondes (µs, représenté ici sous la forme \"us\") pour définir à quelle fréquence réallouer l'accès d'un groupe de contrôle aux ressources du CPU. Si les tâches d'un groupe de contrôle doivent pouvoir accéder aux ressources du CPU pendant 4 secondes sur chaque période de 5 secondes, ajuster <filename>cpu.rt_runtime_us</filename> sur <literal>4000000</literal> et <filename>cpu.rt_period_us</filename> sur <literal>5000000</literal>."
 
 #. Tag: title
 #, no-c-format
@@ -1272,7 +1272,7 @@ msgid ""
 " a cgroup, disable load balancing also in each of its parents in the "
 "hierarchy. In this case, you should also consider whether load balancing "
 "should be enabled for any siblings of the cgroup in question."
-msgstr "Remarquez cependant que définir cet indicateur dans un cgroup n'a aucun effet si l'équilibrage des charges est activé dans tout cgroup parent, car l'équilibrage des charges est déjà en cours à un niveau plus élevé. Ainsi, pour désactiver l'équilibrage des charges dans un cgroup, désactivez aussi l'équilibrage des charges dans chacun de ses parents dans la hiérarchie. Dans ce cas, vous devriez aussi vous demander si l'équilibrage des charges devrait être activé sur les autres relations de même parenté du groupe de contrôle en question."
+msgstr "Remarquer cependant que définir cet indicateur dans un cgroup n'a aucun effet si l'équilibrage des charges est activé dans tout cgroup parent, car l'équilibrage des charges est déjà en cours à un niveau plus élevé. Ainsi, pour désactiver l'équilibrage des charges dans un cgroup, désactiver aussi l'équilibrage des charges dans chacun de ses parents dans la hiérarchie. Dans ce cas, il est nécessaire de se demander si l'équilibrage des charges doit être activé sur les autres relations de même parenté du groupe de contrôle en question."
 
 #. Tag: term
 #, no-c-format
@@ -1583,12 +1583,12 @@ msgstr "Pour suspendre un processus spécifique :"
 msgid ""
 "Move that process to a cgroup in a hierarchy which has the <systemitem "
 "class=\"resource\">freezer</systemitem> subsystem attached to it."
-msgstr "Déplacez ce processus dans un groupe de contrôle se trouvant dans une hiérarchie à laquelle le sous-système <systemitem class=\"resource\">freezer</systemitem> est attaché."
+msgstr "Déplacer ce processus dans un groupe de contrôle se trouvant dans une hiérarchie à laquelle le sous-système <systemitem class=\"resource\">freezer</systemitem> est attaché."
 
 #. Tag: para
 #, no-c-format
 msgid "Freeze that particular cgroup to suspend the process contained in it."
-msgstr "Gelez ce groupe de contrôle en particulier pour suspendre le processus qu'il contient."
+msgstr "Geler ce groupe de contrôle en particulier pour suspendre le processus qu'il contient."
 
 #. Tag: para
 #, no-c-format
@@ -1601,7 +1601,7 @@ msgid ""
 "Note that while the <literal>FROZEN</literal> and <literal>THAWED</literal> "
 "values can be written to <filename>freezer.state</filename>, "
 "<literal>FREEZING</literal> cannot be written, only read."
-msgstr "Remarquez que les valeurs <literal>FROZEN</literal> et <literal>THAWED</literal> peuvent être écrites sur <filename>freezer.state</filename>, alors que <literal>FREEZING</literal> peut seulement être lu."
+msgstr "Remarquer que les valeurs <literal>FROZEN</literal> et <literal>THAWED</literal> peuvent être écrites sur <filename>freezer.state</filename>, alors que <literal>FREEZING</literal> peut seulement être lu."
 
 #. Tag: title
 #, no-c-format
@@ -1805,7 +1805,7 @@ msgid ""
 "When you interpret the values reported by "
 "<systemitem>memory.stat</systemitem>, note how the various statistics inter-"
 "relate:"
-msgstr "Lorsque vous interprétez les valeurs rapportées par <systemitem>memory.stat</systemitem>, remarquez comme les diverses statistiques sont reliées entres elles :"
+msgstr "Lorsque les valeurs rapportées par <systemitem>memory.stat</systemitem> doivent être interprétées, remarquer que les diverses statistiques sont reliées entres elles :"
 
 #. Tag: para
 #, no-c-format
@@ -2082,7 +2082,7 @@ msgid ""
 "system memory because the global virtual memory management logic does not "
 "read the cgroup value. To lock pages completely, use "
 "<function>mlock()</function> instead of cgroups."
-msgstr "Remarquez que la valeur <literal>0</literal> n'empêchera pas la mémoire de processus d'être délogée; celui-ci pourra tout de même se produire lorsqu'il y a un manque de mémoire système car la logique de gestion de la mémoire virtuelle globale ne lit pas la valeur du groupe de contrôle. Pour complètement verrouiller les pages, veuillez utiliser <function>mlock()</function> au lieu des groupes de contrôle."
+msgstr "Remarquer que la valeur <literal>0</literal> n'empêchera pas la mémoire de processus d'être délogée ; celui-ci pourra tout de même se produire lorsqu'il y a un manque de mémoire système car la logique de gestion de la mémoire virtuelle globale ne lit pas la valeur du groupe de contrôle. Pour verrouiller complètement les pages, utiliser <function>mlock()</function> au lieu des groupes de contrôle."
 
 #. Tag: para
 #, no-c-format
@@ -2459,4 +2459,5 @@ msgid ""
 msgstr ""
 "sous-système <systemitem class=\"resource\">net_prio</systemitem> &mdash; "
 "<filename>net_prio.txt</filename>"
+
 
