@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Fedora Resource Management Guide\n"
 "Report-Msgid-Bugs-To: https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&component=resource-management-guide&product=Fedora%20Documentation&classification=Fedora\n"
 "POT-Creation-Date: 2012-05-22T11:56:55\n"
-"PO-Revision-Date: 2012-06-16 09:18+0200\n"
+"PO-Revision-Date: 2012-06-18 17:04+0200\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: ipa-admin <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgid ""
 "If you stop the <systemitem class=\"service\">cgconfig</systemitem> service "
 "(with the <command>systemctl stop cgconfig.service </command> command), it "
 "unmounts all the hierarchies that it mounted."
-msgstr "Si vous arrêtez le service <systemitem class=\"service\">cgconfig</systemitem> (avec la commande <command>systemctl stop cgconfig</command>), celui-ci démontera toutes les hiérarchies qu'il avait monté."
+msgstr "Si l'on arrête le service <systemitem class=\"service\">cgconfig</systemitem> (avec la commande <command>systemctl stop cgconfig</command>), celui-ci démontera toutes les hiérarchies qu'il avait monté."
 
 #. Tag: title
 #, no-c-format
@@ -167,7 +167,7 @@ msgstr "Création d'une entrée « mount »"
 msgid ""
 "The following example creates a hierarchy for the "
 "<systemitem>cpuset</systemitem> subsystem:"
-msgstr "L'exemple suivant crée une hiérarchies pour le sous-système <systemitem>cpuset</systemitem> : "
+msgstr "L'exemple suivant crée une hiérarchie pour le sous-système <systemitem>cpuset</systemitem> :"
 
 #. Tag: programlisting
 #, no-c-format
@@ -219,7 +219,7 @@ msgstr "\ngroup <replaceable>&lt;name&gt;</replaceable> {\n    <optional><replac
 msgid ""
 "Note that the <literal>permissions</literal> section is optional. To define "
 "permissions for a group entry, use the following syntax:"
-msgstr "Remarquez que la section <literal>permissions</literal> est optionnelle. Pour définir les permissions pour une entrée « group », veuillez utiliser la syntaxe suivante : "
+msgstr "Remarquer que la section <literal>permissions</literal> est optionnelle. Pour définir les permissions pour une entrée « group », utiliser la syntaxe suivante : "
 
 #. Tag: programlisting
 #, no-c-format
@@ -254,7 +254,7 @@ msgid ""
 "The following example creates a cgroup for SQL daemons, with permissions for"
 " users in the <literal>sqladmin</literal> group to add tasks to the cgroup "
 "and the <literal>root</literal> user to modify subsystem parameters:"
-msgstr "L'exemple suivant crée un cgroup pour les démons SQL, autorisant les utilisateurs du groupe <literal>sqladmin</literal> à ajouter au cgroup des tâches, et root à modifier les paramètres des sous-systèmes."
+msgstr "L'exemple suivant crée un cgroup pour les démons SQL, autorisant les utilisateurs du groupe <literal>sqladmin</literal> à ajouter des tâches au cgroup et l'utilisateur root à modifier les paramètres des sous-systèmes."
 
 #. Tag: programlisting
 #, no-c-format
@@ -280,7 +280,7 @@ msgstr "\ngroup daemons/sql {\n    perm {\n        task {\n            uid = roo
 msgid ""
 "When combined with the example of the mount entry in <xref linkend"
 "=\"example-mount-entry\" />, the equivalent shell commands are:"
-msgstr "Lorsqu'elles sont combinées avec l'exemple de l'entrée « mount » dans l'<xref linkend=\"example-mount-entry\" />, les commandes shelle équivalentes sont : "
+msgstr "Lorsqu'elles sont combinées avec l'exemple de l'entrée « mount » dans <xref linkend=\"example-mount-entry\" />, les commandes shell équivalentes sont :"
 
 #. Tag: screen
 #, no-c-format
@@ -304,7 +304,7 @@ msgid ""
 "You must restart the <systemitem class=\"service\">cgconfig</systemitem> "
 "service for the changes in the <filename>/etc/cgconfig.conf</filename> to "
 "take effect:"
-msgstr "Vous devez redémarrer le service <systemitem class=\"service\">cgconfig</systemitem> pour que les changements dans <filename>/etc/cgconfig.conf</filename> prennent effet : "
+msgstr "Il faut redémarrer le service <systemitem class=\"service\">cgconfig</systemitem> pour que les changements dans <filename>/etc/cgconfig.conf</filename> prennent effet : "
 
 #. Tag: screen
 #, no-c-format
@@ -321,7 +321,7 @@ msgid ""
 "class=\"service\">cgconfig</systemitem> service."
 msgstr ""
 "Lors de l'installation du paquetage <package>libcgroup-tools</package>, un exemple de fichier de configuration est mis à disposition sous le nom <filename>/etc/cgconfig.conf</filename>. "
-"Les symboles <literal>#</literal> en début de ligne indiquent les commentaires, et rendent ces lignes invisibles au service <systemitem class=\"service\">cgconfig</systemitem>."
+"Le symbole <literal>#</literal> en début de ligne indique un commentaire, et rend ces lignes invisibles au service <systemitem class=\"service\">cgconfig</systemitem>."
 
 #. Tag: title
 #, no-c-format
@@ -353,7 +353,7 @@ msgid ""
 "commands will fail unless you first unmount existing hierarchies, which will"
 " affect the operation of the system. Do not experiment with these "
 "instructions on production systems."
-msgstr "Ces commandes échoueront sur un système où les groupes de contrôle sont déjà configurés (manuellement ou par le service <systemitem class=\"service\">cgconfig</systemitem>), à moins que vous ne démontiez d'abord les hiérarchies existantes, ce qui affectera l'opération du système. Ne pas expérimenter avec ces instructions sur des systèmes de production."
+msgstr "Ces commandes échoueront sur un système où les groupes de contrôle sont déjà configurés (manuellement ou par le service <systemitem class=\"service\">cgconfig</systemitem>), à moins de d'abord démonter les hiérarchies existantes, ce qui affectera l'opération du système. Ne pas expérimenter ces instructions sur des systèmes de production."
 
 #. Tag: para
 #, no-c-format
@@ -362,7 +362,7 @@ msgid ""
 "<literal>mount</literal> section of the "
 "<filename>/etc/cgconfig.conf</filename> file as root. Entries in the "
 "<literal>mount</literal> section have the following format:"
-msgstr "Pour créer un hiérarchie et y attacher des sous-systèmes, modifiez la section <literal>mount</literal> du fichier <filename>/etc/cgconfig.conf</filename> en tant que super-utilisateur. Les entrées de la section <literal>mount</literal> sont sous le format suivant :"
+msgstr "Pour créer un hiérarchie et y attacher des sous-systèmes, modifier la section <literal>mount</literal> du fichier <filename>/etc/cgconfig.conf</filename> en tant que super-utilisateur. Les entrées de la section <literal>mount</literal> sont sous le format suivant :"
 
 #. Tag: programlisting
 #, no-c-format
@@ -376,7 +376,7 @@ msgstr "<replaceable>subsystem</replaceable> = /cgroup/<replaceable>hierarchy</r
 msgid ""
 "When <systemitem class=\"service\">cgconfig</systemitem> next starts, it "
 "will create the hierarchy and attach the subsystems to it."
-msgstr "Lorsque <systemitem class=\"service\">cgconfig</systemitem> démarrera la prochaine fois, il créera la hiérarchie et y attachera les sous-systèmes."
+msgstr "Lorsque <systemitem class=\"service\">cgconfig</systemitem> redémarrera, il créera la hiérarchie et y attachera les sous-systèmes."
 
 #. Tag: para
 #, no-c-format
@@ -402,21 +402,21 @@ msgstr "mount {\n    cpuset  = /cgroup/cpu_and_mem;\n    cpu     = /cgroup/cpu_a
 #. Tag: bridgehead
 #, no-c-format
 msgid "Alternative method"
-msgstr "Méthode alternative"
+msgstr "Variante"
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "You can also use shell commands and utilities to create hierarchies and "
 "attach subsystems to them."
-msgstr "Il est aussi possble d'utiliser des commandes shell et des utilitaires pour créer des hiérarchies et leur attacher des sous-système."
+msgstr "Il est aussi possible d'utiliser des commandes shell et des utilitaires pour créer des hiérarchies et leur attacher des sous-systèmes."
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "Create a <firstterm>mount point</firstterm> for the hierarchy as root. "
 "Include the name of the cgroup in the mount point:"
-msgstr "Créez un <firstterm>point de montage</firstterm> (<firstterm>mount point</firstterm>) pour la hiérarchie en tant que super-utilisateur. Incluez le nom du groupe de contrôle dans le point de montage :"
+msgstr "Créer un <firstterm>point de montage</firstterm> pour la hiérarchie en tant que super-utilisateur. Inclure le nom du groupe de contrôle dans le point de montage :"
 
 #. Tag: screen
 #, no-c-format
@@ -438,7 +438,7 @@ msgstr "~]# <command>mkdir /cgroup/cpu_and_mem</command>"
 msgid ""
 "Next, use the <command>mount</command> command to mount the hierarchy and "
 "simultaneously attach one or more subsystems. For example:"
-msgstr "Puis utilisez la commande <command>mount</command> pour monter la hiérarchie et y attacher un ou plusieurs sous-système(s) simultanément. Par exemple :"
+msgstr "Puis utiliser la commande <command>mount</command> pour monter la hiérarchie et y attacher un ou plusieurs sous-systèmes simultanément. Par exemple :"
 
 #. Tag: screen
 #, no-c-format
@@ -456,7 +456,7 @@ msgid ""
 " Brief descriptions of all available subsystems are listed in <xref "
 "linkend=\"Available_Subsystems\" />, and <xref linkend=\"ch-"
 "Subsystems_and_Tunable_Parameters\" /> provides a detailed reference."
-msgstr "Où <replaceable>subsystems</replaceable> est une liste séparée par virgules des sous-systèmes et <replaceable>name</replaceable> est le nom de la hiérarchie. De brèves descriptions de tous les sous-systèmes disponibles sont répertoriées dans les <xref linkend=\"Available_Subsystems\" /> et le lien <xref linkend=\"ch-Subsystems_and_Tunable_Parameters\" /> fournit une référence détaillée."
+msgstr "Où <replaceable>subsystems</replaceable> est une liste des sous-systèmes séparés par virgules et <replaceable>name</replaceable> est le nom de la hiérarchie. De brèves descriptions de tous les sous-systèmes disponibles sont répertoriées dans les <xref linkend=\"Available_Subsystems\" /> et le lien <xref linkend=\"ch-Subsystems_and_Tunable_Parameters\" /> fournit une référence détaillée."
 
 #. Tag: title
 #, no-c-format
@@ -476,7 +476,7 @@ msgid ""
 "<command>mount</command> the <systemitem "
 "class=\"groupname\">cpu_and_mem</systemitem> hierarchy on "
 "<filename>/cgroup/cpu_and_mem</filename>:"
-msgstr "Dans cet exemple, un répertoire nommé <filename>/cgroup/cpu_and_mem</filename>, qui servira de point de montage pour la hiérarchie que nous créons, existe déjà. Nous attacherons les sous-systèmes  <systemitem class=\"resource\">cpu</systemitem>, <systemitem class=\"resource\">cpuset</systemitem> et <systemitem class=\"resource\">memory</systemitem> à une hiérarchie que nous nommons <systemitem class=\"groupname\">cpu_and_mem</systemitem>, puis nous montons (<command>mount</command>) la hiérarchie  <systemitem class=\"groupname\">cpu_and_mem</systemitem> sur <filename>/cgroup/cpu_and_mem</filename> :"
+msgstr "Dans cet exemple, un répertoire nommé <filename>/cgroup/cpu_and_mem</filename>, qui sert de point de montage pour la hiérarchie en cours de création, existe déjà. Y attacher les sous-systèmes  <systemitem class=\"resource\">cpu</systemitem>, <systemitem class=\"resource\">cpuset</systemitem> et <systemitem class=\"resource\">memory</systemitem> à une hiérarchie qui sera nommée <systemitem class=\"groupname\">cpu_and_mem</systemitem>, puis monter (<command>mount</command>) la hiérarchie  <systemitem class=\"groupname\">cpu_and_mem</systemitem> sur <filename>/cgroup/cpu_and_mem</filename> :"
 
 #. Tag: screen
 #, no-c-format
@@ -497,8 +497,8 @@ msgid ""
 " to use it: refer to <xref linkend=\"ch-Using_Control_Groups\" /> if you are"
 " unable to run <command>lssubsys</command>.</para> </footnote> command:"
 msgstr ""
-"Vous pouvez lister tous les sous-systèmes disponibles ainsi que leurs points de montage respectifs (c'est à dire l'endroit où la hiérarchie à laquelle ils sont attachés est montée) avec la commande <command>lssubsys</command> <footnote id=\"footnote-lssubsys_is_provided_by_libcgroup\">. "
-"<para>La commande <command>lssubsys</command> est l'un des utilitaires fournis par le paquetage <package>libcgroup-tools</package>. Vous devez installer <package>libcgroup-tools</package> afin de pouvoir l'utiliser : cf. <xref linkend=\"ch-Using_Control_Groups\" /> s'il vous est impossible d'utiliser la commande <command>lssubsys</command>.</para> </footnote> :"
+"Il est possible de lister tous les sous-systèmes disponibles ainsi que leurs points de montage respectifs (c'est à dire l'endroit où la hiérarchie à laquelle ils sont attachés est montée) avec la commande <command>lssubsys</command> <footnote id=\"footnote-lssubsys_is_provided_by_libcgroup\">. "
+"<para>La commande <command>lssubsys</command> est l'un des utilitaires fournis par le paquetage <package>libcgroup-tools</package>. Il faut installer <package>libcgroup-tools</package> afin de pouvoir l'utiliser : cf. <xref linkend=\"ch-Using_Control_Groups\" /> s'il est impossible d'utiliser la commande <command>lssubsys</command>.</para> </footnote> :"
 
 #. Tag: screen
 #, no-c-format
@@ -545,7 +545,7 @@ msgid ""
 "class=\"resource\">freezer</systemitem> and <systemitem "
 "class=\"resource\">blkio</systemitem> subsystems are as yet unattached to "
 "any hierarchy, as illustrated by the lack of a corresponding mount point."
-msgstr "les sous-systèmes <systemitem class=\"resource\">net_cls</systemitem>, <systemitem class=\"resource\">ns</systemitem>, <systemitem class=\"resource\">cpuacct</systemitem>, <systemitem class=\"resource\">devices</systemitem>, <systemitem class=\"resource\">freezer</systemitem> et <systemitem class=\"resource\">blkio</systemitem> ne sont toujours pas attaché à une hiérarchie, comme l'absence de points de montage le montre."
+msgstr "les sous-systèmes <systemitem class=\"resource\">net_cls</systemitem>, <systemitem class=\"resource\">ns</systemitem>, <systemitem class=\"resource\">cpuacct</systemitem>, <systemitem class=\"resource\">devices</systemitem>, <systemitem class=\"resource\">freezer</systemitem> et <systemitem class=\"resource\">blkio</systemitem> ne sont toujours pas attachés à une hiérarchie, comme l'absence de point de montage le montre."
 
 #. Tag: title
 #, no-c-format
@@ -563,7 +563,7 @@ msgid ""
 "Creating_a_Hierarchy_and_Attaching_Subsystems\" />. When <systemitem "
 "class=\"service\">cgconfig</systemitem> next starts, it will reorganize the "
 "subsystems according to the hierarchies that you specify."
-msgstr "Pour ajouter un sous-système à une hiérarchie existante, le détacher d'une hiérarchie existante, ou pour le déplacer sur une autre hiérarchie, modifiez la section <literal>mount</literal> du fichier <filename>/etc/cgconfig.conf</filename> en tant que super-utilisateur en utilisant la même syntaxe que celle décrite dans la <xref linkend=\"sec-Creating_a_Hierarchy_and_Attaching_Subsystems\" />. La prochaine fois que <systemitem class=\"service\">cgconfig</systemitem> démarrera, il réorganisera les sous-systèmes en fonction des hiérarchies spécifiées."
+msgstr "Pour ajouter ou détacher un sous-système à une hiérarchie existante, ou bien pour le déplacer sur une autre hiérarchie, modifier la section <literal>mount</literal> du fichier <filename>/etc/cgconfig.conf</filename> en tant que super-utilisateur en utilisant la même syntaxe que celle décrite dans la <xref linkend=\"sec-Creating_a_Hierarchy_and_Attaching_Subsystems\" />. La prochaine fois que <systemitem class=\"service\">cgconfig</systemitem> démarrera, il réorganisera les sous-systèmes en fonction des hiérarchies spécifiées."
 
 #. Tag: para
 #, no-c-format
@@ -571,7 +571,7 @@ msgid ""
 "To add an unattached subsystem to an existing hierarchy, remount the "
 "hierarchy. Include the extra subsystem in the <command>mount</command> "
 "command, together with the <option>remount</option> option."
-msgstr "Pour ajouter un sous-système non attaché à une hiérarchie existante, montez la hiérarchie à nouveau. Veuillez inclure le sous-système supplémentaire dans la commande <command>mount</command> ainsi que l'option  <option>remount</option>."
+msgstr "Pour ajouter un sous-système non attaché à une hiérarchie existante, remonte la hiérarchie. Inclure le sous-système supplémentaire dans la commande <command>mount</command> ainsi que l'option <option>remount</option>."
 
 #. Tag: title
 #, no-c-format
@@ -592,7 +592,7 @@ msgid ""
 "We remount the <systemitem>cpu_and_mem</systemitem> hierarchy, using the "
 "<option>remount</option> option, and including "
 "<systemitem>cpuacct</systemitem> in the list of subsystems:"
-msgstr "Montons la hiérarchie <systemitem>cpu_and_mem</systemitem> à nouveau, en utilisant l'option <option>remount</option> et en incluant <systemitem>cpuacct</systemitem> dans la liste des sous-systèmes :"
+msgstr "Montons à nouveau la hiérarchie <systemitem>cpu_and_mem</systemitem>, en utilisant l'option <option>remount</option> tout en incluant <systemitem>cpuacct</systemitem> dans la liste des sous-systèmes :"
 
 #. Tag: screen
 #, no-c-format
@@ -629,7 +629,7 @@ msgid ""
 "options. For example, to then detach the <systemitem "
 "class=\"resource\">cpuacct</systemitem> subsystem, simply remount and omit "
 "it:"
-msgstr "De manière analogue, il est possible de détacher un sous-système d'une hiérarchie existante en mont la hiérarchie à nouveau et en omettant le nom du sous-système dans les options -o. Par exemple, pour détacher le sous-système <systemitem class=\"resource\">cpuacct</systemitem>, montez-le à nouveau puis omettez-le :"
+msgstr "De manière analogue, il est possible de détacher un sous-système d'une hiérarchie existante en montant la hiérarchie à nouveau sans mentionner le nom du sous-système dans les options -o. Par exemple, pour détacher le sous-système <systemitem class=\"resource\">cpuacct</systemitem>, faites un nouveau montage sans le déclarer :"
 
 #. Tag: screen
 #, no-c-format
@@ -648,7 +648,7 @@ msgstr "Démonter une hiérarchie"
 msgid ""
 "You can <firstterm>unmount</firstterm> a hierarchy of cgroups with the "
 "<command>umount</command> command:"
-msgstr "Vous pouvez <firstterm>démonter</firstterm> (<firstterm>unmount</firstterm>) une hiérarchie de groupes de contrôle avec la commande <command>umount</command> :"
+msgstr "Il est possible de <firstterm>démonter</firstterm> (<firstterm>unmount</firstterm>) une hiérarchie de groupes de contrôle avec la commande <command>umount</command> :"
 
 #. Tag: screen
 #, no-c-format
@@ -667,7 +667,7 @@ msgid ""
 "cgroup) the hierarchy is deactivated when it is unmounted. If the hierarchy "
 "contains any other cgroups, the hierarchy remains active in the kernel even "
 "though it is no longer mounted."
-msgstr "Si la hiérarchie est actuellement vide (c'est-à-dire si elle ne contient que le groupe de contrôle racine), alors celle-ci est désactivée lorsqu'elle est démontée. Si la hiérarchie contient tout autre groupe de contrôle, alors elle restera active dans le noyau même si elle n'est plus montée."
+msgstr "Si la hiérarchie est actuellement vide (c'est-à-dire si elle ne contient que le groupe de contrôle racine), celle-ci sera désactivée  lors de son démontage. Si la hiérarchie contient un quelconque groupe de contrôle, alors elle restera active dans le noyau même si elle n'est plus montée."
 
 #. Tag: para
 #, no-c-format
@@ -676,7 +676,7 @@ msgid ""
 "unmount the hierarchy, or use the <command>cgclear</command> command which "
 "can deactivate a hierarchy even when it is not empty — refer to <xref "
 "linkend=\"Unloading_Control_Groups\" />."
-msgstr "Pour supprimer une hiérarchie, assurez-vous que tous les groupes de contrôle enfants sont supprimés avant de la démonter, ou utilisez la commande <command>cgclear</command>, qui désactive une hiérarchie même si celle-ci n'est pas vide — reportez-vous à la <xref linkend=\"Unloading_Control_Groups\" />."
+msgstr "Pour supprimer une hiérarchie, s'assurer que tous les groupes de contrôle enfants sont supprimés avant de la démonter, ou utiliser la commande <command>cgclear</command>, qui désactive une hiérarchie même si celle-ci n'est pas vide — se reporter à la <xref linkend=\"Unloading_Control_Groups\" />."
 
 #. Tag: title
 #, no-c-format
@@ -708,7 +708,7 @@ msgid ""
 "<option>-t</option> (optional) — specifies a user (by user ID, uid) and a "
 "group (by group ID, gid) to own the <filename>tasks</filename> pseudo-file "
 "for this cgroup. This user can add tasks to the cgroup."
-msgstr "<option>-t</option> (optionnel) — spécifie un utilisateur (par un ID utilisateur, ou uid) et un groupe (par ID de groupe, ou GID) pour posséder le pseudofichier <filename>tâches</filename> (<filename>tasks</filename>) pour ce groupe de contrôle. Cet utilisateur peut ajouter des tâches à ce groupe de contrôle."
+msgstr "<option>-t</option> (optionnelle) — définit un utilisateur (par son ID utilisateur, ou uid) et un groupe (par son ID de groupe, ou GID) qui sera le propriétaire du pseudo-fichier <filename>tasks</filename> pour ce groupe de contrôle. Cet utilisateur peut ajouter des tâches à ce groupe de contrôle."
 
 #. Tag: title
 #, no-c-format
@@ -722,7 +722,7 @@ msgid ""
 "different cgroup. To move a task, the user must have write access to the "
 "<emphasis>destination</emphasis> cgroup; write access to the source cgroup "
 "is unimportant."
-msgstr "Remarquez que l'unique manière de supprimer une tâche d'un groupe de contrôle est de la déplacer sur un autre groupe de contrôle. Pour déplacer une tâche, l'utilisateur doit posséder la permission d'écriture sur le groupe de contrôle <emphasis>destinataire</emphasis> ; la permission d'écriture sur le groupe de contrôle source n'est pas importante."
+msgstr "Remarquer que l'unique manière de supprimer une tâche d'un groupe de contrôle est de la déplacer vers un autre groupe de contrôle. Pour déplacer une tâche, l'utilisateur doit posséder la permission d'écriture sur le groupe de contrôle <emphasis>destinataire</emphasis> ; la permission d'écriture sur le groupe de contrôle source n'a pas d'importance"
 
 #. Tag: para
 #, no-c-format
@@ -731,7 +731,7 @@ msgid ""
 "group (by group ID, gid) to own all pseudo-files other than "
 "<filename>tasks</filename> for this cgroup. This user can modify the access "
 "that the tasks in this cgroup have to system resources."
-msgstr "<option>-a</option> (optionnel) — spécifie un utilisateur (par un ID utilisateur, ou uid) et un groupe (par ID de groupe, ou GID) pour posséder tous les pseudofichiers autres que <filename>tâches</filename> (<filename>tasks</filename>) pour ce groupe de contrôle. Cet utilisateur peut modifier les accès des tâches de ce groupe de contrôle aux ressources système."
+msgstr "<option>-a</option> (optionnelle) — définit un utilisateur (par son ID utilisateur, ou uid) et un groupe (par son ID de groupe, ou GID) qui sera le propriétaire du pseudo-fichier <filename>tasks</filename> pour ce groupe de contrôle. Cet utilisateur peut modifier les accès des tâches de ce groupe de contrôle aux ressources système."
 
 #. Tag: para
 #, no-c-format
@@ -743,7 +743,7 @@ msgid ""
 "created in each of these hierarchies. The list of hierarchies is followed by"
 " a colon and the <replaceable>path</replaceable> to the child group relative"
 " to the hierarchy. Do not include the hierarchy mount point in the path."
-msgstr "<option>-g</option> — spécifie la hiérarchie dans laquelle le groupe de contrôle devrait être créé, en tant que liste séparée par des virgules des <replaceable>sous-systèmes</replaceable> associés à ces hiérarchies. Si les sous-systèmes de cette liste se trouvent dans différentes hiérarchies, le groupe est créé dans chacune d'entre elles. La liste des hiérarchies est suivie par deux-points et le <replaceable>chemin d'accès</replaceable> vers le groupe enfant relatif à la hiérarchie. Ne pas inclure le point de montage de la hiérarchie dans le chemin d'accès."
+msgstr "<option>-g</option> — définit la hiérarchie dans laquelle le groupe de contrôle doit être créé, sous forme de liste des <replaceable>sous-systèmes</replaceable> associés à ces hiérarchies séparés par des virgules. Si les sous-systèmes de cette liste se trouvent dans des hiérarchies différentes, le groupe est créé dans chacune d'entre elles. La liste des hiérarchies est suivie par deux-points puis par le <replaceable>chemin d'accès</replaceable> vers le groupe enfant relatif à la hiérarchie. Ne pas inclure le point de montage de la hiérarchie dans le chemin d'accès."
 
 #. Tag: para
 #, no-c-format
@@ -756,7 +756,7 @@ msgid ""
 "which the cgroup is created, even though these subsystems have not been "
 "specified in the <command>cgcreate</command> command — refer to <xref "
 "linkend=\"cgcreate_usage\" />."
-msgstr "Par exemple, le groupe de contrôle se trouvant dans le répertoire <filename>/cgroup/cpu_and_mem/lab1/</filename> est simplement appelé <filename>lab1</filename> — son chemin d'accès est déjà déterminé de manière unique car il y a, au plus, une seule hiérarchie pour un sous-système donné. Remarquez aussi que le groupe est contrôlé par tous les sous-systèmes  qui existent dans les hiérarchies dans lesquelles le groupe de contrôle a été créé, même si ces sous-systèmes n'ont pas été spécifiés dans la commande <command>cgcreate</command> — reportez-vous à la <xref linkend=\"cgcreate_usage\" />."
+msgstr "Par exemple, le groupe de contrôle se trouvant dans le répertoire <filename>/cgroup/cpu_and_mem/lab1/</filename> est simplement appelé <filename>lab1</filename> — son chemin d'accès est déjà déterminé de manière unique car il y a, au plus, une seule hiérarchie pour un sous-système donné. Remarquer aussi que le groupe est contrôlé par tous les sous-systèmes  qui existent dans les hiérarchies dans lesquelles le groupe de contrôle a été créé, même si ces sous-systèmes n'ont pas été spécifiés dans la commande <command>cgcreate</command> — se reporter à la <xref linkend=\"cgcreate_usage\" />."
 
 #. Tag: para
 #, no-c-format
@@ -778,7 +778,7 @@ msgid ""
 "<systemitem>cpu_and_mem</systemitem> hierarchy, and the "
 "<systemitem>net_cls</systemitem> controller is mounted in a separate "
 "hierarchy called <systemitem>net</systemitem>. We now run:"
-msgstr "Prenez en considération un système où les sous-systèmes <systemitem>cpu</systemitem> et <systemitem>memory</systemitem> sont montés ensemble dans la hiérarchie <systemitem>cpu_and_mem</systemitem> et où le contrôleur <systemitem>net_cls</systemitem> est monté dans une hiérarchie séparée nommée <systemitem>net</systemitem>. Nous exécutons mainenant :"
+msgstr "Si l'on considère un système où les sous-systèmes <systemitem>cpu</systemitem> et <systemitem>memory</systemitem> sont montés ensemble dans la hiérarchie <systemitem>cpu_and_mem</systemitem> et où le contrôleur <systemitem>net_cls</systemitem> est monté dans une hiérarchie séparée nommée <systemitem>net</systemitem>. Exécuter ensuite :"
 
 #. Tag: screen
 #, no-c-format
@@ -802,7 +802,7 @@ msgstr "La commande <command>cgcreate</command> crée deux groupes nommés <syst
 msgid ""
 "To create a child of the cgroup directly, use the <command>mkdir</command> "
 "command:"
-msgstr "Pour créer un enfant du groupe de contrôle, utilisez la commande <command>mkdir</command> :"
+msgstr "Pour créer un enfant du groupe de contrôle, utiliser la commande <command>mkdir</command> :"
 
 #. Tag: screen
 #, no-c-format
@@ -826,7 +826,7 @@ msgstr "Supprimer des groupes de contrôle"
 msgid ""
 "Remove cgroups with the <command>cgdelete</command>, which has a syntax "
 "similar to that of <command>cgcreate</command>. Run the following command:"
-msgstr "La suppression de cgroups se fait à l'aide de la commande <command>cgdelete</command>, dont la syntaxe est similaire à celle de la commande <command>cgcreate</command> :"
+msgstr "La suppression de cgroups se fait à l'aide de la commande <command>cgdelete</command>, dont la syntaxe est similaire à celle de la commande <command>cgcreate</command>, comme suit :"
 
 #. Tag: screen
 #, no-c-format
@@ -840,7 +840,7 @@ msgstr "cgdelete <replaceable>subsystems</replaceable>:<replaceable>path</replac
 msgid ""
 "<replaceable>subsystems</replaceable> is a comma-separated list of "
 "subsystems."
-msgstr "<replaceable>subsystems</replaceable> est une liste des sous-systèmes séparée par des virgules."
+msgstr "<replaceable>subsystems</replaceable> est une liste des sous-systèmes séparés par des virgules."
 
 #. Tag: para
 #, no-c-format
@@ -864,7 +864,7 @@ msgstr "<command>cgdelete</command> peut aussi supprimer récursivement tous les
 #. Tag: para
 #, no-c-format
 msgid "When you delete a cgroup, all its tasks move to its parent group."
-msgstr "Lorsque vous supprimez un groupe de contrôle, toutes ses tâches se déplacent sur son groupe parent."
+msgstr "Lorsque l'on supprime un groupe de contrôle, toutes ses tâches se déplacent vers son groupe parent."
 
 #. Tag: title
 #, no-c-format
@@ -878,7 +878,7 @@ msgid ""
 "from a user account with permission to modify the relevant cgroup. For "
 "example, if <filename>/cgroup/cpuset/group1</filename> exists, specify the "
 "CPUs to which this group has access with the following command:"
-msgstr "Il est possible de définir les paramètres des sous-systèmes en exécutant la commande <command>cgset</command> depuis un compte utilisateur avec la permission de modifier le groupe de contrôle approprié. Par exemple, si <filename>/cgroup/cpuset/group1</filename> existe, spécifiez les CPUs auxquels ce groupe aura accès avec la commande suivante :"
+msgstr "Il est possible de définir les paramètres des sous-systèmes en exécutant la commande <command>cgset</command> depuis un compte utilisateur avec la permission de modifier le groupe de contrôle approprié. Par exemple, si <filename>/cgroup/cpuset/group1</filename> existe, spécifier les CPUs auxquelles ce groupe aura accès avec la commande suivante :"
 
 #. Tag: screen
 #, no-c-format
@@ -903,7 +903,7 @@ msgstr "cgset <option>-r</option> <replaceable>parameter</replaceable>=<replacea
 msgid ""
 "<replaceable>parameter</replaceable> is the parameter to be set, which "
 "corresponds to the file in the directory of the given cgroup"
-msgstr "<replaceable>parameter</replaceable> est le paramètre à définir qui correspond au fichier dans le répertoire du groupe de contrôle donné"
+msgstr "<replaceable>parameter</replaceable> est le paramètre à définir, celui du fichier dans le répertoire du groupe de contrôle donné"
 
 #. Tag: para
 #, no-c-format
@@ -917,7 +917,7 @@ msgid ""
 "<emphasis>relative to the root of the hierarchy</emphasis>. For example, to "
 "set the parameter of the root group (if "
 "<filename>/cgroup/cpuacct/</filename> exists), run:"
-msgstr "<replaceable>path_to_cgroup</replaceable> est le chemin d'accès au groupe de contrôle <emphasis>relatif à la racine de la hiérarchie</emphasis>. Par exemple, pour définir le paramètre du groupe racine (si <filename>/cgroup/cpuacct/</filename> existe), exécutez :"
+msgstr "<replaceable>path_to_cgroup</replaceable> est le chemin d'accès au groupe de contrôle <emphasis>relatif à la racine de la hiérarchie</emphasis>. Par exemple, pour définir le paramètre du groupe racine (si <filename>/cgroup/cpuacct/</filename> existe), exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -929,7 +929,7 @@ msgstr "cpuacct]# <command>cgset -r cpuacct.usage=0 /</command>"
 msgid ""
 "Alternatively, because <literal>.</literal> is relative to the root group "
 "(that is, the root group itself) you could also run:"
-msgstr "Alternativement, comme <literal>.</literal> est relatif au groupe racine (le groupe racine lui-même), vous pourriez aussi exécuter :"
+msgstr "En variante, comme <literal>.</literal> désigne le groupe racine (le groupe racine lui-même), on peut aussi exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -939,7 +939,7 @@ msgstr "cpuacct]# <command>cgset -r cpuacct.usage=0 .</command>"
 #. Tag: para
 #, no-c-format
 msgid "Note, however, that <literal>/</literal> is the preferred syntax."
-msgstr "Remarquez cependant que <literal>/</literal> est la syntaxe préférée."
+msgstr "Remarquer cependant que <literal>/</literal> est la syntaxe préférée."
 
 #. Tag: title
 #, no-c-format
@@ -961,7 +961,7 @@ msgstr "Seul un petit nombre de paramètres peuvent être définis pour le group
 msgid ""
 "To set the parameter of <systemitem>group1</systemitem>, which is a subgroup"
 " of the root group, run:"
-msgstr "Pour définir le paramètre de <systemitem>group1</systemitem>, qui est un sous-groupe du groupe racine, exécutez :"
+msgstr "Pour définir le paramètre de <systemitem>group1</systemitem>, qui est un sous-groupe du groupe racine, exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -983,14 +983,14 @@ msgid ""
 "<filename>group1</filename> is limited to use only CPU&nbsp;0 on a system, "
 "you cannot set <filename>group1/subgroup1</filename> to use CPUs&nbsp;0 and "
 "1, or to use only CPU&nbsp;1."
-msgstr "Les valeurs que vous pouvez définir avec <command>cgset</command> peuvent dépendre des valeurs définies plus haut dans la hiérarchie. Par exemple, si <filename>group1</filename> est limité à l'unique utilisation de CPU&nbsp;0 sur un système, vous ne pourrez pas définir <filename>group1/subgroup1</filename> pour qu'il utilise CPUs&nbsp;0 et 1, ou pour qu'il utilise uniquement CPU&nbsp;1."
+msgstr "Les valeurs que l'on peut définir avec <command>cgset</command> peuvent dépendre des valeurs définies plus haut dans la hiérarchie. Par exemple, si <filename>group1</filename> est limité à l'unique utilisation de CPU&nbsp;0 sur un système, on ne peut pas définir <filename>group1/subgroup1</filename> pour qu'il utilise CPUs&nbsp;0 et 1, ou pour qu'il utilise uniquement CPU&nbsp;1."
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "You can also use <command>cgset</command> to copy the parameters of one "
 "cgroup into another, existing cgroup. For example:"
-msgstr "Vous pouvez aussi utiliser <command>cgset</command> pour copier les paramètres d'un groupe de contrôle à un autre groupe de contrôle existant. Par exemple :"
+msgstr "On peut aussi utiliser <command>cgset</command> pour copier les paramètres d'un groupe de contrôle dans un autre groupe de contrôle existant. Par exemple :"
 
 #. Tag: screen
 #, no-c-format
@@ -1019,14 +1019,14 @@ msgid ""
 "<replaceable>path_to_source_cgroup</replaceable> is the path to the cgroup "
 "whose parameters are to be copied, relative to the root group of the "
 "hierarchy"
-msgstr "<replaceable>path_to_source_cgroup</replaceable> est le chemin d'accès au groupe de contrôle dont les paramètres sont à copier de manière relative au groupe racine de la hiérarchie"
+msgstr "<replaceable>path_to_source_cgroup</replaceable> est le chemin d'accès au groupe de contrôle dont les paramètres sont à copier, chemin se rapportant au groupe racine de la hiérarchie"
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "<replaceable>path_to_target_cgroup</replaceable> is the path to the "
 "destination cgroup, relative to the root group of the hierarchy"
-msgstr "<replaceable>path_to_target_cgroup</replaceable> est le chemin d'accès au groupe de contrôle destinataire relatif au groupe racine de la hiérarchie"
+msgstr "<replaceable>path_to_target_cgroup</replaceable> est le chemin d'accès au groupe de contrôle destinataire, chemin relatif au groupe racine de la hiérarchie"
 
 #. Tag: para
 #, no-c-format
@@ -1035,7 +1035,7 @@ msgid ""
 "before you copy parameters from one group to another, or the command will "
 "fail. For more information on mandatory parameters, refer to <xref linkend"
 "=\"mandatory-parameters\" />."
-msgstr "Assurez-vous que tous les paramètres obligatoires pour les divers sous-systèmes soient bien installés avant de copier des paramètres d'un groupe à un autre, sinon la commande échouera. Pour obtenir plus d'informations sur les paramètres obligatoires, reportez-vous à <xref linkend=\"mandatory-parameters\" />."
+msgstr "S'assurer que tous les paramètres obligatoires pour les divers sous-systèmes sont bien installés avant de copier des paramètres d'un groupe à un autre, sinon la commande échouera. Pour obtenir plus d'informations sur les paramètres obligatoires, se reporter à <xref linkend=\"mandatory-parameters\" />."
 
 #. Tag: para
 #, no-c-format
@@ -1045,7 +1045,7 @@ msgid ""
 "example, this command inserts the value <literal>0-1</literal> into the "
 "<filename>cpuset.cpus</filename> pseudo-file of the cgroup "
 "<systemitem>group1</systemitem>:"
-msgstr "Pour définir des paramètres dans un groupe de contrôle, insérez les valeurs dans le pseudofichier du sous-système correspondant à l'aide de la commande <command>echo</command>. Par exemple, cette commande insère la valeur <literal>0-1</literal> dans le pseudofichier <filename>cpuset.cpus</filename> du groupe de contrôle <systemitem>group1</systemitem> :"
+msgstr "Pour définir des paramètres dans un groupe de contrôle, insérer les valeurs dans le pseudo-fichier du sous-système correspondant à l'aide de la commande <command>echo</command>. Par exemple, cette commande insère la valeur <literal>0-1</literal> dans le pseudo-fichier <filename>cpuset.cpus</filename> du groupe de contrôle <systemitem>group1</systemitem> :"
 
 #. Tag: screen
 #, no-c-format
@@ -1057,19 +1057,19 @@ msgstr "~]# <command>echo 0-1 &gt; /cgroup/cpuset/group1/cpuset.cpus</command>"
 msgid ""
 "With this value in place, the tasks in this cgroup are restricted to CPUs 0 "
 "and 1 on the system."
-msgstr "Avec cette valeur en place, les tâches de ce groupe de contrôle sont restreintes aux CPUs 0 et 1 du système."
+msgstr "Avec cette valeur en place, les tâches de ce groupe de contrôle sont restreintes aux CPU 0 et 1 du système."
 
 #. Tag: title
 #, no-c-format
 msgid "Moving a Process to a Control Group"
-msgstr "Déplacer un processus sur un groupe de contrôle"
+msgstr "Déplacer un processus vers un groupe de contrôle"
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "Move a process into a cgroup by running the <command>cgclassify</command> "
 "command:"
-msgstr "Vous pouvez aussi déplacer un processus en exécutant la commande <command>cgclassify</command> :"
+msgstr "On peut aussi déplacer un processus en exécutant la commande <command>cgclassify</command> :"
 
 #. Tag: screen
 #, no-c-format
@@ -1101,7 +1101,7 @@ msgid ""
 "name exist in multiple hierarchies, the <option>-g</option> option moves the"
 " processes in each of those groups. Ensure that the cgroup exists within "
 "each of the hierarchies whose subsystems you specify here."
-msgstr "<replaceable>subsystems</replaceable> est une liste des sous-systèmes séparée par des virgules, ou <literal>*</literal> pour lancer le processus dans les hiérarchies associées à tous les sous-systèmes disponibles. Remarquez que si des groupes de contrôle du même nom existent dans de multiples hiérarchies, l'option <option>-g</option> déplace les processus dans chacun de ces groupes. Assurez-vous que le groupe de contrôle existe dans chacune des hiérarchies dont vous spécifiez les sous-systèmes ici."
+msgstr "<replaceable>subsystems</replaceable> est une liste des sous-systèmes séparés par des virgules, ou <literal>*</literal> pour lancer le processus dans les hiérarchies associées à tous les sous-systèmes disponibles. Remarquer que si des groupes de contrôle du même nom existent dans de multiples hiérarchies, l'option <option>-g</option> déplace les processus dans chacun de ces groupes. S'assurer que le groupe de contrôle existe dans chacune des hiérarchies dont on spécifie ici les sous-systèmes."
 
 #. Tag: para
 #, no-c-format
@@ -1115,7 +1115,7 @@ msgstr "<replaceable>path_to_cgroup</replaceable> est le chemin vers le groupe d
 msgid ""
 "<replaceable>pidlist</replaceable> is a space-separated list of "
 "<firstterm>process identifier</firstterm> (PIDs)"
-msgstr "<replaceable>pidlist</replaceable> est une liste d'<firstterm>identifiants de processus</firstterm> (ou PID) séparée par des espace"
+msgstr "<replaceable>pidlist</replaceable> est une liste d'<firstterm>identifiants de processus</firstterm> (ou PID) séparés par des espace"
 
 #. Tag: para
 #, no-c-format
@@ -1127,7 +1127,7 @@ msgid ""
 "allocated to cgroups based on the settings found in "
 "<filename>/etc/cgrules.conf</filename>. The process itself, however, will "
 "remain in the cgroup in which you started it."
-msgstr "Vous pouvez aussi ajouter l'option <option>-- sticky</option> avant le <replaceable>pid</replaceable> afin de conserver tout processus enfant dans le même groupe de contrôle. Si vous ne spécifiez pas cette option et que le démon <application>cgred</application> est en cours d'exécution, les processus enfants seront alloués aux groupes de contrôle selon les paramètres se trouvant dans <filename>/etc/cgrules.conf</filename>. Le processus, quant à lui, restera dans le groupe de contrôle à partir duquel vous l'avez démarré."
+msgstr "On peut aussi ajouter l'option <option>-- sticky</option> avant le <replaceable>pid</replaceable> afin de conserver tout processus enfant dans le même groupe de contrôle. Si cette option n'est pas spécifiée et que le démon <application>cgred</application> est en cours d'exécution, les processus enfants seront alloués aux groupes de contrôle selon les paramètres se trouvant dans <filename>/etc/cgrules.conf</filename>. Le processus, quant à lui, restera dans le groupe de contrôle à partir duquel il a été  démarré."
 
 #. Tag: para
 #, no-c-format
@@ -1136,7 +1136,7 @@ msgid ""
 "simultaneously. For example, this command moves the processes with PIDs "
 "<literal>1701</literal> and <literal>1138</literal> into cgroup "
 "<filename>group1/</filename>:"
-msgstr "À l'aide de <command>cgclassify</command>, vous pouvez déplacer plusieurs processus simultanément. Par exemple, cette commande déplace les processus avec les PIDs <literal>1701</literal> et <literal>1138</literal> dans le groupe de contrôle <filename>group1/</filename> :"
+msgstr "Il est possible de déplacer plusieurs processus simultanément à l'aide de <command>cgclassify</command>. Dans l'exemple qui suit, cette commande déplace les processus avec les PID <literal>1701</literal> et <literal>1138</literal> dans le groupe de contrôle <filename>group1/</filename> :"
 
 #. Tag: screen
 #, no-c-format
@@ -1148,7 +1148,7 @@ msgstr "~]# <command>cgclassify -g cpu,memory:group1 1701 1138</command>"
 msgid ""
 "Note that the PIDs to be moved are separated by spaces and that the groups "
 "specified should be in different hierarchies."
-msgstr "Remarquez que les PIDs à déplacer sont séparés par des espaces et que les groupes spécifiés doivent être dans différentes hiérarchies."
+msgstr "Remarquer que les PIDs à déplacer sont séparés par des espaces et que les groupes spécifiés doivent être dans différentes hiérarchies."
 
 #. Tag: para
 #, no-c-format
@@ -1157,7 +1157,7 @@ msgid ""
 "<filename>tasks</filename> file of the cgroup. For example, to move a "
 "process with the PID <literal>1701</literal> into a cgroup at "
 "<filename>/cgroup/lab1/group1/</filename>:"
-msgstr "Pour déplacer un processus vers un groupe de contrôle, écrivez son PID sur le fichier des <filename>tâches</filename> (<filename>tasks</filename>) du groupe de contrôle. Par exemple, pour déplacer un processus avec le PID <literal>1701</literal> dans un groupe de contrôle sur <filename>/cgroup/lab1/group1/</filename> :"
+msgstr "Pour déplacer un processus vers un groupe de contrôle, écrire son PID dans le fichier <filename>tasks</filename> du groupe de contrôle. Par exemple, pour déplacer un processus avec le PID <literal>1701</literal> dans un groupe de contrôle sur <filename>/cgroup/lab1/group1/</filename> :"
 
 #. Tag: screen
 #, no-c-format
@@ -1208,7 +1208,7 @@ msgid ""
 "parameters specified in the <literal>/usergroup/staff</literal> cgroup. To "
 "associate particular commands with particular cgroups, add the "
 "<replaceable>command</replaceable> parameter, as follows:"
-msgstr "Cette entrée spécifie que tout processus appartenant à l'utilisateur nommé <literal>maria</literal> peuvent accéder au sous-système des périphériques selon les paramètres spécifiés dans le groupe de contrôle <literal>/usergroup/staff</literal>. Pour associer des commandes particulières à des groupes de contrôle particuliers, ajoutez le paramètre <replaceable>command</replaceable> comme suit :"
+msgstr "Cette entrée spécifie que tout processus appartenant à l'utilisateur nommé <literal>maria</literal> peut accéder au sous-système des périphériques selon les paramètres spécifiés dans le groupe de contrôle <literal>/usergroup/staff</literal>. Pour associer des commandes particulières à des groupes de contrôle particuliers, ajouter le paramètre <replaceable>command</replaceable> comme suit :"
 
 #. Tag: programlisting
 #, no-c-format
@@ -1229,7 +1229,8 @@ msgid ""
 "process might run for a short time in the wrong group. Furthermore, if the "
 "process quickly spawns children while in the wrong group, these children "
 "might not be moved."
-msgstr "L'entrée spécifie maintenant que lorsque l'utilisateur nommé <literal>maria</literal> utilise la commande <command>ftp</command>, le processus est automatiquement déplacé sur le groupe de contrôle <systemitem>/usergroup/staff/ftp</systemitem> dans la hiérarchie qui contient le sous-système <systemitem>devices</systemitem>. Remarquez cependant que le démon déplace le processus sur le groupe de contrôle uniquement après que la condition appropriée aura été remplie. Ainsi, le processus <command>ftp</command> peut être exécuté pendant un court moment dans le mauvais groupe. En outre, si le processus génère des enfants alors qu'il se trouve dans le mauvais groupe, ces enfants pourraient ne pas être déplacés."
+msgstr ""
+"L'entrée spécifie maintenant que lorsque l'utilisateur nommé <literal>maria</literal> utilise la commande <command>ftp</command>, le processus est automatiquement déplacé sur le groupe de contrôle <systemitem>/usergroup/staff/ftp</systemitem> dans la hiérarchie qui contient le sous-système <systemitem>devices</systemitem>. Remarquer cependant que le démon déplace le processus sur le groupe de contrôle uniquement après que la condition appropriée est remplie. Ainsi, le processus <command>ftp</command> peut être exécuté pendant un court moment dans le mauvais groupe. En outre, si le processus génère hâtivement des enfants alors qu'il se trouve dans le mauvais groupe, ces enfants pourraient ne pas être déplacés."
 
 #. Tag: para
 #, no-c-format
@@ -1245,21 +1246,21 @@ msgid ""
 "indicates a group instead of an individual user. For example, "
 "<literal>@admins</literal> are all users in the <literal>admins</literal> "
 "group."
-msgstr "<literal>@</literal> — lorsque préfixé à <replaceable>user</replaceable>, ceci indique un groupe au lieu d'un utilisateur unique. Par exemple, <literal>@admins</literal> signale tous les utilisateurs faisant partie du groupe <literal>admins</literal>."
+msgstr "<literal>@</literal> — en préfixe de <replaceable>user</replaceable>, ceci indique un groupe au lieu d'un utilisateur unique. Par exemple, <literal>@admins</literal> signale tous les utilisateurs faisant partie du groupe <literal>admins</literal>."
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "<literal>*</literal> — represents \"all\". For example, <literal>*</literal>"
 " in the <literal>subsystem</literal> field represents all subsystems."
-msgstr "<literal>*</literal> — représente \"tout\". Par exemple, <literal>*</literal> dans le champ <literal>sous-système</literal> représente tous les sous-systèmes."
+msgstr "<literal>*</literal> — signifie \"tout\". Par exemple, <literal>*</literal> dans le champ <literal>sous-système</literal> représente tous les sous-systèmes."
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "<literal>%</literal> — represents an item the same as the item in the line "
 "above. For example:"
-msgstr "<literal>%</literal> — représente un élément qui est le même que l'élément présent dans la ligne du dessus. Par exemple :"
+msgstr "<literal>%</literal> — représente un élément qui est identique à celui de la ligne du dessus. Par exemple :"
 
 #. Tag: programlisting
 #, no-c-format
@@ -1288,7 +1289,7 @@ msgid ""
 "class=\"resource\">cpuset</systemitem> subsystem, the "
 "<filename>cpuset.cpus</filename> and <filename>cpuset.mems</filename> "
 "parameters must be defined for that cgroup."
-msgstr "Certains sous-systèmes ont des paramètres obligatoires à définir avant de déplacer une tâche dans un groupe de contrôle qui utilise l'un de ces sous-systsèmes. Par exemple, avant de pouvoir déplacer une tâche dans un groupe de contrôle qui utilise le sous-système <systemitem class=\"resource\">cpuset</systemitem>, les paramètres <filename>cpuset.cpus</filename> et <filename>cpuset.mems</filename> doivent être définis pour ce groupe de contrôle."
+msgstr "Certains sous-systèmes ont des paramètres à définir obligatoirement avant de déplacer une tâche dans un groupe de contrôle utilisant l'un de ces sous-systèmes. Par exemple, avant de déplacer une tâche dans un groupe de contrôle qui utilise le sous-système <systemitem class=\"resource\">cpuset</systemitem>, les paramètres <filename>cpuset.cpus</filename> et <filename>cpuset.mems</filename> doivent avoir été définis pour ce groupe de contrôle."
 
 #. Tag: para
 #, no-c-format
@@ -1298,14 +1299,14 @@ msgid ""
 "been set for any controllers used in the examples. If you have not already "
 "configured the relevant controllers, you cannot copy example commands "
 "directly from this section and expect them to work on your system."
-msgstr "Les exemples dans cette section illustrent la syntaxe correcte pour la commande, mais ne fonctionnent que sur les systèmes sur lesquels les paramètres obligatoires ont été définis pour tout contrôleur utilisé dans les exemples. Si vous n'avez pas déjà configuré les contrôleurs appropriés, vous ne pourrez pas copier les commandes d'exemple directement depuis cette section et vous attendre à ce qu'elles fonctionnent sur votre système."
+msgstr "Les exemples de cette section illustrent la syntaxe correcte pour la commande, mais ne fonctionnent que sur les systèmes sur lesquels les paramètres obligatoires ont été définis pour chacun des contrôleurs utilisés dans les exemples. Si les contrôleurs appropriés n'ont pas été configurés préalablement, il ne sera pas possible de recopier les commandes d'exemple directement depuis cette section et espérer les voir fonctionner sur un système."
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "Refer to <xref linkend=\"ch-Subsystems_and_Tunable_Parameters\" /> for a "
 "description of which parameters are mandatory for given subsystems."
-msgstr "Reportez-vous à <xref linkend=\"ch-Subsystems_and_Tunable_Parameters\" /> pour obtenir une description des paramètres obligatoires pour un sous-système donné."
+msgstr "Se reporter à <xref linkend=\"ch-Subsystems_and_Tunable_Parameters\" /> pour obtenir une description des paramètres obligatoires pour un sous-système donné."
 
 #. Tag: para
 #, no-c-format
@@ -1315,7 +1316,7 @@ msgid ""
 "<application>lynx</application> web browser within the "
 "<systemitem>group1</systemitem> cgroup, subject to the limitations imposed "
 "on that group by the <systemitem>cpu</systemitem> subsystem:"
-msgstr "Vous pouvez aussi lancer des processus dans un groupe de contrôle en exécutant la commande <command>cgexec</command>. Par exemple, cette commande lance le navigateur web <application>lynx</application> dans le groupe de contrôle <systemitem>group1</systemitem>, sujet à toutes les limitations imposées par le sous-système <systemitem>cpu</systemitem> :"
+msgstr "Il est aussi possible de lancer des processus dans un groupe de contrôle en exécutant la commande <command>cgexec</command>. Par exemple, cette commande lance le navigateur web <application>lynx</application> dans le groupe de contrôle <systemitem>group1</systemitem>, assujetti à toutes les limitations imposées par le sous-système <systemitem>cpu</systemitem> :"
 
 #. Tag: screen
 #, no-c-format
@@ -1349,7 +1350,7 @@ msgid ""
 "<option>-g</option> option creates processes in each of those groups. Ensure"
 " that the cgroup exists within each of the hierarchies whose subsystems you "
 "specify here."
-msgstr "<replaceable>subsystems</replaceable> est une liste des sous-systèmes séparée par des virgules, ou <literal>*</literal> sert à lancer le processus dans les hiérarchies associées à tous les sous-systèmes disponibles. Remarquez que comme pour <command>cgset</command>, qui est décrit dans la <xref linkend=\"Setting_Parameters\" />, si des groupes de contrôle de même nom existent dans de multiples hiérarchies, l'option <option>-g</option> crée des processus dans chacun de ces groupes. Assurez-vous que le groupe de contrôle existe bien dans cahcune des hiérarchies dont vous spécifiez les sous-systèmes."
+msgstr "<replaceable>subsystems</replaceable> est soit une liste des sous-systèmes séparés par des virgules, soit <literal>*</literal> qui sert à lancer le processus dans les hiérarchies associées à tous les sous-systèmes disponibles. Remarquer que comme pour <command>cgset</command>, qui est décrit dans la <xref linkend=\"Setting_Parameters\" />, si des groupes de contrôle de même nom existent dans de multiples hiérarchies, l'option <option>-g</option> crée des processus dans chacun de ces groupes. S'assurer que le groupe de contrôle existe bien dans chacune des hiérarchies dont on spécifie les sous-systèmes."
 
 #. Tag: para
 #, no-c-format
@@ -1378,7 +1379,7 @@ msgid ""
 "allocated to cgroups based on the settings found in "
 "<filename>/etc/cgrules.conf</filename>. The process itself, however, will "
 "remain in the cgroup in which you started it."
-msgstr "Vous pouvez aussi ajouter l'option <option>-- sticky</option> avant <replaceable>command</replaceable> afin de conserver tout processus enfant dans le même groupe de contrôle. Si vous ne saisissez pas cette option et que le démon <application>cgred</application> est en cours d'exécution, les processus enfants seront alloués aux groupes de contrôle en fonction des paramètres trouvés sur <filename>/etc/cgrules.conf</filename>. Le processus, toutefois, restera dans le groupe de contrôle à partir duquel il a été démarré."
+msgstr "Il est aussi possible d'ajouter l'option <option>--sticky</option> avant <replaceable>command</replaceable> afin de conserver tout processus enfant dans le même groupe de contrôle. Si cette option n'est pas positionnée et que le démon <application>cgred</application> est en cours d'exécution, les processus enfants seront alloués aux groupes de contrôle en fonction des paramètres trouvés sur <filename>/etc/cgrules.conf</filename>. Le processus lui-même restera toutefois dans le groupe de contrôle à partir duquel il a été démarré."
 
 #. Tag: para
 #, no-c-format
@@ -1388,7 +1389,7 @@ msgid ""
 "cgroup is to move your shell process to that group (refer to <xref linkend"
 "=\"sec-Moving_a_Process_to_a_Control_Group\" />), and then launch the "
 "process from that shell. For example:"
-msgstr "Lorsque vous lancez un nouveau processus, il hérite du groupe de son processus parent. Ainsi, déplacer votre processus shell sur un groupe de contrôle puis lancer le processus à partir de ce shell constitue une méthode alternative pour démarrer un processus dans un groupe de contrôle particulier (reportez-vous à la <xref linkend=\"sec-Moving_a_Process_to_a_Control_Group\" />). Par exemple :"
+msgstr "Lorsqu'un nouveau processus est lancé, il hérite du groupe de son processus parent. Ainsi, déplacer votre processus shell sur un groupe de contrôle puis lancer le processus à partir de ce shell constitue une variante pour démarrer un processus dans un groupe de contrôle particulier (se reporter à <xref linkend=\"sec-Moving_a_Process_to_a_Control_Group\" />). Par exemple :"
 
 #. Tag: screen
 #, no-c-format
@@ -1403,7 +1404,7 @@ msgid ""
 "Note that after exiting <application>lynx</application>, your existing shell"
 " is still in the <systemitem>group1</systemitem> cgroup. Therefore, an even "
 "better way would be:"
-msgstr "Remarquez qu'après la fermeture de <application>lynx</application>, le shell existant se trouve toujours dans le groupe de contrôle <systemitem>group1</systemitem>. Ainsi, la méthode suivante est encore meilleure : "
+msgstr "Remarquer qu'après la fermeture de <application>lynx</application>, le shell existant se trouve toujours dans le groupe de contrôle <systemitem>group1</systemitem>. Ainsi, la méthode suivante est préférable : "
 
 #. Tag: screen
 #, no-c-format
@@ -1449,7 +1450,7 @@ msgid ""
 " where <replaceable>subsystem</replaceable> is a subsystem associated with a"
 " particular hierarchy, and <replaceable>control_group</replaceable> is a "
 "cgroup in that hierarchy. For example:"
-msgstr "Pour lancer un service dans un groupe de contrôle, modifiez son fichier dans le répertoire <filename>/etc/sysconfig</filename> de manière à inclure une entrée sous la forme <literal>CGROUP_DAEMON=\"<replaceable>subsystem</replaceable>:<replaceable>control_group</replaceable>\"</literal>, où <replaceable>subsystem</replaceable> est un sous-système associé à une hiérarchie particulière, et où <replaceable>control_group</replaceable> est un groupe de contrôle dans cette hiérarchie. Par exemple :"
+msgstr "Pour lancer un service dans un groupe de contrôle, modifier son fichier dans le répertoire <filename>/etc/sysconfig</filename> de manière à inclure une entrée sous la forme <literal>CGROUP_DAEMON=\"<replaceable>subsystem</replaceable>:<replaceable>control_group</replaceable>\"</literal>, où <replaceable>subsystem</replaceable> est un sous-système associé à une hiérarchie particulière, et où <replaceable>control_group</replaceable> est un groupe de contrôle dans cette hiérarchie. Par exemple :"
 
 #. Tag: programlisting
 #, no-c-format
@@ -1486,7 +1487,7 @@ msgid ""
 "In each subgroup and in the root group, define the "
 "<filename>cpu.shares</filename> configuration option and set it to "
 "<literal>1</literal>."
-msgstr "Dans chaque sous-groupe est dans le groupe racine, définir l'option de configuration <filename>cpu.shares</filename> à <literal>1</literal>."
+msgstr "Dans chaque sous-groupe et dans le groupe racine, définir l'option de configuration <filename>cpu.shares</filename> à <literal>1</literal>."
 
 #. Tag: para
 #, no-c-format
@@ -1496,7 +1497,7 @@ msgid ""
 "<filename>/rootgroup/red/tasks</filename> and "
 "<filename>/rootgroup/blue/tasks</filename>) ends up consuming 33.33% of the "
 "CPU:"
-msgstr "Dans le scénario ci-dessus, un processus placé dans chaque groupe (i.e, une tâche dans <filename>/rootgroup/tasks</filename>, <filename>/rootgroup/red/tasks</filename> et <filename>/rootgroup/blue/tasks</filename>) obtiendra 33.33% du CPU :"
+msgstr "Dans le scénario ci-dessus, un processus placé dans chaque groupe (i.e, une tâche dans <filename>/rootgroup/tasks</filename>, dans <filename>/rootgroup/red/tasks</filename> et dans <filename>/rootgroup/blue/tasks</filename>) obtiendra 33.33% de la CPU :"
 
 #. Tag: screen
 #, no-c-format
@@ -1515,7 +1516,7 @@ msgid ""
 "<literal>red</literal> result in the 33.33% percent of the CPU assigned to "
 "that specific subgroup to be split among the multiple processes in that "
 "subgroup."
-msgstr "Tout autre processus placé dans les sous-groupes <literal>blue</literal> et <literal>red</literal> obtiendra sa part des 33.33% du CPU assigné à ce sous-groupe."
+msgstr "Tout autre processus placé dans les sous-groupes <literal>blue</literal> et <literal>red</literal> obtiendra sa part des 33.33% de la CPU assignée à ce sous-groupe qui les partagera entre chacun de ses processus."
 
 #. Tag: para
 #, no-c-format
@@ -1527,7 +1528,7 @@ msgid ""
 "<filename>/rootgroup/blue/</filename> contains one process, and the "
 "<filename>cpu.shares</filename> option is set to <literal>1</literal> in all"
 " groups, the CPU resource is divided as follows:"
-msgstr "Cependant, plusieurs processus placés dans le groupe racine résultera en un partage par processus plutôt que par sous-groupe. Par exemple, si <filename>/rootgroup/</filename> contient trois processus, si <filename>/rootgroup/red/</filename> en contient un et <filename>/rootgroup/blue/</filename> un autre, et que l'option <filename>cpu.shares</filename> est définie à <literal>1</literal> dans tous les groupes, alors la ressource CPU sera répartie comme suit :"
+msgstr "Cependant, plusieurs processus placés dans le groupe racine entraîneront un partage par processus plutôt que par sous-groupe. Par exemple, si <filename>/rootgroup/</filename> contient trois processus, si <filename>/rootgroup/red/</filename> en contient un et <filename>/rootgroup/blue/</filename> un autre, et que l'option <filename>cpu.shares</filename> est définie à <literal>1</literal> dans tous les groupes, alors la ressource CPU sera répartie comme suit :"
 
 #. Tag: screen
 #, no-c-format
@@ -1550,7 +1551,7 @@ msgid ""
 "<filename>cpu.shares</filename> or <filename>blkio.weight</filename>). To "
 "move all tasks from the root group into a specific subgroup, you can use the"
 " following commands:"
-msgstr "Ainsi, il est recommandé de déplacer tous les processus du groupe racine vers un sous-groupe spécifique lorsque les options de configuration sur <systemitem class=\"resource\">blkio</systemitem> et <systemitem class=\"resource\">cpu</systemitem> divisent les ressources disponibles sur la base d'un poids ou d'un découpage (par exemple, <filename>cpu.shares</filename> ou <filename>blkio.weight</filename>). Pour déplacer toutes les tâches d'un groupe racine dans lun sous-groupe spécifique, il est possible d'utiliser la commande suivante :"
+msgstr "Ainsi, il est recommandé de déplacer tous les processus du groupe racine vers un sous-groupe spécifique lorsque les options de configuration sur <systemitem class=\"resource\">blkio</systemitem> et <systemitem class=\"resource\">cpu</systemitem> divisent les ressources disponibles sur la base d'un poids ou d'un découpage (par exemple, <filename>cpu.shares</filename> ou <filename>blkio.weight</filename>). Pour déplacer toutes les tâches d'un groupe racine dans un sous-groupe spécifique, il est possible d'utiliser la commande suivante :"
 
 #. Tag: screen
 #, no-c-format
@@ -1575,7 +1576,7 @@ msgid ""
 "<filename>/etc/cgconfig.conf</filename> file. <xref linkend=\"ex-cgsnapshot-"
 "usage\" /> shows an example usage of the "
 "<application>cgsnapshot</application> utility."
-msgstr "La configuration du fichier <filename>/etc/cgconfig.conf</filename> peut être générée depuis la configuration cgroup actuelle en utilisant l'utilitaire  <application>cgsnapshot</application>. Cet utilitaire prend un cliché de l'état courant de tous les sous-sytèmes et leurs cgroup et renvoie leur configuration telle qu'elle pourrait apparaître dans le fichier <filename>/etc/cgconfig.conf</filename>. Le paragraphe <xref linkend=\"ex-cgsnapshot-usage\" /> montre un exemple d'utilisation de l'utilitaire <application>cgsnapshot</application>."
+msgstr "La configuration du fichier <filename>/etc/cgconfig.conf</filename> peut être générée depuis la configuration cgroup actuelle en utilisant l'utilitaire  <application>cgsnapshot</application>. Cet utilitaire prend un cliché de l'état courant de tous les sous-sytèmes et de leurs groupes de contrôles et renvoie leur configuration telle qu'elle pourrait apparaître dans le fichier <filename>/etc/cgconfig.conf</filename>. Le paragraphe <xref linkend=\"ex-cgsnapshot-usage\" /> montre un exemple d'utilisation de l'utilitaire <application>cgsnapshot</application>."
 
 #. Tag: title
 #, no-c-format
@@ -1637,7 +1638,7 @@ msgstr ""
 "L'utilisation de la commande <command>cgsnapshot</command> (avec l'option <option>-s</option> et un fichier "
 "<filename>/etc/cgsnapshot_blacklist.conf</filename> vide<footnote id=\"footnote-default-cpu-shares\"> "
 "<para>Le paramètre <systemitem>cpu.shares</systemitem> est spécifié dans le fichier <filename>/etc/cgsnapshot_blacklist.conf</filename> par défaut, ce qui provoque son omission dans l'affichage dans <xref linkend=\"ex-cgsnapshot-usage\" />. Ainsi, pour les besoins de l'exemple, un fichier "
-"<filename>/etc/cgsnapshot_blacklist.conf</filename> vide est utilisée.</para> "
+"<filename>/etc/cgsnapshot_blacklist.conf</filename> vide sera utilisé.</para> "
 "</footnote>) produit l'affichage suivant :"
 
 #. Tag: screen
@@ -1705,7 +1706,7 @@ msgid ""
 "=\"sec-cgsnapshot_whitelist\" />."
 msgstr ""
 "L'option <option>-s</option> utilisée dans l'exemple qui précéde indique à "
-"<application>cgsnapshot</application> d'ignorer tous les avertissements dans le fichier de sortie qui pourraient être causées par des paramètres indéfinis dans la liste noire ou la liste blanche de l'utilitaire  <application>cgsnapshot</application>. "
+"<application>cgsnapshot</application> d'ignorer tous les avertissements dans le fichier de sortie résultant de paramètres indéfinis dans la liste noire ou la liste blanche de l'utilitaire  <application>cgsnapshot</application>. "
 "Pour plus d'informations sur les listes noires de paramètres, cf. <xref linkend=\"sec-cgsnapshot_blacklist\" "
 "/>. Pour plus d'informations sur les listes blanches de paramètres, cf. <xref linkend"
 "=\"sec-cgsnapshot_whitelist\" />."
@@ -1731,7 +1732,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "The -f option overwrites the specified file"
-msgstr "L'option -f écrasera le fichier spécifié"
+msgstr "L'option -f écrase le fichier spécifié"
 
 #. Tag: para
 #, no-c-format
@@ -1747,7 +1748,7 @@ msgid ""
 "The cgsnapshot utility can also create configuration files per subsystem. By"
 " specifying the name of a subsystem, the output will consist of the "
 "corresponding configuration for that subsystem:"
-msgstr "L'utilitaire <application>cgsnapshot</application> peut aussi créer des fichiers de configuration par sous-système. Si un sous-système est spécifié par son nom, la sortie en sera la configuration correspondante pour ce sous-système :"
+msgstr "L'utilitaire <application>cgsnapshot</application> peut aussi créer des fichiers de configuration par sous-système. Si un sous-système est spécifié par son nom, la sortie en sera la configuration correspondante :"
 
 #. Tag: screen
 #, no-c-format
@@ -1871,7 +1872,7 @@ msgstr "Trouver un processus"
 #. Tag: para
 #, no-c-format
 msgid "To find the cgroup to which a process belongs, run:"
-msgstr "Pour trouver le groupe de contrôle auquel un processus appartient, exécutez : "
+msgstr "Pour trouver le groupe de contrôle auquel un processus appartient, exécuter : "
 
 #. Tag: screen
 #, no-c-format
@@ -1881,7 +1882,7 @@ msgstr "~]$ <command>ps -O cgroup</command>"
 #. Tag: para
 #, no-c-format
 msgid "Or, if you know the PID for the process, run:"
-msgstr "Ou bien, si vous connaissez le PID du processus, exécutez :"
+msgstr "Ou bien, si le PID du processus est connu, exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -1898,7 +1899,7 @@ msgstr "Trouver un sous-système"
 msgid ""
 "To find the subsystems that are available in your kernel and how are they "
 "mounted together to hierarchies, run:"
-msgstr "Pour trouver les sous-systèmes qui sont disponibles dans le noyau et de quelle manière ils sont montés ensembles sur des hiérarchies, exécutez :"
+msgstr "Pour trouver les sous-systèmes disponibles dans le noyau et la façon dont ils sont montés ensembles sur des hiérarchies, exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -1908,7 +1909,7 @@ msgstr "~]$ <command>cat /proc/cgroups</command>"
 #. Tag: para
 #, no-c-format
 msgid "Or, to find the mount points of particular subsystems, run:"
-msgstr "Sinon, pour trouver les points de montage de sous-systèmes particuliers, exécutez :"
+msgstr "Sinon, pour trouver les points de montage de sous-systèmes particuliers, exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -1921,7 +1922,7 @@ msgid ""
 "where <replaceable>subsystems</replaceable> is a list of the subsystems in "
 "which you are interested. Note that the <command>lssubsys -m</command> "
 "command returns only the top-level mount point per each hierarchy."
-msgstr "ou <replaceable>subsystems</replaceable> est une liste des sous-systèmes qui vous intéresserait. Remarquez que la commande <command>lssubsys -m</command> retourne uniquement le point de montage le plus haut de chaque hiérarchie."
+msgstr "ou <replaceable>subsystems</replaceable> est une liste des sous-systèmes intéressant l'utilisateur. Remarquer que la commande <command>lssubsys -m</command> retourne uniquement le point de montage le plus haut de chaque hiérarchie."
 
 #. Tag: title
 #, no-c-format
@@ -1936,7 +1937,7 @@ msgid ""
 "that directory to obtain a list of hierarchies. If "
 "<application>tree</application> is installed on your system, run it to "
 "obtain an overview of all hierarchies and the cgroups within them:"
-msgstr "Il est recommandé de monter les hiérarchies sous <filename>/cgroup</filename>. En supposant que ce soit le cas sur votre système, répertoriez ou naviguez sur le contenu de ce répertoire pour obtenir une liste des hiérarchies. Si <application>tree</application> est installé sur votre système, exécutez-le pour obtenir une vue d'ensemble de toutes les hiérarchies et de tous les groupes de contrôle se trouvant dedans :"
+msgstr "Il est recommandé de monter les hiérarchies sous <filename>/cgroup</filename>. En supposant que ce soit le cas sur votre système, répertorier ou naviguer sur le contenu de ce répertoire pour obtenir une liste des hiérarchies. Si <application>tree</application> est installé sur votre système, l'exécuter pour obtenir une vue d'ensemble de toutes les hiérarchies et de tous les groupes de contrôle qui s'y trouvent :"
 
 #. Tag: screen
 #, no-c-format
@@ -1951,7 +1952,7 @@ msgstr "Trouver des groupes de contrôle"
 #. Tag: para
 #, no-c-format
 msgid "To list the cgroups on a system, run:"
-msgstr "Pour répertorier les groupes de contrôle sur un système, exécutez : "
+msgstr "Pour répertorier les groupes de contrôle sur un système, exécuter : "
 
 #. Tag: screen
 #, no-c-format
@@ -1988,7 +1989,7 @@ msgstr "Afficher les paramètres des groupes de contrôle"
 #. Tag: para
 #, no-c-format
 msgid "To display the parameters of specific cgroups, run:"
-msgstr "Pour afficher les paramètres de groupes de contrôle spécifiques, exécutez :"
+msgstr "Pour afficher les paramètres de groupes de contrôle spécifiques, exécuter :"
 
 #. Tag: screen
 #, no-c-format
@@ -2003,7 +2004,7 @@ msgid ""
 "where <replaceable>parameter</replaceable> is a pseudo-file that contains "
 "values for a subsystem, and <replaceable>list_of_cgroups</replaceable> is a "
 "list of cgroups separated with spaces. For example:"
-msgstr "où <replaceable>parameter</replaceable> est un pseudofichier contenant les valeurs d'un sous-système et <replaceable>list_of_cgroups</replaceable> est une liste des groupes de contrôle séparée par des espaces. Par exemple :"
+msgstr "où <replaceable>parameter</replaceable> est un pseudo-fichier contenant les valeurs d'un sous-système et <replaceable>list_of_cgroups</replaceable> est une liste des groupes de contrôle séparés par des espaces. Par exemple :"
 
 #. Tag: screen
 #, no-c-format
@@ -2025,7 +2026,7 @@ msgstr "affiche les valeurs de <filename>cpuset.cpus</filename> et <filename>mem
 msgid ""
 "If you do not know the names of the parameters themselves, use a command "
 "like:"
-msgstr "Si vous ne connaissez pas les noms des paramètres, utilisez une commande comme :"
+msgstr "Si les noms des paramètres ne sont pas connus, utiliser une commande comme :"
 
 #. Tag: screen
 #, no-c-format
@@ -2048,14 +2049,14 @@ msgid ""
 "The <command>cgclear</command> command destroys all cgroups in all "
 "hierarchies. If you do not have these hierarchies stored in a configuration "
 "file, you will not be able to readily reconstruct them."
-msgstr "La commande <command>cgclear</command> supprime tous les groupes de contrôle dans toutes les hiérarchies. Si vous n'avez pas stocké ces hiérarchies dans un fichier de configuration, vous ne serez pas en mesure de les reconstruires."
+msgstr "La commande <command>cgclear</command> supprime tous les groupes de contrôle dans toutes les hiérarchies. Si ces hiérarchies n'ont pas été stockées dans un fichier de configuration, elle ne pourront être reconstruites facilement."
 
 #. Tag: para
 #, no-c-format
 msgid ""
 "To clear an entire cgroup file system, use the <command>cgclear</command> "
 "command."
-msgstr "Pour supprimer un système de fichiers de groupe de contrôle entier, utilisez la commande <command>cgclear</command>."
+msgstr "Pour supprimer un système de fichiers de groupe de contrôle en entier, utiliser la commande <command>cgclear</command>."
 
 #. Tag: para
 #, no-c-format
@@ -2064,7 +2065,7 @@ msgid ""
 " all cgroups are removed, and the file system itself is unmounted from the "
 "system, thus destroying all previously mounted hierarchies. Finally, the "
 "directory where the cgroup file system was mounted is actually deleted."
-msgstr "Toutes les tâches dans le groupe de contrôle sont réaffectées dans le noeud racine (root) des hiérarchies, tous les groupes de contrôle sont supprimés, et le système de fichiers est démonté du système, détruisant ainsi toutes les hiérarchies précédemment montées. Finalement, le répertoire où le système de fichiers du groupe de contrôle était monté est supprimé."
+msgstr "Toutes les tâches dans le groupe de contrôle sont réaffectées au noeud racine (root) des hiérarchies, tous les groupes de contrôle sont supprimés, et le système de fichiers lui-même est démonté du système, détruisant ainsi toutes les hiérarchies précédemment montées. Finalement, le répertoire où le système de fichiers du groupe de contrôle était monté est effectivement supprimé."
 
 #. Tag: title
 #, no-c-format
@@ -2094,12 +2095,12 @@ msgstr ""
 "leur création à l'aide du service <systemitem class=\"service\">cgconfig</systemitem>) aboutit à la création d'une entrée dans le"
 "<filename>/etc/mtab</filename> (le fichier contenant la liste des systèmes de fichiers montés). "
 "Ce changement est également reflété dans le fichier <filename>/proc/mounts</filename>."
-"Toutefois, le déchargement des cgroups avec la commande <command>cgclear</command>, de même que les autres commandes <command>cgconfig</command>, utilisent une interface directe au noyau dont les changements ne seront pas reflétés "
+"Toutefois, le déchargement des cgroups avec la commande <command>cgclear</command>, de même que les autres commandes <command>cgconfig</command>, utilisent une interface directe avec le noyau dont les changements ne seront pas reflétés "
 "dans le fichier <filename>/etc/mtab</filename> mais uniquement dans le fichier <filename>/proc/mounts</filename>. "
 "Ainsi, après le déchargement de cgroups avec la commande <command>cgclear</command>, ces cgroups démontés pourront être encore"
 "visibles dans le fichier <filename>/etc/mtab</filename>, et, par conséquent,"
-"affiché lorsque la commande <command>mount</command> est exécutée. Se reporter "
-"sur le contenu du fichier <filename>/proc/mounts</filename> pour une liste précise de tous les"
+"affichés lorsque la commande <command>mount</command> est exécutée. Se reporter "
+"au contenu du fichier <filename>/proc/mounts</filename> pour une liste précise de tous les"
 "cgroups montés."
 
 #. Tag: title
@@ -2128,7 +2129,7 @@ msgstr "Les pages de manuel de libcgroup-tools"
 msgid ""
 "<command>man 1 cgclassify</command> — the <command>cgclassify</command> "
 "command is used to move running tasks to one or more cgroups."
-msgstr "<command>man 1 cgclassify</command> — la commande <command>cgclassify</command> est utilisée pour déplacer des tâches en cours d'exécution sur un ou plusieurs groupe(s) de contrôle."
+msgstr "<command>man 1 cgclassify</command> — la commande <command>cgclassify</command> est utilisée pour déplacer des tâches en cours d'exécution sur un ou plusieurs groupes de contrôle."
 
 #. Tag: para
 #, no-c-format
