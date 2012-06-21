@@ -1,0 +1,969 @@
+# Copyright (C) 2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Jérôme Fenal <jfenal@gmail.com>, 2012.
+#   <jfenal@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Image WareHouse Daemon\n"
+"Report-Msgid-Bugs-To: http://news.gmane.org/gmane.comp.lib.iwhd.devel\n"
+"POT-Creation-Date: 2011-10-20 20:19+0200\n"
+"PO-Revision-Date: 2012-06-21 15:13+0200\n"
+"Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
+"Language-Team: ipa-admin <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: auto.c:59 auto.c:107
+#, c-format
+msgid "stat %s failed"
+msgstr "échec de stat %s"
+
+#: auto.c:63
+#, c-format
+msgid "path %s is not a directory"
+msgstr "le chemin %s n'est pas un répertoire"
+
+#: auto.c:68
+#, c-format
+msgid "Cannot create %s"
+msgstr "Impossible de créer %s"
+
+#: auto.c:111
+#, c-format
+msgid "path %s is not a regular file"
+msgstr "le chemin %s n'est pas un fichier"
+
+#: auto.c:117 backend.c:518 backend.c:1587 backend.c:1795 backend.c:1960
+#, c-format
+msgid "fork failed"
+msgstr "échec du clonage"
+
+#: auto.c:123 backend.c:529 backend.c:1598 backend.c:1806 backend.c:1970
+#, c-format
+msgid "failed to run command %s"
+msgstr "échec du lancement de la commande %s"
+
+#: auto.c:160
+#, c-format
+msgid "socket"
+msgstr "socket"
+
+#: auto.c:188
+#, c-format
+msgid "failed to verify mongod using port %s"
+msgstr "impossible de vérifier mongod sur le port %s"
+
+#: auto.c:232
+#, c-format
+msgid "sigaction"
+msgstr "sigaction"
+
+#: auto.c:268
+#, c-format
+msgid "something is listening on port %s, not auto-starting Mongo"
+msgstr "quelque chose écoute sur le port %s, Mongo ne sera pas démarré"
+
+#: auto.c:291
+msgid "atexit failed for auto_stop"
+msgstr "atexit a échoué pour auto_stop"
+
+#: backend.c:228
+#, c-format
+msgid "hostname %s too long in %s"
+msgstr "nom de système %s trop long dans %s"
+
+#: backend.c:280 backend.c:679 backend.c:1086
+msgid "missing Content-Length"
+msgstr "Content-Length manquant"
+
+#: backend.c:341
+#, c-format
+msgid "%s: failed to create file from template"
+msgstr "%s : échec de la création du fichier depuis le modèle"
+
+#: backend.c:352
+#, c-format
+msgid "failed to write to %s"
+msgstr "échec de l'écriture sur %s"
+
+#: backend.c:418
+msgid "missing EC2 API key"
+msgstr "clé d'API EC2 manquante"
+
+#: backend.c:427
+msgid "missing EC2 API secret"
+msgstr "secret d'API EC2 manquant"
+
+#: backend.c:442
+msgid "missing EC2 AMI cert"
+msgstr "certificat d'AMI EC2 manquant"
+
+#: backend.c:457
+msgid "missing EC2 AMI key"
+msgstr "clé d'AMI EC2 manquant"
+
+#: backend.c:466
+msgid "missing EC2 AMI uid"
+msgstr "uid d'AMI EC2 manquant"
+
+#: backend.c:511 backend.c:1580 backend.c:1788 backend.c:1954
+#, c-format
+msgid "pipe creation failed"
+msgstr "échec de la création du tube"
+
+#: backend.c:535 backend.c:1604 backend.c:1812 backend.c:1976
+msgid "could not open parent pipe stream"
+msgstr "impossible d'ouvrir le flux du tube parent"
+
+#: backend.c:564 backend.c:1649 backend.c:1835 backend.c:1998
+#, c-format
+msgid "waitpid failed"
+msgstr "échec de waitpid"
+
+#: backend.c:569 backend.c:1654 backend.c:1840 backend.c:2003
+#, c-format
+msgid "%s is killed (status 0x%x)"
+msgstr "%s est tué (état 0x%x)"
+
+#: backend.c:572 backend.c:1657 backend.c:1843 backend.c:2006
+#, c-format
+msgid "%s exited with code %d"
+msgstr "%s s'est terminé avec le code %d"
+
+#: backend.c:639 backend.c:699 backend.c:745 backend.c:786 backend.c:807
+#: backend.c:855 backend.c:1039 backend.c:1100 backend.c:1146 backend.c:1193
+#: backend.c:1278
+#, c-format
+msgid "path too long in %s"
+msgstr "chemin trop long dans %s"
+
+#: backend.c:813
+#, c-format
+msgid "no memory in %s"
+msgstr "plus de mémoire dans %s"
+
+#: backend.c:951
+msgid "auth_hdr too long"
+msgstr "auth_hdr trop long"
+
+#: backend.c:975
+#, c-format
+msgid "API URL too long in %s"
+msgstr "URL de l'API trop longue dans %s"
+
+#: backend.c:982
+#, c-format
+msgid "auth_user too long in %s"
+msgstr "auth_user trop long dans %s"
+
+#: backend.c:989
+#, c-format
+msgid "auth_key too long in %s"
+msgstr "auth_key trop long dans %s"
+
+#: backend.c:1220
+#, c-format
+msgid "chdir failed, unsafe to continue"
+msgstr "échec de chdir, il ne serait pas sûr de continuer"
+
+#: backend.c:1249
+#, c-format
+msgid "%s: read failed"
+msgstr "%s : échec en lecture"
+
+#: backend.c:1282
+#, c-format
+msgid "unlink failed for %s"
+msgstr "échec de unlink pour %s"
+
+#: backend.c:1300
+#, c-format
+msgid "%s: write failed"
+msgstr "%s : échec en écriture"
+
+#: backend.c:1338 backend.c:1341
+#, c-format
+msgid "%s: failed to unlink"
+msgstr "%s : échec de la suppression"
+
+#: backend.c:1357
+#, c-format
+msgid "%s: failed to create directory"
+msgstr "%s : échec de la création de répertoire"
+
+#: backend.c:1502
+msgid "missing RHEV-M API URL (api-url)"
+msgstr "URL d'API RHEV-M (api-url) manquante"
+
+#: backend.c:1510
+msgid "missing RHEV-M API username (api-key)"
+msgstr "nom d'utilisateur d'API RHEV-M (api-key) manquant"
+
+#: backend.c:1519
+msgid "missing RHEV-M API secret (api-secret)"
+msgstr "secret d'API RHEV-M (api-secret) manquant"
+
+#: backend.c:1537
+msgid "missing export domain's host (nfs-host)"
+msgstr "système du domaine d'export du système (nfs-host) manquant"
+
+#: backend.c:1541
+msgid "missing export domain's path (nfs-path)"
+msgstr "chemin du domaine d'export du système (nfs-path) manquant"
+
+#: backend.c:1545
+msgid "missing target directory (nfs-dir)"
+msgstr "répertoire cible manquant (nfs-dir)"
+
+#: backend.c:1560
+msgid "no core"
+msgstr "pas de cœur"
+
+#: backend.c:1565
+msgid "cannot create a temporary file"
+msgstr "impossible de créer un fichier temporaire"
+
+#: backend.c:1760
+msgid "missing target directory (nfs-dir,nfsdir)"
+msgstr "répertoire cible manquant (nfs-dir, nfsdir)"
+
+#: backend.c:1900
+msgid "missing vSphere API URL (api-url)"
+msgstr "URL d'API vSphere (api-url) manquante"
+
+#: backend.c:1908
+msgid "missing vSphere API username (api-key)"
+msgstr "nom d'utilisateur d'API vSphere (api-key) manquant"
+
+#: backend.c:1918
+msgid "missing vSphere API secret (api-secret)"
+msgstr "secret d'API vSphere (api-secret) manquant"
+
+#: backend.c:1931
+msgid "missing ESXi host (vm-host)"
+msgstr "système ESXi (vm-host) manquant"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr "erreur en écriture"
+
+#: lib/copy-acl.c:638
+#, c-format
+msgid "preserving permissions for %s"
+msgstr "préservation des permissions pour %s"
+
+#: lib/copy-file.c:70
+#, c-format
+msgid "error while opening \"%s\" for reading"
+msgstr "erreur à l'ouverture de « %s » en lecture"
+
+#: lib/copy-file.c:77
+#, c-format
+msgid "cannot open backup file \"%s\" for writing"
+msgstr "erreur à l'ouverture de « %s » en écriture"
+
+#: lib/copy-file.c:85
+#, c-format
+msgid "error reading \"%s\""
+msgstr "erreur à lecture de « %s »"
+
+#: lib/copy-file.c:90 lib/copy-file.c:97 lib/copy-file.c:136
+#, c-format
+msgid "error writing \"%s\""
+msgstr "erreur à l'écriture sur « %s »"
+
+#: lib/copy-file.c:99 lib/copy-file.c:138
+#, c-format
+msgid "error after reading \"%s\""
+msgstr "erreur après la lecture de « %s »"
+
+#: lib/error.c:187
+msgid "Unknown system error"
+msgstr "Erreur système inconnue"
+
+#: lib/getopt.c:547 lib/getopt.c:576
+#, c-format
+msgid "%s: option '%s' is ambiguous; possibilities:"
+msgstr "%s : l'option '%s' est ambigüe ; les possibilités sont :"
+
+#: lib/getopt.c:624 lib/getopt.c:628
+#, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s : l'option '--%s' n'autorise pas d'argument\n"
+
+#: lib/getopt.c:637 lib/getopt.c:642
+#, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s : l'option '%c%s' n'autorise pas d'argument\n"
+
+#: lib/getopt.c:685 lib/getopt.c:704
+#, c-format
+msgid "%s: option '--%s' requires an argument\n"
+msgstr "%s : l'option '--%s' requiert un argument\n"
+
+#: lib/getopt.c:742 lib/getopt.c:745
+#, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s : option '--%s' non reconnue\n"
+
+#: lib/getopt.c:753 lib/getopt.c:756
+#, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s : option '%c%s' non reconnue\n"
+
+#: lib/getopt.c:805 lib/getopt.c:808
+#, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s : option invalide -- '%c'\n"
+
+#: lib/getopt.c:861 lib/getopt.c:878 lib/getopt.c:1088 lib/getopt.c:1106
+#, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s : l'option requiert un argument -- '%c'\n"
+
+#: lib/getopt.c:934 lib/getopt.c:950
+#, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s : l'option '-W %s' est ambigüe\n"
+
+#: lib/getopt.c:974 lib/getopt.c:992
+#, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s : l'option '-W %s' n'autorise pas d'argument\n"
+
+#: lib/getopt.c:1013 lib/getopt.c:1031
+#, c-format
+msgid "%s: option '-W %s' requires an argument\n"
+msgstr "%s : l'option '-W %s' requiert un argument\n"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:271
+msgid "`"
+msgstr "« "
+
+#: lib/quotearg.c:272
+msgid "'"
+msgstr " »"
+
+#: lib/set-mode-acl.c:682
+#, c-format
+msgid "setting permissions for %s"
+msgstr "application des permissions sur %s"
+
+#: lib/version-etc.c:74
+#, c-format
+msgid "Packaged by %s (%s)\n"
+msgstr "Emballé par %s (%s)\n"
+
+#: lib/version-etc.c:77
+#, c-format
+msgid "Packaged by %s\n"
+msgstr "Emballé par %s\n"
+
+#. TRANSLATORS: Translate "(C)" to the copyright symbol
+#. (C-in-a-circle), if this symbol is available in the user's
+#. locale.  Otherwise, do not translate "(C)"; leave it as-is.
+#: lib/version-etc.c:84
+msgid "(C)"
+msgstr "©"
+
+#: lib/version-etc.c:86
+msgid ""
+"\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+"\n"
+msgstr ""
+"\n"
+"Licence GPLv3+ : GNU GPL version 3 ou ultérieure <http://gnu.org/licenses/gpl.html>.\n"
+"Ceci est un logiciel libre : vous êtes libre de le modifier et le redistribuer.\n"
+"Il n'y AUCUNE GARANTIE, dans la limite de la loi.\n"
+"\n"
+
+#. TRANSLATORS: %s denotes an author name.
+#: lib/version-etc.c:102
+#, c-format
+msgid "Written by %s.\n"
+msgstr "Écrit par %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#: lib/version-etc.c:106
+#, c-format
+msgid "Written by %s and %s.\n"
+msgstr "Écrit par %s et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#: lib/version-etc.c:110
+#, c-format
+msgid "Written by %s, %s, and %s.\n"
+msgstr "Écrit par %s, %s et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:117
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"and %s.\n"
+msgstr ""
+"Écrit par %s, %s, %s\n"
+"et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:124
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, and %s.\n"
+msgstr ""
+"Écrit par %s, %s, %s,\n"
+"%s et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:131
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, and %s.\n"
+msgstr ""
+"Écrit par %s, %s, %s,\n"
+"%s, %s et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:139
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, and %s.\n"
+msgstr ""
+"Écrit par %s, %s, %s,\n"
+"%s, %s, %s et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:147
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"and %s.\n"
+msgstr ""
+"Écrit par %s, %s, %s,\n"
+"%s, %s, %s, %s\n"
+"et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:156
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, and %s.\n"
+msgstr ""
+"Écrit par %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s et %s.\n"
+
+#. TRANSLATORS: Each %s denotes an author name.
+#. You can use line breaks, estimating that each author name occupies
+#. ca. 16 screen columns and that a screen line has ca. 80 columns.
+#: lib/version-etc.c:167
+#, c-format
+msgid ""
+"Written by %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s, and others.\n"
+msgstr ""
+"Écrit par %s, %s, %s,\n"
+"%s, %s, %s, %s,\n"
+"%s, %s et d'autres.\n"
+
+#. TRANSLATORS: The placeholder indicates the bug-reporting address
+#. for this package.  Please add _another line_ saying
+#. "Report translation bugs to <...>\n" with the address for translation
+#. bugs (typically your translation team's web or email address).
+#: lib/version-etc.c:245
+#, c-format
+msgid ""
+"\n"
+"Report bugs to: %s\n"
+msgstr ""
+"\n"
+"Rapporter les bugs à : %s\n"
+
+#: lib/version-etc.c:247
+#, c-format
+msgid "Report %s bugs to: %s\n"
+msgstr "Rapporter %s bugs à : %s\n"
+
+#: lib/version-etc.c:251
+#, c-format
+msgid "%s home page: <%s>\n"
+msgstr "%s page de démarrage : <%s>\n"
+
+#: lib/version-etc.c:253
+#, c-format
+msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
+msgstr "%s page de démarrage : <http://www.gnu.org/software/%s/>\n"
+
+#: lib/version-etc.c:256
+msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
+msgstr "Aide générique sur l'utilisation de logiciels GNU : <http://www.gnu.org/gethelp/>\n"
+
+#: lib/xalloc-die.c:34
+msgid "memory exhausted"
+msgstr "mémoire épuisée"
+
+#: lib/xstrtol-error.c:63
+#, c-format
+msgid "invalid %s%s argument `%s'"
+msgstr "argument %s%s invalide « %s »"
+
+#: lib/xstrtol-error.c:68
+#, c-format
+msgid "invalid suffix in %s%s argument `%s'"
+msgstr "suffixe invalide dans l'argument %s%s « %s »"
+
+#: lib/xstrtol-error.c:72
+#, c-format
+msgid "%s%s argument `%s' too large"
+msgstr "argument %s%s « %s » trop grand"
+
+#: logging.c:109
+#, c-format
+msgid "unable to open log `%s'"
+msgstr "impossible d'ouvrir le journal « %s »"
+
+#: logging.c:120 logging.c:125
+#, c-format
+msgid "failed to flush stdout"
+msgstr "impossible de vider stdout"
+
+#: logging.c:133
+#, c-format
+msgid "unable to dup log to stdout"
+msgstr "impossible de cloner le journal vers stdout"
+
+#: logging.c:138
+#, c-format
+msgid "unable to dup log to stderr"
+msgstr "impossible de cloner le journal vers stderr"
+
+#: qparser.y:398
+#, c-format
+msgid "failed to initialize query parser"
+msgstr "impossible d'initialiser l'analyseur de requête"
+
+#: replica.c:115
+#, c-format
+msgid "ran out of memory replicating delete for %s"
+msgstr "épuisement de la mémoire lors de la réplication de la suppression pour %s"
+
+#: replica.c:122
+#, c-format
+msgid "invalid path replicating delete for %s"
+msgstr "chemin invalide lors de la réplication de la suppression pour %s"
+
+#: replica.c:130
+#, c-format
+msgid "got status %d replicating delete for %s"
+msgstr "état %d reçu lors de la réplication de la suppression pour %s"
+
+#: replica.c:144
+#, c-format
+msgid "got status %d replicating bcreate for %s"
+msgstr "état %d reçu lors de la réplication de bcreate pour %s"
+
+#: replica.c:187
+#, c-format
+msgid "thread mutex init failed"
+msgstr "échec de l'initialisation du mutex de fil d'exécution"
+
+#: replica.c:206
+#, c-format
+msgid "bad repl type %d (url=%s) skipped"
+msgstr "mauvais type repl %d (url=%s)"
+
+#: replica.c:281
+#, c-format
+msgid "could not parse url %s"
+msgstr "impossible d'analyser l'url %s"
+
+#: replica.c:332 replica.c:339 replica.c:383
+#, c-format
+msgid "could not create repl_item for %s"
+msgstr "impossible de créer le repl_item pour %s"
+
+#. This is a proper name. See the gettext manual, section Names.
+#: rest.c:76
+msgid "Jeff Darcy"
+msgstr "Jeff Darcy"
+
+#. This is a proper name. See the gettext manual, section Names.
+#: rest.c:77
+msgid "Jim Meyering"
+msgstr "Jim Meyering"
+
+#. This is a proper name. See the gettext manual, section Names.
+#: rest.c:78
+msgid "Pete Zaitcev"
+msgstr "Pete Zaitcev"
+
+#: rest.c:442
+#, c-format
+msgid "failed to get policy for %s/%s"
+msgstr "impossible d'obtenir la politique pour %s/%s"
+
+#: rest.c:451
+#, c-format
+msgid "failed to get default policy"
+msgstr "impossible d'obtenir la politique par défaut"
+
+#: rest.c:1814 rest.c:1841 rest.c:1847
+#, c-format
+msgid "invalid request: %s"
+msgstr "requête invalide : %s"
+
+#: rest.c:1852
+#, c-format
+msgid "failed to extract provider name: %s"
+msgstr "impossible d'extraire le nom du fournisseur : %s"
+
+#: rest.c:2720
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Essayer « %s --help » pour plus d'informations.\n"
+
+#: rest.c:2724
+#, c-format
+msgid "Usage: %s [OPTION]\n"
+msgstr "Utilisation : %s [OPTION]\n"
+
+#: rest.c:2728
+msgid ""
+"Aeolus' image-warehouse daemon.\n"
+"A configuration file must be specified.\n"
+"\n"
+"  -a, --autostart         start necessary back-end services\n"
+"  -c, --config=FILE       config file [required]\n"
+"  -d, --db=HOST_PORT      database server as ip[:port]\n"
+"  -l, --logfile=FILE      logfile (default stdout/stderr)\n"
+"  -m, --master=HOST_PORT  master (upstream) server as ip[:port]\n"
+"  -o, --oauth             enable OAuth\n"
+"  -p, --port=PORT         alternate listen port (default 9090)\n"
+"  -u, --userlist=FILE     list of user names, secrets\n"
+"  -v, --verbose           verbose/debug output\n"
+"\n"
+"      --help     display this help and exit\n"
+"      --version  output version information and exit\n"
+msgstr ""
+"Aeolus' image-warehouse daemon.\n"
+"Démon de gestion d'images de Aeolus."
+"Un fichier de configuration doit être spécifié.\n"
+"\n"
+"  -a, --autostart         démarrer les services de soutien nécessaires\n"
+"  -c, --config=FILE       fichier de configuration [requis]\n"
+"  -d, --db=HOST_PORT      serveur de base de données : ip[:port]\n"
+"  -l, --logfile=FILE      journal (par défaut : stdout/stderr)\n"
+"  -m, --master=HOST_PORT  serveur maître (amont) : ip[:port]\n"
+"  -o, --oauth             activer OAuth\n"
+"  -p, --port=PORT         port d'écoute alternatif (9090 par défaut)\n"
+"  -u, --userlist=FILE     liste de noms d'utilisateurs et secrets\n"
+"  -v, --verbose           mode verbeux/débogage\n"
+"\n"
+"      --help     afficher ce texte d'aide et quitter\n"
+"      --version  afficher les informations de version et quitter\n"
+
+#: rest.c:2745
+#, c-format
+msgid ""
+"\n"
+"The default RHEV-M import timeout is %d seconds.\n"
+msgstr ""
+"\n"
+"Le timeout par défaut de RHEV-M est de %d secondes.\n"
+
+#: rest.c:2750
+#, c-format
+msgid ""
+"\n"
+"Report %s bugs to %s.\n"
+msgstr ""
+"\n"
+"Rapporter %s bugs à %s\n"
+
+#: rest.c:2762
+#, c-format
+msgid "gethostname"
+msgstr "gethostname"
+
+#: rest.c:2774
+#, c-format
+msgid "invalid port number: %s"
+msgstr "numéro de port invalide : %s"
+
+#: rest.c:2790
+#, c-format
+msgid "invalid host name"
+msgstr "nom de système invalide : %s"
+
+#: rest.c:2876
+#, c-format
+msgid "extra operand %s"
+msgstr "opérande %s surnuméraire"
+
+#: rest.c:2882
+#, c-format
+msgid "A deprecated flag -U is specified, migrate to -u"
+msgstr "L'option -U utilisée est obsolète, utilisation de -u"
+
+#: rest.c:2887 rest.c:2910
+#, c-format
+msgid "could not parse %s"
+msgstr "impossible d'analyser %s"
+
+#: rest.c:2897
+#, c-format
+msgid "do not use -c and -a simultaneously"
+msgstr "ne pas utiliser -c et -a simultanément"
+
+#: rest.c:2915
+#, c-format
+msgid "specify at least -c or -a"
+msgstr "spécifier au moins -c ou -a"
+
+#: rest.c:2942
+#, c-format
+msgid "write failed"
+msgstr "échec de l'écriture"
+
+#: rest.c:2960
+#, c-format
+msgid "failed to start daemon"
+msgstr "échec au démarrage du démon"
+
+#: setup.c:125
+#, c-format
+msgid "provider %s has no type"
+msgstr "le fournisseur %s n'a pas de type"
+
+#: setup.c:137
+#, c-format
+msgid "provider %s has invalid type: %s"
+msgstr "le fournisseur %s a un type invalide : %s"
+
+#: setup.c:145
+#, c-format
+msgid "%s: %s-provider requires a host"
+msgstr "%s : le fournisseur %s requiert un nom de système"
+
+#: setup.c:150
+#, c-format
+msgid "%s: %s-provider requires a port"
+msgstr "%s : le fournisseur %s requiert un numéro de port"
+
+#: setup.c:155
+#, c-format
+msgid "%s: %s-provider: invalid port: %s"
+msgstr "%s : fournisseur %s : port invalide : %s"
+
+#: setup.c:164
+#, c-format
+msgid "%s: %s-provider requires a key"
+msgstr "%s : le fournisseur %s requiert une clé"
+
+#: setup.c:169
+#, c-format
+msgid "%s: %s-provider requires a secret"
+msgstr "%s : le fournisseur %s requiert un secret"
+
+#: setup.c:177
+#, c-format
+msgid "%s: %s-provider requires a path"
+msgstr "%s : le fournisseur %s requiert un chemin"
+
+#: setup.c:196
+#, c-format
+msgid "config elem %u: missing object"
+msgstr "élément de configuration %u : objet manquant"
+
+#: setup.c:202 user.c:120
+#, c-format
+msgid "config elem %u: missing name"
+msgstr "élément de configuration %u : nom manquant"
+
+#: setup.c:209
+#, c-format
+msgid "config elem %u (%s): missing type"
+msgstr "élément de configuration %u : type manquant"
+
+#: setup.c:226
+#, c-format
+msgid "config elem %u (%s): bad type"
+msgstr "élément de configuration %u (%s) : mauvais type"
+
+#: setup.c:233
+#, c-format
+msgid "config elem %u (%s): missing host"
+msgstr "élément de configuration %u (%s) : nom de système manquant"
+
+#: setup.c:239
+#, c-format
+msgid "config elem %u (%s): missing port"
+msgstr "élément de configuration %u (%s) : numéro de port manquant"
+
+#: setup.c:248
+#, c-format
+msgid "config elem %u (%s): missing key"
+msgstr "élément de configuration %u (%s) : clé manquante"
+
+#: setup.c:254
+#, c-format
+msgid "config elem %u (%s): missing secret"
+msgstr "élément de configuration %u (%s) : secret manquant"
+
+#: setup.c:263
+#, c-format
+msgid "config elem %u (%s): missing path"
+msgstr "élément de configuration %u (%s) : chemin manquant"
+
+#: setup.c:272
+#, c-format
+msgid "config elem %u (%s): timeout is honored only with fs-rhev-m"
+msgstr "élément de configuration %u (%s) : le timeout est honoré uniquement avec fs-rhev-m"
+
+#: setup.c:367
+#, c-format
+msgid "convert-provider: ITER key: %s"
+msgstr "fournisseur de contenu : clé ITER : %s"
+
+#: setup.c:378 setup.c:500
+msgid "exhausted virtual memory"
+msgstr "mémoire virtuelle épuisée"
+
+#: setup.c:383
+#, c-format
+msgid "could not extract %u.%s"
+msgstr "impossible d'extraire %u.%s"
+
+#: setup.c:443
+#, c-format
+msgid "ignoring invalid import-timeout: %s"
+msgstr "on ignore le timeout d'import invalide : %s"
+
+#: setup.c:495
+#, c-format
+msgid "no value for %s"
+msgstr "aucune valeur pour %s"
+
+#: setup.c:526
+msgid "config should be a JSON array"
+msgstr "la configuration devrait être un tableau JSON"
+
+#: setup.c:547
+msgid "could not allocate provider hash"
+msgstr "impossible d'allouer la table de hachage des fournisseurs"
+
+#: setup.c:553
+#, c-format
+msgid "could not get pointer to provider %u"
+msgstr "impossible d'obtenir le pointeur vers le fournisseur %u"
+
+#: setup.c:558
+#, c-format
+msgid "could not copy key %u"
+msgstr "impossible de copier la clé %u"
+
+#: setup.c:563
+#, c-format
+msgid "could not allocate provider %u"
+msgstr "impossible d'allouer le fournisseur %u"
+
+#: setup.c:567
+#, c-format
+msgid "could not add provider %u"
+msgstr "impossible d'ajouter le fournisseur %u"
+
+#: setup.c:609 user.c:152
+#, c-format
+msgid "failed to open %s for reading"
+msgstr "impossible d'ouvrir %s en lecture"
+
+#: setup.c:615 setup.c:646 user.c:158
+#, c-format
+msgid "JSON error on line %d: %s"
+msgstr "Erreur JSON sur la ligne %d : %s"
+
+#: setup.c:656
+msgid "invalid autostart configuration (internal error)"
+msgstr "configuration autostart invalide (erreur interne)"
+
+#: user.c:56
+#, c-format
+msgid "The -U argument must contain a colon"
+msgstr "L'argument -U doit contenir un « : »"
+
+#: user.c:60
+#, c-format
+msgid "The user part of -U argument is empty"
+msgstr "La partie utilisateur de l'argument -U est vide"
+
+#: user.c:64 user.c:79
+#, c-format
+msgid "User name too long"
+msgstr "Le nom d'utilisateur est trop long"
+
+#: user.c:67 user.c:82
+#, c-format
+msgid "User password too long"
+msgstr "Le mot de passe de l'utilisateur est trop long"
+
+#: user.c:99
+msgid "user list must be a JSON array"
+msgstr "la liste d'utilisateurs doit être un tableau JSON"
+
+#: user.c:114
+#, c-format
+msgid "could not get pointer to user %u"
+msgstr "impossible d'obtenir le pointeur vers l'utilisateur %u"
+
+#: user.c:131
+#, c-format
+msgid "config elem %u: missing secret"
+msgstr "élément de configuration %u : secret manquant"
+
