@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Spacewalk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.redhat.com/\n"
 "POT-Creation-Date: 2010-11-02 11:19+0100\n"
-"PO-Revision-Date: 2012-06-21 13:01+0200\n"
+"PO-Revision-Date: 2012-06-23 14:25-0500\n"
 "Last-Translator: Jérôme Fenal <jfenal@gmail.com>\n"
 "Language-Team: ipa-admin <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -53,12 +53,12 @@ msgstr "Cet identifiant de serveur n'existe plus"
 #: ../server/handlers/xmlrpc/errata.py:56
 #, python-format
 msgid "Expected a package name, not: %s"
-msgstr "Nom de paquetage attendu, pas : %s"
+msgstr "Nom de paquet attendu, pas : %s"
 
 #: ../server/handlers/xmlrpc/errata.py:116
 #, python-format
 msgid "Expected a package, not: %s"
-msgstr "Paquetage attendu, pas : %s"
+msgstr "Paquet attendu, pas : %s"
 
 #: ../server/handlers/xmlrpc/up2date.py:230
 #, python-format
@@ -68,7 +68,7 @@ msgstr "Valeur %s invalide (type %s)"
 #: ../server/handlers/xmlrpc/up2date.py:258
 #, python-format
 msgid "Unable to retrieve package header %s"
-msgstr "Impossible de récupérer l'entête %s du paquetage"
+msgstr "Impossible de récupérer l'entête %s du paquet"
 
 #: ../server/handlers/xmlrpc/up2date.py:405
 #, python-format
@@ -78,12 +78,12 @@ msgstr "Valeur %s invalide (%s)"
 #: ../server/handlers/xmlrpc/up2date.py:477
 #, python-format
 msgid "Invalid value for %s in package tuple: %s (%s)"
-msgstr "Valeur invalide %s dans le tuple du paquetage : %s (%s)"
+msgstr "Valeur invalide %s dans le tuple du paquet : %s (%s)"
 
 #: ../server/handlers/xmlrpc/up2date.py:489
 #, python-format
 msgid "Invalid package parameter %s (%s)"
-msgstr "Paramètre %s de paquetage invalide (%s)"
+msgstr "Paramètre %s de paquet invalide (%s)"
 
 #: ../server/handlers/xmlrpc/registration.py:200
 msgid "Required data missing"
@@ -106,7 +106,7 @@ msgid ""
 msgstr ""
 "\n"
 "                   Le compte %s a été désactivé sur ce serveur.\n"
-"                   Veuillez contacter votre administrateur d'Organisation pour plus d'assistance."
+"                   Veuillez contacter votre administrateur d'organisation pour plus d'assistance."
 
 #: ../server/handlers/xmlrpc/registration.py:875
 msgid "Invalid system release version requested"
@@ -167,7 +167,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Si vous avez un numéro d'installation, veuillez d'abord l'enregistrer à http://www.redhat.com/apps/activate/ puis de ré-essayer.\n"
+"Si vous avez un numéro d'installation, veuillez d'abord l'enregistrer à http://www.redhat.com/apps/activate/ puis de réessayer.\n"
 "\n"
 
 #: ../server/rhnChannel.py:1801
@@ -266,12 +266,12 @@ msgstr ""
 
 #: ../server/importlib/userAuth.py:89 ../server/importlib/userAuth.py:93
 msgid "You are not authorized to manage packages in the null org"
-msgstr "Vous n'êtes pas autorisé à administrer les paquetages de l'organisation null"
+msgstr "Vous n'êtes pas autorisé à administrer les paquets de l'organisation null"
 
 #: ../server/importlib/userAuth.py:100
 #, python-format
 msgid "You are not allowed to manage packages in the %s org"
-msgstr "Vous n'êtes pas autorisé à administrer les paquetages de l'organisation %s"
+msgstr "Vous n'êtes pas autorisé à administrer les paquets de l'organisation %s"
 
 #: ../server/importlib/userAuth.py:118
 msgid "You are not allowed to perform administrative tasks"
@@ -317,13 +317,13 @@ msgstr "Limite d'utilisation maximale de %s atteinte"
 
 #: ../server/rhnServer/server_token.py:642
 msgid "Registration failed: RHN Software Management service entitlements exhausted"
-msgstr "Enregistrement échoué : droits d'accès au service RHN Software Management épuisés"
+msgstr "Échec de l'enregistrement : les droits d'accès au service RHN Software Management sont épuisés"
 
 #: ../server/rhnServer/server_token.py:756
 msgid ""
 "Stacking of re-registration tokens with different base entitlements is not "
 "supported"
-msgstr "L'empilement de jetons de ré-enregistrement avec des droits de base différents n'est pas supporté"
+msgstr "L'empilement de jetons de réenregistrement avec des droits de base différents n'est pas supporté"
 
 #: ../server/rhnServer/server_token.py:834
 #, python-format
@@ -342,7 +342,7 @@ msgstr "Inadéquation de session kickstart"
 
 #: ../server/rhnServer/server_token.py:896
 msgid "Stacking of re-registration tokens is not supported"
-msgstr "L'empilement de jetons de ré-enregistrement n'est pas supporté"
+msgstr "L'empilement de jetons de réenregistrement n'est pas supporté"
 
 #: ../server/rhnServer/server_class.py:93
 #, python-format
@@ -355,12 +355,12 @@ msgstr "L'architecture `%s' n'est pas supportée"
 #: ../server/rhnPackage.py:198 ../server/rhnPackage.py:286
 #, python-format
 msgid "Invalid RPM package %s requested"
-msgstr "Paquetage RPM %s demandé invalide"
+msgstr "Paquet RPM %s demandé invalide"
 
 #: ../server/rhnPackage.py:96 ../server/rhnPackage.py:170
 #: ../server/rhnPackage.py:204 ../server/rhnPackage.py:292
 msgid "Package not found"
-msgstr "Paquetage non trouvé"
+msgstr "Paquet non trouvé"
 
 #: ../server/apacheRequest.py:46
 #, python-format
@@ -410,7 +410,7 @@ msgstr "Le nom d'utilisateur `%s' n'a pas été réservé"
 #. New accounts have to specify an e-mail address
 #: ../server/rhnUser.py:542
 msgid "E-mail address not specified"
-msgstr "L'adresse e-mail non spécifiée"
+msgstr "Adresse courriel non spécifiée"
 
 #. wrong organization
 #. Invalid org password
@@ -441,7 +441,7 @@ msgstr "nom d'utilisateur = `%s', caractère invalide `%s'"
 #: ../server/rhnUser.py:667
 #, python-format
 msgid "Please limit your e-mail address to %s chars"
-msgstr "Veuillez limiter votre adresse e-mail à %s caractères"
+msgstr "Veuillez limiter votre adresse courriel à %s caractères"
 
 #: ../server/rhnUser.py:738
 #, python-format
@@ -629,6 +629,7 @@ msgstr ""
 "     ou vous connecter sur https://%(hostname)s, et depuis l'onglet Aperçu,\n"
 "     sélectionner « Gestion des Abonnements » pour activer le service RHN sur\n"
 "     ce système.\n"
+"     "
 
 #: ../common/rhnException.py:90
 msgid "Channel error"
@@ -725,7 +726,7 @@ msgstr ""
 "\n"
 "     Architecture invalide.\n"
 "\n"
-"     L'architecture de ce paquetage n'est pas prise en charge par Red Hat Network\n"
+"     L'architecture de ce paquet n'est pas prise en charge par Red Hat Network\n"
 "     "
 
 #: ../common/rhnException.py:123
@@ -740,7 +741,7 @@ msgstr ""
 "\n"
 "     Architecture incompatible.\n"
 "\n"
-"     L'architecture de ce paquetage que vous tentez de télécharger n'est pas\n"
+"     L'architecture de ce paquet que vous tentez de télécharger n'est pas\n"
 "     compatible avec l'architecture du canal.\n"
 "     "
 
@@ -783,8 +784,8 @@ msgid ""
 msgstr ""
 "\n"
 "     Cette erreur est survenue car RHN a détecté un abus du service\n"
-"     de la part de ce système et de votre compte; Cette erreur est\n"
-"     déclenchée quand votre système se connecter trop souvent à Red Hat\n"
+"     de la part de ce système et de votre compte ; Cette erreur est\n"
+"     déclenchée quand votre système se connecte trop souvent à Red Hat\n"
 "     Network. Cette erreur ne peut être déclenchée lors d'une utilisation\n"
 "     normale du service Red Hat Network telle que configurée par défaut\n"
 "     sur Red Hat Enterprise Linux.\n"
@@ -833,7 +834,7 @@ msgid ""
 msgstr ""
 "\n"
 "     L'accès à Red Hat Network est actuellement limité aux clients\n"
-"     possédant un abonnement. Merci de re-esayer ultérieurement.\n"
+"     possédant un abonnement. Merci de réitérer ultérieurement.\n"
 "     Si vous souhaitez devenir client en acquérant un abonnement,\n"
 "     veuillez consulter https://%(hostname)s/preview/priority_service.pxt\n"
 "     pour plus d'informations.\n"
@@ -938,7 +939,7 @@ msgstr "Impossible d'accorder des droits au système"
 
 #: ../common/rhnException.py:201
 msgid "Registration token unable to entitle system: maximum membership exceeded"
-msgstr "La clé d'activation ne peut inscrire le système : le nombre d'adhésion est dépassé"
+msgstr "La clé d'activation ne peut inscrire le système : le nombre maximum d'enregistrements autorisé est dépassé"
 
 #. 100-109: e-mail and uuid related faults
 #: ../common/rhnException.py:205
@@ -992,27 +993,27 @@ msgstr "Information sur les en-têtes HTTP sont manquantes"
 
 #: ../common/rhnException.py:226
 msgid "The package's checksum signature does not match the header one"
-msgstr "La signature de contrôle du paquetage ne correspond pas à celle de l'en-tête"
+msgstr "La signature de contrôle du paquet ne correspond pas à celle de l'en-tête"
 
 #: ../common/rhnException.py:227
 msgid "Header information does not match package metainformation"
-msgstr "Les informations d'en-têtes ne correspondent pas aux meta-informations du paquetage"
+msgstr "Les informations d'en-têtes ne correspondent pas aux meta-informations du paquet"
 
 #: ../common/rhnException.py:228
 msgid "Package with a different signature already uploaded"
-msgstr "Un paquetage avec une signature différente a déjà été transmis"
+msgstr "Un paquet avec une signature différente a déjà été transmis"
 
 #: ../common/rhnException.py:229
 msgid "Not an RPM package"
-msgstr "Pas un paquetage RPM"
+msgstr "Pas un paquet RPM"
 
 #: ../common/rhnException.py:230
 msgid "Unsigned RPM package"
-msgstr "Paquetage RPM non signé"
+msgstr "Paquet RPM non signé"
 
 #: ../common/rhnException.py:231
 msgid "Incompatible package and channel architectures"
-msgstr "Architectures de paquetage et de canal incompatibles"
+msgstr "Architectures de paquet et de canal incompatibles"
 
 #: ../common/rhnException.py:232
 msgid "Incompatible checksum type"
@@ -1034,7 +1035,7 @@ msgstr "Le numéro d'installation n'ouvre aucun droit"
 #. 700-799: Additional user input verification errors.
 #: ../common/rhnException.py:240
 msgid "Maximum username length violation"
-msgstr "Violation de la limite minimale de longueur du nom d'utilisateur"
+msgstr "Violation de la limite maximale de longueur du nom d'utilisateur"
 
 #: ../common/rhnException.py:241
 msgid "Maximum password length violation"
@@ -1161,7 +1162,7 @@ msgid ""
 "     "
 msgstr ""
 "\n"
-"     L'arborescence kickstart ne passe pas la validation, des paquetages\n"
+"     L'arborescence kickstart ne passe pas la validation, des paquets\n"
 "     manquent dans le canal\n"
 "     "
 
@@ -1180,7 +1181,7 @@ msgstr "Nom de paquetage invalide"
 
 #: ../common/rhnException.py:294
 msgid "Unable to retrieve package"
-msgstr "Impossible de récupérer le paquetage"
+msgstr "Impossible de récupérer le paquet"
 
 #: ../common/rhnException.py:295
 msgid "Invalid erratum name"
@@ -1331,9 +1332,9 @@ msgid ""
 msgstr ""
 "\n"
 "     Une erreur est survenue pendant le traitement de votre demande. Si\n"
-"     le problème persiste, merci de créer un rapport de bug sur\n"
+"     le problème persiste, merci de créer un rapport d'anomalie sur\n"
 "     bugzilla.redhat.com. Si vous choisissez de soumettre ce rapport\n"
-"     de bug, assurez-vous d'y adjoindre les détails de ce que vous étiez\n"
+"     d'anomalie, assurez-vous d'y adjoindre les détails de ce que vous étiez\n"
 "     en train de faire lorsque l'erreur est survenue, ainsi que les détails\n"
 "     sur la façon de reproduire le problème.\n"
 
